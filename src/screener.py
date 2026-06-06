@@ -1,5 +1,6 @@
 """
 Screener metrics (Volatility, Sharpe, Drawdown, Return).
+Compatible with pandas 2.x / 3.x and yfinance 1.x.
 """
 
 from __future__ import annotations
@@ -8,37 +9,41 @@ import numpy as np
 import pandas as pd
 
 
-def _to_series(x) -> pd.Series:
+def _to_1d_series(x) -> pd.Series:
     """
-    Гарантира, че входът е 1-D pd.Series с float стойности.
-    Поправя проблема при yfinance >= 0.2.50 където prices_df[ticker]
-    може да върне DataFrame с 1 колона вместо Series.
+    Гарантира 1-D pd.Series с float стойности.
+    Обработва: Series, DataFrame (1 или повече колони), numpy array.
     """
     if isinstance(x, pd.DataFrame):
-        x = x.squeeze(axis=1)
+        if x.shape[1] == 1:
+            return x.iloc[:, 0].astype(float)
+        # Ако има повече колони (MultiIndex остатък), вземи първата
+        return x.iloc[:, 0].astype(float)
     if isinstance(x, pd.Series):
-        # Ако Series има MultiIndex колони (рядко), вземи първата стойност
         return x.astype(float)
-    return pd.Series(x, dtype=float)
+    # numpy array или друго
+    return pd.Series(np.asarray(x).ravel(), dtype=float)
 
 
 def compute_metrics(prices) -> dict[str, float]:
-    p = _to_series(prices).dropna()
+    p = _to_1d_series(prices).dropna()
+
+    nan_result = {
+        "ret_1m": np.nan, "ret_3m": np.nan, "ret_6m": np.nan, "ret_12m": np.nan,
+        "vol_1m": np.nan, "vol_3m": np.nan, "vol_12m": np.nan,
+        "sharpe_12m": np.nan, "max_dd_12m": np.nan
+    }
 
     if len(p) < 252:
-        return {
-            "ret_1m": np.nan, "ret_3m": np.nan, "ret_6m": np.nan, "ret_12m": np.nan,
-            "vol_1m": np.nan, "vol_3m": np.nan, "vol_12m": np.nan,
-            "sharpe_12m": np.nan, "max_dd_12m": np.nan
-        }
+        return nan_result
 
     # Returns
     def _ret(days: int) -> float:
         if len(p) <= days:
             return np.nan
-        val_now = float(p.iloc[-1])
+        val_now  = float(p.iloc[-1])
         val_then = float(p.iloc[-1 - days])
-        if val_then == 0:
+        if val_then == 0 or not np.isfinite(val_then):
             return np.nan
         return val_now / val_then - 1.0
 
@@ -61,40 +66,50 @@ def compute_metrics(prices) -> dict[str, float]:
     v12 = _vol(252)
 
     # Sharpe (risk-free = 0)
-    sharpe12 = (r12 / v12) if (v12 is not None and np.isfinite(v12) and v12 > 0 and np.isfinite(r12)) else np.nan
+    if v12 is not None and np.isfinite(v12) and v12 > 0 and np.isfinite(r12):
+        sharpe12 = r12 / v12
+    else:
+        sharpe12 = np.nan
 
     # Max Drawdown 12m
-    p12 = p.iloc[-252:]
+    p12      = p.iloc[-252:]
     roll_max = p12.cummax()
-    dd = (p12 - roll_max) / roll_max
-    mdd = float(dd.min())
+    dd       = (p12 - roll_max) / roll_max
+    mdd      = float(dd.min())
 
     def _pct(v):
-        return round(v * 100.0, 4) if np.isfinite(v) else np.nan
+        return round(float(v) * 100.0, 4) if np.isfinite(v) else np.nan
 
     return {
-        "ret_1m":    _pct(r1),
-        "ret_3m":    _pct(r3),
-        "ret_6m":    _pct(r6),
-        "ret_12m":   _pct(r12),
-        "vol_1m":    _pct(v1),
-        "vol_3m":    _pct(v3),
-        "vol_12m":   _pct(v12),
+        "ret_1m":     _pct(r1),
+        "ret_3m":     _pct(r3),
+        "ret_6m":     _pct(r6),
+        "ret_12m":    _pct(r12),
+        "vol_1m":     _pct(v1),
+        "vol_3m":     _pct(v3),
+        "vol_12m":    _pct(v12),
         "sharpe_12m": round(float(sharpe12), 4) if np.isfinite(sharpe12) else np.nan,
         "max_dd_12m": _pct(mdd),
     }
 
 
 def run_screener(prices_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Изчислява метрики за всеки тикър в prices_df.
+    prices_df трябва да е плосък DataFrame (не MultiIndex колони).
+    """
+    # Ако колоните са MultiIndex, сплескай до последното ниво (тикъри)
+    if isinstance(prices_df.columns, pd.MultiIndex):
+        prices_df = prices_df.copy()
+        prices_df.columns = prices_df.columns.get_level_values(-1)
+
     rows = []
     for ticker in prices_df.columns:
         col = prices_df[ticker]
-        # Squeeze в случай на MultiIndex колони
-        if isinstance(col, pd.DataFrame):
-            col = col.squeeze(axis=1)
         m = compute_metrics(col)
         m["ticker"] = ticker
         rows.append(m)
+
     if not rows:
         return pd.DataFrame()
     return pd.DataFrame(rows)

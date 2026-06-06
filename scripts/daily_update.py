@@ -17,7 +17,7 @@ import pandas as pd
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src.universe import (
-    get_universe_tickers, get_benchmark_tickers, 
+    get_universe_tickers, get_benchmark_tickers,
     get_category_map, get_name_map, get_benchmark_map
 )
 from src.prices import download_prices
@@ -31,15 +31,30 @@ from src.render import render_frontend_data
 DATA_DIR = Path(__file__).parent.parent / "data"
 DOCS_DIR = Path(__file__).parent.parent / "docs"
 
+
+def filter_prices(prices_df: pd.DataFrame, tickers: list) -> pd.DataFrame:
+    """
+    Връща само колоните за дадените тикъри.
+    Работи независимо дали колоните са обикновен Index или MultiIndex.
+    """
+    if isinstance(prices_df.columns, pd.MultiIndex):
+        # Сплескай MultiIndex до обикновен Index
+        prices_df = prices_df.copy()
+        prices_df.columns = prices_df.columns.get_level_values(-1)
+
+    available = [t for t in tickers if t in prices_df.columns]
+    return prices_df[available]
+
+
 def main():
     print("=== ETF Rotation Radar: Daily Update ===")
-    
+
     # 1. Get Universe
     tickers = get_universe_tickers()
     benchmarks = get_benchmark_tickers()
     all_tickers = list(set(tickers + benchmarks))
     print(f"Universe: {len(tickers)} ETFs, {len(benchmarks)} Benchmarks")
-    
+
     # 2. Download Prices
     print("\nDownloading prices (last 2 years)...")
     prices_df = download_prices(all_tickers, period="2y")
@@ -47,53 +62,55 @@ def main():
         print("Failed to download prices. Exiting.")
         return
     print(f"Downloaded prices up to {prices_df.index[-1].strftime('%Y-%m-%d')}")
-    
+    print(f"Price DataFrame shape: {prices_df.shape}, columns type: {type(prices_df.columns).__name__}")
+
     # 3. Signal Engine & Rank History
     print("\nComputing cross-section and updating history...")
     category_map = get_category_map()
-    
-    # For daily update, we only need the latest snapshot
-    # In a real setup, we'd backfill first, but for now we just compute the latest
+
     latest_date = prices_df.index[-1]
     snapshot = compute_cross_section(prices_df, category_map=category_map, as_of=latest_date)
-    
+
     history_path = DATA_DIR / "ranks_history.parquet"
     if not snapshot.empty:
         append_snapshot(history_path, snapshot)
-        
+
     history = load_history(history_path)
     print(f"History contains {len(history)} records")
-    
+
     # Compute deltas and quadrants
     deltas = compute_delta_metrics(history, as_of=latest_date)
     print(f"Computed deltas for {len(deltas)} ETFs")
-    
+
     # 4. Fundamentals
     print("\nFetching fundamentals...")
     fundamentals = fetch_fundamentals(tickers)
     print(f"Fetched fundamentals for {len(fundamentals)} ETFs")
-    
+
     # 5. RS Line Signals
     print("\nComputing RS Line signals...")
     benchmark_map = get_benchmark_map()
     rs_signals = generate_rs_signals(prices_df, benchmark_map)
     print(f"Generated RS signals for {len(rs_signals)} ETFs")
-    
-    # 6. Screener Metrics
+
+    # 6. Screener Metrics — филтрираме само ETF тикъри (без бенчмаркове)
     print("\nComputing screener metrics...")
-    screener = run_screener(prices_df[tickers])
+    etf_prices = filter_prices(prices_df, tickers)
+    print(f"ETF price slice shape: {etf_prices.shape}")
+    screener = run_screener(etf_prices)
     print(f"Computed screener metrics for {len(screener)} ETFs")
-    
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     name_map = get_name_map()
     output_path = DOCS_DIR / "data.json"
     render_frontend_data(
-        deltas, screener, fundamentals, rs_signals, 
+        deltas, screener, fundamentals, rs_signals,
         category_map, name_map, benchmark_map, output_path
     )
-    
+
     print("\n=== Update Complete ===")
+
 
 if __name__ == "__main__":
     main()
