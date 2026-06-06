@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETF Rotation Radar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">ETF Rotation Radar</span>
+      </div>
+      <div class="header-meta">
+        <span id="as-of-label">Loading...</span>
+        <button class="btn-secondary" id="btn-refresh" onclick="location.reload()">↻ Refresh</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="radar">Rotation Radar</button>
+    <button class="tab-btn" data-tab="screener">Screener</button>
+    <button class="tab-btn" data-tab="rs">RS Lines</button>
+    <button class="tab-btn" data-tab="macro">Macro Heatmap</button>
+  </nav>
+
+  <main>
+    <!-- ── ROTATION RADAR TAB ─────────────────────────────────── -->
+    <section id="tab-radar" class="tab-content active">
+      <div class="section-header">
+        <h2>Rotation Radar</h2>
+        <div class="controls">
+          <label>Category:
+            <select id="cat-filter">
+              <option value="all">All Categories</option>
+            </select>
+          </label>
+          <label>Window:
+            <select id="window-filter">
+              <option value="1m">1 Month</option>
+              <option value="3m">3 Months</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="quadrant-grid">
+        <div class="quadrant q-stable-winner">
+          <div class="q-header">
+            <span class="q-icon">★</span>
+            <span class="q-title">Stable Winners</span>
+            <span class="q-desc">High base, still rising</span>
+          </div>
+          <div class="q-list" id="q-stable-winner"></div>
+        </div>
+        <div class="quadrant q-riser">
+          <div class="q-header">
+            <span class="q-icon">↑</span>
+            <span class="q-title">Risers</span>
+            <span class="q-desc">Low base, gaining momentum</span>
+          </div>
+          <div class="q-list" id="q-riser"></div>
+        </div>
+        <div class="quadrant q-decayer">
+          <div class="q-header">
+            <span class="q-icon">↓</span>
+            <span class="q-title">Quality Dip</span>
+            <span class="q-desc">High base, pulling back</span>
+          </div>
+          <div class="q-list" id="q-decayer"></div>
+        </div>
+        <div class="quadrant q-chronic-loser">
+          <div class="q-header">
+            <span class="q-icon">✗</span>
+            <span class="q-title">Chronic Losers</span>
+            <span class="q-desc">Low base, still falling</span>
+          </div>
+          <div class="q-list" id="q-chronic-loser"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SCREENER TAB ───────────────────────────────────────── -->
+    <section id="tab-screener" class="tab-content">
+      <div class="section-header">
+        <h2>ETF Screener</h2>
+        <div class="controls">
+          <label>Category:
+            <select id="screener-cat-filter">
+              <option value="all">All Categories</option>
+            </select>
+          </label>
+          <label>Sort by:
+            <select id="screener-sort">
+              <option value="percentile_rank">Momentum Rank</option>
+              <option value="ret_1m">Return 1M</option>
+              <option value="ret_3m">Return 3M</option>
+              <option value="ret_12m">Return 12M</option>
+              <option value="sharpe_12m">Sharpe 12M</option>
+              <option value="aum">AUM</option>
+              <option value="yield">Yield</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table id="screener-table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th class="sortable" data-col="percentile_rank">Rank%</th>
+              <th class="sortable" data-col="ret_1m">1M%</th>
+              <th class="sortable" data-col="ret_3m">3M%</th>
+              <th class="sortable" data-col="ret_12m">12M%</th>
+              <th class="sortable" data-col="sharpe_12m">Sharpe</th>
+              <th class="sortable" data-col="max_dd_12m">MaxDD</th>
+              <th class="sortable" data-col="expense_ratio">Exp.Ratio%</th>
+              <th class="sortable" data-col="yield">Yield%</th>
+              <th class="sortable" data-col="pe_ratio">P/E</th>
+              <th class="sortable" data-col="duration">Duration</th>
+              <th class="sortable" data-col="aum">AUM $B</th>
+            </tr>
+          </thead>
+          <tbody id="screener-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── RS LINES TAB ──────────────────────────────────────── -->
+    <section id="tab-rs" class="tab-content">
+      <div class="section-header">
+        <h2>RS Line Signals</h2>
+        <div class="controls">
+          <label>Category:
+            <select id="rs-cat-filter">
+              <option value="all">All Categories</option>
+            </select>
+          </label>
+          <label>Show:
+            <select id="rs-signal-filter">
+              <option value="all">All</option>
+              <option value="bullish">Bullish Only</option>
+              <option value="bearish">Bearish Only</option>
+              <option value="crossover">Recent Crossovers</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="rs-grid" id="rs-grid"></div>
+    </section>
+
+    <!-- ── MACRO HEATMAP TAB ─────────────────────────────────── -->
+    <section id="tab-macro" class="tab-content">
+      <div class="section-header">
+        <h2>Macro Heatmap</h2>
+        <p class="section-subtitle">Category-level momentum (median percentile rank of all ETFs in category)</p>
+      </div>
+      <div class="heatmap-grid" id="heatmap-grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

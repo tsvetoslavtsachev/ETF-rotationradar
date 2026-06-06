@@ -1,0 +1,275 @@
+/* ── ETF Rotation Radar — Frontend Logic ──────────────────── */
+
+let DATA = null;
+let sortCol = "percentile_rank";
+let sortDir = -1; // descending
+
+// ── Tab Navigation ─────────────────────────────────────────
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById(`tab-${btn.dataset.tab}`).classList.add("active");
+  });
+});
+
+// ── Load Data ──────────────────────────────────────────────
+async function loadData() {
+  try {
+    const resp = await fetch("data.json?v=" + Date.now());
+    DATA = await resp.json();
+    init();
+  } catch (e) {
+    document.getElementById("as-of-label").textContent = "Error loading data";
+    console.error(e);
+  }
+}
+
+function init() {
+  document.getElementById("as-of-label").textContent = "As of: " + DATA.as_of;
+
+  // Populate category filters
+  const cats = DATA.categories || [];
+  ["cat-filter", "screener-cat-filter", "rs-cat-filter"].forEach(id => {
+    const sel = document.getElementById(id);
+    cats.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = c;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener("change", renderAll);
+  });
+
+  document.getElementById("window-filter").addEventListener("change", renderAll);
+  document.getElementById("screener-sort").addEventListener("change", () => {
+    sortCol = document.getElementById("screener-sort").value;
+    renderScreener();
+  });
+  document.getElementById("rs-signal-filter").addEventListener("change", renderRS);
+
+  // Table header sort
+  document.querySelectorAll("th.sortable").forEach(th => {
+    th.addEventListener("click", () => {
+      const col = th.dataset.col;
+      if (sortCol === col) { sortDir *= -1; } else { sortCol = col; sortDir = -1; }
+      document.getElementById("screener-sort").value = col;
+      renderScreener();
+    });
+  });
+
+  renderAll();
+}
+
+function renderAll() {
+  renderRadar();
+  renderScreener();
+  renderRS();
+  renderHeatmap();
+}
+
+// ── Helpers ────────────────────────────────────────────────
+function fmtPct(v, decimals = 1) {
+  if (v == null) return "—";
+  const n = parseFloat(v);
+  if (isNaN(n)) return "—";
+  const cls = n > 0 ? "positive" : n < 0 ? "negative" : "neutral";
+  return `<span class="${cls}">${n >= 0 ? "+" : ""}${n.toFixed(decimals)}%</span>`;
+}
+function fmtNum(v, decimals = 2) {
+  if (v == null) return "—";
+  const n = parseFloat(v);
+  return isNaN(n) ? "—" : n.toFixed(decimals);
+}
+function fmtAUM(v) {
+  if (v == null) return "—";
+  const n = parseFloat(v) / 1_000_000_000;
+  return isNaN(n) ? "—" : n.toFixed(1) + "B";
+}
+function filteredByCategory(catSelectId) {
+  const cat = document.getElementById(catSelectId).value;
+  return cat === "all" ? DATA.etfs : DATA.etfs.filter(e => e.category === cat);
+}
+
+// ── Rotation Radar ─────────────────────────────────────────
+function renderRadar() {
+  const window = document.getElementById("window-filter").value;
+  const quadCol = `quadrant_${window}`;
+  const deltaCol = `delta_${window}`;
+  const etfs = filteredByCategory("cat-filter");
+
+  const quadrants = {
+    "stable_winner": [],
+    "riser": [],
+    "decayer": [],
+    "chronic_loser": []
+  };
+
+  etfs.forEach(e => {
+    const q = e[quadCol];
+    if (q && quadrants[q]) quadrants[q].push(e);
+  });
+
+  // Sort each quadrant
+  quadrants.stable_winner.sort((a, b) => (b[deltaCol] || 0) - (a[deltaCol] || 0));
+  quadrants.riser.sort((a, b) => (b[deltaCol] || 0) - (a[deltaCol] || 0));
+  quadrants.decayer.sort((a, b) => (a[deltaCol] || 0) - (b[deltaCol] || 0));
+  quadrants.chronic_loser.sort((a, b) => (a[deltaCol] || 0) - (b[deltaCol] || 0));
+
+  Object.keys(quadrants).forEach(q => {
+    const el = document.getElementById(`q-${q.replace("_", "-")}`);
+    if (!el) return;
+    el.innerHTML = quadrants[q].slice(0, 15).map(e => {
+      const rank = e.current_rank != null ? e.current_rank.toFixed(0) : "—";
+      const delta = e[deltaCol] != null ? e[deltaCol].toFixed(1) : null;
+      const deltaHtml = delta != null
+        ? `<span class="${parseFloat(delta) >= 0 ? 'positive' : 'negative'} q-delta">${parseFloat(delta) >= 0 ? "+" : ""}${delta}</span>`
+        : "";
+      const rs = e.is_bullish != null
+        ? `<span style="font-size:0.7rem;color:${e.is_bullish ? 'var(--green)' : 'var(--red)'}">RS${e.is_bullish ? '▲' : '▼'}</span>`
+        : "";
+      return `<div class="q-item">
+        <div class="q-item-left">
+          <span class="q-ticker">${e.ticker}</span>
+          <span class="q-cat-badge">${e.category || ""}</span>
+          <span class="q-name">${e.name || ""}</span>
+        </div>
+        <div class="q-item-right">
+          ${rs}
+          <span class="q-rank">${rank}%</span>
+          ${deltaHtml}
+        </div>
+      </div>`;
+    }).join("") || '<div style="color:var(--text-muted);font-size:0.85rem;padding:0.5rem">No ETFs in this quadrant</div>';
+  });
+}
+
+// ── Screener ───────────────────────────────────────────────
+function renderScreener() {
+  const etfs = filteredByCategory("screener-cat-filter");
+  const sorted = [...etfs].sort((a, b) => {
+    const av = a[sortCol] != null ? parseFloat(a[sortCol]) : -Infinity;
+    const bv = b[sortCol] != null ? parseFloat(b[sortCol]) : -Infinity;
+    return sortDir * (bv - av);
+  });
+
+  const tbody = document.getElementById("screener-body");
+  tbody.innerHTML = sorted.map(e => {
+    const rankPct = e.percentile_rank != null ? parseFloat(e.percentile_rank) : null;
+    const barWidth = rankPct != null ? Math.max(0, Math.min(100, rankPct)) : 0;
+    const rankColor = rankPct >= 80 ? "var(--green)" : rankPct >= 50 ? "var(--accent)" : rankPct >= 20 ? "var(--yellow)" : "var(--red)";
+    const rsIcon = e.is_bullish != null ? (e.is_bullish ? `<span style="color:var(--green)">▲</span>` : `<span style="color:var(--red)">▼</span>`) : "";
+
+    return `<tr>
+      <td class="ticker-cell">${e.ticker} ${rsIcon}</td>
+      <td>${e.name || "—"}</td>
+      <td class="cat-cell">${e.category || "—"}</td>
+      <td class="num-cell bar-cell">
+        <span class="rank-bar" style="width:${barWidth * 0.6}px;background:${rankColor}"></span>
+        ${rankPct != null ? rankPct.toFixed(0) : "—"}
+      </td>
+      <td class="num-cell">${fmtPct(e.ret_1m)}</td>
+      <td class="num-cell">${fmtPct(e.ret_3m)}</td>
+      <td class="num-cell">${fmtPct(e.ret_12m)}</td>
+      <td class="num-cell">${fmtNum(e.sharpe_12m)}</td>
+      <td class="num-cell">${fmtPct(e.max_dd_12m)}</td>
+      <td class="num-cell">${e.expense_ratio != null ? fmtNum(e.expense_ratio, 2) + "%" : "—"}</td>
+      <td class="num-cell">${e.yield != null ? fmtNum(e.yield, 2) + "%" : "—"}</td>
+      <td class="num-cell">${e.pe_ratio != null ? fmtNum(e.pe_ratio, 1) : "—"}</td>
+      <td class="num-cell">${e.duration != null ? fmtNum(e.duration, 1) + "y" : "—"}</td>
+      <td class="num-cell">${fmtAUM(e.aum)}</td>
+    </tr>`;
+  }).join("");
+}
+
+// ── RS Lines ───────────────────────────────────────────────
+function renderRS() {
+  const catFilter = document.getElementById("rs-cat-filter").value;
+  const sigFilter = document.getElementById("rs-signal-filter").value;
+
+  let etfs = catFilter === "all" ? DATA.etfs : DATA.etfs.filter(e => e.category === catFilter);
+  etfs = etfs.filter(e => e.is_bullish != null);
+
+  if (sigFilter === "bullish") etfs = etfs.filter(e => e.is_bullish);
+  if (sigFilter === "bearish") etfs = etfs.filter(e => !e.is_bullish);
+  if (sigFilter === "crossover") etfs = etfs.filter(e => e.last_signal !== 0 && e.days_in_trend != null && e.days_in_trend <= 30);
+
+  // Sort: bullish first, then by days_in_trend ascending
+  etfs.sort((a, b) => {
+    if (a.is_bullish !== b.is_bullish) return a.is_bullish ? -1 : 1;
+    return (a.days_in_trend || 999) - (b.days_in_trend || 999);
+  });
+
+  const grid = document.getElementById("rs-grid");
+  grid.innerHTML = etfs.map(e => {
+    const bull = e.is_bullish;
+    const days = e.days_in_trend != null ? Math.round(e.days_in_trend) + "d" : "—";
+    const newCross = e.last_signal !== 0 && e.days_in_trend != null && e.days_in_trend <= 30;
+    const newBadge = newCross ? `<span style="font-size:0.7rem;background:rgba(88,166,255,0.15);color:var(--accent);padding:0.1rem 0.3rem;border-radius:3px">NEW</span>` : "";
+    return `<div class="rs-card ${bull ? 'bullish' : 'bearish'}">
+      <div class="rs-card-header">
+        <span class="rs-ticker">${e.ticker}</span>
+        <span class="rs-signal ${bull ? 'bullish' : 'bearish'}">${bull ? 'BULLISH' : 'BEARISH'}</span>
+      </div>
+      <div class="rs-name">${e.name || "—"}</div>
+      <div class="rs-bm">vs ${e.benchmark || "—"} ${newBadge}</div>
+      <div class="rs-days">In trend: ${days}</div>
+    </div>`;
+  }).join("") || '<div style="color:var(--text-muted);padding:1rem">No ETFs match the current filter</div>';
+}
+
+// ── Macro Heatmap ──────────────────────────────────────────
+function renderHeatmap() {
+  const byCategory = {};
+  DATA.etfs.forEach(e => {
+    if (!e.category) return;
+    if (!byCategory[e.category]) byCategory[e.category] = [];
+    byCategory[e.category].push(e);
+  });
+
+  const catData = Object.entries(byCategory).map(([cat, etfs]) => {
+    const ranks = etfs.map(e => e.current_rank != null ? e.current_rank : e.percentile_rank).filter(r => r != null);
+    const median = ranks.length > 0
+      ? ranks.sort((a, b) => a - b)[Math.floor(ranks.length / 2)]
+      : null;
+    const top3 = [...etfs]
+      .filter(e => (e.current_rank != null || e.percentile_rank != null))
+      .sort((a, b) => (b.current_rank || b.percentile_rank || 0) - (a.current_rank || a.percentile_rank || 0))
+      .slice(0, 3);
+    return { cat, median, etfs, top3 };
+  }).sort((a, b) => (b.median || 0) - (a.median || 0));
+
+  function scoreClass(v) {
+    if (v == null) return "";
+    if (v >= 75) return "score-very-high";
+    if (v >= 60) return "score-high";
+    if (v >= 40) return "score-mid";
+    if (v >= 25) return "score-low";
+    return "score-very-low";
+  }
+
+  const grid = document.getElementById("heatmap-grid");
+  grid.innerHTML = catData.map(({ cat, median, etfs, top3 }) => {
+    const sc = scoreClass(median);
+    const barPct = median != null ? median.toFixed(0) : 0;
+    const topHtml = top3.map(e => {
+      const r = e.current_rank != null ? e.current_rank : e.percentile_rank;
+      return `<span><span style="font-weight:700;color:var(--accent)">${e.ticker}</span> ${r != null ? r.toFixed(0) + "%" : ""}</span>`;
+    }).join(" · ");
+    return `<div class="heatmap-card ${sc}">
+      <div class="heatmap-card-header">
+        <span class="heatmap-cat">${cat}</span>
+        <span class="heatmap-score">${median != null ? median.toFixed(0) : "—"}</span>
+      </div>
+      <div class="heatmap-bar-bg">
+        <div class="heatmap-bar-fill" style="width:${barPct}%"></div>
+      </div>
+      <div class="heatmap-etfs">${etfs.length} ETFs tracked</div>
+      <div class="heatmap-top">Leaders: ${topHtml || "—"}</div>
+    </div>`;
+  }).join("");
+}
+
+// ── Bootstrap ──────────────────────────────────────────────
+loadData();
