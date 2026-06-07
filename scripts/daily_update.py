@@ -26,6 +26,8 @@ from src.rank_history import append_snapshot, load_history, compute_delta_metric
 from src.fundamentals import fetch_fundamentals
 from src.rs_line import generate_rs_signals
 from src.screener import run_screener
+from src.fred import fetch_fred_series
+from src.barometer import compute_barometer
 from src.render import render_frontend_data
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -82,9 +84,11 @@ def main():
     deltas = compute_delta_metrics(history, as_of=latest_date)
     print(f"Computed deltas for {len(deltas)} ETFs")
 
-    # 4. Fundamentals
+    # 4. Fundamentals (с кеш — рефетч само на липсващи/остарели)
     print("\nFetching fundamentals...")
-    fundamentals = fetch_fundamentals(tickers)
+    fundamentals = fetch_fundamentals(
+        tickers, cache_path=DATA_DIR / "fundamentals.parquet", category_map=category_map
+    )
     print(f"Fetched fundamentals for {len(fundamentals)} ETFs")
 
     # 5. RS Line Signals
@@ -100,13 +104,23 @@ def main():
     screener = run_screener(etf_prices)
     print(f"Computed screener metrics for {len(screener)} ETFs")
 
+    # 6.5 Behavioral Barometer (ELANA дислокации) — HY-spread + XLE/SPY + GLD/TLT
+    print("\nComputing behavioral barometer...")
+    hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
+    barometer = compute_barometer(prices_df, hy, latest_date)
+    ind = {i["key"]: i["value"] for i in barometer["indicators"]}
+    conf = barometer["confluence"]
+    print(f"Barometer: HY={ind['hy_spread']} XLE/SPY={ind['xle_spy']} GLD/TLT={ind['gld_tlt']} "
+          f"| confluence={conf['has_confluence']} {conf['direction'] or ''}")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     name_map = get_name_map()
     output_path = DOCS_DIR / "data.json"
     render_frontend_data(
         deltas, screener, fundamentals, rs_signals,
-        category_map, name_map, benchmark_map, output_path
+        category_map, name_map, benchmark_map, output_path,
+        barometer=barometer
     )
 
     print("\n=== Update Complete ===")

@@ -28,6 +28,9 @@
   </nav>
 
   <main>
+    <!-- ── REGIME BANNER (ELANA Behavioral Barometer) ─────────── -->
+    <div id="regime-banner" class="regime-banner" style="display:none"></div>
+
     <!-- ── ROTATION RADAR TAB ─────────────────────────────────── -->
     <section id="tab-radar" class="tab-content active">
       <div class="section-header">
@@ -100,6 +103,8 @@
               <option value="ret_3m">Return 3M</option>
               <option value="ret_12m">Return 12M</option>
               <option value="sharpe_12m">Sharpe 12M</option>
+              <option value="dist_52w_high">vs 52w High</option>
+              <option value="drawdown_now">Drawdown now</option>
               <option value="aum">AUM</option>
               <option value="yield">Yield</option>
             </select>
@@ -119,10 +124,11 @@
               <th class="sortable" data-col="ret_12m">12M%</th>
               <th class="sortable" data-col="sharpe_12m">Sharpe</th>
               <th class="sortable" data-col="max_dd_12m">MaxDD</th>
+              <th class="sortable" data-col="dist_52w_high">vs 52wH</th>
+              <th class="sortable" data-col="drawdown_now">DD now</th>
               <th class="sortable" data-col="expense_ratio">Exp.Ratio%</th>
               <th class="sortable" data-col="yield">Yield%</th>
               <th class="sortable" data-col="pe_ratio">P/E</th>
-              <th class="sortable" data-col="duration">Duration</th>
               <th class="sortable" data-col="aum">AUM $B</th>
             </tr>
           </thead>
@@ -158,7 +164,7 @@
     <section id="tab-macro" class="tab-content">
       <div class="section-header">
         <h2>Macro Heatmap</h2>
-        <p class="section-subtitle">Category-level momentum (median percentile rank of all ETFs in category)</p>
+        <p class="section-subtitle">Category-level momentum (median absolute-momentum percentile of all ETFs in category)</p>
       </div>
       <div class="heatmap-grid" id="heatmap-grid"></div>
     </section>

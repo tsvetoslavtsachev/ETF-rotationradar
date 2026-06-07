@@ -1,0 +1,67 @@
+{
+  "as_of": "2026-06-05",
+  "snapshot": [
+    {
+      "indicator": "HY-spread",
+      "value": 2.74,
+      "base": 3.0,
+      "alarm": 3.5,
+      "zone": "base",
+      "trend": "down"
+    },
+    {
+      "indicator": "XLE/SPY",
+      "value": 0.0782,
+      "base": 0.06,
+      "alarm": 0.07,
+      "zone": "alarm",
+      "trend": "down"
+    },
+    {
+      "indicator": "GLD/TLT",
+      "value": 4.66,
+      "base": 5.2,
+      "alarm": 5.5,
+      "zone": "base",
+      "trend": "down"
+    }
+  ],
+  "readings": [
+    {
+      "indicator": "HY-spread",
+      "zone": "base",
+      "dist_to_alarm": 0.76,
+      "trend_4w": "down",
+      "change_4w_pct": -2.67
+    },
+    {
+      "indicator": "XLE/SPY",
+      "zone": "alarm",
+      "dist_to_alarm": -0.0082,
+      "trend_4w": "down",
+      "change_4w_pct": -4.74
+    },
+    {
+      "indicator": "GLD/TLT",
+      "zone": "base",
+      "dist_to_alarm": 0.84,
+      "trend_4w": "down",
+      "change_4w_pct": -3.76
+    }
+  ],
+  "confluence": {
+    "alarm_count": 1,
+    "base_count": 2,
+    "gray_count": 0,
+    "alarm": [
+      "XLE/SPY"
+    ],
+    "base": [
+      "HY-spread",
+      "GLD/TLT"
+    ],
+    "gray": [],
+    "has_confluence": true,
+    "direction": "base"
+  }
+}

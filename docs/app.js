@@ -42,6 +42,8 @@ function init() {
     sel.addEventListener("change", renderAll);
   });
 
+  renderBarometer();
+
   document.getElementById("window-filter").addEventListener("change", renderAll);
   document.getElementById("screener-sort").addEventListener("change", () => {
     sortCol = document.getElementById("screener-sort").value;
@@ -151,7 +153,8 @@ function renderScreener() {
   const sorted = [...etfs].sort((a, b) => {
     const av = a[sortCol] != null ? parseFloat(a[sortCol]) : -Infinity;
     const bv = b[sortCol] != null ? parseFloat(b[sortCol]) : -Infinity;
-    return sortDir * (bv - av);
+    // sortDir = -1 -> низходящо (най-силните първи), +1 -> възходящо
+    return sortDir * (av - bv);
   });
 
   const tbody = document.getElementById("screener-body");
@@ -174,10 +177,11 @@ function renderScreener() {
       <td class="num-cell">${fmtPct(e.ret_12m)}</td>
       <td class="num-cell">${fmtNum(e.sharpe_12m)}</td>
       <td class="num-cell">${fmtPct(e.max_dd_12m)}</td>
+      <td class="num-cell">${fmtPct(e.dist_52w_high)}</td>
+      <td class="num-cell">${fmtPct(e.drawdown_now)}</td>
       <td class="num-cell">${e.expense_ratio != null ? fmtNum(e.expense_ratio, 2) + "%" : "—"}</td>
       <td class="num-cell">${e.yield != null ? fmtNum(e.yield, 2) + "%" : "—"}</td>
       <td class="num-cell">${e.pe_ratio != null ? fmtNum(e.pe_ratio, 1) : "—"}</td>
-      <td class="num-cell">${e.duration != null ? fmtNum(e.duration, 1) + "y" : "—"}</td>
       <td class="num-cell">${fmtAUM(e.aum)}</td>
     </tr>`;
   }).join("");
@@ -219,6 +223,47 @@ function renderRS() {
   }).join("") || '<div style="color:var(--text-muted);padding:1rem">No ETFs match the current filter</div>';
 }
 
+// ── Regime Banner (ELANA Behavioral Barometer) ─────────────
+function renderBarometer() {
+  const el = document.getElementById("regime-banner");
+  if (!el) return;
+  const b = DATA.barometer;
+  if (!b || !b.indicators) { el.style.display = "none"; return; }
+
+  const conf = b.confluence || {};
+  const zoneColor = z => z === "alarm" ? "var(--red)" : z === "base" ? "var(--green)"
+    : z === "gray" ? "var(--yellow)" : "var(--text-muted)";
+  const zoneBG = z => z === "alarm" ? "rgba(248,81,73,0.12)" : z === "base" ? "rgba(63,185,80,0.12)"
+    : z === "gray" ? "rgba(210,153,34,0.12)" : "transparent";
+  const zoneLabel = z => ({ base: "база", gray: "сива", alarm: "тревога", unknown: "—" }[z] || z);
+  const arrow = t => t === "up" ? "↗" : t === "down" ? "↘" : "→";
+
+  let verdict, vcolor;
+  if (conf.has_confluence && conf.direction === "alarm") {
+    verdict = "⚠ Дислокация — ≥2 индикатора в тревога"; vcolor = "var(--red)";
+  } else if (conf.has_confluence && conf.direction === "base") {
+    verdict = "✓ Спокоен режим — ≥2 индикатора в база"; vcolor = "var(--green)";
+  } else {
+    verdict = "Смесен сигнал — без съвпадение"; vcolor = "var(--yellow)";
+  }
+
+  const chips = b.indicators.map(i => `
+    <div class="reg-chip" style="border-color:${zoneColor(i.zone)};background:${zoneBG(i.zone)}">
+      <span class="reg-name">${i.name}</span>
+      <span class="reg-val" style="color:${zoneColor(i.zone)}">${i.value != null ? i.value : "—"} <span class="reg-arrow">${arrow(i.trend_4w)}</span></span>
+      <span class="reg-zone">${zoneLabel(i.zone)} · база ${i.base_threshold} / тревога ${i.alarm_threshold}</span>
+    </div>`).join("");
+
+  el.innerHTML = `
+    <div class="reg-head">
+      <span class="reg-title">⬡ Барометър на дислокациите</span>
+      <span class="reg-verdict" style="color:${vcolor}">${verdict}</span>
+      <span class="reg-asof">${b.as_of || ""}</span>
+    </div>
+    <div class="reg-chips">${chips}</div>`;
+  el.style.display = "block";
+}
+
 // ── Macro Heatmap ──────────────────────────────────────────
 function renderHeatmap() {
   const byCategory = {};
@@ -228,14 +273,18 @@ function renderHeatmap() {
     byCategory[e.category].push(e);
   });
 
+  // Heatmap-ът е МАКРО изглед → ползва абсолютен momentum (abs_strength),
+  // а не вътрешнокатегорийния percentile_rank (който по конструкция е ~50 за всяка
+  // категория). Така малките категории не изскачат изкуствено.
+  const strengthOf = e => (e.abs_strength != null ? e.abs_strength : e.current_rank);
   const catData = Object.entries(byCategory).map(([cat, etfs]) => {
-    const ranks = etfs.map(e => e.current_rank != null ? e.current_rank : e.percentile_rank).filter(r => r != null);
+    const ranks = etfs.map(strengthOf).filter(r => r != null);
     const median = ranks.length > 0
       ? ranks.sort((a, b) => a - b)[Math.floor(ranks.length / 2)]
       : null;
     const top3 = [...etfs]
-      .filter(e => (e.current_rank != null || e.percentile_rank != null))
-      .sort((a, b) => (b.current_rank || b.percentile_rank || 0) - (a.current_rank || a.percentile_rank || 0))
+      .filter(e => strengthOf(e) != null)
+      .sort((a, b) => (strengthOf(b) || 0) - (strengthOf(a) || 0))
       .slice(0, 3);
     return { cat, median, etfs, top3 };
   }).sort((a, b) => (b.median || 0) - (a.median || 0));
@@ -254,7 +303,7 @@ function renderHeatmap() {
     const sc = scoreClass(median);
     const barPct = median != null ? median.toFixed(0) : 0;
     const topHtml = top3.map(e => {
-      const r = e.current_rank != null ? e.current_rank : e.percentile_rank;
+      const r = strengthOf(e);
       return `<span><span style="font-weight:700;color:var(--accent)">${e.ticker}</span> ${r != null ? r.toFixed(0) + "%" : ""}</span>`;
     }).join(" · ");
     return `<div class="heatmap-card ${sc}">

@@ -73,7 +73,11 @@ def compute_cross_section(
 
     df["category_zscore"] = df.groupby("category")["mom_12_1"].transform(_category_z)
     df["raw_score"] = df["category_zscore"]
-    df["percentile_rank"] = df["category_zscore"].rank(pct=True) * 100.0
+    # percentile_rank = ранг В РАМКИТЕ НА КАТЕГОРИЯТА (както README обещава:
+    # "ranked within its own category"). Радарът показва "най-добрия в класа си".
+    df["percentile_rank"] = df.groupby("category")["category_zscore"].rank(pct=True) * 100.0
+    # unadj_percentile = ГЛОБАЛЕН ранг по абсолютен 12-1 momentum (abs_strength).
+    # Ползва се от Macro Heatmap за истински кросс-категориен макро сигнал.
     df["unadj_percentile"] = df["mom_12_1"].rank(pct=True) * 100.0
     df["date"] = sliced.index[-1]
 

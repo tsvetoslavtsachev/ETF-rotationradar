@@ -116,6 +116,40 @@ main {
   cursor: pointer;
 }
 
+/* ── Regime Banner (Behavioral Barometer) ──────────────────── */
+.regime-banner {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.reg-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.reg-title { font-weight: 700; font-size: 0.95rem; }
+.reg-verdict { font-weight: 600; font-size: 0.9rem; }
+.reg-asof { margin-left: auto; color: var(--text-muted); font-size: 0.78rem; }
+.reg-chips { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.reg-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  min-width: 150px;
+}
+.reg-name { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+.reg-val { font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.reg-arrow { font-size: 0.85rem; }
+.reg-zone { font-size: 0.68rem; color: var(--text-muted); }
+
 /* ── Quadrant Grid ─────────────────────────────────────────── */
 .quadrant-grid {
   display: grid;

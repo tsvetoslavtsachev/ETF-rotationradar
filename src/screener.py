@@ -31,7 +31,8 @@ def compute_metrics(prices) -> dict[str, float]:
     nan_result = {
         "ret_1m": np.nan, "ret_3m": np.nan, "ret_6m": np.nan, "ret_12m": np.nan,
         "vol_1m": np.nan, "vol_3m": np.nan, "vol_12m": np.nan,
-        "sharpe_12m": np.nan, "max_dd_12m": np.nan
+        "sharpe_12m": np.nan, "max_dd_12m": np.nan,
+        "dist_52w_high": np.nan, "drawdown_now": np.nan
     }
 
     if len(p) < 252:
@@ -71,11 +72,20 @@ def compute_metrics(prices) -> dict[str, float]:
     else:
         sharpe12 = np.nan
 
-    # Max Drawdown 12m
+    # Max Drawdown 12m (най-лошата точка за годината)
     p12      = p.iloc[-252:]
     roll_max = p12.cummax()
     dd       = (p12 - roll_max) / roll_max
     mdd      = float(dd.min())
+
+    # Разстояние до 52-седмичния връх (колко под годишния максимум)
+    hi_252 = float(p.iloc[-252:].max())
+    last   = float(p.iloc[-1])
+    dist_52w_high = (last / hi_252 - 1.0) if hi_252 > 0 else np.nan
+
+    # Текущ drawdown — колко си НАДОЛУ сега спрямо пика в наличния прозорец
+    peak = float(p.cummax().iloc[-1])
+    drawdown_now = (last / peak - 1.0) if peak > 0 else np.nan
 
     def _pct(v):
         return round(float(v) * 100.0, 4) if np.isfinite(v) else np.nan
@@ -90,6 +100,8 @@ def compute_metrics(prices) -> dict[str, float]:
         "vol_12m":    _pct(v12),
         "sharpe_12m": round(float(sharpe12), 4) if np.isfinite(sharpe12) else np.nan,
         "max_dd_12m": _pct(mdd),
+        "dist_52w_high": _pct(dist_52w_high),
+        "drawdown_now":  _pct(drawdown_now),
     }
 
 

@@ -1,6 +1,7 @@
 """
 ETF Universe Definition.
-Contains ~135 ETFs across 8 categories, all with >$100M AUM.
+Contains 131 ETFs across 9 categories, all with >$100M AUM.
+Leveraged/inverse/volatility products are intentionally excluded.
 Each category has a designated benchmark for RS Line calculations.
 """
 
@@ -17,7 +18,6 @@ CATEGORY_BENCHMARKS = {
     "Commodity": "DBC",
     "Real Estate": "VNQ",
     "Currency": "UUP",
-    "Volatility": "SPY"
 }
 
 # The universe (filtered to >$100M AUM)
@@ -44,8 +44,9 @@ ETF_UNIVERSE = [
     {"symbol": "XLP", "name": "Consumer Staples Select", "category": "US Sector", "benchmark": "SPY"},
     {"symbol": "XLU", "name": "Utilities Select", "category": "US Sector", "benchmark": "SPY"},
     {"symbol": "XLB", "name": "Materials Select", "category": "US Sector", "benchmark": "SPY"},
-    {"symbol": "XLRE", "name": "Real Estate Select", "category": "US Sector", "benchmark": "SPY"},
     {"symbol": "XLC", "name": "Communication Services", "category": "US Sector", "benchmark": "SPY"},
+    # NB: XLRE (Real Estate Select SPDR) се води в категория "Real Estate" по-долу,
+    # за да не дублира тикър (дублиран символ чупи merge-овете в render.py).
 
     # Factors (Benchmark: SPY)
     {"symbol": "QUAL", "name": "iShares MSCI Quality", "category": "Factor", "benchmark": "SPY"},
@@ -63,7 +64,6 @@ ETF_UNIVERSE = [
     # Thematic (Benchmark: SPY)
     {"symbol": "ITA", "name": "iShares US Aerospace & Def", "category": "Thematic", "benchmark": "SPY"},
     {"symbol": "XAR", "name": "SPDR Aerospace & Defense", "category": "Thematic", "benchmark": "SPY"},
-    {"symbol": "DFEN", "name": "Direxion Aerospace 3x", "category": "Thematic", "benchmark": "SPY"},
     {"symbol": "PPA", "name": "Invesco Aerospace & Defense", "category": "Thematic", "benchmark": "SPY"},
     {"symbol": "URA", "name": "VanEck Uranium & Nuclear", "category": "Thematic", "benchmark": "SPY"},
     {"symbol": "URNM", "name": "Sprott Uranium Miners", "category": "Thematic", "benchmark": "SPY"},
@@ -173,13 +173,22 @@ ETF_UNIVERSE = [
     {"symbol": "FXY", "name": "Invesco CurrencyShares Yen", "category": "Currency", "benchmark": "UUP"},
     {"symbol": "FXF", "name": "Invesco CurrencyShares CHF", "category": "Currency", "benchmark": "UUP"},
 
-    # Volatility (Benchmark: SPY)
-    {"symbol": "VIXY", "name": "ProShares VIX Short-Term", "category": "Volatility", "benchmark": "SPY"},
-    {"symbol": "SVXY", "name": "ProShares Short VIX", "category": "Volatility", "benchmark": "SPY"},
+    # NB: Leveraged/инверсни/волатилностни фондове (DFEN 3x, VIXY, SVXY) НЕ са в
+    # вселената — daily-reset лостът и VIX-структурата изкривяват 12-1 momentum
+    # z-score спрямо нормалните им "съседи" в категорията.
 ]
 
 def get_universe_tickers() -> list[str]:
-    return [e["symbol"] for e in ETF_UNIVERSE]
+    # De-dup със запазен ред — защита срещу случайно дублиран символ,
+    # който иначе размножава редове в merge-овете на render.py.
+    seen: set[str] = set()
+    out: list[str] = []
+    for e in ETF_UNIVERSE:
+        s = e["symbol"]
+        if s not in seen:
+            seen.add(s)
+            out.append(s)
+    return out
 
 def get_benchmark_tickers() -> list[str]:
     benchmarks = set(e["benchmark"] for e in ETF_UNIVERSE)

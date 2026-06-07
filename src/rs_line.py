@@ -30,7 +30,10 @@ def compute_rs_line(
     
     # Crossover signals
     df["ema_above_sma"] = df["rs_ema10"] > df["rs_sma50"]
-    df["signal_change"] = df["ema_above_sma"].astype(int).diff()
+    # .diff() оставя NaN на ред 0; pandas смята NaN != 0 за True, което иначе
+    # вкарва ред 0 във "crossovers" и води до int(NaN) -> ValueError за серии
+    # без нито един реален crossover. fillna(0) го предотвратява.
+    df["signal_change"] = df["ema_above_sma"].astype(int).diff().fillna(0)
     
     # +1 = Bullish crossover (EMA10 crosses above SMA50)
     # -1 = Bearish crossover (EMA10 crosses below SMA50)
@@ -45,12 +48,15 @@ def generate_rs_signals(
     Генерира последния RS статус за всички ETF-и.
     """
     rows = []
-    
+    skipped_missing_bm = []  # тикъри без наличен бенчмарк в данните
+
     for ticker in prices_df.columns:
         bm_ticker = benchmark_map.get(ticker)
         if not bm_ticker or bm_ticker not in prices_df.columns:
+            if ticker in benchmark_map:  # има зададен бенчмарк, но липсва в цените
+                skipped_missing_bm.append(ticker)
             continue
-            
+
         # Don't calculate RS for the benchmark against itself
         if ticker == bm_ticker:
             continue
@@ -82,7 +88,10 @@ def generate_rs_signals(
             "last_signal": int(last_signal)
         })
         
+    if skipped_missing_bm:
+        print(f"  RS: {len(skipped_missing_bm)} тикъра без бенчмарк в цените: {skipped_missing_bm}")
+
     if not rows:
         return pd.DataFrame()
-        
+
     return pd.DataFrame(rows)
