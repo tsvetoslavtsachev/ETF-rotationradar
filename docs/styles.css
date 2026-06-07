@@ -237,7 +237,14 @@ main {
 .neutral { color: var(--text-muted); }
 
 /* ── Screener Table ────────────────────────────────────────── */
-.table-wrapper { overflow-x: auto; }
+/* Собствен scroll-контейнер: иначе overflow-x:auto прави и overflow-y:auto,
+   което чупи sticky хедъра (закача се за обвивката вместо за viewport-а).
+   Тук таблицата скролва вътрешно, а хедърът се закача за нейния връх (top:0). */
+.table-wrapper {
+  overflow: auto;
+  max-height: calc(100vh - 290px);
+  min-height: 300px;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -252,8 +259,8 @@ thead th {
   color: var(--text-muted);
   white-space: nowrap;
   position: sticky;
-  top: 52px;
-  z-index: 10; /* над tbody редовете (иначе те се рисуват върху закачения хедър), под page header (100) */
+  top: 0; /* закача се за върха на .table-wrapper (нейния scroll-контейнер) */
+  z-index: 10; /* над tbody редовете, иначе те се рисуват върху закачения хедър */
 }
 thead th.sortable { cursor: pointer; }
 thead th.sortable:hover { color: var(--text); }
