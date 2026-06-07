@@ -232,6 +232,7 @@ thead th {
   white-space: nowrap;
   position: sticky;
   top: 52px;
+  z-index: 10; /* над tbody редовете (иначе те се рисуват върху закачения хедър), под page header (100) */
 }
 thead th.sortable { cursor: pointer; }
 thead th.sortable:hover { color: var(--text); }
