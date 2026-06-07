@@ -251,20 +251,24 @@ function renderBarometer() {
   const zoneLabel = z => ({ base: "база", gray: "сива", alarm: "тревога", unknown: "—" }[z] || z);
   const arrow = t => t === "up" ? "↗" : t === "down" ? "↘" : "→";
 
+  const aC = conf.alarm_count ?? 0, bC = conf.base_count ?? 0;
   let verdict, vcolor;
   if (conf.has_confluence && conf.direction === "alarm") {
-    verdict = "⚠ Дислокация — ≥2 индикатора в тревога"; vcolor = "var(--red)";
+    verdict = `⚠ Дислокация — нетен наклон към тревога (${aC} тревога / ${bC} база)`; vcolor = "var(--red)";
   } else if (conf.has_confluence && conf.direction === "base") {
-    verdict = "✓ Спокоен режим — ≥2 индикатора в база"; vcolor = "var(--green)";
+    verdict = `✓ Спокоен режим — нетен наклон към база (${bC} база / ${aC} тревога)`; vcolor = "var(--green)";
   } else {
-    verdict = "Смесен сигнал — без съвпадение"; vcolor = "var(--yellow)";
+    verdict = `Смесен сигнал (${aC} тревога / ${bC} база)`; vcolor = "var(--yellow)";
   }
 
+  const thresholdLabel = i => i.kind === "robust_z"
+    ? `z ${i.z != null ? i.z : "—"} (тревога |z|>${i.z_alarm})`
+    : `база ${i.base_threshold} / тревога ${i.alarm_threshold}`;
   const chips = b.indicators.map(i => `
     <div class="reg-chip" style="border-color:${zoneColor(i.zone)};background:${zoneBG(i.zone)}">
       <span class="reg-name">${i.name}</span>
       <span class="reg-val" style="color:${zoneColor(i.zone)}">${i.value != null ? i.value : "—"} <span class="reg-arrow">${arrow(i.trend_4w)}</span></span>
-      <span class="reg-zone">${zoneLabel(i.zone)} · база ${i.base_threshold} / тревога ${i.alarm_threshold}</span>
+      <span class="reg-zone">${zoneLabel(i.zone)} · ${thresholdLabel(i)}</span>
     </div>`).join("");
 
   el.innerHTML = `

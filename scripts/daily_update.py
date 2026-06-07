@@ -20,7 +20,7 @@ from src.universe import (
     get_universe_tickers, get_benchmark_tickers,
     get_category_map, get_name_map, get_benchmark_map
 )
-from src.prices import download_ohlcv
+from src.prices import download_ohlcv, download_prices
 from src.signal_engine import compute_cross_section
 from src.rank_history import append_snapshot, load_history, compute_delta_metrics
 from src.fundamentals import fetch_fundamentals
@@ -111,14 +111,24 @@ def main():
     ohlcv_metrics = run_ohlcv_screener(etf_ohlcv)
     print(f"Computed OHLCV metrics (ATR/stop/liquidity) for {len(ohlcv_metrics)} ETFs")
 
-    # 6.5 Behavioral Barometer (ELANA дислокации) — HY-spread + XLE/SPY + GLD/TLT
+    # 6.5 Behavioral Barometer (ELANA дислокации) — 11 индикатора
     print("\nComputing behavioral barometer...")
+    # Тикъри ИЗВЪН вселената (^VIX, ^MOVE, VUG, VTV) — само за барометъра,
+    # не влизат в screener/momentum. Сваляме ги отделно и обединяваме.
+    barometer_extra = download_prices(["^VIX", "^MOVE", "VUG", "VTV"], period="2y")
+    barometer_prices = pd.concat([prices_df, barometer_extra], axis=1, sort=True)
+    barometer_prices = barometer_prices.loc[:, ~barometer_prices.columns.duplicated()]
     hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
-    barometer = compute_barometer(prices_df, hy, latest_date)
+    be = fetch_fred_series("T10YIE", cache_path=DATA_DIR / "fred_T10YIE.parquet")
+    barometer = compute_barometer(
+        barometer_prices, {"hy_spread": hy, "breakeven_10y": be}, latest_date
+    )
     ind = {i["key"]: i["value"] for i in barometer["indicators"]}
     conf = barometer["confluence"]
     print(f"Barometer: HY={ind['hy_spread']} XLE/SPY={ind['xle_spy']} GLD/TLT={ind['gld_tlt']} "
-          f"| confluence={conf['has_confluence']} {conf['direction'] or ''}")
+          f"VIX={ind['vix']} BE={ind['breakeven_10y']} MOVE={ind['move']} "
+          f"| alarm={conf['alarm_count']} base={conf['base_count']} net={conf['net']} "
+          f"conf={conf['has_confluence']} {conf['direction'] or ''}")
 
     # 7. Render to JSON
     print("\nRendering frontend data...")

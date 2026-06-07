@@ -4,63 +4,258 @@
     {
       "indicator": "HY-spread",
       "value": 2.74,
+      "kind": "abs",
       "base": 3.0,
       "alarm": 3.5,
+      "z": null,
       "zone": "base",
       "trend": "down"
     },
     {
       "indicator": "XLE/SPY",
       "value": 0.0782,
+      "kind": "abs",
       "base": 0.06,
       "alarm": 0.07,
+      "z": null,
       "zone": "alarm",
       "trend": "down"
     },
     {
       "indicator": "GLD/TLT",
       "value": 4.66,
+      "kind": "abs",
       "base": 5.2,
       "alarm": 5.5,
+      "z": null,
       "zone": "base",
       "trend": "down"
+    },
+    {
+      "indicator": "VIX",
+      "value": 21.51,
+      "kind": "abs",
+      "base": 20.0,
+      "alarm": 25.0,
+      "z": null,
+      "zone": "gray",
+      "trend": "up"
+    },
+    {
+      "indicator": "10Y breakeven",
+      "value": null,
+      "kind": "abs",
+      "base": 2.4,
+      "alarm": 2.6,
+      "z": null,
+      "zone": "unknown",
+      "trend": "flat"
+    },
+    {
+      "indicator": "TIP/IEF",
+      "value": 1.167,
+      "kind": "robust_z",
+      "base": null,
+      "alarm": null,
+      "z": 1.89,
+      "zone": "gray",
+      "trend": "flat"
+    },
+    {
+      "indicator": "MOVE",
+      "value": 75.2,
+      "kind": "robust_z",
+      "base": null,
+      "alarm": null,
+      "z": -0.82,
+      "zone": "base",
+      "trend": "down"
+    },
+    {
+      "indicator": "HYG/LQD",
+      "value": 0.7343,
+      "kind": "robust_z",
+      "base": null,
+      "alarm": null,
+      "z": 1.21,
+      "zone": "base",
+      "trend": "flat"
+    },
+    {
+      "indicator": "XLY/XLP",
+      "value": 1.3766,
+      "kind": "robust_z",
+      "base": null,
+      "alarm": null,
+      "z": 0.04,
+      "zone": "base",
+      "trend": "flat"
+    },
+    {
+      "indicator": "IWM/SPY",
+      "value": 0.3819,
+      "kind": "robust_z",
+      "base": null,
+      "alarm": null,
+      "z": 0.5,
+      "zone": "base",
+      "trend": "flat"
+    },
+    {
+      "indicator": "IWF/IWD",
+      "value": 0.5189,
+      "kind": "robust_z",
+      "base": null,
+      "alarm": null,
+      "z": -0.39,
+      "zone": "base",
+      "trend": "flat"
+    },
+    {
+      "indicator": "VUG/VTV",
+      "value": 0.4053,
+      "kind": "robust_z",
+      "base": null,
+      "alarm": null,
+      "z": -0.0,
+      "zone": "base",
+      "trend": "flat"
     }
   ],
   "readings": [
     {
       "indicator": "HY-spread",
       "zone": "base",
+      "kind": "abs",
       "dist_to_alarm": 0.76,
+      "z": null,
       "trend_4w": "down",
       "change_4w_pct": -2.67
     },
     {
       "indicator": "XLE/SPY",
       "zone": "alarm",
+      "kind": "abs",
       "dist_to_alarm": -0.0082,
+      "z": null,
       "trend_4w": "down",
       "change_4w_pct": -4.74
     },
     {
       "indicator": "GLD/TLT",
       "zone": "base",
+      "kind": "abs",
       "dist_to_alarm": 0.84,
+      "z": null,
       "trend_4w": "down",
       "change_4w_pct": -3.76
+    },
+    {
+      "indicator": "VIX",
+      "zone": "gray",
+      "kind": "abs",
+      "dist_to_alarm": 3.49,
+      "z": null,
+      "trend_4w": "up",
+      "change_4w_pct": 4.84
+    },
+    {
+      "indicator": "10Y breakeven",
+      "zone": "unknown",
+      "kind": "abs",
+      "dist_to_alarm": null,
+      "z": null,
+      "trend_4w": "flat",
+      "change_4w_pct": null
+    },
+    {
+      "indicator": "TIP/IEF",
+      "zone": "gray",
+      "kind": "robust_z",
+      "dist_to_alarm": null,
+      "z": 1.89,
+      "trend_4w": "flat",
+      "change_4w_pct": -0.3
+    },
+    {
+      "indicator": "MOVE",
+      "zone": "base",
+      "kind": "robust_z",
+      "dist_to_alarm": null,
+      "z": -0.82,
+      "trend_4w": "down",
+      "change_4w_pct": -8.14
+    },
+    {
+      "indicator": "HYG/LQD",
+      "zone": "base",
+      "kind": "robust_z",
+      "dist_to_alarm": null,
+      "z": 1.21,
+      "trend_4w": "flat",
+      "change_4w_pct": -0.3
+    },
+    {
+      "indicator": "XLY/XLP",
+      "zone": "base",
+      "kind": "robust_z",
+      "dist_to_alarm": null,
+      "z": 0.04,
+      "trend_4w": "flat",
+      "change_4w_pct": 1.88
+    },
+    {
+      "indicator": "IWM/SPY",
+      "zone": "base",
+      "kind": "robust_z",
+      "dist_to_alarm": null,
+      "z": 0.5,
+      "trend_4w": "flat",
+      "change_4w_pct": 1.04
+    },
+    {
+      "indicator": "IWF/IWD",
+      "zone": "base",
+      "kind": "robust_z",
+      "dist_to_alarm": null,
+      "z": -0.39,
+      "trend_4w": "flat",
+      "change_4w_pct": -0.79
+    },
+    {
+      "indicator": "VUG/VTV",
+      "zone": "base",
+      "kind": "robust_z",
+      "dist_to_alarm": null,
+      "z": -0.0,
+      "trend_4w": "flat",
+      "change_4w_pct": -1.18
     }
   ],
   "confluence": {
     "alarm_count": 1,
-    "base_count": 2,
-    "gray_count": 0,
+    "base_count": 8,
+    "gray_count": 2,
+    "unknown_count": 1,
     "alarm": [
       "XLE/SPY"
     ],
     "base": [
       "HY-spread",
-      "GLD/TLT"
+      "GLD/TLT",
+      "MOVE",
+      "HYG/LQD",
+      "XLY/XLP",
+      "IWM/SPY",
+      "IWF/IWD",
+      "VUG/VTV"
     ],
-    "gray": [],
+    "gray": [
+      "VIX",
+      "TIP/IEF"
+    ],
+    "net": -7,
+    "conf_net_threshold": 2,
     "has_confluence": true,
     "direction": "base"
   }

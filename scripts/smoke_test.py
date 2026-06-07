@@ -16,6 +16,8 @@ from src.rank_history import build_history_from_prices, compute_delta_metrics
 from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.render import render_frontend_data
+from src.barometer import compute_barometer, INDICATORS
+from src.fred import fetch_fred_series
 
 # Tiny universe: >=2 per category so category z-scores are well-defined
 UNIVERSE = [
@@ -95,6 +97,25 @@ try:
     payload = json.load(open(out))
     print(f"as_of={payload['as_of']}, n_etfs={len(payload['etfs'])}, categories={payload['categories']}")
     print("Sample record:", json.dumps(payload['etfs'][0], indent=2))
+
+    step(f"8. compute_barometer ({len(INDICATORS)} indicators)")
+    bar_tickers = ["SPY", "XLE", "GLD", "TLT", "TIP", "IEF", "HYG", "LQD", "XLY", "XLP",
+                   "IWM", "IWF", "IWD", "VUG", "VTV", "^VIX", "^MOVE"]
+    bpx = download_prices(bar_tickers, period="2y")
+    data_dir = Path(__file__).parent.parent / "data"
+    hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=data_dir / "fred_BAMLH0A0HYM2.parquet")
+    be = fetch_fred_series("T10YIE", cache_path=data_dir / "fred_T10YIE.parquet")
+    bar = compute_barometer(bpx, {"hy_spread": hy, "breakeven_10y": be}, bpx.index[-1])
+    for i in bar["indicators"]:
+        print(f"  {i['name']:14s} val={i['value']} zone={i['zone']:7s} kind={i['kind']:8s} z={i['z']}")
+    print("confluence:", bar["confluence"])
+    assert len(bar["indicators"]) == len(INDICATORS), "indicator count mismatch"
+    unknown = [i["name"] for i in bar["indicators"] if i["zone"] == "unknown"]
+    assert len(unknown) <= 2, f"too many unknown indicators: {unknown}"
+    vix = next(i for i in bar["indicators"] if i["key"] == "vix")
+    assert vix["value"] and 5 < vix["value"] < 100, "VIX value implausible"
+    hyg = next(i for i in bar["indicators"] if i["key"] == "hyg_lqd")
+    assert hyg["kind"] == "robust_z" and hyg["z"] is not None, "HYG/LQD z missing"
 
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
