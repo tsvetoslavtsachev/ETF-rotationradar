@@ -10,11 +10,11 @@ import numpy as np
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from src.prices import download_prices
+from src.prices import download_prices, download_ohlcv
 from src.signal_engine import compute_cross_section
 from src.rank_history import build_history_from_prices, compute_delta_metrics
 from src.rs_line import generate_rs_signals
-from src.screener import run_screener
+from src.screener import run_screener, run_ohlcv_screener
 from src.render import render_frontend_data
 
 # Tiny universe: >=2 per category so category z-scores are well-defined
@@ -76,10 +76,21 @@ try:
     print(scr.to_string())
     assert not scr.empty, "screener empty"
 
+    step("6b. download_ohlcv + run_ohlcv_screener (ATR/stop/liquidity)")
+    ohlcv = download_ohlcv(tickers, period="2y")
+    assert {"High", "Low", "Close", "Volume"}.issubset(ohlcv.keys()), "OHLCV missing fields"
+    assert not ohlcv["Close"].empty, "OHLCV Close empty"
+    ohlcv_scr = run_ohlcv_screener(ohlcv)
+    print(ohlcv_scr.to_string())
+    assert not ohlcv_scr.empty, "ohlcv screener empty"
+    spy = ohlcv_scr[ohlcv_scr["ticker"] == "SPY"].iloc[0]
+    assert np.isfinite(spy["atr_14"]) and np.isfinite(spy["stop_distance_pct"]), "SPY ATR/stop not finite"
+    assert np.isfinite(spy["dollar_vol_20d"]) and spy["liquidity_flag"] == "ok", "SPY liquidity wrong"
+
     step("7. render_frontend_data")
     out = Path(__file__).parent.parent / "docs" / "_smoke_data.json"
     fund_empty = pd.DataFrame(columns=["ticker"])
-    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out)
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out, ohlcv_df=ohlcv_scr)
     import json
     payload = json.load(open(out))
     print(f"as_of={payload['as_of']}, n_etfs={len(payload['etfs'])}, categories={payload['categories']}")

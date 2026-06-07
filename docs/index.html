@@ -115,6 +115,9 @@
               <option value="sharpe_12m">Sharpe 12M</option>
               <option value="dist_52w_high">vs 52w High</option>
               <option value="drawdown_now">Drawdown now</option>
+              <option value="stop_distance_pct">Stop distance</option>
+              <option value="atr_pct">ATR %</option>
+              <option value="dollar_vol_20d">Dollar volume</option>
               <option value="aum">AUM</option>
               <option value="yield">Yield</option>
             </select>
@@ -136,10 +139,13 @@
               <th class="sortable" data-col="max_dd_12m">MaxDD</th>
               <th class="sortable" data-col="dist_52w_high">vs 52wH</th>
               <th class="sortable" data-col="drawdown_now">DD now</th>
+              <th class="sortable" data-col="atr_pct" title="Средна истинска амплитуда (14д) като % от цената — нормализирана волатилност">ATR%</th>
+              <th class="sortable" data-col="stop_distance_pct" title="Разстояние до Chandelier стопа (highest-high 22д − 3×ATR) като % от цената — служи и за оразмеряване на позиция">Stop%</th>
               <th class="sortable" data-col="expense_ratio">Exp.Ratio%</th>
               <th class="sortable" data-col="yield">Yield%</th>
               <th class="sortable" data-col="pe_ratio">P/E</th>
               <th class="sortable" data-col="aum">AUM $B</th>
+              <th class="sortable" data-col="dollar_vol_20d" title="Среднодневен оборот в $ (20д). Червено = тънка ликвидност (под прага).">$Vol/d</th>
             </tr>
           </thead>
           <tbody id="screener-body"></tbody>

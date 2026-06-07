@@ -89,6 +89,16 @@ function fmtAUM(v) {
   const n = parseFloat(v) / 1_000_000_000;
   return isNaN(n) ? "—" : n.toFixed(1) + "B";
 }
+function fmtDollarVol(v, flag) {
+  if (v == null) return "—";
+  const n = parseFloat(v);
+  if (isNaN(n)) return "—";
+  const txt = n >= 1e9 ? (n / 1e9).toFixed(1) + "B"
+            : n >= 1e6 ? (n / 1e6).toFixed(0) + "M"
+            : (n / 1e3).toFixed(0) + "K";
+  const cls = flag === "thin" ? "negative" : "neutral";
+  return `<span class="${cls}">${txt}</span>`;
+}
 function filteredByCategory(catSelectId) {
   const cat = document.getElementById(catSelectId).value;
   return cat === "all" ? DATA.etfs : DATA.etfs.filter(e => e.category === cat);
@@ -179,10 +189,13 @@ function renderScreener() {
       <td class="num-cell">${fmtPct(e.max_dd_12m)}</td>
       <td class="num-cell">${fmtPct(e.dist_52w_high)}</td>
       <td class="num-cell">${fmtPct(e.drawdown_now)}</td>
+      <td class="num-cell">${e.atr_pct != null ? fmtNum(e.atr_pct, 1) + "%" : "—"}</td>
+      <td class="num-cell">${e.stop_distance_pct != null ? fmtNum(e.stop_distance_pct, 1) + "%" : "—"}</td>
       <td class="num-cell">${e.expense_ratio != null ? fmtNum(e.expense_ratio, 2) + "%" : "—"}</td>
       <td class="num-cell">${e.yield != null ? fmtNum(e.yield, 2) + "%" : "—"}</td>
       <td class="num-cell">${e.pe_ratio != null ? fmtNum(e.pe_ratio, 1) : "—"}</td>
       <td class="num-cell">${fmtAUM(e.aum)}</td>
+      <td class="num-cell">${fmtDollarVol(e.dollar_vol_20d, e.liquidity_flag)}</td>
     </tr>`;
   }).join("");
 }

@@ -10,10 +10,12 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 - Screener: distance-from-52w-high and current-drawdown columns
 - Fundamentals parquet cache + retry/backoff (survives yfinance 429)
 - **Light/dark theme toggle** (persisted; light mode = paste-ready Members screenshots)
+- **OHLCV fetch path** (`download_ohlcv`) — single yfinance call; Close feeds the old pipeline unchanged (zero blast radius), full OHLCV feeds the new metrics
+- **ATR(14) + Chandelier stop** (`atr_pct`, `chandelier_stop`, `stop_distance_pct`) + **dollar-volume / liquidity** (`dollar_vol_20d`, `dollar_vol_trend`, `liquidity_flag`) — 3 new Screener columns (ATR%, Stop%, $Vol/d)
 
 ## Tier 1 — cheap, high intuition (do next)
-- [ ] **ATR(14) + Chandelier stop** — requires `prices.py` to retain OHLC (currently Close-only). Volatility-scaled stop; `stop_distance_pct` doubles as a position-sizing number.
-- [ ] **Dollar-volume trend + liquidity flag** — same one-line `prices.py` change (keep `Volume`). Flags thin thematic/currency ETFs where slippage swamps the signal.
+- [x] ~~**ATR(14) + Chandelier stop**~~ — shipped 2026-06-07 (ATR14 Wilder; Chandelier = highest-high(22) − 3×ATR; `stop_distance_pct` = position-sizing number)
+- [x] ~~**Dollar-volume trend + liquidity flag**~~ — shipped 2026-06-07 (ADV20 in $; trend = ADV20/ADV63; `liquidity_flag` thin <$5M heuristic)
 - [ ] **CSV / Excel export of the Screener** — client-side, zero-dep (CSV) / SheetJS (xlsx). Clean handoff into the weekly publication pipeline.
 - [x] ~~**Light/dark theme toggle**~~ — shipped 2026-06-07
 - [ ] **Per-ETF inline SVG sparklines** — 2y weekly-decimated Close; ~15 lines vanilla JS. "Shape of the trend" next to each rank.
@@ -39,3 +41,5 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 - [ ] Sharpe uses rf=0 (inflates ~0.3–0.4 for low-return assets) — add configurable `rf` or a UI footnote
 - [ ] `days_in_trend` uses calendar days, not trading days
 - [ ] ΔRank windows use `BusinessDay` (ignores US market holidays) — minor misalignment near holidays
+- [ ] **Liquidity threshold** `LIQUIDITY_THIN_USD = $5M` (screener.py) is a heuristic, not a calibrated cutoff — currently flags SIZE/CNRG/FINX/FAN; currency ETFs (FXF ~$6M, FXY ~$9M) sit just above. Tune if you want them flagged.
+- [ ] **Chandelier basis** uses ATR(14) + 22-day high + 3× (honours backlog's "ATR(14)"); the classic Chandelier uses ATR(22). Named constants in screener.py — 1-line switch.

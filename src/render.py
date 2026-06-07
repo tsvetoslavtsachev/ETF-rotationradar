@@ -36,6 +36,7 @@ def render_frontend_data(
     benchmark_map: dict[str, str],
     output_path: Path,
     barometer: "dict | None" = None,
+    ohlcv_df: "pd.DataFrame | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -56,7 +57,11 @@ def render_frontend_data(
     # Merge Screener
     if not screener_df.empty:
         df = df.merge(screener_df, on="ticker", how="left")
-        
+
+    # Merge OHLCV-базирани метрики (ATR / Chandelier стоп / ликвидност)
+    if ohlcv_df is not None and not ohlcv_df.empty:
+        df = df.merge(ohlcv_df, on="ticker", how="left")
+
     # Merge Fundamentals
     if not fundamentals_df.empty:
         df = df.merge(fundamentals_df, on="ticker", how="left")
