@@ -320,5 +320,21 @@ function renderHeatmap() {
   }).join("");
 }
 
+// ── Theme toggle (light / dark) ────────────────────────────
+(function setupTheme() {
+  const btn = document.getElementById("btn-theme");
+  if (!btn) return;
+  const isLight = () => document.documentElement.getAttribute("data-theme") === "light";
+  const sync = () => { btn.textContent = isLight() ? "☀" : "☾"; };
+  sync();
+  btn.addEventListener("click", () => {
+    const next = isLight() ? "dark" : "light";
+    if (next === "light") document.documentElement.setAttribute("data-theme", "light");
+    else document.documentElement.removeAttribute("data-theme");
+    try { localStorage.setItem("etf-theme", next); } catch (e) {}
+    sync();
+  });
+})();
+
 // ── Bootstrap ──────────────────────────────────────────────
 loadData();

@@ -18,6 +18,27 @@
   --shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
+/* ── Light theme (data-theme="light") ──────────────────────── */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg2: #f6f8fa;
+  --bg3: #eaeef2;
+  --border: #d0d7de;
+  --text: #1f2328;
+  --text-muted: #656d76;
+  --accent: #0969da;
+  --green: #1a7f37;
+  --red: #cf222e;
+  --yellow: #9a6700;
+  --purple: #8250df;
+  --orange: #bc4c00;
+  --shadow: 0 4px 12px rgba(140,149,159,0.2);
+}
+/* Светлозеленото на heatmap-а е нечетимо на бяло — потъмняваме го */
+:root[data-theme="light"] .score-high::before,
+:root[data-theme="light"] .score-high .heatmap-bar-fill { background: #2da44e; }
+:root[data-theme="light"] .score-high .heatmap-score { color: #2da44e; }
+
 html { font-size: 14px; }
 body {
   background: var(--bg);

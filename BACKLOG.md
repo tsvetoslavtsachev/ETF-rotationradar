@@ -9,12 +9,13 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 - **Behavioral Barometer** banner (HY-spread + XLE/SPY + GLD/TLT) + `barometer_feed.json`
 - Screener: distance-from-52w-high and current-drawdown columns
 - Fundamentals parquet cache + retry/backoff (survives yfinance 429)
+- **Light/dark theme toggle** (persisted; light mode = paste-ready Members screenshots)
 
 ## Tier 1 — cheap, high intuition (do next)
 - [ ] **ATR(14) + Chandelier stop** — requires `prices.py` to retain OHLC (currently Close-only). Volatility-scaled stop; `stop_distance_pct` doubles as a position-sizing number.
 - [ ] **Dollar-volume trend + liquidity flag** — same one-line `prices.py` change (keep `Volume`). Flags thin thematic/currency ETFs where slippage swamps the signal.
 - [ ] **CSV / Excel export of the Screener** — client-side, zero-dep (CSV) / SheetJS (xlsx). Clean handoff into the weekly publication pipeline.
-- [ ] **Light/dark theme toggle** — CSS already uses `var(--…)`; light mode = paste-ready screenshots for the mostly-light Members HTML/PDF.
+- [x] ~~**Light/dark theme toggle**~~ — shipped 2026-06-07
 - [ ] **Per-ETF inline SVG sparklines** — 2y weekly-decimated Close; ~15 lines vanilla JS. "Shape of the trend" next to each rank.
 
 ## Tier 2 — macro / regime overlays (tie into the barometer)
