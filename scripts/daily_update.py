@@ -10,6 +10,7 @@ Daily update script for ETF Rotation Radar.
 
 import sys
 import os
+import time
 from pathlib import Path
 import pandas as pd
 
@@ -118,18 +119,23 @@ def main():
     barometer_extra = download_prices(["^VIX", "^MOVE", "VUG", "VTV"], period="2y")
     barometer_prices = pd.concat([prices_df, barometer_extra], axis=1, sort=True)
     barometer_prices = barometer_prices.loc[:, ~barometer_prices.columns.duplicated()]
-    hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
+    # T10YIE се тегли ПЪРВА: fredgraph пуска заявки пестеливо (rate limit),
+    # а тя единствена няма посят кеш. HY има stale-cache fallback и се движи
+    # бавно — ден закъснение е приемлив.
     be = fetch_fred_series("T10YIE", cache_path=DATA_DIR / "fred_T10YIE.parquet")
     if be.dropna().empty:
-        # T10YIE е ИЗЧИСЛЯВАНА серия и нейният fredgraph път понякога виси,
-        # докато суровите серии минават. Смятаме breakeven ПО ДЕФИНИЦИЯ:
-        # 10г номинална доходност минус 10г TIPS доходност (DGS10 - DFII10).
+        # Резервен път ПО ДЕФИНИЦИЯ: breakeven = 10г номинална минус 10г TIPS
+        # доходност (DGS10 - DFII10) — същата стойност, същите прагове.
         print("T10YIE unavailable -> deriving breakeven as DGS10 - DFII10...")
+        time.sleep(15)
         dgs10 = fetch_fred_series("DGS10", cache_path=DATA_DIR / "fred_DGS10.parquet")
+        time.sleep(15)
         dfii10 = fetch_fred_series("DFII10", cache_path=DATA_DIR / "fred_DFII10.parquet")
         if len(dgs10.dropna()) and len(dfii10.dropna()):
             be = (dgs10 - dfii10).dropna()
             print(f"Derived breakeven: {len(be)} points, last={float(be.iloc[-1]):.2f}")
+    time.sleep(15)
+    hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
     barometer = compute_barometer(
         barometer_prices, {"hy_spread": hy, "breakeven_10y": be}, latest_date
     )

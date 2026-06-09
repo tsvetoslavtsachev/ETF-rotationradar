@@ -76,7 +76,9 @@ def fetch_fred_series(
             return s
         except Exception as e:
             if attempt < max_retries - 1:
-                wait = 3 * (attempt + 1)
+                # По-дълъг backoff: fredgraph rate-limit-ва на пориви; 20/40s
+                # дава шанс прозорецът да отмине в рамките на същия run.
+                wait = 20 * (attempt + 1)
                 print(f"FRED {series_id} fetch failed ({e}); retry in {wait}s...")
                 time.sleep(wait)
             else:
