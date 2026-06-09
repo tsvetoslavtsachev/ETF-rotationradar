@@ -22,7 +22,7 @@ FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}"
 _UA = "Mozilla/5.0 (ETF-RotationRadar; +https://github.com/tsvetoslavtsachev)"
 
 
-def _download_csv(series_id: str, timeout: int = 30) -> pd.Series:
+def _download_csv(series_id: str, timeout: int = 60) -> pd.Series:
     url = FRED_CSV_URL.format(sid=series_id)
     req = Request(url, headers={"User-Agent": _UA})
     with urlopen(req, timeout=timeout) as resp:

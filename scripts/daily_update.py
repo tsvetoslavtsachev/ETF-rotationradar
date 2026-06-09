@@ -120,6 +120,16 @@ def main():
     barometer_prices = barometer_prices.loc[:, ~barometer_prices.columns.duplicated()]
     hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
     be = fetch_fred_series("T10YIE", cache_path=DATA_DIR / "fred_T10YIE.parquet")
+    if be.dropna().empty:
+        # T10YIE е ИЗЧИСЛЯВАНА серия и нейният fredgraph път понякога виси,
+        # докато суровите серии минават. Смятаме breakeven ПО ДЕФИНИЦИЯ:
+        # 10г номинална доходност минус 10г TIPS доходност (DGS10 - DFII10).
+        print("T10YIE unavailable -> deriving breakeven as DGS10 - DFII10...")
+        dgs10 = fetch_fred_series("DGS10", cache_path=DATA_DIR / "fred_DGS10.parquet")
+        dfii10 = fetch_fred_series("DFII10", cache_path=DATA_DIR / "fred_DFII10.parquet")
+        if len(dgs10.dropna()) and len(dfii10.dropna()):
+            be = (dgs10 - dfii10).dropna()
+            print(f"Derived breakeven: {len(be)} points, last={float(be.iloc[-1]):.2f}")
     barometer = compute_barometer(
         barometer_prices, {"hy_spread": hy, "breakeven_10y": be}, latest_date
     )
