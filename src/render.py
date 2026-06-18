@@ -37,6 +37,7 @@ def render_frontend_data(
     output_path: Path,
     barometer: "dict | None" = None,
     ohlcv_df: "pd.DataFrame | None" = None,
+    flows_df: "pd.DataFrame | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -61,6 +62,10 @@ def render_frontend_data(
     # Merge OHLCV-базирани метрики (ATR / Chandelier стоп / ликвидност)
     if ohlcv_df is not None and not ohlcv_df.empty:
         df = df.merge(ohlcv_df, on="ticker", how="left")
+
+    # Merge fund-flow прокси (S15) — est_flow / est_flow_pct / flow_window_days / flow_dir
+    if flows_df is not None and not flows_df.empty:
+        df = df.merge(flows_df, on="ticker", how="left")
 
     # Merge Fundamentals
     if not fundamentals_df.empty:

@@ -32,13 +32,20 @@ CONF_NET = 2     # нетна разлика alarm−base за да има confl
 
 # ── Дефиниция на индикаторите (в реда на показване) ─────────────────────────
 # Абсолютните прагове са сорснати; robust_z няма абс. праг (self-calibrating).
+# S15 (2026-06-18) калибрация:
+#   • XLE/SPY → robust_z. Старият abs праг 0.070 палеше тревога 66% от последните
+#     2г (текущото ≈ 2г медиана, robust-z≈0) — счупен, не базисен проблем. Сега
+#     се само-калибрира като другите ротационни ratio-та.
+#   • TIP/IEF махнат — беше breakeven прокси по време на FRED блокадата; реалният
+#     T10YIE отново е жив, проксито дублираше.
+#   • IWF/IWD махнат — дублираше VUG/VTV (растеж/стойност). Задържаме Vanguard.
 INDICATORS = [
     {"key": "hy_spread", "name": "HY-spread", "kind": "abs", "stress_dir": "high",
      "src": ("fred", "hy_spread"), "base": 3.00, "alarm": 3.50, "decimals": 2,
      "source": "FRED BAMLH0A0HYM2"},
-    {"key": "xle_spy", "name": "XLE/SPY", "kind": "abs", "stress_dir": "high",
-     "src": ("ratio", "XLE", "SPY"), "base": 0.060, "alarm": 0.070, "decimals": 4,
-     "source": "yfinance XLE/SPY"},
+    {"key": "xle_spy", "name": "XLE/SPY", "kind": "robust_z", "stress_dir": "high",
+     "src": ("ratio", "XLE", "SPY"), "decimals": 4,
+     "source": "yfinance XLE/SPY (self-calibrating, S15)"},
     {"key": "gld_tlt", "name": "GLD/TLT", "kind": "abs", "stress_dir": "high",
      "src": ("ratio", "GLD", "TLT"), "base": 5.20, "alarm": 5.50, "decimals": 2,
      "source": "yfinance GLD/TLT"},
@@ -48,9 +55,6 @@ INDICATORS = [
     {"key": "breakeven_10y", "name": "10Y breakeven", "kind": "abs", "stress_dir": "high",
      "src": ("fred", "breakeven_10y"), "base": 2.40, "alarm": 2.60, "decimals": 2,
      "source": "FRED T10YIE"},
-    {"key": "tip_ief", "name": "TIP/IEF", "kind": "robust_z", "stress_dir": "high",
-     "src": ("ratio", "TIP", "IEF"), "decimals": 4,
-     "source": "yfinance TIP/IEF (breakeven прокси)"},
     {"key": "move", "name": "MOVE", "kind": "robust_z", "stress_dir": "high",
      "src": ("level", "^MOVE"), "decimals": 2, "source": "yfinance ^MOVE"},
     {"key": "hyg_lqd", "name": "HYG/LQD", "kind": "robust_z", "stress_dir": "low",
@@ -59,8 +63,6 @@ INDICATORS = [
      "src": ("ratio", "XLY", "XLP"), "decimals": 4, "source": "yfinance XLY/XLP"},
     {"key": "iwm_spy", "name": "IWM/SPY", "kind": "robust_z", "stress_dir": "low",
      "src": ("ratio", "IWM", "SPY"), "decimals": 4, "source": "yfinance IWM/SPY"},
-    {"key": "iwf_iwd", "name": "IWF/IWD", "kind": "robust_z", "stress_dir": "high",
-     "src": ("ratio", "IWF", "IWD"), "decimals": 4, "source": "yfinance IWF/IWD (растеж/стойност)"},
     {"key": "vug_vtv", "name": "VUG/VTV", "kind": "robust_z", "stress_dir": "high",
      "src": ("ratio", "VUG", "VTV"), "decimals": 4, "source": "yfinance VUG/VTV (растеж/стойност)"},
 ]

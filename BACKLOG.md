@@ -49,3 +49,39 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 - [ ] **Breakeven: FRED rate vs TIP/IEF proxy** — running BOTH on purpose (true T10YIE rate + yfinance TIP/IEF robust-z proxy) to compare which tracks better over time; consolidate to one once observed.
 - [ ] **Growth/value stress direction** — IWF/IWD & VUG/VTV use `stress_dir="high"` (growth-euphoria = alarm) as a documented assumption (genuinely two-sided). Flip the constant in barometer.py if you prefer the other reading.
 - [ ] **Net-confluence semantics changed** — barometer confluence is now net (`|alarm − base| ≥ 2`) across 11 indicators, not raw ≥2. The `behavioral-tracker` skill reads `barometer_feed.json` (now 11 indicators) and may need updating to match.
+
+## S15 — owner calibration sign-off (2026-06-18)
+Decisions from the review-first audit:
+1. **XLE/SPY threshold — REBUILD.** Old `0.070` alarm fires 66% of the last 2y (current 0.0738 ≈ 2y median 0.0736, robust-z ≈ +0.02). Stale, not a basis issue (verified: adjusted == nominal at the latest bar). → convert to `robust_z` (joins the self-calibrating bucket; current lands `base`) unless absolute-level semantics are required.
+2. **Breakeven TIP/IEF proxy — RETIRE.** Real T10YIE is live again (06-17, BE=2.29; `fred_T10YIE.parquet` seeded). Keep T10YIE-primary + derived `DGS10−DFII10` fallback; drop the proxy.
+3. **Growth/value redundancy — KEEP VUG/VTV, DROP IWF/IWD** (both measured growth-vs-value; Vanguard pair retained).
+5. **Flows v1 — SHIP proxy** (whole universe, coarse, scale+direction). `est_flow ≈ AUM_now − AUM_prior×(1+market_ret)` over ~21 trading days. New `src/flows.py` + `data/aum_history.parquet` (forward-accumulating, no backfill → "—" until window fills). Screener column `Flow%`.
+6. **Health exit-code — DONE (a):** `daily_update.py` now `sys.exit(1)` on empty prices (dead channel → red Action, not silent green). No on-page banner (owner chose (a) only).
+
+### S15 BUILT (2026-06-18, pending push approval)
+- barometer.py: 12→10 indicators; XLE/SPY abs→robust_z; removed TIP/IEF + IWF/IWD.
+- daily_update.py: health exit(1); flows section; pass flows to render.
+- src/flows.py (new) + render.py flows merge; index.html/app.js `Flow%` column.
+- smoke_test.py: 10-indicator + XLE robust_z + synthetic flows assertions — **PASS**.
+- behavioral-tracker SKILL.md → v2.0 (reads barometer_feed.json, 10 indicators, net confluence).
+- Verify gates green: smoke_test ✓ · empty-prices→exit1 ✓ · full daily_update (data to 06-18, XLE=base, EXIT=0) ✓ · preview :8137 (10 chips, XLE green, Flow col, no console errors) ✓.
+
+### Flows — open validation gate (watch over next ~weeks)
+- AUM refresh cadence: fundamentals cache is 7-day → AUM moves ~weekly. If `totalAssets` is too sticky, short-window flows are noisy (synthetic QQQ test showed flat-AUM-during-rally → spurious "outflow"). Watch the daily `Flows: N ETFs with usable...` log + first real values; if unusable → fallback to issuer CSV (shares-out × price) for ~30 flagships.
+- No backfill: column is "—" until ~MIN_WINDOW_DAYS (3) of history accumulates; full signal at ~21 trading days.
+
+### Optional hardening (not done, flag only)
+- FRED keyless `fredgraph.csv` is fragile (06-07 outage). INIT-22 lesson: official `api.stlouisfed.org` + `FRED_API_KEY` is more robust. Breakeven works now (T10YIE live), so deferred.
+
+### Deferred heuristics — reconsider + test once flows/health infra exists (decision 4)
+"What each currently drives" — so we know what a recalibration would move. `[VERDICT]` = changes a shown classification; `[display]` = cosmetic.
+- **Quadrant 80/20** (rank_history.py) → which quadrant an ETF lands in → the whole Rotation Radar tab. `[VERDICT]`
+- **CONF_NET=2** (barometer.py) → whether the banner shows an alarm/base confluence tilt → regime headline. `[VERDICT]`
+- **robust_z Z_BASE/Z_ALARM/Z_WINDOW = 1.0/2.0/504** (barometer.py) → base/gray/alarm zones for the 7 self-calibrating ratios. `[VERDICT]`
+- **Liquidity $5M** (screener.py) → `liquidity_flag` thin/ok → position-sizing caution. `[flag]`
+- **ΔRank BusinessDay / US holidays** (rank_history.py) → 1m/3m rank-change windows → feeds quadrant. `[minor verdict]`
+- **Chandelier ATR(14) vs classic ATR(22)** (screener.py) → chandelier_stop + stop_distance_pct → trailing-stop level. `[display]`
+- **Sharpe rf=0** (screener.py) → Sharpe column; inflates ~0.3–0.4 for low-return assets. `[display]`
+- **days_in_trend calendar days** (rs_line.py) → "days in trend" on RS cards (~+40% vs trading days). `[display]`
+- **trend_4w ±2%** (barometer.py) → up/down/flat arrow per indicator. `[display]`
+- **PE gate 3–100** (fundamentals.py) → show/null a P/E → data hygiene. `[display]`

@@ -99,6 +99,24 @@ function fmtDollarVol(v, flag) {
   const cls = flag === "thin" ? "negative" : "neutral";
   return `<span class="${cls}">${txt}</span>`;
 }
+function fmtFlow(pct, dollars, dir, windowDays) {
+  // Нетен поток за мащаб+посока (груба оценка). "—" докато историята не стигне.
+  if (pct == null) return `<span style="color:var(--text-muted)">—</span>`;
+  const p = parseFloat(pct);
+  if (isNaN(p)) return `<span style="color:var(--text-muted)">—</span>`;
+  const cls = p > 0 ? "positive" : p < 0 ? "negative" : "neutral";
+  const arrow = p > 0 ? "▲" : p < 0 ? "▼" : "·";
+  let dTxt = "";
+  if (dollars != null && !isNaN(parseFloat(dollars))) {
+    const n = Math.abs(parseFloat(dollars));
+    dTxt = n >= 1e9 ? "$" + (n / 1e9).toFixed(1) + "B"
+         : n >= 1e6 ? "$" + (n / 1e6).toFixed(0) + "M"
+         : "$" + (n / 1e3).toFixed(0) + "K";
+  }
+  const tip = `${dir === "in" ? "приток" : dir === "out" ? "отток" : "плоско"} ${dTxt}` +
+              (windowDays != null ? ` за ~${windowDays}д` : "");
+  return `<span class="${cls}" title="${tip}">${arrow}${Math.abs(p).toFixed(1)}%</span>`;
+}
 function filteredByCategory(catSelectId) {
   const cat = document.getElementById(catSelectId).value;
   return cat === "all" ? DATA.etfs : DATA.etfs.filter(e => e.category === cat);
@@ -196,6 +214,7 @@ function renderScreener() {
       <td class="num-cell">${e.pe_ratio != null ? fmtNum(e.pe_ratio, 1) : "—"}</td>
       <td class="num-cell">${fmtAUM(e.aum)}</td>
       <td class="num-cell">${fmtDollarVol(e.dollar_vol_20d, e.liquidity_flag)}</td>
+      <td class="num-cell">${fmtFlow(e.est_flow_pct, e.est_flow, e.flow_dir, e.flow_window_days)}</td>
     </tr>`;
   }).join("");
 }

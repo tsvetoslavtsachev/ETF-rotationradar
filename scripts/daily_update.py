@@ -29,6 +29,7 @@ from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.fred import fetch_fred_series
 from src.barometer import compute_barometer
+from src.flows import append_aum_snapshot, load_aum_history, compute_flows
 from src.render import render_frontend_data
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -64,8 +65,10 @@ def main():
     ohlcv = download_ohlcv(all_tickers, period="2y")
     prices_df = ohlcv.get("Close", pd.DataFrame())
     if prices_df.empty:
-        print("Failed to download prices. Exiting.")
-        return
+        # S15 health: провал на свалянето е МЪРТЪВ канал → излизаме с грешка,
+        # за да светне GitHub Action червен (не тихо зелено със застинали данни).
+        print("ERROR: price download returned empty — dead data channel, failing loudly.")
+        sys.exit(1)
     print(f"Downloaded prices up to {prices_df.index[-1].strftime('%Y-%m-%d')}")
     print(f"Price DataFrame shape: {prices_df.shape}, columns type: {type(prices_df.columns).__name__}")
 
@@ -94,6 +97,19 @@ def main():
     )
     print(f"Fetched fundamentals for {len(fundamentals)} ETFs")
 
+    # 4b. Fund-flow прокси (S15) — записваме днешния AUM snapshot, после смятаме
+    #     нетния поток за прозореца (мащаб+посока). Пълни се напред; "—" докато
+    #     историята покрие прозореца.
+    print("\nComputing fund-flow proxy...")
+    aum_map = dict(zip(fundamentals["ticker"], fundamentals["aum"])) if not fundamentals.empty else {}
+    aum_hist_path = DATA_DIR / "aum_history.parquet"
+    append_aum_snapshot(aum_hist_path, aum_map, latest_date)
+    aum_history = load_aum_history(aum_hist_path)
+    flows = compute_flows(aum_history, prices_df, latest_date)
+    n_snap = aum_history["date"].nunique() if not aum_history.empty else 0
+    print(f"Flows: {len(flows)} ETFs with usable est. net flow "
+          f"(AUM history: {n_snap} daily snapshots)")
+
     # 5. RS Line Signals
     print("\nComputing RS Line signals...")
     benchmark_map = get_benchmark_map()
@@ -112,7 +128,7 @@ def main():
     ohlcv_metrics = run_ohlcv_screener(etf_ohlcv)
     print(f"Computed OHLCV metrics (ATR/stop/liquidity) for {len(ohlcv_metrics)} ETFs")
 
-    # 6.5 Behavioral Barometer (ELANA дислокации) — 11 индикатора
+    # 6.5 Behavioral Barometer (ELANA дислокации) — 10 индикатора (S15)
     print("\nComputing behavioral barometer...")
     # Тикъри ИЗВЪН вселената (^VIX, ^MOVE, VUG, VTV) — само за барометъра,
     # не влизат в screener/momentum. Сваляме ги отделно и обединяваме.
@@ -153,7 +169,7 @@ def main():
     render_frontend_data(
         deltas, screener, fundamentals, rs_signals,
         category_map, name_map, benchmark_map, output_path,
-        barometer=barometer, ohlcv_df=ohlcv_metrics
+        barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows
     )
 
     print("\n=== Update Complete ===")

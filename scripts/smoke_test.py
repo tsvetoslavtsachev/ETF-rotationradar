@@ -17,6 +17,7 @@ from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.render import render_frontend_data
 from src.barometer import compute_barometer, INDICATORS
+from src.flows import append_aum_snapshot, load_aum_history, compute_flows
 from src.fred import fetch_fred_series
 
 # Tiny universe: >=2 per category so category z-scores are well-defined
@@ -99,8 +100,9 @@ try:
     print("Sample record:", json.dumps(payload['etfs'][0], indent=2))
 
     step(f"8. compute_barometer ({len(INDICATORS)} indicators)")
-    bar_tickers = ["SPY", "XLE", "GLD", "TLT", "TIP", "IEF", "HYG", "LQD", "XLY", "XLP",
-                   "IWM", "IWF", "IWD", "VUG", "VTV", "^VIX", "^MOVE"]
+    # S15: 10 индикатора. TIP/IEF + IWF/IWD махнати; XLE/SPY вече robust_z.
+    bar_tickers = ["SPY", "XLE", "GLD", "TLT", "HYG", "LQD", "XLY", "XLP",
+                   "IWM", "VUG", "VTV", "^VIX", "^MOVE"]
     bpx = download_prices(bar_tickers, period="2y")
     data_dir = Path(__file__).parent.parent / "data"
     hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=data_dir / "fred_BAMLH0A0HYM2.parquet")
@@ -109,13 +111,37 @@ try:
     for i in bar["indicators"]:
         print(f"  {i['name']:14s} val={i['value']} zone={i['zone']:7s} kind={i['kind']:8s} z={i['z']}")
     print("confluence:", bar["confluence"])
-    assert len(bar["indicators"]) == len(INDICATORS), "indicator count mismatch"
+    assert len(bar["indicators"]) == len(INDICATORS) == 10, "indicator count mismatch (expect 10)"
+    keys = {i["key"] for i in bar["indicators"]}
+    assert not ({"tip_ief", "iwf_iwd"} & keys), "retired indicators still present"
     unknown = [i["name"] for i in bar["indicators"] if i["zone"] == "unknown"]
     assert len(unknown) <= 2, f"too many unknown indicators: {unknown}"
     vix = next(i for i in bar["indicators"] if i["key"] == "vix")
     assert vix["value"] and 5 < vix["value"] < 100, "VIX value implausible"
     hyg = next(i for i in bar["indicators"] if i["key"] == "hyg_lqd")
     assert hyg["kind"] == "robust_z" and hyg["z"] is not None, "HYG/LQD z missing"
+    xle = next(i for i in bar["indicators"] if i["key"] == "xle_spy")
+    assert xle["kind"] == "robust_z", "XLE/SPY should be robust_z after S15"
+
+    step("9. flows proxy (synthetic 2-snapshot AUM history)")
+    import tempfile
+    flow_path = Path(tempfile.gettempdir()) / "_smoke_aum_history.parquet"
+    if flow_path.exists():
+        flow_path.unlink()
+    d_now = prices.index[-1]
+    d_prior = prices.index[-22]  # ~1 месец назад
+    # снимка отпреди месец: SPY с базов AUM; снимка сега: SPY +5% AUM (приток)
+    append_aum_snapshot(flow_path, {"SPY": 100_000_000_000.0, "QQQ": 50_000_000_000.0}, d_prior)
+    append_aum_snapshot(flow_path, {"SPY": 105_000_000_000.0, "QQQ": 50_000_000_000.0}, d_now)
+    aum_hist = load_aum_history(flow_path)
+    assert aum_hist["date"].nunique() == 2, "expected 2 AUM snapshots"
+    flows = compute_flows(aum_hist, prices, d_now)
+    print(flows.to_string())
+    assert not flows.empty, "flows empty with 2 valid snapshots"
+    spy_flow = flows[flows["ticker"] == "SPY"]
+    assert not spy_flow.empty and np.isfinite(spy_flow["est_flow"].iloc[0]), "SPY flow not finite"
+    assert spy_flow["flow_window_days"].iloc[0] >= 3, "flow window too short"
+    flow_path.unlink()
 
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
