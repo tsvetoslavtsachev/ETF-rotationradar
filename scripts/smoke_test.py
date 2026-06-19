@@ -13,6 +13,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from src.prices import download_prices, download_ohlcv
 from src.signal_engine import compute_cross_section
 from src.rank_history import build_history_from_prices, compute_delta_metrics, compute_movers
+from src.heatstrip import compute_heatstrip
 from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.render import render_frontend_data
@@ -311,6 +312,35 @@ try:
     assert payload5.get("movers") and payload5["movers"]["available"], "movers missing from payload"
     assert len(payload5["movers"]["up"]) == 2 and len(payload5["movers"]["entered"]) == 1, \
         "movers payload structure wrong"
+
+    step("14. category-rotation heat-strip (synthetic W-FRI resample + render coverage)")
+    # Две категории, 3 W-FRI седмици + 4 ДНЕВНИ snapshot-а в последната седмица
+    # (репликира CI дневния append). Resample-ът трябва да остави 1 колона/седмица
+    # и да вземе ПОСЛЕДНАТА дневна снимка за последната седмица.
+    hs_rows = []
+    for d, hot, cold in [("2026-06-05", 60, 40), ("2026-06-12", 70, 30),
+                         # последна седмица: 4 дневни снимки, последната (06-19) печели
+                         ("2026-06-16", 50, 50), ("2026-06-17", 55, 45),
+                         ("2026-06-18", 80, 20), ("2026-06-19", 90, 10)]:
+        hs_rows.append({"date": d, "ticker": "AAA", "unadj_percentile": hot, "category": "Hot"})
+        hs_rows.append({"date": d, "ticker": "BBB", "unadj_percentile": cold, "category": "Cold"})
+    hs_hist = pd.DataFrame(hs_rows)
+    hs = compute_heatstrip(hs_hist, n_weeks=3)
+    print(f"heatstrip: weeks={hs['weeks']} cats={hs['categories']}")
+    assert hs["available"], "heatstrip should be available"
+    assert hs["n_weeks"] == 3 and len(hs["weeks"]) == 3, "should resample to 3 W-FRI weeks"
+    # последната седмица (06-15→06-19) → взима 06-19 снимката, не 06-16/17/18
+    assert hs["weeks"][-1] == "2026-06-19", f"last week should pick latest daily snap, got {hs['weeks'][-1]}"
+    # подредба: Hot (90 на последната седмица) преди Cold (10)
+    assert hs["categories"][0] == "Hot" and hs["categories"][1] == "Cold", "categories should sort hottest-first"
+    assert hs["cells"]["Hot"] == [60.0, 70.0, 90.0], f"Hot cells wrong: {hs['cells']['Hot']}"
+    assert hs["cells"]["Cold"] == [40.0, 30.0, 10.0], f"Cold cells wrong: {hs['cells']['Cold']}"
+    # render coverage: heatstrip попада в payload-а
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map, heatstrip=hs)
+    payload6 = json.load(open(out))
+    assert payload6.get("heatstrip") and payload6["heatstrip"]["available"], "heatstrip missing from payload"
+    assert payload6["heatstrip"]["categories"][0] == "Hot", "heatstrip payload order wrong"
 
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:

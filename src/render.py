@@ -44,6 +44,7 @@ def render_frontend_data(
     lookthrough_df: "pd.DataFrame | None" = None,
     cot_df: "pd.DataFrame | None" = None,
     movers: "dict | None" = None,
+    heatstrip: "dict | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -142,6 +143,8 @@ def render_frontend_data(
         payload["macro"] = macro
     if movers is not None:
         payload["movers"] = movers
+    if heatstrip is not None:
+        payload["heatstrip"] = heatstrip
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:

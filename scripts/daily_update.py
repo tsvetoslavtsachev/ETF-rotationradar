@@ -24,6 +24,7 @@ from src.universe import (
 from src.prices import download_ohlcv, download_prices
 from src.signal_engine import compute_cross_section
 from src.rank_history import append_snapshot, load_history, compute_delta_metrics, compute_movers
+from src.heatstrip import compute_heatstrip
 from src.fundamentals import fetch_fundamentals
 from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
@@ -234,6 +235,18 @@ def main():
     else:
         print("Movers: history too short — panel hidden")
 
+    # 6.12 Category-rotation heat-strip (Tier 3 UX, последното парче) — 9 кат ×
+    #      26 седмици, цвят по медиен абсолютен momentum-перцентил per категория
+    #      per седмица. Метрика=unadj_percentile (percentile_rank е структурно
+    #      плосък ~50, виж src/heatstrip.py). W-FRI resample. Нула нови вызови.
+    print("\nComputing category-rotation heat-strip...")
+    heatstrip = compute_heatstrip(history, category_map=category_map)
+    if heatstrip["available"]:
+        print(f"Heat-strip: {len(heatstrip['categories'])} categories × "
+              f"{heatstrip['n_weeks']} weeks (to {heatstrip['weeks'][-1]})")
+    else:
+        print("Heat-strip: history too short — panel hidden")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     output_path = DOCS_DIR / "data.json"
@@ -242,7 +255,8 @@ def main():
         category_map, name_map, benchmark_map, output_path,
         barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
         spark_map=spark_map, macro=macro_context, betas_df=betas,
-        lookthrough_df=lookthrough, cot_df=cot, movers=movers
+        lookthrough_df=lookthrough, cot_df=cot, movers=movers,
+        heatstrip=heatstrip
     )
 
     print("\n=== Update Complete ===")

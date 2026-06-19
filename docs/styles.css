@@ -278,6 +278,37 @@ main {
 .mv-pill.negative { border-left-color: var(--red); color: var(--text); }
 .mv-pill .mv-ctx { font-weight: 400; }
 
+/* ── Category-rotation heat-strip (Tier 3 UX) ──────────────── */
+.heatstrip-panel .hs-grid { display: flex; flex-direction: column; gap: 2px; margin-top: 0.5rem; }
+.hs-row { display: flex; align-items: center; gap: 0.5rem; }
+.hs-label {
+  flex: 0 0 6.5rem; font-size: 0.74rem; color: var(--text-muted);
+  text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hs-cells { display: flex; gap: 2px; flex: 1 1 auto; }
+.hs-cell {
+  flex: 1 1 0; height: 16px; border-radius: 2px; cursor: default;
+  border: 1px solid rgba(127,127,127,0.12);
+}
+.hs-cell:hover { outline: 2px solid var(--accent); outline-offset: -1px; }
+.hs-monthrow .hs-cell { background: none !important; border: none; }
+.hs-monthrow { margin-bottom: 1px; }
+.hs-mo {
+  flex: 1 1 0; font-size: 0.62rem; color: var(--text-muted);
+  text-align: left; white-space: nowrap; overflow: visible;
+}
+.hs-legend {
+  display: flex; align-items: center; gap: 0.5rem; margin-top: 0.7rem;
+  font-size: 0.72rem; color: var(--text-muted);
+}
+.hs-bar {
+  flex: 0 0 120px; width: 120px; height: 10px; border-radius: 3px;
+  background: linear-gradient(to right,
+    hsl(212,80%,48%), hsl(212,40%,78%), hsl(0,0%,92%), hsl(8,40%,78%), hsl(8,80%,48%));
+}
+.hs-legend-note { margin-left: auto; font-style: italic; }
+@media (max-width: 720px) { .hs-label { flex-basis: 4.2rem; font-size: 0.66rem; } .hs-legend-note { display: none; } }
+
 /* ── Screener Table ────────────────────────────────────────── */
 /* Собствен scroll-контейнер: иначе overflow-x:auto прави и overflow-y:auto,
    което чупи sticky хедъра (закача се за обвивката вместо за viewport-а).

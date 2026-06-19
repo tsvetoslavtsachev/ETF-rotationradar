@@ -46,6 +46,7 @@ function init() {
   renderBarometer();
   renderMacro();
   renderMovers();
+  renderHeatstrip();
 
   document.getElementById("window-filter").addEventListener("change", renderAll);
   document.getElementById("screener-sort").addEventListener("change", () => {
@@ -262,6 +263,66 @@ function renderMovers() {
         <div class="mv-rot"><span class="mv-rot-label positive">▲ влязоха</span><div class="mv-pills">${entered}</div></div>
         <div class="mv-rot"><span class="mv-rot-label negative">▼ напуснаха</span><div class="mv-pills">${left}</div></div>
       </div>
+    </div>`;
+  el.style.display = "block";
+}
+
+// ── Category-rotation heat-strip (Tier 3 UX) ───────────────
+// 9 категории × 26 седмици; цвят по медиен абсолютен momentum-перцентил
+// per категория per седмица. Дивержентна скала, центрирана на 50 (50=медианен
+// ETF, 0/100=краища — всичко дефиниционно). Независим от cat/window филтрите —
+// рисува се веднъж в init() (като Барометъра/Движенията).
+function heatColor(v) {
+  // v ∈ [0,100]. 50 → неутрално; <50 студено (синьо); >50 топло (червено).
+  if (v == null || isNaN(v)) return "var(--bg3)";
+  const t = (v - 50) / 50;                 // [-1, +1]
+  const mag = Math.min(1, Math.abs(t));
+  const hue = t >= 0 ? 8 : 212;            // топло ~червено / студено ~синьо
+  const sat = 18 + mag * 62;               // 18% (до центъра) → 80%
+  const light = 92 - mag * 44;             // 92% (бледо) → 48% (наситено)
+  return `hsl(${hue}, ${sat}%, ${light}%)`;
+}
+function renderHeatstrip() {
+  const el = document.getElementById("heatstrip-panel");
+  if (!el) return;
+  const h = DATA.heatstrip;
+  if (!h || !h.available) { el.style.display = "none"; return; }
+
+  // Разредени етикети за месеците — само където сменя месецът.
+  const monthAbbr = ["Яну","Фев","Мар","Апр","Май","Юни","Юли","Авг","Сеп","Окт","Ное","Дек"];
+  let lastMonth = "";
+  const monthCells = h.weeks.map(w => {
+    const mo = w.slice(5, 7);
+    if (mo !== lastMonth) { lastMonth = mo; return `<span class="hs-mo">${monthAbbr[parseInt(mo,10)-1]}</span>`; }
+    return `<span class="hs-mo"></span>`;
+  }).join("");
+
+  const rows = h.categories.map(cat => {
+    const cells = h.cells[cat].map((v, i) => {
+      const val = v == null ? "—" : Math.round(v);
+      const tip = `${cat} · седмица до ${h.weeks[i]} · momentum-перцентил ${val}`;
+      return `<span class="hs-cell" style="background:${heatColor(v)}" title="${tip.replace(/"/g,"&quot;")}"></span>`;
+    }).join("");
+    return `<div class="hs-row">
+      <span class="hs-label">${cat}</span>
+      <div class="hs-cells">${cells}</div>
+    </div>`;
+  }).join("");
+
+  el.innerHTML = `
+    <div class="reg-head">
+      <span class="reg-title">🔥 Ротация по сектори — ${h.n_weeks} седмици</span>
+      <span class="reg-asof">медиен абсолютен momentum · студено → топло</span>
+    </div>
+    <div class="hs-grid">
+      <div class="hs-row hs-monthrow"><span class="hs-label"></span><div class="hs-cells">${monthCells}</div></div>
+      ${rows}
+    </div>
+    <div class="hs-legend">
+      <span>студено</span>
+      <span class="hs-bar"></span>
+      <span>топло</span>
+      <span class="hs-legend-note">клетка = медиен momentum-перцентил на сектора (0–100, 50 = средата на вселената)</span>
     </div>`;
   el.style.display = "block";
 }
