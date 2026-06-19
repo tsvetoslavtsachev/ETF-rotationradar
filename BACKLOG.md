@@ -22,13 +22,14 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 - [x] ~~**Per-ETF inline SVG sparklines**~~ — **S17 (2026-06-19)**: 2г седмично-децимиран Close (104 точки, W-FRI), inline SVG до всеки ранг в Rotation Radar; зелено/червено по посока. Backend: `spark_map` в daily_update→render; frontend `sparkline()`.
 
 ## Tier 2 — macro / regime overlays (tie into the barometer)
-- [ ] Credit-stress strip: HY OAS + **STLFSI4** / **NFCI** (FRED, keyless)
-- [ ] USD + yield-curve context: FRED **DTWEXBGS**, **T10Y2Y**
-- [ ] Gold/Copper ratio (GLD / COPX) — growth-vs-fear tell
-- [ ] Rolling 90-day beta & correlation to SPY (prices already in pipeline)
-- [ ] Recession-probability gauge: FRED **RECPROUSM156N**
-- [ ] ETF look-through: sector weights + top-10 concentration (yfinance `funds_data`)
-- [ ] CFTC COT positioning for commodity/rate ETFs (CFTC Socrata CSV, keyless)
+**S17 batch 1 (2026-06-19): FRED макро-стрип** — нов `🌐 Макро контекст` панел под Барометъра (`src/macro_context.py`, DISPLAY-ONLY, не влиза в confluence). 5 keyless FRED серии, зони base/gray/alarm. Дефинитивни котви сорснати (0 = норма за STLFSI4/NFCI/2s10s); band-овете документирани конвенции (±0.10 dead-band, 2s10s watch 0.50, recession 20/50).
+- [x] ~~Credit-stress strip: STLFSI4 / NFCI~~ — **S17**. (HY OAS вече е в Барометъра.)
+- [x] ~~USD + yield-curve context: DTWEXBGS, T10Y2Y~~ — **S17** (USD=robust_z, 2s10s=spread зона).
+- [x] ~~Recession-probability gauge: RECPROUSM156N~~ — **S17** (Chauvet-Piger smoothed %).
+- [ ] Gold/Copper ratio (GLD / COPX) — growth-vs-fear tell  *(S17 batch 2 — на цени)*
+- [ ] Rolling 90-day beta & correlation to SPY (prices already in pipeline)  *(S17 batch 2 — на цени)*
+- [ ] ETF look-through: sector weights + top-10 concentration (yfinance `funds_data`)  *(batch 3)*
+- [ ] CFTC COT positioning for commodity/rate ETFs (CFTC Socrata CSV, keyless)  *(batch 4)*
 
 ## Tier 3 — bigger UX
 - [ ] "Movers since last run" diff panel (`ranks_history.parquet` already stores the series)

@@ -170,6 +170,7 @@ main {
 .reg-val { font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 .reg-arrow { font-size: 0.85rem; }
 .reg-zone { font-size: 0.68rem; color: var(--text-muted); }
+.reg-zsub { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
 
 /* ── Quadrant Grid ─────────────────────────────────────────── */
 .quadrant-grid {

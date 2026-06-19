@@ -160,6 +160,31 @@ try:
     assert spy_flow["flow_window_days"].iloc[0] >= 3, "flow window too short"
     flow_path.unlink()
 
+    step("10. macro context (synthetic, без мрежа)")
+    from src.macro_context import compute_macro_context, MACRO_SERIES
+    synth = {
+        "stlfsi": pd.Series([0.5] * 40, index=pd.date_range("2025-01-01", periods=40, freq="W-FRI")),
+        "nfci": pd.Series([-0.4] * 40, index=pd.date_range("2025-01-01", periods=40, freq="W-FRI")),
+        "curve_2s10s": pd.Series([-0.2] * 60, index=pd.date_range("2025-01-01", periods=60, freq="D")),
+        "recession_prob": pd.Series([5.0] * 40, index=pd.date_range("2025-01-01", periods=40, freq="MS")),
+        # usd липсва нарочно → unknown
+    }
+    mc = compute_macro_context(synth, pd.Timestamp("2026-01-01"))
+    zmap = {i["key"]: i["zone"] for i in mc["items"]}
+    print("macro zones:", zmap)
+    assert len(mc["items"]) == len(MACRO_SERIES), "macro item count mismatch"
+    assert zmap["stlfsi"] == "alarm", "STLFSI4 0.5 (>0) трябва да е стрес"
+    assert zmap["nfci"] == "base", "NFCI -0.4 (<0) трябва да е норма"
+    assert zmap["curve_2s10s"] == "alarm", "инверсия (<0) трябва да е стрес"
+    assert zmap["recession_prob"] == "base", "5% recession prob трябва да е калм"
+    assert zmap["usd"] == "unknown", "липсваща USD серия трябва да е unknown"
+    # render coverage: macro попада в payload-а
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map, macro=mc)
+    payload2 = json.load(open(out))
+    assert payload2.get("macro") and len(payload2["macro"]["items"]) == len(MACRO_SERIES), \
+        "macro context missing from rendered payload"
+
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
     print("\n\n>>> SMOKE TEST FAILED <<<")

@@ -44,6 +44,7 @@ function init() {
   });
 
   renderBarometer();
+  renderMacro();
 
   document.getElementById("window-filter").addEventListener("change", renderAll);
   document.getElementById("screener-sort").addEventListener("change", () => {
@@ -349,6 +350,36 @@ function renderBarometer() {
       <span class="reg-title">⬡ Барометър на дислокациите</span>
       <span class="reg-verdict" style="color:${vcolor}">${verdict}</span>
       <span class="reg-asof">${b.as_of || ""}</span>
+    </div>
+    <div class="reg-chips">${chips}</div>`;
+  el.style.display = "block";
+}
+
+// ── Macro Context Strip (Tier 2 — keyless FRED overlays) ───
+// Display-only режимен фон (НЕ е част от Барометър confluence).
+function renderMacro() {
+  const el = document.getElementById("macro-strip");
+  if (!el) return;
+  const m = DATA.macro;
+  if (!m || !Array.isArray(m.items) || !m.items.length) { el.style.display = "none"; return; }
+  const zColor = z => z === "alarm" ? "var(--red)" : z === "base" ? "var(--green)"
+    : z === "gray" ? "var(--yellow)" : "var(--text-muted)";
+  const zBG = z => z === "alarm" ? "rgba(248,81,73,0.12)" : z === "base" ? "rgba(63,185,80,0.12)"
+    : z === "gray" ? "rgba(210,153,34,0.12)" : "transparent";
+  const zLabel = z => ({ base: "норма", gray: "внимание", alarm: "стрес", unknown: "—" }[z] || z);
+  const arrow = t => t === "up" ? "↗" : t === "down" ? "↘" : "→";
+  const chips = m.items.map(i => `
+    <div class="reg-chip" style="border-color:${zColor(i.zone)};background:${zBG(i.zone)}" title="${i.source}">
+      <span class="reg-name">${i.name}</span>
+      <span class="reg-val" style="color:${zColor(i.zone)}">${i.value != null ? i.value : "—"}`
+        + `${i.z != null ? ` <span class="reg-zsub">z${i.z}</span>` : ""} `
+        + `<span class="reg-arrow">${arrow(i.trend_4w)}</span></span>
+      <span class="reg-zone">${zLabel(i.zone)} · ${i.note}</span>
+    </div>`).join("");
+  el.innerHTML = `
+    <div class="reg-head">
+      <span class="reg-title">🌐 Макро контекст</span>
+      <span class="reg-asof">${m.as_of || ""}</span>
     </div>
     <div class="reg-chips">${chips}</div>`;
   el.style.display = "block";

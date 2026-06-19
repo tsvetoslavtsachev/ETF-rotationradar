@@ -29,6 +29,7 @@ from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.fred import fetch_fred_series
 from src.barometer import compute_barometer
+from src.macro_context import compute_macro_context, MACRO_SERIES
 from src.flows import append_aum_snapshot, load_aum_history, compute_flows
 from src.render import render_frontend_data
 
@@ -162,6 +163,21 @@ def main():
           f"| alarm={conf['alarm_count']} base={conf['base_count']} net={conf['net']} "
           f"conf={conf['has_confluence']} {conf['direction'] or ''}")
 
+    # 6.7 Макро контекст strip (Tier 2, S17) — keyless FRED режимни overlays.
+    #     DISPLAY-ONLY (не влиза в Барометър confluence). Всяка серия с parquet
+    #     кеш + stale fallback; кратки паузи срещу fredgraph rate-limit.
+    print("\nFetching macro-context FRED series...")
+    macro_raw = {}
+    for m in MACRO_SERIES:
+        macro_raw[m["key"]] = fetch_fred_series(
+            m["fred_id"], cache_path=DATA_DIR / f"fred_{m['fred_id']}.parquet"
+        )
+        time.sleep(8)
+    macro_context = compute_macro_context(macro_raw, latest_date)
+    mi = {i["key"]: i["value"] for i in macro_context["items"]}
+    print(f"Macro: STLFSI4={mi['stlfsi']} NFCI={mi['nfci']} USD={mi['usd']} "
+          f"2s10s={mi['curve_2s10s']} RecProb={mi['recession_prob']}")
+
     # 6.6 Sparkline серии — 2г седмично-децимиран Close per ETF (за Rotation Radar)
     spark_src = filter_prices(prices_df, tickers).resample("W-FRI").last()
     spark_map = {}
@@ -179,7 +195,7 @@ def main():
         deltas, screener, fundamentals, rs_signals,
         category_map, name_map, benchmark_map, output_path,
         barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
-        spark_map=spark_map
+        spark_map=spark_map, macro=macro_context
     )
 
     print("\n=== Update Complete ===")

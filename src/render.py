@@ -39,6 +39,7 @@ def render_frontend_data(
     ohlcv_df: "pd.DataFrame | None" = None,
     flows_df: "pd.DataFrame | None" = None,
     spark_map: "dict | None" = None,
+    macro: "dict | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -107,6 +108,8 @@ def render_frontend_data(
     }
     if barometer is not None:
         payload["barometer"] = barometer
+    if macro is not None:
+        payload["macro"] = macro
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
