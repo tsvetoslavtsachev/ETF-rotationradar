@@ -486,5 +486,21 @@ function renderHeatmap() {
   });
 })();
 
+// ── Print / PDF snapshot (форсира светла тема, после възстановява) ──
+(function setupPrint() {
+  const btn = document.getElementById("btn-print");
+  if (!btn) return;
+  let restoreDark = false;
+  btn.addEventListener("click", () => {
+    restoreDark = document.documentElement.getAttribute("data-theme") !== "light";
+    document.documentElement.setAttribute("data-theme", "light");
+    window.print();
+  });
+  window.addEventListener("afterprint", () => {
+    if (restoreDark) document.documentElement.removeAttribute("data-theme");
+    restoreDark = false;
+  });
+})();
+
 // ── Bootstrap ──────────────────────────────────────────────
 loadData();

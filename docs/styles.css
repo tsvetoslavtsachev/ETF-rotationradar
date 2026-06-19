@@ -369,3 +369,25 @@ tbody td {
   .section-header { flex-direction: column; align-items: flex-start; }
   main { padding: 1rem; }
 }
+
+/* ── Print / PDF snapshot (Tier 3) ──────────────────────────── */
+/* JS форсира data-theme=light преди печат → мастило-икономичен, paste-ready */
+@media print {
+  @page { margin: 1.2cm; }
+  body { background: #fff; font-size: 11px; }
+  header { position: static !important; box-shadow: none !important; }
+
+  /* скрий интерактивните контроли — на хартия не вършат работа */
+  button, select, .tab-nav, .section-header label { display: none !important; }
+
+  /* печатай само активния таб */
+  .tab-content { display: none !important; }
+  .tab-content.active { display: block !important; }
+
+  /* запази цветовете на чиповете/лентите/сигналите при печат */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* не режи редове/карти през страничните граници; повтаряй хедъра */
+  tr, .q-item, .reg-chip, .rs-card, .heatmap-cell { break-inside: avoid; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+}
