@@ -41,6 +41,7 @@ def render_frontend_data(
     spark_map: "dict | None" = None,
     macro: "dict | None" = None,
     betas_df: "pd.DataFrame | None" = None,
+    lookthrough_df: "pd.DataFrame | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -74,6 +75,10 @@ def render_frontend_data(
     if betas_df is not None and not betas_df.empty:
         df = df.merge(betas_df, on="ticker", how="left")
 
+    # Merge ETF look-through (S18 batch 3) — conc_top10 + JSON колони (парсват се долу)
+    if lookthrough_df is not None and not lookthrough_df.empty:
+        df = df.merge(lookthrough_df, on="ticker", how="left")
+
     # Merge Fundamentals
     if not fundamentals_df.empty:
         df = df.merge(fundamentals_df, on="ticker", how="left")
@@ -105,6 +110,20 @@ def render_frontend_data(
             sp = spark_map.get(r.get("ticker"))
             if sp is not None:
                 r["spark"] = sp
+
+    # Look-through (S18 batch 3) — парсваме JSON-стринг колоните в nested списъци
+    # (holdings/sectors за tooltip) и махаме суровите _json полета от payload-а.
+    for r in records:
+        for raw, key in (("top_holdings_json", "holdings"), ("top_sectors_json", "sectors")):
+            if raw in r:
+                val = r.pop(raw)
+                if val:
+                    try:
+                        parsed = json.loads(val)
+                        if parsed:
+                            r[key] = parsed
+                    except (ValueError, TypeError):
+                        pass
 
     payload = {
         "as_of": as_of_str,

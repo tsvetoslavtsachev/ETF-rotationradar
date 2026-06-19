@@ -151,6 +151,7 @@ const EXPORT_COLS = [
   ["stop_distance_pct", "Stop%"], ["expense_ratio", "ExpRatio%"], ["yield", "Yield%"],
   ["pe_ratio", "PE"], ["aum", "AUM"], ["dollar_vol_20d", "DollarVol20d"],
   ["est_flow_pct", "Flow%"], ["beta_1y", "Beta1Y"], ["corr_1y", "Corr1Y"],
+  ["conc_top10", "ConcTop10%"],
 ];
 function csvCell(v) {
   if (v == null) return "";
@@ -173,6 +174,19 @@ function exportScreenerCSV() {
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
+}
+
+// ── Look-through tooltip (S18) — топ holdings + сектори за концентрацията ──
+function concTooltip(e) {
+  const parts = [];
+  if (Array.isArray(e.holdings) && e.holdings.length) {
+    parts.push("Топ holdings: " + e.holdings.map(h => `${h[0]} ${h[1]}%`).join(", "));
+  }
+  if (Array.isArray(e.sectors) && e.sectors.length) {
+    parts.push("Сектори: " + e.sectors.map(s => `${s[0]} ${s[1]}%`).join(", "));
+  }
+  // escape за HTML title атрибута (кавички/амперсанд)
+  return parts.join(" | ").replace(/"/g, "&quot;").replace(/&(?!quot;)/g, "&amp;");
 }
 
 // ── Rotation Radar ─────────────────────────────────────────
@@ -272,6 +286,7 @@ function renderScreener() {
       <td class="num-cell">${fmtFlow(e.est_flow_pct, e.est_flow, e.flow_dir, e.flow_window_days)}</td>
       <td class="num-cell">${e.beta_1y != null ? fmtNum(e.beta_1y, 2) : "—"}</td>
       <td class="num-cell">${e.corr_1y != null ? fmtNum(e.corr_1y, 2) : "—"}</td>
+      <td class="num-cell" title="${concTooltip(e)}">${e.conc_top10 != null ? fmtNum(e.conc_top10, 1) + "%" : "—"}</td>
     </tr>`;
   }).join("");
 }

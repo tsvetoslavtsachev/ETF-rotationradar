@@ -124,6 +124,7 @@
               <option value="est_flow_pct">Net flow %</option>
               <option value="beta_1y">Beta 1Y</option>
               <option value="corr_1y">Corr 1Y</option>
+              <option value="conc_top10">Концентрация %</option>
               <option value="aum">AUM</option>
               <option value="yield">Yield</option>
             </select>
@@ -156,6 +157,7 @@
               <th class="sortable" data-col="est_flow_pct" title="Оценен нетен поток (creation/redemption) за прозореца, като % от активите — мащаб+посока, груба оценка. AUM-делта минус пазарното движение. Пълни се напред; '—' докато историята покрие прозореца.">Flow%</th>
               <th class="sortable" data-col="beta_1y" title="1-годишна СЕДМИЧНА бета спрямо SPY (52 седмични доходности). 1.0 = движи се като пазара; >1 по-агресивно, <1 по-защитно. Тактическа (текущ режим), не оценъчна бета; седмично лекува десинхрона на международни/суровинни ETF.">β 1Y</th>
               <th class="sortable" data-col="corr_1y" title="1-годишна СЕДМИЧНА корелация спрямо SPY. Близо до 1 = плътно следва пазара; ниско/отрицателно = диверсификатор.">Corr</th>
+              <th class="sortable" data-col="conc_top10" title="Концентрация: дял на топ holding-ите (обикн. топ-10) в %. Високо = малко имена носят фонда (риск). Hover за топ-5 holdings + сектори. Само за акционни ETF.">Конц.%</th>
             </tr>
           </thead>
           <tbody id="screener-body"></tbody>

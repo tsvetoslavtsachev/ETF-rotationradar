@@ -215,6 +215,32 @@ try:
     assert payload2.get("macro") and len(payload2["macro"]["items"]) == len(MACRO_SERIES) + 1, \
         "macro context (5 FRED + GLD/COPX) missing from rendered payload"
 
+    step("11. ETF look-through (synthetic summarize + render coverage, без мрежа)")
+    from src.lookthrough import summarize_funds
+    th = pd.DataFrame(
+        {"Name": ["NVIDIA Corp", "Apple Inc", "Microsoft Corp"],
+         "Holding Percent": [0.13, 0.12, 0.085]},
+        index=pd.Index(["NVDA", "AAPL", "MSFT"], name="Symbol"))
+    sw = {"technology": 0.30, "financial_services": 0.13, "healthcare": 0.10, "energy": 0.0}
+    conc, holds, sects = summarize_funds(sw, th)
+    print(f"conc={conc} holds={holds} sects={sects}")
+    assert conc == 33.5, f"top-10 concentration should be 33.5, got {conc}"
+    assert holds[0] == ["NVDA", 13.0], "top holding should be NVDA 13.0%"
+    assert len(sects) == 3 and sects[0] == ["Technology", 30.0], "sectors top should be Technology 30%"
+    assert all(lbl != "energy" for lbl, _ in sects), "zero-weight sector should be dropped"
+    # render coverage: JSON колоните се парсват в nested holdings/sectors; суровите се махат
+    lt = pd.DataFrame([{
+        "ticker": "QQQ", "conc_top10": conc,
+        "top_holdings_json": json.dumps(holds), "top_sectors_json": json.dumps(sects)}])
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map, lookthrough_df=lt)
+    payload3 = json.load(open(out))
+    qqq = next(e for e in payload3["etfs"] if e["ticker"] == "QQQ")
+    assert qqq.get("conc_top10") == conc, "conc_top10 missing from payload"
+    assert isinstance(qqq.get("holdings"), list) and qqq["holdings"][0][0] == "NVDA", \
+        "parsed holdings missing from payload"
+    assert "top_holdings_json" not in qqq, "raw JSON column should be stripped from payload"
+
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
     print("\n\n>>> SMOKE TEST FAILED <<<")

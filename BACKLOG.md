@@ -28,7 +28,7 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 - [x] ~~Recession-probability gauge: RECPROUSM156N~~ — **S17** (Chauvet-Piger smoothed %).
 - [x] ~~Gold/Copper ratio (GLD / COPX) — growth-vs-fear tell~~ — **S18 (2026-06-19)**: 6-ти display-only макро-чип (robust_z; COPX=миньори не фючърси, документирана конвенция). И GLD, и COPX вече във вселената → нула нови вызови.
 - [x] ~~Rolling beta & correlation to SPY~~ — **S18 (2026-06-19)**: вградено като **1-годишна СЕДМИЧНА** бета/корелация (`beta_1y`/`corr_1y`, 52 W-FRI доходности), НЕ 90д дневна. Решение след сравнение 90д/252д/52с/104с: седмично лекува десинхрона на intl/суровинни ETF (EWY дневна 3.46→седмична 2.2; GLD 1.12→0.51); 1г (не 2г Bloomberg) защото инструментът е тактически — 2г размива режима (XLE −0.63→+0.36). Конвенция за целия инструмент (ETF, акции). 2 Screener колони + sort + CSV.
-- [ ] ETF look-through: sector weights + top-10 concentration (yfinance `funds_data`)  *(batch 3)*
+- [x] ~~ETF look-through: sector weights + top-10 concentration (yfinance `funds_data`)~~ — **S18 batch 3 (2026-06-19)**: `src/lookthrough.py` (отделен модул, собствен кеш `data/lookthrough.parquet`, само акционни ~93 ETF). Концентрация (топ-10 %) = сортируема Screener колона „Конц.%"; hover tooltip = топ-5 holdings + топ-3 сектора. GLD/TLT self-gate (празно). XLK 61.8% / EWY 61.2% (top-heavy) vs SPY 39.2%. Имена на holdings = symbols (за intl напр. 000660.KS; човешки имена = 1-add ако потрябва).
 - [ ] CFTC COT positioning for commodity/rate ETFs (CFTC Socrata CSV, keyless)  *(batch 4)*
 
 ## Tier 3 — bigger UX

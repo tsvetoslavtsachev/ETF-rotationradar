@@ -32,6 +32,7 @@ from src.barometer import compute_barometer
 from src.macro_context import compute_macro_context, compute_gold_copper_item, MACRO_SERIES
 from src.flows import append_aum_snapshot, load_aum_history, compute_flows
 from src.beta import compute_betas
+from src.lookthrough import compute_lookthrough
 from src.render import render_frontend_data
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -200,6 +201,15 @@ def main():
     betas = compute_betas(prices_df, tickers)
     print(f"Computed beta/corr for {len(betas)} ETFs (full 52-week window)")
 
+    # 6.9 ETF look-through (S18 batch 3) — секторни тегла + концентрация на топ
+    #     holdings от yfinance funds_data. Само акционни ETF; кеш 7 дни.
+    print("\nComputing ETF look-through (sector weights + top holdings)...")
+    lookthrough = compute_lookthrough(
+        tickers, category_map=category_map, cache_path=DATA_DIR / "lookthrough.parquet"
+    )
+    n_conc = int(lookthrough["conc_top10"].notna().sum()) if not lookthrough.empty else 0
+    print(f"Look-through: {n_conc} ETFs with concentration data")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     name_map = get_name_map()
@@ -208,7 +218,8 @@ def main():
         deltas, screener, fundamentals, rs_signals,
         category_map, name_map, benchmark_map, output_path,
         barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
-        spark_map=spark_map, macro=macro_context, betas_df=betas
+        spark_map=spark_map, macro=macro_context, betas_df=betas,
+        lookthrough_df=lookthrough
     )
 
     print("\n=== Update Complete ===")
