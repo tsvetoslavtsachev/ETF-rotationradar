@@ -193,11 +193,12 @@ def main():
             spark_map[t] = [round(float(x), 3) for x in s.tail(104).tolist()]
     print(f"Built sparkline series for {len(spark_map)} ETFs")
 
-    # 6.8 90д бета / корелация спрямо SPY (S18) — per-ETF Screener колони,
+    # 6.8 1г СЕДМИЧНА бета / корелация спрямо SPY (S18) — per-ETF Screener колони,
     #     на вече свалените цени (нула нови вызови). SPY е в prices_df (бенчмарк).
-    print("\nComputing 90d beta/correlation to SPY...")
+    #     Седмично+1г = тактическа конвенция (лекува десинхрон. на intl/суровини).
+    print("\nComputing 1-year weekly beta/correlation to SPY...")
     betas = compute_betas(prices_df, tickers)
-    print(f"Computed beta/corr for {len(betas)} ETFs (full {90}-day window)")
+    print(f"Computed beta/corr for {len(betas)} ETFs (full 52-week window)")
 
     # 7. Render to JSON
     print("\nRendering frontend data...")

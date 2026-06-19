@@ -70,7 +70,7 @@ def render_frontend_data(
     if flows_df is not None and not flows_df.empty:
         df = df.merge(flows_df, on="ticker", how="left")
 
-    # Merge 90д бета / корелация спрямо SPY (S18) — beta_90d / corr_90d
+    # Merge 1г седмична бета / корелация спрямо SPY (S18) — beta_1y / corr_1y
     if betas_df is not None and not betas_df.empty:
         df = df.merge(betas_df, on="ticker", how="left")
 

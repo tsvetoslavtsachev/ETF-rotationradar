@@ -90,16 +90,17 @@ try:
     assert np.isfinite(spy["atr_14"]) and np.isfinite(spy["stop_distance_pct"]), "SPY ATR/stop not finite"
     assert np.isfinite(spy["dollar_vol_20d"]) and spy["liquidity_flag"] == "ok", "SPY liquidity wrong"
 
-    step("6c. compute_betas (90d beta/corr to SPY)")
+    step("6c. compute_betas (1Y weekly beta/corr to SPY)")
     from src.beta import compute_betas
     betas = compute_betas(prices, tickers)
     print(betas.to_string())
     assert not betas.empty, "betas empty"
+    assert {"beta_1y", "corr_1y"}.issubset(betas.columns), "beta/corr columns renamed?"
     spy_b = betas[betas["ticker"] == "SPY"]
     assert not spy_b.empty, "SPY beta row missing"
     # SPY спрямо себе си: beta = var/var = 1.0, corr = 1.0 (точно, до закръгляне)
-    assert abs(spy_b["beta_90d"].iloc[0] - 1.0) < 0.05, "SPY beta to itself should be ~1.0"
-    assert abs(spy_b["corr_90d"].iloc[0] - 1.0) < 0.02, "SPY corr to itself should be ~1.0"
+    assert abs(spy_b["beta_1y"].iloc[0] - 1.0) < 0.05, "SPY beta to itself should be ~1.0"
+    assert abs(spy_b["corr_1y"].iloc[0] - 1.0) < 0.02, "SPY corr to itself should be ~1.0"
 
     step("7. render_frontend_data")
     out = Path(__file__).parent.parent / "docs" / "_smoke_data.json"
@@ -116,8 +117,8 @@ try:
     print("Sample record:", json.dumps(payload['etfs'][0], indent=2))
     assert any(isinstance(e.get("spark"), list) and len(e["spark"]) >= 2 for e in payload["etfs"]), \
         "sparkline data missing from rendered payload"
-    assert any(e.get("beta_90d") is not None for e in payload["etfs"]), \
-        "beta_90d missing from rendered payload"
+    assert any(e.get("beta_1y") is not None for e in payload["etfs"]), \
+        "beta_1y missing from rendered payload"
 
     step(f"8. compute_barometer ({len(INDICATORS)} indicators)")
     # S15: 10 индикатора. TIP/IEF + IWF/IWD махнати; XLE/SPY вече robust_z.
