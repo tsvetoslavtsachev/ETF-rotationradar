@@ -93,11 +93,18 @@ try:
     step("7. render_frontend_data")
     out = Path(__file__).parent.parent / "docs" / "_smoke_data.json"
     fund_empty = pd.DataFrame(columns=["ticker"])
-    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out, ohlcv_df=ohlcv_scr)
+    spark_map = {
+        t: [round(float(x), 3) for x in prices[t].resample("W-FRI").last().dropna().tail(104).tolist()]
+        for t in tickers if t in prices.columns
+    }
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map)
     import json
     payload = json.load(open(out))
     print(f"as_of={payload['as_of']}, n_etfs={len(payload['etfs'])}, categories={payload['categories']}")
     print("Sample record:", json.dumps(payload['etfs'][0], indent=2))
+    assert any(isinstance(e.get("spark"), list) and len(e["spark"]) >= 2 for e in payload["etfs"]), \
+        "sparkline data missing from rendered payload"
 
     step(f"8. compute_barometer ({len(INDICATORS)} indicators)")
     # S15: 10 индикатора. TIP/IEF + IWF/IWD махнати; XLE/SPY вече robust_z.

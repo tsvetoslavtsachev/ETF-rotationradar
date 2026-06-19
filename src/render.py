@@ -38,6 +38,7 @@ def render_frontend_data(
     barometer: "dict | None" = None,
     ohlcv_df: "pd.DataFrame | None" = None,
     flows_df: "pd.DataFrame | None" = None,
+    spark_map: "dict | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -90,7 +91,15 @@ def render_frontend_data(
 
     # Convert to list of dicts
     records = df.to_dict(orient="records")
-        
+
+    # Sparkline серия per ETF (2г седмично-децимиран Close) — добавя се след
+    # to_dict, за да не се бори с dtype-овете на df (списък в колона).
+    if spark_map:
+        for r in records:
+            sp = spark_map.get(r.get("ticker"))
+            if sp is not None:
+                r["spark"] = sp
+
     payload = {
         "as_of": as_of_str,
         "etfs": records,

@@ -162,6 +162,15 @@ def main():
           f"| alarm={conf['alarm_count']} base={conf['base_count']} net={conf['net']} "
           f"conf={conf['has_confluence']} {conf['direction'] or ''}")
 
+    # 6.6 Sparkline серии — 2г седмично-децимиран Close per ETF (за Rotation Radar)
+    spark_src = filter_prices(prices_df, tickers).resample("W-FRI").last()
+    spark_map = {}
+    for t in spark_src.columns:
+        s = spark_src[t].dropna()
+        if len(s) >= 8:
+            spark_map[t] = [round(float(x), 3) for x in s.tail(104).tolist()]
+    print(f"Built sparkline series for {len(spark_map)} ETFs")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     name_map = get_name_map()
@@ -169,7 +178,8 @@ def main():
     render_frontend_data(
         deltas, screener, fundamentals, rs_signals,
         category_map, name_map, benchmark_map, output_path,
-        barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows
+        barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
+        spark_map=spark_map
     )
 
     print("\n=== Update Complete ===")

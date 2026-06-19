@@ -3,6 +3,7 @@
 let DATA = null;
 let sortCol = "percentile_rank";
 let sortDir = -1; // descending
+let lastScreenerSorted = []; // последно показаните редове (за CSV export)
 
 // ── Tab Navigation ─────────────────────────────────────────
 document.querySelectorAll(".tab-btn").forEach(btn => {
@@ -50,6 +51,7 @@ function init() {
     renderScreener();
   });
   document.getElementById("rs-signal-filter").addEventListener("change", renderRS);
+  document.getElementById("btn-export-csv").addEventListener("click", exportScreenerCSV);
 
   // Table header sort
   document.querySelectorAll("th.sortable").forEach(th => {
@@ -122,6 +124,56 @@ function filteredByCategory(catSelectId) {
   return cat === "all" ? DATA.etfs : DATA.etfs.filter(e => e.category === cat);
 }
 
+// ── Sparkline (inline SVG, 2г седмично-децимиран Close) ─────
+// „Формата на тренда" до всеки ранг. Зелено ако последното ≥ първото, иначе червено.
+function sparkline(data) {
+  if (!Array.isArray(data) || data.length < 2) return "";
+  const w = 60, h = 16, n = data.length;
+  const min = Math.min(...data), max = Math.max(...data), range = (max - min) || 1;
+  const pts = data.map((v, i) =>
+    `${(i / (n - 1) * w).toFixed(1)},${(h - (v - min) / range * h).toFixed(1)}`).join(" ");
+  const up = data[n - 1] >= data[0];
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" `
+    + `preserveAspectRatio="none" aria-hidden="true">`
+    + `<polyline points="${pts}" fill="none" stroke="${up ? 'var(--green)' : 'var(--red)'}" `
+    + `stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+}
+
+// ── CSV Export (Screener) ──────────────────────────────────
+// Изнася ТЕКУЩИЯ изглед (същия филтър + сортиране като таблицата), сурови числа —
+// чист handoff към публикационния pipeline. Client-side, без зависимости.
+const EXPORT_COLS = [
+  ["ticker", "Ticker"], ["name", "Name"], ["category", "Category"],
+  ["percentile_rank", "Rank%"], ["ret_1m", "Ret1M%"], ["ret_3m", "Ret3M%"],
+  ["ret_12m", "Ret12M%"], ["sharpe_12m", "Sharpe"], ["max_dd_12m", "MaxDD%"],
+  ["dist_52w_high", "vs52wH%"], ["drawdown_now", "DDnow%"], ["atr_pct", "ATR%"],
+  ["stop_distance_pct", "Stop%"], ["expense_ratio", "ExpRatio%"], ["yield", "Yield%"],
+  ["pe_ratio", "PE"], ["aum", "AUM"], ["dollar_vol_20d", "DollarVol20d"],
+  ["est_flow_pct", "Flow%"],
+];
+function csvCell(v) {
+  if (v == null) return "";
+  const s = typeof v === "number"
+    ? (Number.isInteger(v) ? String(v) : String(+v.toFixed(4)))
+    : String(v);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+function exportScreenerCSV() {
+  const rows = lastScreenerSorted.length ? lastScreenerSorted
+    : filteredByCategory("screener-cat-filter");
+  const header = EXPORT_COLS.map(c => c[1]).join(",");
+  const body = rows.map(e => EXPORT_COLS.map(c => csvCell(e[c[0]])).join(",")).join("\n");
+  const blob = new Blob([header + "\n" + body], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `etf-screener-${DATA.as_of || "latest"}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
 // ── Rotation Radar ─────────────────────────────────────────
 function renderRadar() {
   const window = document.getElementById("window-filter").value;
@@ -166,6 +218,7 @@ function renderRadar() {
           <span class="q-name">${e.name || ""}</span>
         </div>
         <div class="q-item-right">
+          ${sparkline(e.spark)}
           ${rs}
           <span class="q-rank">${rank}%</span>
           ${deltaHtml}
@@ -185,6 +238,7 @@ function renderScreener() {
     return sortDir * (av - bv);
   });
 
+  lastScreenerSorted = sorted;
   const tbody = document.getElementById("screener-body");
   tbody.innerHTML = sorted.map(e => {
     const rankPct = e.percentile_rank != null ? parseFloat(e.percentile_rank) : null;

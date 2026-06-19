@@ -230,6 +230,7 @@ main {
   border: 1px solid var(--border);
 }
 .q-item-right { display: flex; align-items: center; gap: 0.5rem; }
+.spark { vertical-align: middle; display: inline-block; opacity: 0.85; }
 .q-rank { font-size: 0.85rem; font-weight: 600; }
 .q-delta { font-size: 0.78rem; }
 .positive { color: var(--green); }

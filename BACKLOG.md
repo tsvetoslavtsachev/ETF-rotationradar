@@ -17,9 +17,9 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 ## Tier 1 — cheap, high intuition (do next)
 - [x] ~~**ATR(14) + Chandelier stop**~~ — shipped 2026-06-07 (ATR14 Wilder; Chandelier = highest-high(22) − 3×ATR; `stop_distance_pct` = position-sizing number)
 - [x] ~~**Dollar-volume trend + liquidity flag**~~ — shipped 2026-06-07 (ADV20 in $; trend = ADV20/ADV63; `liquidity_flag` thin <$5M heuristic)
-- [ ] **CSV / Excel export of the Screener** — client-side, zero-dep (CSV) / SheetJS (xlsx). Clean handoff into the weekly publication pipeline.
+- [x] ~~**CSV export of the Screener**~~ — **S17 (2026-06-19)**: client-side, zero-dep `⤓ CSV` бутон; изнася текущия филтриран+сортиран изглед със СУРОВИ стойности (чист handoff към публикацията). `etf-screener-{as_of}.csv`. (xlsx/SheetJS = 1-add ако потрябва.)
 - [x] ~~**Light/dark theme toggle**~~ — shipped 2026-06-07
-- [ ] **Per-ETF inline SVG sparklines** — 2y weekly-decimated Close; ~15 lines vanilla JS. "Shape of the trend" next to each rank.
+- [x] ~~**Per-ETF inline SVG sparklines**~~ — **S17 (2026-06-19)**: 2г седмично-децимиран Close (104 точки, W-FRI), inline SVG до всеки ранг в Rotation Radar; зелено/червено по посока. Backend: `spark_map` в daily_update→render; frontend `sparkline()`.
 
 ## Tier 2 — macro / regime overlays (tie into the barometer)
 - [ ] Credit-stress strip: HY OAS + **STLFSI4** / **NFCI** (FRED, keyless)
