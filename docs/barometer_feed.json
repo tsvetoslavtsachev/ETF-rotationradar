@@ -33,13 +33,13 @@
     },
     {
       "indicator": "VIX",
-      "value": 16.4,
+      "value": 17.04,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
       "z": null,
       "zone": "base",
-      "trend": "up"
+      "trend": "down"
     },
     {
       "indicator": "10Y breakeven",
@@ -73,11 +73,11 @@
     },
     {
       "indicator": "XLY/XLP",
-      "value": 1.4065,
+      "value": 1.3801,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 0.21,
+      "z": 0.04,
       "zone": "base",
       "trend": "down"
     },
@@ -134,10 +134,10 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 8.6,
+      "dist_to_alarm": 7.96,
       "z": null,
-      "trend_4w": "up",
-      "change_4w_pct": 22.39
+      "trend_4w": "down",
+      "change_4w_pct": -5.73
     },
     {
       "indicator": "10Y breakeven",
@@ -171,7 +171,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 0.21,
+      "z": 0.04,
       "trend_4w": "down",
       "change_4w_pct": -4.47
     },

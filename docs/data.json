@@ -36,6 +36,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.01,
       "corr_1y": 0.96,
+      "conc_top10": 25.0,
       "aum": 32931053568.0,
       "expense_ratio": 0.32,
       "yield": 1.38,
@@ -149,6 +150,42 @@
         153.393,
         155.46,
         157.74
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          4.75
+        ],
+        [
+          "AAPL",
+          4.46
+        ],
+        [
+          "MSFT",
+          3.1
+        ],
+        [
+          "AMZN",
+          2.55
+        ],
+        [
+          "GOOGL",
+          2.16
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          32.8
+        ],
+        [
+          "Financials",
+          15.3
+        ],
+        [
+          "Industrials",
+          10.4
+        ]
       ]
     },
     {
@@ -186,6 +223,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.09,
       "corr_1y": 0.31,
+      "conc_top10": null,
       "aum": 136455700480.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 3.9600000000000004,
@@ -336,6 +374,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.73,
       "corr_1y": 0.86,
+      "conc_top10": 42.7,
       "aum": 10853201920.0,
       "expense_ratio": 0.6799999999999999,
       "yield": 0.13999999999999999,
@@ -449,6 +488,42 @@
         62.52,
         64.0,
         66.8
+      ],
+      "holdings": [
+        [
+          "000660.KS",
+          7.11
+        ],
+        [
+          "MU",
+          5.76
+        ],
+        [
+          "AMD",
+          4.8
+        ],
+        [
+          "005930.KS",
+          4.79
+        ],
+        [
+          "INTC",
+          4.17
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          77.4
+        ],
+        [
+          "Communication",
+          11.0
+        ],
+        [
+          "Cons. Cyclical",
+          7.2
+        ]
       ]
     },
     {
@@ -486,6 +561,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.81,
       "corr_1y": 0.54,
+      "conc_top10": 61.0,
       "aum": 1306909696.0,
       "expense_ratio": 0.75,
       "yield": null,
@@ -599,6 +675,34 @@
         33.41,
         33.47,
         36.86
+      ],
+      "holdings": [
+        [
+          "TWST",
+          8.56
+        ],
+        [
+          "CRSP",
+          8.22
+        ],
+        [
+          "TEM",
+          7.78
+        ],
+        [
+          "PSNL",
+          6.4
+        ],
+        [
+          "TXG",
+          6.29
+        ]
+      ],
+      "sectors": [
+        [
+          "Healthcare",
+          100.0
+        ]
       ]
     },
     {
@@ -636,6 +740,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 2.04,
       "corr_1y": 0.72,
+      "conc_top10": 50.8,
       "aum": 7262198784.0,
       "expense_ratio": 0.75,
       "yield": null,
@@ -749,6 +854,42 @@
         74.49,
         75.65,
         80.19
+      ],
+      "holdings": [
+        [
+          "TSLA",
+          10.27
+        ],
+        [
+          "AMD",
+          5.51
+        ],
+        [
+          "HOOD",
+          5.14
+        ],
+        [
+          "CRSP",
+          4.94
+        ],
+        [
+          "TEM",
+          4.78
+        ]
+      ],
+      "sectors": [
+        [
+          "Healthcare",
+          28.1
+        ],
+        [
+          "Technology",
+          25.9
+        ],
+        [
+          "Financials",
+          16.2
+        ]
       ]
     },
     {
@@ -772,7 +913,7 @@
       "ret_12m": 4.496,
       "vol_1m": 1.8928,
       "vol_3m": 3.1508,
-      "vol_12m": 2.7675,
+      "vol_12m": 2.7676,
       "sharpe_12m": 1.6246,
       "max_dd_12m": -3.0671,
       "dist_52w_high": -0.4804,
@@ -786,6 +927,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.11,
       "corr_1y": 0.45,
+      "conc_top10": null,
       "aum": 7154355712.0,
       "expense_ratio": 0.64999997,
       "yield": 6.61,
@@ -904,7 +1046,7 @@
     {
       "ticker": "BLOK",
       "current_rank": 32.25806451612903,
-      "abs_strength": 47.32824427480916,
+      "abs_strength": 48.091603053435115,
       "rank_1m_ago": 32.25806451612903,
       "rank_3m_ago": 45.16129032258064,
       "base_rank_6m": 50.806451612903224,
@@ -936,6 +1078,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 2.26,
       "corr_1y": 0.72,
+      "conc_top10": 35.7,
       "aum": 1425362176.0,
       "expense_ratio": 0.69999998,
       "yield": 0.6,
@@ -1049,6 +1192,42 @@
         61.07,
         64.04,
         66.78
+      ],
+      "holdings": [
+        [
+          "HUT",
+          4.67
+        ],
+        [
+          "CIFR",
+          4.41
+        ],
+        [
+          "WULF",
+          4.14
+        ],
+        [
+          "GLXY",
+          3.73
+        ],
+        [
+          "CORZ",
+          3.44
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          54.3
+        ],
+        [
+          "Technology",
+          35.2
+        ],
+        [
+          "Cons. Cyclical",
+          6.6
+        ]
       ]
     },
     {
@@ -1073,7 +1252,7 @@
       "vol_1m": 3.6508,
       "vol_3m": 4.213,
       "vol_12m": 3.7305,
-      "sharpe_12m": 1.2828,
+      "sharpe_12m": 1.2829,
       "max_dd_12m": -2.6755,
       "dist_52w_high": -1.1475,
       "drawdown_now": -1.1475,
@@ -1086,6 +1265,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.09,
       "corr_1y": 0.31,
+      "conc_top10": null,
       "aum": 394429661184.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 3.94,
@@ -1225,8 +1405,8 @@
       "vol_12m": 3.4565,
       "sharpe_12m": 0.705,
       "max_dd_12m": -2.9328,
-      "dist_52w_high": -0.8308,
-      "drawdown_now": -0.8308,
+      "dist_52w_high": -0.8309,
+      "drawdown_now": -0.8309,
       "atr_14": 0.147,
       "atr_pct": 0.3041,
       "chandelier_stop": 47.9989,
@@ -1236,6 +1416,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.1,
       "corr_1y": 0.38,
+      "conc_top10": null,
       "aum": 122032054272.0,
       "expense_ratio": 0.06999999999999999,
       "yield": 4.46,
@@ -1258,7 +1439,7 @@
         46.112,
         46.37,
         46.269,
-        46.388,
+        46.389,
         46.238,
         46.146,
         46.423,
@@ -1386,6 +1567,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.63,
       "corr_1y": 0.82,
+      "conc_top10": 58.7,
       "aum": 3743227648.0,
       "expense_ratio": 0.6799999999999999,
       "yield": 0.58999998,
@@ -1499,6 +1681,42 @@
         37.98,
         37.12,
         38.37
+      ],
+      "holdings": [
+        [
+          "6861.T",
+          9.28
+        ],
+        [
+          "ABBN.SW",
+          9.02
+        ],
+        [
+          "6954.T",
+          8.97
+        ],
+        [
+          "NVDA",
+          8.26
+        ],
+        [
+          "ISRG",
+          6.13
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          49.3
+        ],
+        [
+          "Technology",
+          31.8
+        ],
+        [
+          "Healthcare",
+          8.0
+        ]
       ]
     },
     {
@@ -1536,6 +1754,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.12,
       "corr_1y": 0.41,
+      "conc_top10": 59.7,
       "aum": 1174444416.0,
       "expense_ratio": 0.5,
       "yield": 0.029999999000000003,
@@ -1649,6 +1868,42 @@
         35.22,
         34.11,
         33.89
+      ],
+      "holdings": [
+        [
+          "OKTA",
+          7.45
+        ],
+        [
+          "CRWD",
+          7.3
+        ],
+        [
+          "FTNT",
+          7.29
+        ],
+        [
+          "PANW",
+          6.99
+        ],
+        [
+          "AKAM",
+          6.46
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          100.0
+        ],
+        [
+          "Communication",
+          0.0
+        ],
+        [
+          "Cons. Cyclical",
+          0.0
+        ]
       ]
     },
     {
@@ -1686,6 +1941,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.11,
       "corr_1y": 0.55,
+      "conc_top10": 62.7,
       "aum": 13681273856.0,
       "expense_ratio": 0.58,
       "yield": 0.45999999999999996,
@@ -1729,7 +1985,7 @@
         67.211,
         69.021,
         71.039,
-        67.3,
+        67.301,
         65.73,
         65.551,
         64.437,
@@ -1799,6 +2055,42 @@
         86.7,
         85.33,
         84.54
+      ],
+      "holdings": [
+        [
+          "CRWD",
+          10.93
+        ],
+        [
+          "PANW",
+          10.52
+        ],
+        [
+          "FTNT",
+          8.84
+        ],
+        [
+          "CSCO",
+          8.43
+        ],
+        [
+          "AVGO",
+          7.77
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          95.4
+        ],
+        [
+          "Industrials",
+          2.7
+        ],
+        [
+          "Communication",
+          1.9
+        ]
       ]
     },
     {
@@ -1836,6 +2128,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.02,
       "corr_1y": 0.41,
+      "conc_top10": 47.6,
       "aum": 268760608.0,
       "expense_ratio": 0.6799999999999999,
       "yield": null,
@@ -1949,6 +2242,42 @@
         23.88,
         22.7,
         21.75
+      ],
+      "holdings": [
+        [
+          "SNOW",
+          6.34
+        ],
+        [
+          "DDOG",
+          6.34
+        ],
+        [
+          "DOCN",
+          5.48
+        ],
+        [
+          "AKAM",
+          4.92
+        ],
+        [
+          "NOW",
+          4.77
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          90.7
+        ],
+        [
+          "Communication",
+          4.0
+        ],
+        [
+          "Real Estate",
+          3.2
+        ]
       ]
     },
     {
@@ -1986,6 +2315,7 @@
       "liquidity_flag": "thin",
       "beta_1y": 1.42,
       "corr_1y": 0.56,
+      "conc_top10": 41.1,
       "aum": 263544912.0,
       "expense_ratio": 0.44999999999999996,
       "yield": 1.0199999,
@@ -2099,6 +2429,42 @@
         111.62,
         109.7,
         113.3
+      ],
+      "holdings": [
+        [
+          "BE",
+          5.97
+        ],
+        [
+          "SEDG",
+          5.13
+        ],
+        [
+          "BLDP.TO",
+          4.8
+        ],
+        [
+          "ENPH",
+          4.42
+        ],
+        [
+          "NXT",
+          3.71
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          40.2
+        ],
+        [
+          "Technology",
+          33.8
+        ],
+        [
+          "Utilities",
+          22.0
+        ]
       ]
     },
     {
@@ -2136,6 +2502,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 2.01,
       "corr_1y": 0.63,
+      "conc_top10": null,
       "aum": 7991804928.0,
       "expense_ratio": 0.64999997,
       "yield": 2.18,
@@ -2286,6 +2653,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.14,
       "corr_1y": 0.12,
+      "conc_top10": null,
       "aum": 251711936.0,
       "expense_ratio": 1.0,
       "yield": null,
@@ -2436,6 +2804,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.45,
       "corr_1y": 0.55,
+      "conc_top10": null,
       "aum": 800427008.0,
       "expense_ratio": 0.88,
       "yield": null,
@@ -2554,7 +2923,7 @@
     {
       "ticker": "DBA",
       "current_rank": 18.75,
-      "abs_strength": 30.53435114503817,
+      "abs_strength": 31.297709923664126,
       "rank_1m_ago": 18.75,
       "rank_3m_ago": 18.75,
       "base_rank_6m": 21.25,
@@ -2586,6 +2955,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.15,
       "corr_1y": 0.19,
+      "conc_top10": null,
       "aum": 1365882880.0,
       "expense_ratio": 0.8500000000000001,
       "yield": 3.35,
@@ -2736,6 +3106,7 @@
       "liquidity_flag": "ok",
       "beta_1y": -0.31,
       "corr_1y": -0.2,
+      "conc_top10": null,
       "aum": 1874939264.0,
       "expense_ratio": 0.8500000000000001,
       "yield": 2.53,
@@ -2886,6 +3257,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.57,
       "corr_1y": 0.71,
+      "conc_top10": 27.2,
       "aum": 40455868416.0,
       "expense_ratio": 0.08,
       "yield": 1.96,
@@ -2915,7 +3287,7 @@
         60.236,
         59.696,
         61.816,
-        60.688,
+        60.689,
         61.922,
         62.577,
         61.748,
@@ -2999,12 +3371,48 @@
         74.842,
         75.579,
         74.82
+      ],
+      "holdings": [
+        [
+          "AVGO",
+          3.42
+        ],
+        [
+          "AAPL",
+          3.32
+        ],
+        [
+          "MSFT",
+          3.16
+        ],
+        [
+          "JPM",
+          2.87
+        ],
+        [
+          "XOM",
+          2.69
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          22.0
+        ],
+        [
+          "Financials",
+          20.6
+        ],
+        [
+          "Healthcare",
+          16.5
+        ]
       ]
     },
     {
       "ticker": "DIA",
       "current_rank": 10.0,
-      "abs_strength": 46.56488549618321,
+      "abs_strength": 47.32824427480916,
       "rank_1m_ago": 10.0,
       "rank_3m_ago": 10.0,
       "base_rank_6m": 25.0,
@@ -3036,6 +3444,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.84,
       "corr_1y": 0.87,
+      "conc_top10": 56.0,
       "aum": 44786040832.0,
       "expense_ratio": 0.16,
       "yield": 1.37,
@@ -3054,13 +3463,13 @@
         383.255,
         394.814,
         399.755,
-        404.006,
+        404.007,
         392.611,
         402.774,
         409.451,
         411.768,
         412.216,
-        417.395,
+        417.396,
         421.347,
         410.147,
         409.446,
@@ -3123,7 +3532,7 @@
         475.426,
         480.745,
         477.573,
-        483.409,
+        483.41,
         480.035,
         491.34,
         489.929,
@@ -3149,6 +3558,42 @@
         508.313,
         511.664,
         515.52
+      ],
+      "holdings": [
+        [
+          "GS",
+          12.36
+        ],
+        [
+          "CAT",
+          10.56
+        ],
+        [
+          "MSFT",
+          5.43
+        ],
+        [
+          "UNH",
+          4.58
+        ],
+        [
+          "AMGN",
+          4.06
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          27.3
+        ],
+        [
+          "Technology",
+          19.1
+        ],
+        [
+          "Industrials",
+          18.1
+        ]
       ]
     },
     {
@@ -3186,6 +3631,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.36,
       "corr_1y": 0.36,
+      "conc_top10": 19.1,
       "aum": 22536437760.0,
       "expense_ratio": 0.38,
       "yield": 3.39,
@@ -3201,7 +3647,7 @@
         117.753,
         120.242,
         118.515,
-        117.307,
+        117.308,
         120.316,
         122.814,
         124.495,
@@ -3299,6 +3745,42 @@
         154.18,
         157.593,
         153.3
+      ],
+      "holdings": [
+        [
+          "MO",
+          2.22
+        ],
+        [
+          "PFE",
+          2.19
+        ],
+        [
+          "HPQ",
+          2.11
+        ],
+        [
+          "TROW",
+          2.08
+        ],
+        [
+          "F",
+          2.02
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          24.8
+        ],
+        [
+          "Utilities",
+          23.6
+        ],
+        [
+          "Cons. Defensive",
+          13.5
+        ]
       ]
     },
     {
@@ -3336,6 +3818,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.29,
       "corr_1y": 0.75,
+      "conc_top10": 39.4,
       "aum": 30325661696.0,
       "expense_ratio": 0.72000003,
       "yield": 1.77,
@@ -3449,6 +3932,42 @@
         64.256,
         67.529,
         70.79
+      ],
+      "holdings": [
+        [
+          "2330.TW",
+          14.74
+        ],
+        [
+          "005930.KS",
+          7.83
+        ],
+        [
+          "000660.KS",
+          6.81
+        ],
+        [
+          "0700.HK",
+          2.67
+        ],
+        [
+          "9988.HK",
+          2.06
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          44.3
+        ],
+        [
+          "Financials",
+          17.6
+        ],
+        [
+          "Cons. Cyclical",
+          8.4
+        ]
       ]
     },
     {
@@ -3486,6 +4005,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.05,
       "corr_1y": 0.5,
+      "conc_top10": 51.6,
       "aum": 1028573376.0,
       "expense_ratio": 0.58999998,
       "yield": 1.1400000000000001,
@@ -3566,7 +4086,7 @@
         96.715,
         98.684,
         100.829,
-        101.243,
+        101.242,
         103.851,
         98.91,
         102.118,
@@ -3599,6 +4119,42 @@
         123.353,
         129.188,
         122.97
+      ],
+      "holdings": [
+        [
+          "TEVA",
+          8.81
+        ],
+        [
+          "LUMI.TA",
+          8.0
+        ],
+        [
+          "POLI.TA",
+          7.0
+        ],
+        [
+          "TSEM.TA",
+          6.9
+        ],
+        [
+          "ESLT.TA",
+          5.41
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          33.3
+        ],
+        [
+          "Technology",
+          19.3
+        ],
+        [
+          "Industrials",
+          10.8
+        ]
       ]
     },
     {
@@ -3636,6 +4192,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.29,
       "corr_1y": 0.66,
+      "conc_top10": null,
       "aum": 14162584576.0,
       "expense_ratio": 0.38999999999999996,
       "yield": 5.04,
@@ -3679,7 +4236,7 @@
         84.142,
         84.647,
         84.964,
-        84.805,
+        84.806,
         85.935,
         85.322,
         85.069,
@@ -3754,7 +4311,7 @@
     {
       "ticker": "EWA",
       "current_rank": 26.923076923076923,
-      "abs_strength": 36.6412213740458,
+      "abs_strength": 37.404580152671755,
       "rank_1m_ago": 42.30769230769231,
       "rank_3m_ago": 53.84615384615385,
       "base_rank_6m": 25.961538461538463,
@@ -3786,6 +4343,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.82,
       "corr_1y": 0.61,
+      "conc_top10": 64.5,
       "aum": 1459037312.0,
       "expense_ratio": 0.5,
       "yield": 2.87,
@@ -3899,6 +4457,42 @@
         27.671,
         28.815,
         28.56
+      ],
+      "holdings": [
+        [
+          "BHP.AX",
+          15.67
+        ],
+        [
+          "CBA.AX",
+          13.66
+        ],
+        [
+          "WBC.AX",
+          6.09
+        ],
+        [
+          "NAB.AX",
+          5.67
+        ],
+        [
+          "ANZ.AX",
+          5.25
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          41.4
+        ],
+        [
+          "Materials",
+          26.4
+        ],
+        [
+          "Cons. Cyclical",
+          6.5
+        ]
       ]
     },
     {
@@ -3936,6 +4530,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.71,
       "corr_1y": 0.68,
+      "conc_top10": 43.2,
       "aum": 5484459008.0,
       "expense_ratio": 0.5,
       "yield": 1.3200001,
@@ -3966,7 +4561,7 @@
         39.33,
         40.317,
         40.346,
-        41.554,
+        41.555,
         41.825,
         41.467,
         40.626,
@@ -4049,6 +4644,42 @@
         57.758,
         58.485,
         57.87
+      ],
+      "holdings": [
+        [
+          "RY",
+          8.82
+        ],
+        [
+          "TD",
+          6.23
+        ],
+        [
+          "SHOP",
+          4.81
+        ],
+        [
+          "ENB.TO",
+          3.94
+        ],
+        [
+          "BMO.TO",
+          3.68
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          38.7
+        ],
+        [
+          "Energy",
+          18.3
+        ],
+        [
+          "Materials",
+          15.7
+        ]
       ]
     },
     {
@@ -4086,6 +4717,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.11,
       "corr_1y": 0.75,
+      "conc_top10": 63.0,
       "aum": 1472494336.0,
       "expense_ratio": 0.49,
       "yield": 1.5599999999999998,
@@ -4199,6 +4831,42 @@
         41.282,
         41.478,
         41.52
+      ],
+      "holdings": [
+        [
+          "SIE.DE",
+          11.96
+        ],
+        [
+          "SAP.DE",
+          9.67
+        ],
+        [
+          "ALV.DE",
+          8.66
+        ],
+        [
+          "ENR.DE",
+          7.55
+        ],
+        [
+          "IFX.DE",
+          6.32
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          29.9
+        ],
+        [
+          "Financials",
+          20.6
+        ],
+        [
+          "Technology",
+          16.3
+        ]
       ]
     },
     {
@@ -4236,6 +4904,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.09,
       "corr_1y": 0.72,
+      "conc_top10": 69.2,
       "aum": 660753856.0,
       "expense_ratio": 0.5,
       "yield": 2.56,
@@ -4278,7 +4947,7 @@
         36.812,
         36.669,
         37.03,
-        38.609,
+        38.61,
         38.619,
         38.809,
         40.759,
@@ -4349,6 +5018,42 @@
         56.917,
         59.496,
         60.6
+      ],
+      "holdings": [
+        [
+          "UCG.MI",
+          15.69
+        ],
+        [
+          "ISP.MI",
+          12.43
+        ],
+        [
+          "ENEL.MI",
+          11.23
+        ],
+        [
+          "ENI.MI",
+          5.33
+        ],
+        [
+          "PRY.MI",
+          4.59
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          47.9
+        ],
+        [
+          "Utilities",
+          18.0
+        ],
+        [
+          "Industrials",
+          11.1
+        ]
       ]
     },
     {
@@ -4386,6 +5091,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.05,
       "corr_1y": 0.63,
+      "conc_top10": 28.5,
       "aum": 21298173952.0,
       "expense_ratio": 0.49,
       "yield": 3.92,
@@ -4436,7 +5142,7 @@
         67.837,
         65.83,
         58.498,
-        62.596,
+        62.597,
         64.736,
         67.304,
         68.369,
@@ -4499,27 +5205,63 @@
         90.23,
         92.209,
         96.26
+      ],
+      "holdings": [
+        [
+          "8306.T",
+          3.91
+        ],
+        [
+          "7203.T",
+          3.52
+        ],
+        [
+          "9984.T",
+          3.4
+        ],
+        [
+          "8035.T",
+          2.87
+        ],
+        [
+          "6501.T",
+          2.79
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          24.5
+        ],
+        [
+          "Technology",
+          21.7
+        ],
+        [
+          "Financials",
+          17.0
+        ]
       ]
     },
     {
       "ticker": "EWP",
-      "current_rank": 76.92307692307693,
-      "abs_strength": 78.62595419847328,
+      "current_rank": 73.07692307692307,
+      "abs_strength": 77.86259541984732,
       "rank_1m_ago": 84.61538461538461,
       "rank_3m_ago": 80.76923076923077,
       "base_rank_6m": 89.61538461538461,
-      "delta_1m": -7.692307692307679,
-      "delta_3m": -3.8461538461538396,
+      "delta_1m": -11.538461538461547,
+      "delta_3m": -7.692307692307708,
       "quadrant_1m": "decayer",
       "quadrant_3m": "decayer",
       "name": "iShares MSCI Spain",
       "category": "Intl Equity",
       "benchmark": "VGK",
-      "percentile_rank": 76.92307692307693,
+      "percentile_rank": 73.07692307692307,
       "ret_1m": 7.4247,
       "ret_3m": 12.5258,
       "ret_6m": 13.3769,
-      "ret_12m": 43.2295,
+      "ret_12m": 43.2294,
       "vol_1m": 19.2862,
       "vol_3m": 23.0123,
       "vol_12m": 18.8168,
@@ -4536,6 +5278,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.98,
       "corr_1y": 0.66,
+      "conc_top10": 74.3,
       "aum": 1688743168.0,
       "expense_ratio": 0.5,
       "yield": 2.12,
@@ -4649,6 +5392,42 @@
         55.896,
         57.776,
         59.01
+      ],
+      "holdings": [
+        [
+          "SAN.MC",
+          18.41
+        ],
+        [
+          "IBE.MC",
+          13.63
+        ],
+        [
+          "BBVA.MC",
+          12.64
+        ],
+        [
+          "ITX.MC",
+          4.6
+        ],
+        [
+          "CABK.MC",
+          4.54
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          42.4
+        ],
+        [
+          "Utilities",
+          21.4
+        ],
+        [
+          "Industrials",
+          16.3
+        ]
       ]
     },
     {
@@ -4669,7 +5448,7 @@
       "ret_1m": 5.5912,
       "ret_3m": 8.5732,
       "ret_6m": 4.3694,
-      "ret_12m": 12.9409,
+      "ret_12m": 12.9408,
       "vol_1m": 18.9066,
       "vol_3m": 22.9661,
       "vol_12m": 17.6204,
@@ -4686,6 +5465,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.02,
       "corr_1y": 0.69,
+      "conc_top10": 57.6,
       "aum": 384979360.0,
       "expense_ratio": 0.5,
       "yield": 2.5799999000000002,
@@ -4799,6 +5579,42 @@
         44.302,
         45.533,
         45.81
+      ],
+      "holdings": [
+        [
+          "TTE.PA",
+          8.06
+        ],
+        [
+          "SU.PA",
+          8.06
+        ],
+        [
+          "MC.PA",
+          6.41
+        ],
+        [
+          "AIR.PA",
+          5.81
+        ],
+        [
+          "SAF.PA",
+          5.75
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          32.3
+        ],
+        [
+          "Financials",
+          12.7
+        ],
+        [
+          "Cons. Cyclical",
+          11.6
+        ]
       ]
     },
     {
@@ -4816,33 +5632,34 @@
       "category": "Intl Equity",
       "benchmark": "EEM",
       "percentile_rank": 42.30769230769231,
-      "ret_1m": 3.7879,
-      "ret_3m": 7.3896,
-      "ret_6m": 11.9898,
-      "ret_12m": 21.8644,
-      "vol_1m": 18.0193,
-      "vol_3m": 17.398,
-      "vol_12m": 15.3499,
-      "sharpe_12m": 1.4244,
+      "ret_1m": 3.1971,
+      "ret_3m": 7.6984,
+      "ret_6m": 11.3119,
+      "ret_12m": 21.0937,
+      "vol_1m": 18.3752,
+      "vol_3m": 18.5836,
+      "vol_12m": 15.3471,
+      "sharpe_12m": 1.3744,
       "max_dd_12m": -7.8152,
       "dist_52w_high": 0.0,
       "drawdown_now": 0.0,
-      "atr_14": 0.396,
-      "atr_pct": 1.3292,
-      "chandelier_stop": 28.7421,
-      "stop_distance_pct": 3.5177,
-      "dollar_vol_20d": 33026099.04,
-      "dollar_vol_trend": 26.4694,
+      "atr_14": 0.4034,
+      "atr_pct": 1.3632,
+      "chandelier_stop": 28.7199,
+      "stop_distance_pct": 2.9405,
+      "dollar_vol_20d": 32809644.32,
+      "dollar_vol_trend": 25.6856,
       "liquidity_flag": "ok",
       "beta_1y": 0.71,
-      "corr_1y": 0.6,
+      "corr_1y": 0.61,
+      "conc_top10": 78.8,
       "aum": 782655232.0,
       "expense_ratio": 0.5,
       "yield": 3.82,
       "pe_ratio": 16.024042,
       "holdings_turnover": 21.0,
       "is_bullish": false,
-      "days_in_trend": 62.0,
+      "days_in_trend": 61.0,
       "last_signal": -1.0,
       "spark": [
         17.617,
@@ -4948,7 +5765,43 @@
         28.968,
         28.162,
         28.634,
-        29.79
+        29.59
+      ],
+      "holdings": [
+        [
+          "D05.SI",
+          22.66
+        ],
+        [
+          "O39.SI",
+          19.74
+        ],
+        [
+          "BN4.SI",
+          4.7
+        ],
+        [
+          "S63.SI",
+          4.62
+        ],
+        [
+          "SE",
+          4.61
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          51.6
+        ],
+        [
+          "Industrials",
+          18.0
+        ],
+        [
+          "Real Estate",
+          8.9
+        ]
       ]
     },
     {
@@ -4986,6 +5839,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.48,
       "corr_1y": 0.69,
+      "conc_top10": 52.0,
       "aum": 10750864384.0,
       "expense_ratio": 0.58999998,
       "yield": 0.97,
@@ -5099,6 +5953,42 @@
         98.08,
         102.62,
         109.99
+      ],
+      "holdings": [
+        [
+          "2330.TW",
+          21.1
+        ],
+        [
+          "2454.TW",
+          7.01
+        ],
+        [
+          "2308.TW",
+          5.58
+        ],
+        [
+          "2317.TW",
+          4.08
+        ],
+        [
+          "3711.TW",
+          2.89
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          76.9
+        ],
+        [
+          "Financials",
+          11.9
+        ],
+        [
+          "Industrials",
+          3.1
+        ]
       ]
     },
     {
@@ -5136,6 +6026,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.63,
       "corr_1y": 0.57,
+      "conc_top10": 52.8,
       "aum": 3447056896.0,
       "expense_ratio": 0.5,
       "yield": 3.5099998,
@@ -5249,23 +6140,59 @@
         45.725,
         46.494,
         45.46
+      ],
+      "holdings": [
+        [
+          "HSBA.L",
+          10.32
+        ],
+        [
+          "AZN.L",
+          8.99
+        ],
+        [
+          "SHEL.L",
+          7.55
+        ],
+        [
+          "RR.L",
+          4.84
+        ],
+        [
+          "BATS.L",
+          3.97
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          25.7
+        ],
+        [
+          "Healthcare",
+          14.5
+        ],
+        [
+          "Industrials",
+          13.2
+        ]
       ]
     },
     {
       "ticker": "EWW",
-      "current_rank": 80.76923076923077,
-      "abs_strength": 79.38931297709924,
+      "current_rank": 76.92307692307693,
+      "abs_strength": 78.62595419847328,
       "rank_1m_ago": 76.92307692307693,
       "rank_3m_ago": 96.15384615384616,
       "base_rank_6m": 87.88461538461539,
-      "delta_1m": 3.8461538461538396,
-      "delta_3m": -15.384615384615387,
+      "delta_1m": 0.0,
+      "delta_3m": -19.230769230769226,
       "quadrant_1m": "stable_winner",
       "quadrant_3m": "decayer",
       "name": "iShares MSCI Mexico",
       "category": "Intl Equity",
       "benchmark": "EEM",
-      "percentile_rank": 80.76923076923077,
+      "percentile_rank": 76.92307692307693,
       "ret_1m": 1.2229,
       "ret_3m": 8.7115,
       "ret_6m": 14.9209,
@@ -5286,6 +6213,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.9,
       "corr_1y": 0.52,
+      "conc_top10": 63.3,
       "aum": 1987181568.0,
       "expense_ratio": 0.5,
       "yield": 3.0700000000000003,
@@ -5399,6 +6327,42 @@
         74.011,
         77.332,
         77.33
+      ],
+      "holdings": [
+        [
+          "GMEXICOB.MX",
+          14.62
+        ],
+        [
+          "GFNORTEO.MX",
+          9.99
+        ],
+        [
+          "AMXB.MX",
+          8.09
+        ],
+        [
+          "FEMSAUBD.MX",
+          8.0
+        ],
+        [
+          "CEMEXCPO.MX",
+          4.74
+        ]
+      ],
+      "sectors": [
+        [
+          "Materials",
+          26.2
+        ],
+        [
+          "Cons. Defensive",
+          23.9
+        ],
+        [
+          "Financials",
+          17.8
+        ]
       ]
     },
     {
@@ -5436,6 +6400,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 2.23,
       "corr_1y": 0.61,
+      "conc_top10": 61.2,
       "aum": 24140621824.0,
       "expense_ratio": 0.58999998,
       "yield": 0.9900000000000001,
@@ -5549,50 +6514,87 @@
         175.19,
         197.45,
         219.2
+      ],
+      "holdings": [
+        [
+          "000660.KS",
+          23.68
+        ],
+        [
+          "005930.KS",
+          21.79
+        ],
+        [
+          "009150.KS",
+          3.5
+        ],
+        [
+          "402340.KS",
+          3.06
+        ],
+        [
+          "005380.KS",
+          2.51
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          56.7
+        ],
+        [
+          "Industrials",
+          17.7
+        ],
+        [
+          "Financials",
+          8.6
+        ]
       ]
     },
     {
       "ticker": "EWZ",
-      "current_rank": 73.07692307692307,
-      "abs_strength": 77.09923664122137,
+      "current_rank": 80.76923076923077,
+      "abs_strength": 79.38931297709924,
       "rank_1m_ago": 92.3076923076923,
       "rank_3m_ago": 84.61538461538461,
       "base_rank_6m": 87.88461538461539,
-      "delta_1m": -19.23076923076924,
-      "delta_3m": -11.538461538461547,
+      "delta_1m": -11.538461538461533,
+      "delta_3m": -3.8461538461538396,
       "quadrant_1m": "decayer",
       "quadrant_3m": "decayer",
       "name": "iShares MSCI Brazil",
       "category": "Intl Equity",
       "benchmark": "EEM",
-      "percentile_rank": 73.07692307692307,
-      "ret_1m": -5.1237,
-      "ret_3m": -6.7093,
-      "ret_6m": 8.1214,
-      "ret_12m": 25.3798,
-      "vol_1m": 20.6223,
-      "vol_3m": 27.1297,
-      "vol_12m": 25.1899,
-      "sharpe_12m": 1.0075,
+      "percentile_rank": 80.76923076923077,
+      "ret_1m": -6.2746,
+      "ret_3m": -5.0338,
+      "ret_6m": 6.1386,
+      "ret_12m": 25.8966,
+      "vol_1m": 22.6164,
+      "vol_3m": 28.1761,
+      "vol_12m": 25.1611,
+      "sharpe_12m": 1.0292,
       "max_dd_12m": -19.2667,
-      "dist_52w_high": -18.4014,
-      "drawdown_now": -18.4014,
-      "atr_14": 0.746,
-      "atr_pct": 2.2118,
-      "chandelier_stop": 34.6904,
-      "stop_distance_pct": -2.8472,
-      "dollar_vol_20d": 841184506.73,
-      "dollar_vol_trend": -21.8376,
+      "dist_52w_high": -17.4821,
+      "drawdown_now": -17.4821,
+      "atr_14": 0.7611,
+      "atr_pct": 2.2313,
+      "chandelier_stop": 34.6451,
+      "stop_distance_pct": -1.5688,
+      "dollar_vol_20d": 877848888.89,
+      "dollar_vol_trend": -19.1887,
       "liquidity_flag": "ok",
       "beta_1y": 0.84,
       "corr_1y": 0.4,
+      "conc_top10": 57.9,
       "aum": 10174738432.0,
       "expense_ratio": 0.58999998,
       "yield": 4.5900002,
       "pe_ratio": 12.516334,
       "holdings_turnover": 19.0,
       "is_bullish": false,
-      "days_in_trend": 51.0,
+      "days_in_trend": 50.0,
       "last_signal": -1.0,
       "spark": [
         24.542,
@@ -5698,13 +6700,49 @@
         35.571,
         33.689,
         34.769,
-        33.73
+        34.11
+      ],
+      "holdings": [
+        [
+          "VALE3.SA",
+          11.3
+        ],
+        [
+          "NU",
+          8.74
+        ],
+        [
+          "ITUB4",
+          8.14
+        ],
+        [
+          "PETR4",
+          6.86
+        ],
+        [
+          "PETR3.SA",
+          6.5
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          33.4
+        ],
+        [
+          "Energy",
+          16.7
+        ],
+        [
+          "Materials",
+          15.2
+        ]
       ]
     },
     {
       "ticker": "EZU",
       "current_rank": 34.61538461538461,
-      "abs_strength": 42.74809160305343,
+      "abs_strength": 43.51145038167939,
       "rank_1m_ago": 26.923076923076923,
       "rank_3m_ago": 30.76923076923077,
       "base_rank_6m": 51.730769230769226,
@@ -5736,6 +6774,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.07,
       "corr_1y": 0.75,
+      "conc_top10": 28.6,
       "aum": 9371091968.0,
       "expense_ratio": 0.5,
       "yield": 2.6600001,
@@ -5849,6 +6888,42 @@
         66.439,
         68.699,
         69.31
+      ],
+      "holdings": [
+        [
+          "ASML.AS",
+          8.28
+        ],
+        [
+          "SIE.DE",
+          3.09
+        ],
+        [
+          "SAP.DE",
+          2.5
+        ],
+        [
+          "SAN.MC",
+          2.37
+        ],
+        [
+          "TTE.PA",
+          2.28
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          24.0
+        ],
+        [
+          "Industrials",
+          21.0
+        ],
+        [
+          "Technology",
+          16.4
+        ]
       ]
     },
     {
@@ -5886,6 +6961,7 @@
       "liquidity_flag": "thin",
       "beta_1y": 0.57,
       "corr_1y": 0.41,
+      "conc_top10": 53.4,
       "aum": 319683360.0,
       "expense_ratio": 0.6,
       "yield": 0.97,
@@ -5999,6 +7075,42 @@
         25.06,
         24.9,
         24.82
+      ],
+      "holdings": [
+        [
+          "VWS.CO",
+          8.25
+        ],
+        [
+          "ORSTED.CO",
+          8.15
+        ],
+        [
+          "NDX1.DE",
+          7.15
+        ],
+        [
+          "EDPR.LS",
+          6.61
+        ],
+        [
+          "NPI.TO",
+          5.85
+        ]
+      ],
+      "sectors": [
+        [
+          "Utilities",
+          55.7
+        ],
+        [
+          "Industrials",
+          41.3
+        ],
+        [
+          "Cons. Cyclical",
+          1.7
+        ]
       ]
     },
     {
@@ -6036,6 +7148,7 @@
       "liquidity_flag": "thin",
       "beta_1y": 1.84,
       "corr_1y": 0.7,
+      "conc_top10": 50.4,
       "aum": 195602784.0,
       "expense_ratio": 0.6799999999999999,
       "yield": 0.64999997,
@@ -6149,6 +7262,42 @@
         23.652,
         24.22,
         24.97
+      ],
+      "holdings": [
+        [
+          "HOOD",
+          6.85
+        ],
+        [
+          "XYZ",
+          6.57
+        ],
+        [
+          "PYPL",
+          5.5
+        ],
+        [
+          "COIN",
+          5.38
+        ],
+        [
+          "FISV",
+          5.18
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          52.9
+        ],
+        [
+          "Financials",
+          42.0
+        ],
+        [
+          "Industrials",
+          3.8
+        ]
       ]
     },
     {
@@ -6186,6 +7335,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.03,
       "corr_1y": 0.5,
+      "conc_top10": null,
       "aum": 9512147968.0,
       "expense_ratio": 0.15,
       "yield": 4.6,
@@ -6205,7 +7355,7 @@
         46.584,
         46.693,
         46.73,
-        46.757,
+        46.758,
         46.84,
         46.886,
         46.941,
@@ -6219,7 +7369,7 @@
         47.389,
         47.417,
         47.484,
-        47.53,
+        47.531,
         47.584,
         47.649,
         47.687,
@@ -6239,7 +7389,7 @@
         47.724,
         48.112,
         48.226,
-        48.291,
+        48.29,
         48.31,
         48.443,
         48.462,
@@ -6322,7 +7472,7 @@
       "ret_12m": 0.4916,
       "vol_1m": 5.3226,
       "vol_3m": 5.2832,
-      "vol_12m": 6.2417,
+      "vol_12m": 6.2418,
       "sharpe_12m": 0.0788,
       "max_dd_12m": -5.0154,
       "dist_52w_high": -4.5008,
@@ -6336,13 +7486,14 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.25,
       "corr_1y": 0.5,
+      "conc_top10": null,
       "aum": 408586560.0,
       "expense_ratio": 0.4,
       "yield": 0.74,
       "pe_ratio": null,
       "holdings_turnover": 0.0,
       "is_bullish": false,
-      "days_in_trend": 28.0,
+      "days_in_trend": 27.0,
       "last_signal": -1.0,
       "spark": [
         96.633,
@@ -6352,7 +7503,7 @@
         98.139,
         98.689,
         98.777,
-        99.796,
+        99.797,
         101.345,
         100.149,
         100.498,
@@ -6391,7 +7542,7 @@
         103.978,
         103.474,
         103.077,
-        102.046,
+        102.045,
         104.049,
         104.029,
         104.419,
@@ -6486,13 +7637,14 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.26,
       "corr_1y": 0.46,
+      "conc_top10": null,
       "aum": 489049888.0,
       "expense_ratio": 0.4,
       "yield": null,
       "pe_ratio": null,
       "holdings_turnover": 0.0,
       "is_bullish": false,
-      "days_in_trend": 27.0,
+      "days_in_trend": 26.0,
       "last_signal": -1.0,
       "spark": [
         98.99,
@@ -6636,6 +7788,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.92,
       "corr_1y": 0.61,
+      "conc_top10": 55.4,
       "aum": 5520180736.0,
       "expense_ratio": 0.73,
       "yield": 2.6300002,
@@ -6749,6 +7902,42 @@
         34.491,
         35.027,
         33.3
+      ],
+      "holdings": [
+        [
+          "9988.HK",
+          8.43
+        ],
+        [
+          "00939",
+          8.24
+        ],
+        [
+          "0700.HK",
+          7.21
+        ],
+        [
+          "01398",
+          5.89
+        ],
+        [
+          "1810.HK",
+          5.37
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          34.8
+        ],
+        [
+          "Cons. Cyclical",
+          26.4
+        ],
+        [
+          "Communication",
+          16.3
+        ]
       ]
     },
     {
@@ -6786,13 +7975,14 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.16,
       "corr_1y": 0.27,
+      "conc_top10": null,
       "aum": 438157920.0,
       "expense_ratio": 0.4,
       "yield": null,
       "pe_ratio": null,
       "holdings_turnover": 0.0,
       "is_bullish": false,
-      "days_in_trend": 28.0,
+      "days_in_trend": 27.0,
       "last_signal": -1.0,
       "spark": [
         57.53,
@@ -6936,6 +8126,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.6,
       "corr_1y": 0.42,
+      "conc_top10": null,
       "aum": 27132413952.0,
       "expense_ratio": 0.50999997,
       "yield": 0.70999996,
@@ -7086,6 +8277,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.89,
       "corr_1y": 0.44,
+      "conc_top10": null,
       "aum": 8646438912.0,
       "expense_ratio": 0.52,
       "yield": 2.2399999999999998,
@@ -7204,7 +8396,7 @@
     {
       "ticker": "GII",
       "current_rank": 29.03225806451613,
-      "abs_strength": 45.038167938931295,
+      "abs_strength": 41.98473282442748,
       "rank_1m_ago": 29.03225806451613,
       "rank_3m_ago": 29.03225806451613,
       "base_rank_6m": 32.74193548387097,
@@ -7216,33 +8408,34 @@
       "category": "Thematic",
       "benchmark": "SPY",
       "percentile_rank": 29.03225806451613,
-      "ret_1m": 0.7398,
-      "ret_3m": 0.3424,
-      "ret_6m": 10.334,
-      "ret_12m": 17.904,
-      "vol_1m": 12.7782,
-      "vol_3m": 13.3502,
-      "vol_12m": 10.8859,
-      "sharpe_12m": 1.6447,
+      "ret_1m": 0.5245,
+      "ret_3m": 0.1662,
+      "ret_6m": 8.886,
+      "ret_12m": 16.332,
+      "vol_1m": 12.8422,
+      "vol_3m": 14.3373,
+      "vol_12m": 10.8743,
+      "sharpe_12m": 1.5019,
       "max_dd_12m": -5.9429,
-      "dist_52w_high": -3.0979,
-      "drawdown_now": -3.0979,
-      "atr_14": 0.7479,
-      "atr_pct": 0.9903,
-      "chandelier_stop": 74.1464,
-      "stop_distance_pct": 1.8189,
-      "dollar_vol_20d": 3078637.53,
-      "dollar_vol_trend": -49.6629,
+      "dist_52w_high": -3.6496,
+      "drawdown_now": -3.6496,
+      "atr_14": 0.7431,
+      "atr_pct": 0.9896,
+      "chandelier_stop": 74.1607,
+      "stop_distance_pct": 1.2376,
+      "dollar_vol_20d": 2981555.17,
+      "dollar_vol_trend": -51.1477,
       "liquidity_flag": "thin",
-      "beta_1y": 0.21,
-      "corr_1y": 0.24,
+      "beta_1y": 0.2,
+      "corr_1y": 0.23,
+      "conc_top10": 38.3,
       "aum": 964808448.0,
       "expense_ratio": 0.4,
       "yield": 2.92,
       "pe_ratio": 21.116558,
       "holdings_turnover": 10.0,
       "is_bullish": false,
-      "days_in_trend": 63.0,
+      "days_in_trend": 62.0,
       "last_signal": -1.0,
       "spark": [
         51.455,
@@ -7348,7 +8541,43 @@
         74.906,
         74.36,
         75.5,
-        75.52
+        75.09
+      ],
+      "holdings": [
+        [
+          "TCL.AX",
+          5.51
+        ],
+        [
+          "AENA.MC",
+          4.92
+        ],
+        [
+          "NEE",
+          4.8
+        ],
+        [
+          "ENB.TO",
+          4.07
+        ],
+        [
+          "IBE.MC",
+          3.84
+        ]
+      ],
+      "sectors": [
+        [
+          "Utilities",
+          42.1
+        ],
+        [
+          "Industrials",
+          39.5
+        ],
+        [
+          "Energy",
+          18.3
+        ]
       ]
     },
     {
@@ -7386,6 +8615,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.51,
       "corr_1y": 0.27,
+      "conc_top10": null,
       "aum": 150367518720.0,
       "expense_ratio": 0.4,
       "yield": null,
@@ -7521,7 +8751,7 @@
       "ret_6m": 0.3152,
       "ret_12m": 3.6851,
       "vol_1m": 3.2464,
-      "vol_3m": 3.8734,
+      "vol_3m": 3.8733,
       "vol_12m": 3.5945,
       "sharpe_12m": 1.0252,
       "max_dd_12m": -2.8341,
@@ -7536,6 +8766,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.05,
       "corr_1y": 0.2,
+      "conc_top10": null,
       "aum": 41892425728.0,
       "expense_ratio": 0.05,
       "yield": 3.56,
@@ -7654,7 +8885,7 @@
     {
       "ticker": "HACK",
       "current_rank": 19.35483870967742,
-      "abs_strength": 31.297709923664126,
+      "abs_strength": 32.06106870229007,
       "rank_1m_ago": 22.58064516129032,
       "rank_3m_ago": 22.58064516129032,
       "base_rank_6m": 20.64516129032258,
@@ -7686,6 +8917,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.91,
       "corr_1y": 0.44,
+      "conc_top10": 59.8,
       "aum": 2465017856.0,
       "expense_ratio": 0.6,
       "yield": 0.059999997,
@@ -7799,6 +9031,38 @@
         97.3,
         96.05,
         96.0
+      ],
+      "holdings": [
+        [
+          "CRWD",
+          7.78
+        ],
+        [
+          "PANW",
+          7.77
+        ],
+        [
+          "AVGO",
+          7.46
+        ],
+        [
+          "CSCO",
+          6.82
+        ],
+        [
+          "FTNT",
+          6.41
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          93.1
+        ],
+        [
+          "Industrials",
+          6.9
+        ]
       ]
     },
     {
@@ -7836,6 +9100,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.21,
       "corr_1y": 0.74,
+      "conc_top10": null,
       "aum": 16106322944.0,
       "expense_ratio": 0.49,
       "yield": 5.84,
@@ -7881,7 +9146,7 @@
         73.773,
         73.671,
         74.115,
-        73.831,
+        73.83,
         73.301,
         73.617,
         73.226,
@@ -7903,7 +9168,7 @@
         76.036,
         76.263,
         76.163,
-        76.392,
+        76.391,
         76.62,
         76.991,
         77.001,
@@ -7915,7 +9180,7 @@
         76.857,
         77.598,
         77.944,
-        77.675,
+        77.674,
         77.617,
         77.51,
         77.655,
@@ -7986,6 +9251,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.51,
       "corr_1y": 0.27,
+      "conc_top10": null,
       "aum": 69916966912.0,
       "expense_ratio": 0.25,
       "yield": null,
@@ -8136,6 +9402,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.76,
       "corr_1y": 0.52,
+      "conc_top10": 44.7,
       "aum": 7944343040.0,
       "expense_ratio": 0.44,
       "yield": 0.22999999999999998,
@@ -8249,6 +9516,34 @@
         168.416,
         170.636,
         173.64
+      ],
+      "holdings": [
+        [
+          "GILD",
+          7.42
+        ],
+        [
+          "VRTX",
+          7.4
+        ],
+        [
+          "AMGN",
+          7.13
+        ],
+        [
+          "REGN",
+          5.69
+        ],
+        [
+          "ALNY",
+          3.61
+        ]
+      ],
+      "sectors": [
+        [
+          "Healthcare",
+          100.0
+        ]
       ]
     },
     {
@@ -8286,6 +9581,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.09,
       "corr_1y": 0.57,
+      "conc_top10": 55.1,
       "aum": 3209411328.0,
       "expense_ratio": 0.38999999999999996,
       "yield": 1.1400000000000001,
@@ -8399,6 +9695,42 @@
         21.263,
         20.864,
         21.1
+      ],
+      "holdings": [
+        [
+          "BE",
+          12.14
+        ],
+        [
+          "FSLR",
+          9.55
+        ],
+        [
+          "NXT",
+          8.4
+        ],
+        [
+          "ENPH",
+          5.92
+        ],
+        [
+          "600900.SS",
+          5.31
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          37.2
+        ],
+        [
+          "Utilities",
+          32.0
+        ],
+        [
+          "Industrials",
+          29.3
+        ]
       ]
     },
     {
@@ -8436,6 +9768,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.08,
       "corr_1y": 0.22,
+      "conc_top10": null,
       "aum": 48318722048.0,
       "expense_ratio": 0.15,
       "yield": 3.8699999999999997,
@@ -8499,7 +9832,7 @@
         91.053,
         91.813,
         91.496,
-        91.072,
+        91.071,
         91.149,
         91.477,
         92.686,
@@ -8512,7 +9845,7 @@
         93.913,
         93.515,
         93.976,
-        94.474,
+        94.473,
         94.941,
         95.039,
         94.415,
@@ -8586,6 +9919,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.26,
       "corr_1y": 0.75,
+      "conc_top10": 34.5,
       "aum": 162030354432.0,
       "expense_ratio": 0.09000000400000001,
       "yield": 2.21,
@@ -8699,12 +10033,48 @@
         78.003,
         81.912,
         85.63
+      ],
+      "holdings": [
+        [
+          "2330.TW",
+          12.91
+        ],
+        [
+          "005930.KS",
+          6.85
+        ],
+        [
+          "000660.KS",
+          5.95
+        ],
+        [
+          "0700.HK",
+          2.34
+        ],
+        [
+          "9988.HK",
+          1.8
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          42.1
+        ],
+        [
+          "Financials",
+          16.7
+        ],
+        [
+          "Cons. Cyclical",
+          8.5
+        ]
       ]
     },
     {
       "ticker": "IEUR",
       "current_rank": 30.76923076923077,
-      "abs_strength": 41.98473282442748,
+      "abs_strength": 42.74809160305343,
       "rank_1m_ago": 34.61538461538461,
       "rank_3m_ago": 26.923076923076923,
       "base_rank_6m": 40.19230769230769,
@@ -8736,6 +10106,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.97,
       "corr_1y": 0.75,
+      "conc_top10": 18.5,
       "aum": 8913497088.0,
       "expense_ratio": 0.1,
       "yield": 2.77,
@@ -8849,6 +10220,42 @@
         72.859,
         74.868,
         74.7
+      ],
+      "holdings": [
+        [
+          "ASML.AS",
+          4.0
+        ],
+        [
+          "HSBA.L",
+          2.06
+        ],
+        [
+          "ROP.SW",
+          1.89
+        ],
+        [
+          "AZN.L",
+          1.8
+        ],
+        [
+          "NOVN.SW",
+          1.77
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          22.5
+        ],
+        [
+          "Industrials",
+          20.2
+        ],
+        [
+          "Healthcare",
+          12.5
+        ]
       ]
     },
     {
@@ -8872,7 +10279,7 @@
       "ret_12m": 31.8643,
       "vol_1m": 17.6047,
       "vol_3m": 18.0549,
-      "vol_12m": 15.1695,
+      "vol_12m": 15.1694,
       "sharpe_12m": 2.1006,
       "max_dd_12m": -8.4008,
       "dist_52w_high": -1.1081,
@@ -8886,6 +10293,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.5,
       "corr_1y": 0.44,
+      "conc_top10": 33.1,
       "aum": 4143374336.0,
       "expense_ratio": 0.3,
       "yield": 1.6,
@@ -8999,6 +10407,42 @@
         61.099,
         61.867,
         61.99
+      ],
+      "holdings": [
+        [
+          "CAT",
+          4.89
+        ],
+        [
+          "PWR",
+          4.17
+        ],
+        [
+          "UNP",
+          3.93
+        ],
+        [
+          "NEE",
+          3.63
+        ],
+        [
+          "CSX",
+          3.32
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          39.0
+        ],
+        [
+          "Utilities",
+          38.0
+        ],
+        [
+          "Materials",
+          15.2
+        ]
       ]
     },
     {
@@ -9036,6 +10480,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.56,
       "corr_1y": 0.41,
+      "conc_top10": 75.3,
       "aum": 2991947776.0,
       "expense_ratio": 0.38,
       "yield": 0.44999999999999996,
@@ -9149,6 +10594,34 @@
         50.004,
         49.595,
         49.07
+      ],
+      "holdings": [
+        [
+          "ISRG",
+          16.01
+        ],
+        [
+          "ABT",
+          15.81
+        ],
+        [
+          "SYK",
+          11.16
+        ],
+        [
+          "EW",
+          5.38
+        ],
+        [
+          "IDXX",
+          4.97
+        ]
+      ],
+      "sectors": [
+        [
+          "Healthcare",
+          100.0
+        ]
       ]
     },
     {
@@ -9169,7 +10642,7 @@
       "ret_1m": 6.3245,
       "ret_3m": 12.7971,
       "ret_6m": 14.8857,
-      "ret_12m": 27.4618,
+      "ret_12m": 27.4619,
       "vol_1m": 16.3126,
       "vol_3m": 17.2433,
       "vol_12m": 15.8708,
@@ -9186,6 +10659,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.83,
       "corr_1y": 0.71,
+      "conc_top10": 8.3,
       "aum": 119166820352.0,
       "expense_ratio": 0.05,
       "yield": 1.1900000000000002,
@@ -9299,6 +10773,42 @@
         73.766,
         75.851,
         75.78
+      ],
+      "holdings": [
+        [
+          "FLEX",
+          1.58
+        ],
+        [
+          "TWLO",
+          0.82
+        ],
+        [
+          "FTI",
+          0.79
+        ],
+        [
+          "CW",
+          0.78
+        ],
+        [
+          "NVT",
+          0.77
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          24.7
+        ],
+        [
+          "Technology",
+          17.8
+        ],
+        [
+          "Financials",
+          13.8
+        ]
       ]
     },
     {
@@ -9318,7 +10828,7 @@
       "percentile_rank": 80.0,
       "ret_1m": 7.8724,
       "ret_3m": 17.0017,
-      "ret_6m": 17.6947,
+      "ret_6m": 17.6946,
       "ret_12m": 37.0633,
       "vol_1m": 17.5107,
       "vol_3m": 17.2456,
@@ -9336,6 +10846,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.93,
       "corr_1y": 0.68,
+      "conc_top10": 7.5,
       "aum": 103489478656.0,
       "expense_ratio": 0.059999997,
       "yield": 1.15,
@@ -9358,7 +10869,7 @@
         106.854,
         110.597,
         113.111,
-        113.233,
+        113.232,
         112.475,
         112.883,
         114.777,
@@ -9369,7 +10880,7 @@
         121.48,
         122.918,
         120.965,
-        119.324,
+        119.323,
         113.572,
         113.542,
         113.964,
@@ -9449,6 +10960,42 @@
         137.265,
         143.237,
         143.21
+      ],
+      "holdings": [
+        [
+          "XTSLA",
+          1.69
+        ],
+        [
+          "SANM",
+          0.83
+        ],
+        [
+          "SMTC",
+          0.83
+        ],
+        [
+          "VIAV",
+          0.66
+        ],
+        [
+          "VSAT",
+          0.64
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          17.3
+        ],
+        [
+          "Financials",
+          16.5
+        ],
+        [
+          "Industrials",
+          15.1
+        ]
       ]
     },
     {
@@ -9486,6 +11033,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.77,
       "corr_1y": 0.58,
+      "conc_top10": 34.7,
       "aum": 6759351296.0,
       "expense_ratio": 0.61000003,
       "yield": null,
@@ -9599,6 +11147,42 @@
         47.34,
         48.33,
         49.58
+      ],
+      "holdings": [
+        [
+          "RELIANCE.NS",
+          6.33
+        ],
+        [
+          "HDFCBANK.NS",
+          6.15
+        ],
+        [
+          "ICICIBANK.NS",
+          4.68
+        ],
+        [
+          "BHARTIARTL.NS",
+          3.91
+        ],
+        [
+          "INFY.NS",
+          2.76
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          28.9
+        ],
+        [
+          "Cons. Cyclical",
+          12.0
+        ],
+        [
+          "Industrials",
+          10.6
+        ]
       ]
     },
     {
@@ -9636,6 +11220,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.9,
       "corr_1y": 0.55,
+      "conc_top10": 74.3,
       "aum": 14330825728.0,
       "expense_ratio": 0.38,
       "yield": 0.45999999999999996,
@@ -9749,6 +11334,34 @@
         229.289,
         233.626,
         238.99
+      ],
+      "holdings": [
+        [
+          "GE",
+          20.16
+        ],
+        [
+          "RTX",
+          14.32
+        ],
+        [
+          "BA",
+          9.61
+        ],
+        [
+          "RKLB",
+          5.28
+        ],
+        [
+          "HWM",
+          4.69
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          100.0
+        ]
       ]
     },
     {
@@ -9786,6 +11399,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.0,
       "corr_1y": 1.0,
+      "conc_top10": 39.2,
       "aum": 854916988928.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 1.06,
@@ -9800,7 +11414,7 @@
         548.866,
         538.084,
         533.61,
-        522.283,
+        522.282,
         522.36,
         543.397,
         551.001,
@@ -9858,7 +11472,7 @@
         640.839,
         640.661,
         642.786,
-        652.915,
+        652.914,
         660.977,
         659.015,
         666.478,
@@ -9899,6 +11513,42 @@
         738.925,
         743.144,
         750.11
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          7.88
+        ],
+        [
+          "AAPL",
+          7.04
+        ],
+        [
+          "MSFT",
+          5.14
+        ],
+        [
+          "AMZN",
+          4.06
+        ],
+        [
+          "GOOGL",
+          3.4
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          39.0
+        ],
+        [
+          "Financials",
+          11.1
+        ],
+        [
+          "Communication",
+          10.6
+        ]
       ]
     },
     {
@@ -9922,7 +11572,7 @@
       "ret_12m": 30.3921,
       "vol_1m": 13.9617,
       "vol_3m": 12.9762,
-      "vol_12m": 11.2203,
+      "vol_12m": 11.2202,
       "sharpe_12m": 2.7087,
       "max_dd_12m": -6.7858,
       "dist_52w_high": -0.6563,
@@ -9936,6 +11586,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.71,
       "corr_1y": 0.82,
+      "conc_top10": 20.9,
       "aum": 75561271296.0,
       "expense_ratio": 0.18000001,
       "yield": 1.5,
@@ -9988,7 +11639,7 @@
         166.909,
         172.522,
         172.717,
-        176.744,
+        176.743,
         181.122,
         181.269,
         187.186,
@@ -10049,6 +11700,42 @@
         235.677,
         241.369,
         242.18
+      ],
+      "holdings": [
+        [
+          "MU",
+          3.22
+        ],
+        [
+          "BRK-B",
+          2.6
+        ],
+        [
+          "JPM",
+          2.41
+        ],
+        [
+          "GOOGL",
+          2.33
+        ],
+        [
+          "AMZN",
+          2.12
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          18.6
+        ],
+        [
+          "Financials",
+          18.4
+        ],
+        [
+          "Industrials",
+          12.5
+        ]
       ]
     },
     {
@@ -10086,6 +11773,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.25,
       "corr_1y": 0.95,
+      "conc_top10": 61.1,
       "aum": 132278181888.0,
       "expense_ratio": 0.18000001,
       "yield": 0.33000002,
@@ -10199,6 +11887,42 @@
         122.582,
         121.503,
         123.19
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          13.05
+        ],
+        [
+          "AAPL",
+          11.93
+        ],
+        [
+          "MSFT",
+          8.95
+        ],
+        [
+          "AVGO",
+          5.77
+        ],
+        [
+          "AMZN",
+          5.05
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          53.9
+        ],
+        [
+          "Cons. Cyclical",
+          12.7
+        ],
+        [
+          "Communication",
+          12.4
+        ]
       ]
     },
     {
@@ -10236,6 +11960,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.12,
       "corr_1y": 0.8,
+      "conc_top10": 7.9,
       "aum": 80933363712.0,
       "expense_ratio": 0.19,
       "yield": 0.8699999999999999,
@@ -10349,12 +12074,48 @@
         280.982,
         292.255,
         295.59
+      ],
+      "holdings": [
+        [
+          "BE",
+          1.82
+        ],
+        [
+          "CRDO",
+          1.12
+        ],
+        [
+          "STRL",
+          0.75
+        ],
+        [
+          "IONQ",
+          0.73
+        ],
+        [
+          "FN",
+          0.69
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          19.2
+        ],
+        [
+          "Industrials",
+          17.8
+        ],
+        [
+          "Healthcare",
+          16.3
+        ]
       ]
     },
     {
       "ticker": "IYR",
       "current_rank": 60.0,
-      "abs_strength": 32.06106870229007,
+      "abs_strength": 32.82442748091603,
       "rank_1m_ago": 40.0,
       "rank_3m_ago": 40.0,
       "base_rank_6m": 51.0,
@@ -10386,6 +12147,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.56,
       "corr_1y": 0.47,
+      "conc_top10": 51.2,
       "aum": 4871619584.0,
       "expense_ratio": 0.38,
       "yield": 2.22,
@@ -10499,6 +12261,38 @@
         102.039,
         103.86,
         100.45
+      ],
+      "holdings": [
+        [
+          "WELL",
+          9.69
+        ],
+        [
+          "PLD",
+          9.34
+        ],
+        [
+          "EQIX",
+          4.79
+        ],
+        [
+          "SPG",
+          4.72
+        ],
+        [
+          "DLR",
+          4.58
+        ]
+      ],
+      "sectors": [
+        [
+          "Real Estate",
+          99.4
+        ],
+        [
+          "Communication",
+          0.6
+        ]
       ]
     },
     {
@@ -10536,6 +12330,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.23,
       "corr_1y": 0.76,
+      "conc_top10": null,
       "aum": 7700293120.0,
       "expense_ratio": 0.4,
       "yield": 6.59,
@@ -10550,7 +12345,7 @@
         83.951,
         83.924,
         84.215,
-        84.015,
+        84.014,
         84.245,
         85.246,
         85.849,
@@ -10686,6 +12481,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.29,
       "corr_1y": 0.62,
+      "conc_top10": 63.6,
       "aum": 6225812480.0,
       "expense_ratio": 0.69999998,
       "yield": 7.85,
@@ -10799,6 +12595,42 @@
         26.38,
         26.49,
         25.24
+      ],
+      "holdings": [
+        [
+          "9988.HK",
+          9.46
+        ],
+        [
+          "0700.HK",
+          9.3
+        ],
+        [
+          "PDD",
+          7.66
+        ],
+        [
+          "9999.HK",
+          7.02
+        ],
+        [
+          "3690.HK",
+          6.8
+        ]
+      ],
+      "sectors": [
+        [
+          "Communication",
+          41.7
+        ],
+        [
+          "Cons. Cyclical",
+          36.9
+        ],
+        [
+          "Healthcare",
+          6.0
+        ]
       ]
     },
     {
@@ -10836,6 +12668,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.18,
       "corr_1y": 0.43,
+      "conc_top10": null,
       "aum": 29782712320.0,
       "expense_ratio": 0.13999999999999999,
       "yield": 4.52,
@@ -10869,7 +12702,7 @@
         100.964,
         102.967,
         103.465,
-        101.614,
+        101.615,
         100.343,
         100.034,
         99.987,
@@ -10954,7 +12787,7 @@
     {
       "ticker": "MCHI",
       "current_rank": 19.230769230769234,
-      "abs_strength": 23.66412213740458,
+      "abs_strength": 22.900763358778626,
       "rank_1m_ago": 19.230769230769234,
       "rank_3m_ago": 15.384615384615385,
       "base_rank_6m": 37.5,
@@ -10986,6 +12819,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.97,
       "corr_1y": 0.65,
+      "conc_top10": 40.5,
       "aum": 6346572288.0,
       "expense_ratio": 0.58999998,
       "yield": 2.3,
@@ -11099,6 +12933,42 @@
         54.082,
         54.469,
         52.77
+      ],
+      "holdings": [
+        [
+          "0700.HK",
+          13.12
+        ],
+        [
+          "9988.HK",
+          10.09
+        ],
+        [
+          "00939",
+          3.58
+        ],
+        [
+          "1810.HK",
+          2.4
+        ],
+        [
+          "01398",
+          2.15
+        ]
+      ],
+      "sectors": [
+        [
+          "Cons. Cyclical",
+          24.9
+        ],
+        [
+          "Financials",
+          18.8
+        ],
+        [
+          "Communication",
+          18.1
+        ]
       ]
     },
     {
@@ -11136,6 +13006,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.83,
       "corr_1y": 0.71,
+      "conc_top10": 8.3,
       "aum": 26399574016.0,
       "expense_ratio": 0.22999999999999998,
       "yield": 1.05,
@@ -11169,7 +13040,7 @@
         598.279,
         603.324,
         596.408,
-        587.445,
+        587.444,
         560.677,
         562.643,
         565.475,
@@ -11190,7 +13061,7 @@
         494.567,
         510.071,
         528.275,
-        530.848,
+        530.847,
         556.809,
         536.83,
         540.832,
@@ -11249,6 +13120,42 @@
         672.916,
         692.018,
         691.0
+      ],
+      "holdings": [
+        [
+          "FLEX",
+          1.58
+        ],
+        [
+          "TWLO",
+          0.82
+        ],
+        [
+          "FTI",
+          0.79
+        ],
+        [
+          "CW",
+          0.79
+        ],
+        [
+          "NVT",
+          0.77
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          24.8
+        ],
+        [
+          "Technology",
+          17.4
+        ],
+        [
+          "Financials",
+          13.3
+        ]
       ]
     },
     {
@@ -11286,6 +13193,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.2,
       "corr_1y": 0.81,
+      "conc_top10": 40.1,
       "aum": 26655328256.0,
       "expense_ratio": 0.15,
       "yield": 0.62,
@@ -11375,12 +13283,12 @@
         250.748,
         254.52,
         252.225,
-        256.477,
+        256.476,
         257.864,
         254.979,
         255.379,
-        252.984,
-        250.978,
+        252.983,
+        250.977,
         254.271,
         252.455,
         240.997,
@@ -11399,6 +13307,42 @@
         306.132,
         324.042,
         338.52
+      ],
+      "holdings": [
+        [
+          "MU",
+          6.5
+        ],
+        [
+          "AMD",
+          5.2
+        ],
+        [
+          "AVGO",
+          5.08
+        ],
+        [
+          "INTC",
+          4.84
+        ],
+        [
+          "CAT",
+          3.68
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          50.2
+        ],
+        [
+          "Industrials",
+          15.0
+        ],
+        [
+          "Energy",
+          10.5
+        ]
       ]
     },
     {
@@ -11436,6 +13380,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.1,
       "corr_1y": 0.35,
+      "conc_top10": null,
       "aum": 44944617472.0,
       "expense_ratio": 0.05,
       "yield": 3.17,
@@ -11448,7 +13393,7 @@
         100.087,
         100.728,
         101.076,
-        100.925,
+        100.926,
         101.029,
         102.193,
         101.655,
@@ -11498,7 +13443,7 @@
         100.616,
         100.694,
         101.043,
-        101.266,
+        101.267,
         100.956,
         100.266,
         100.635,
@@ -11554,7 +13499,7 @@
     {
       "ticker": "NLR",
       "current_rank": 35.483870967741936,
-      "abs_strength": 48.091603053435115,
+      "abs_strength": 48.854961832061065,
       "rank_1m_ago": 83.87096774193549,
       "rank_3m_ago": 93.54838709677419,
       "base_rank_6m": 88.2258064516129,
@@ -11586,6 +13531,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.48,
       "corr_1y": 0.52,
+      "conc_top10": 57.3,
       "aum": 4874374144.0,
       "expense_ratio": 0.52,
       "yield": 2.3800000000000003,
@@ -11699,6 +13645,42 @@
         122.11,
         121.95,
         126.94
+      ],
+      "holdings": [
+        [
+          "CCO.TO",
+          8.22
+        ],
+        [
+          "CEG",
+          8.11
+        ],
+        [
+          "BWXT",
+          6.35
+        ],
+        [
+          "PEG",
+          5.91
+        ],
+        [
+          "PCG",
+          5.17
+        ]
+      ],
+      "sectors": [
+        [
+          "Energy",
+          45.2
+        ],
+        [
+          "Utilities",
+          38.1
+        ],
+        [
+          "Industrials",
+          15.0
+        ]
       ]
     },
     {
@@ -11736,6 +13718,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.14,
       "corr_1y": 0.29,
+      "conc_top10": null,
       "aum": 753974208.0,
       "expense_ratio": 0.6,
       "yield": null,
@@ -11886,6 +13869,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.86,
       "corr_1y": 0.6,
+      "conc_top10": 32.3,
       "aum": 13540407296.0,
       "expense_ratio": 0.47000000000000003,
       "yield": 0.7799999999999999,
@@ -11999,6 +13983,42 @@
         56.68,
         57.76,
         58.56
+      ],
+      "holdings": [
+        [
+          "PWR",
+          4.18
+        ],
+        [
+          "CSX",
+          3.48
+        ],
+        [
+          "ETN",
+          3.3
+        ],
+        [
+          "HWM",
+          3.27
+        ],
+        [
+          "TT",
+          3.19
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          74.4
+        ],
+        [
+          "Materials",
+          20.1
+        ],
+        [
+          "Utilities",
+          3.4
+        ]
       ]
     },
     {
@@ -12036,6 +14056,7 @@
       "liquidity_flag": "ok",
       "beta_1y": -0.33,
       "corr_1y": -0.21,
+      "conc_top10": null,
       "aum": 6073438208.0,
       "expense_ratio": 0.58999998,
       "yield": 2.9000001,
@@ -12186,6 +14207,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.88,
       "corr_1y": 0.59,
+      "conc_top10": 55.2,
       "aum": 8374877184.0,
       "expense_ratio": 0.58,
       "yield": 0.37,
@@ -12299,6 +14321,42 @@
         170.5,
         174.13,
         175.31
+      ],
+      "holdings": [
+        [
+          "BA",
+          8.67
+        ],
+        [
+          "GE",
+          8.27
+        ],
+        [
+          "RTX",
+          6.86
+        ],
+        [
+          "LMT",
+          6.17
+        ],
+        [
+          "HON",
+          4.59
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          90.5
+        ],
+        [
+          "Technology",
+          9.4
+        ],
+        [
+          "Communication",
+          0.1
+        ]
       ]
     },
     {
@@ -12336,6 +14394,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.49,
       "corr_1y": 0.35,
+      "conc_top10": null,
       "aum": 2335482368.0,
       "expense_ratio": 0.6,
       "yield": null,
@@ -12486,6 +14545,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.54,
       "corr_1y": 0.69,
+      "conc_top10": 59.6,
       "aum": 895295232.0,
       "expense_ratio": 0.58999998,
       "yield": 0.15,
@@ -12599,12 +14659,48 @@
         61.39,
         61.49,
         64.24
+      ],
+      "holdings": [
+        [
+          "BE",
+          10.6
+        ],
+        [
+          "ON",
+          10.5
+        ],
+        [
+          "MPWR",
+          7.93
+        ],
+        [
+          "FSLR",
+          7.71
+        ],
+        [
+          "TSLA",
+          6.27
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          47.6
+        ],
+        [
+          "Industrials",
+          24.8
+        ],
+        [
+          "Cons. Cyclical",
+          10.2
+        ]
       ]
     },
     {
       "ticker": "QQQ",
       "current_rank": 100.0,
-      "abs_strength": 77.86259541984732,
+      "abs_strength": 77.09923664122137,
       "rank_1m_ago": 80.0,
       "rank_3m_ago": 90.0,
       "base_rank_6m": 93.0,
@@ -12636,6 +14732,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.31,
       "corr_1y": 0.94,
+      "conc_top10": 47.5,
       "aum": 493987528704.0,
       "expense_ratio": 0.18000001,
       "yield": 0.38,
@@ -12669,12 +14766,12 @@
         501.795,
         505.714,
         522.321,
-        526.34,
+        526.339,
         514.563,
         519.268,
-        515.314,
+        515.313,
         503.995,
-        518.454,
+        518.453,
         526.294,
         519.0,
         519.626,
@@ -12749,12 +14846,48 @@
         705.06,
         721.34,
         740.62
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          8.16
+        ],
+        [
+          "AAPL",
+          7.28
+        ],
+        [
+          "MSFT",
+          5.32
+        ],
+        [
+          "MU",
+          4.8
+        ],
+        [
+          "AMZN",
+          4.62
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          58.7
+        ],
+        [
+          "Communication",
+          14.3
+        ],
+        [
+          "Cons. Cyclical",
+          11.4
+        ]
       ]
     },
     {
       "ticker": "QUAL",
       "current_rank": 36.36363636363637,
-      "abs_strength": 48.854961832061065,
+      "abs_strength": 46.56488549618321,
       "rank_1m_ago": 27.27272727272727,
       "rank_3m_ago": 45.45454545454545,
       "base_rank_6m": 40.90909090909091,
@@ -12766,36 +14899,37 @@
       "category": "Factor",
       "benchmark": "SPY",
       "percentile_rank": 36.36363636363637,
-      "ret_1m": 3.2043,
-      "ret_3m": 11.3613,
-      "ret_6m": 9.3582,
-      "ret_12m": 22.5806,
-      "vol_1m": 13.6594,
-      "vol_3m": 14.395,
-      "vol_12m": 12.1025,
-      "sharpe_12m": 1.8658,
+      "ret_1m": 1.8549,
+      "ret_3m": 10.6927,
+      "ret_6m": 8.1437,
+      "ret_12m": 20.5963,
+      "vol_1m": 14.1535,
+      "vol_3m": 14.6307,
+      "vol_12m": 12.1125,
+      "sharpe_12m": 1.7004,
       "max_dd_12m": -9.0346,
-      "dist_52w_high": -1.51,
-      "drawdown_now": -1.51,
-      "atr_14": 2.6791,
-      "atr_pct": 1.241,
-      "chandelier_stop": 211.7827,
-      "stop_distance_pct": 1.9025,
-      "dollar_vol_20d": 672656886.76,
-      "dollar_vol_trend": 69.4753,
+      "dist_52w_high": -2.167,
+      "drawdown_now": -2.167,
+      "atr_14": 2.7106,
+      "atr_pct": 1.264,
+      "chandelier_stop": 211.6883,
+      "stop_distance_pct": 1.2878,
+      "dollar_vol_20d": 664034269.18,
+      "dollar_vol_trend": 65.2517,
       "liquidity_flag": "ok",
       "beta_1y": 0.89,
       "corr_1y": 0.93,
+      "conc_top10": 44.2,
       "aum": 47113105408.0,
       "expense_ratio": 0.15,
       "yield": 0.88,
       "pe_ratio": 28.311066,
       "holdings_turnover": 21.0,
       "is_bullish": true,
-      "days_in_trend": 7.0,
+      "days_in_trend": 6.0,
       "last_signal": 1.0,
       "spark": [
-        167.397,
+        167.396,
         169.994,
         170.886,
         167.416,
@@ -12815,7 +14949,7 @@
         176.755,
         174.13,
         181.337,
-        176.559,
+        176.558,
         179.695,
         182.193,
         183.343,
@@ -12898,7 +15032,43 @@
         215.107,
         212.761,
         216.524,
-        215.89
+        214.45
+      ],
+      "holdings": [
+        [
+          "MSFT",
+          7.06
+        ],
+        [
+          "AAPL",
+          6.83
+        ],
+        [
+          "NVDA",
+          6.27
+        ],
+        [
+          "META",
+          4.27
+        ],
+        [
+          "TJX",
+          3.98
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          38.8
+        ],
+        [
+          "Communication",
+          11.8
+        ],
+        [
+          "Financials",
+          10.8
+        ]
       ]
     },
     {
@@ -12936,6 +15106,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.59,
       "corr_1y": 0.83,
+      "conc_top10": 20.0,
       "aum": 2022659456.0,
       "expense_ratio": 0.95,
       "yield": 0.33000002,
@@ -13049,6 +15220,42 @@
         83.38,
         83.0,
         86.0
+      ],
+      "holdings": [
+        [
+          "6324.T",
+          2.4
+        ],
+        [
+          "IFX.DE",
+          2.37
+        ],
+        [
+          "2049.TW",
+          2.09
+        ],
+        [
+          "QCOM",
+          1.99
+        ],
+        [
+          "CELT",
+          1.91
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          45.3
+        ],
+        [
+          "Technology",
+          43.6
+        ],
+        [
+          "Healthcare",
+          4.6
+        ]
       ]
     },
     {
@@ -13086,6 +15293,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.33,
       "corr_1y": 0.33,
+      "conc_top10": 43.5,
       "aum": 94946205696.0,
       "expense_ratio": 0.059999997,
       "yield": 3.25,
@@ -13199,12 +15407,48 @@
         32.3,
         32.82,
         31.86
+      ],
+      "holdings": [
+        [
+          "QCOM",
+          6.73
+        ],
+        [
+          "TXN",
+          5.9
+        ],
+        [
+          "UNH",
+          5.09
+        ],
+        [
+          "KO",
+          3.95
+        ],
+        [
+          "MRK",
+          3.86
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          19.4
+        ],
+        [
+          "Cons. Defensive",
+          18.5
+        ],
+        [
+          "Healthcare",
+          18.4
+        ]
       ]
     },
     {
       "ticker": "SCHH",
       "current_rank": 100.0,
-      "abs_strength": 37.404580152671755,
+      "abs_strength": 38.16793893129771,
       "rank_1m_ago": 80.0,
       "rank_3m_ago": 80.0,
       "base_rank_6m": 60.0,
@@ -13236,6 +15480,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.52,
       "corr_1y": 0.43,
+      "conc_top10": 49.6,
       "aum": 9982081024.0,
       "expense_ratio": 0.06999999999999999,
       "yield": 2.78,
@@ -13349,6 +15594,34 @@
         23.68,
         24.17,
         23.38
+      ],
+      "holdings": [
+        [
+          "WELL",
+          9.6
+        ],
+        [
+          "PLD",
+          8.94
+        ],
+        [
+          "EQIX",
+          4.88
+        ],
+        [
+          "SPG",
+          4.46
+        ],
+        [
+          "DLR",
+          4.34
+        ]
+      ],
+      "sectors": [
+        [
+          "Real Estate",
+          100.0
+        ]
       ]
     },
     {
@@ -13386,6 +15659,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.01,
       "corr_1y": 0.14,
+      "conc_top10": null,
       "aum": 25434476544.0,
       "expense_ratio": 0.15,
       "yield": 3.7100002,
@@ -13536,6 +15810,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 2.08,
       "corr_1y": 0.46,
+      "conc_top10": null,
       "aum": 5223315456.0,
       "expense_ratio": 0.64999997,
       "yield": 1.06,
@@ -13686,6 +15961,7 @@
       "liquidity_flag": "thin",
       "beta_1y": 0.78,
       "corr_1y": 0.83,
+      "conc_top10": 2.8,
       "aum": 422162240.0,
       "expense_ratio": 0.15,
       "yield": 1.4199998999999999,
@@ -13703,7 +15979,7 @@
         134.213,
         134.368,
         138.462,
-        141.44,
+        141.439,
         142.439,
         137.608,
         141.711,
@@ -13799,6 +16075,42 @@
         173.667,
         176.29,
         175.4
+      ],
+      "holdings": [
+        [
+          "DELL",
+          0.32
+        ],
+        [
+          "SMCI",
+          0.29
+        ],
+        [
+          "IONQ",
+          0.29
+        ],
+        [
+          "OKTA",
+          0.28
+        ],
+        [
+          "SNOW",
+          0.28
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          20.0
+        ],
+        [
+          "Industrials",
+          15.3
+        ],
+        [
+          "Financials",
+          14.7
+        ]
       ]
     },
     {
@@ -13836,6 +16148,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.44,
       "corr_1y": 0.34,
+      "conc_top10": null,
       "aum": 36822409216.0,
       "expense_ratio": 0.5,
       "yield": null,
@@ -13986,6 +16299,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.78,
       "corr_1y": 0.75,
+      "conc_top10": 72.5,
       "aum": 67822489600.0,
       "expense_ratio": 0.34999999,
       "yield": 0.18000001,
@@ -14099,6 +16413,34 @@
         569.69,
         619.96,
         659.88
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          15.23
+        ],
+        [
+          "TSM",
+          9.38
+        ],
+        [
+          "MU",
+          7.78
+        ],
+        [
+          "AMD",
+          7.61
+        ],
+        [
+          "INTC",
+          7.22
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          100.0
+        ]
       ]
     },
     {
@@ -14136,6 +16478,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.92,
       "corr_1y": 0.71,
+      "conc_top10": 62.1,
       "aum": 38373490688.0,
       "expense_ratio": 0.33999999999999997,
       "yield": 0.29,
@@ -14188,7 +16531,7 @@
         156.555,
         171.085,
         165.414,
-        183.55,
+        183.549,
         188.734,
         192.617,
         211.676,
@@ -14249,6 +16592,34 @@
         539.514,
         595.967,
         639.45
+      ],
+      "holdings": [
+        [
+          "MU",
+          11.62
+        ],
+        [
+          "AMD",
+          9.49
+        ],
+        [
+          "AVGO",
+          6.9
+        ],
+        [
+          "INTC",
+          6.2
+        ],
+        [
+          "MRVL",
+          6.19
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          100.0
+        ]
       ]
     },
     {
@@ -14286,6 +16657,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.0,
       "corr_1y": 1.0,
+      "conc_top10": 39.2,
       "aum": 783796404224.0,
       "expense_ratio": 0.0945,
       "yield": 0.98,
@@ -14308,10 +16680,10 @@
         527.864,
         549.013,
         556.811,
-        559.966,
+        559.967,
         561.446,
         567.913,
-        572.823,
+        572.822,
         567.384,
         559.545,
         586.149,
@@ -14319,10 +16691,10 @@
         583.523,
         590.421,
         595.575,
-        592.048,
+        592.047,
         581.2,
         584.995,
-        581.986,
+        581.987,
         570.719,
         587.522,
         597.737,
@@ -14358,7 +16730,7 @@
         638.238,
         637.981,
         640.147,
-        650.206,
+        650.205,
         658.247,
         656.382,
         663.711,
@@ -14399,6 +16771,42 @@
         735.655,
         739.844,
         746.74
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          7.89
+        ],
+        [
+          "AAPL",
+          7.05
+        ],
+        [
+          "MSFT",
+          5.14
+        ],
+        [
+          "AMZN",
+          4.07
+        ],
+        [
+          "GOOGL",
+          3.41
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          39.0
+        ],
+        [
+          "Financials",
+          11.1
+        ],
+        [
+          "Communication",
+          10.6
+        ]
       ]
     },
     {
@@ -14436,6 +16844,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.21,
       "corr_1y": 0.42,
+      "conc_top10": 65.2,
       "aum": 2292250112.0,
       "expense_ratio": 0.69999998,
       "yield": null,
@@ -14549,6 +16958,42 @@
         64.05,
         63.03,
         60.58
+      ],
+      "holdings": [
+        [
+          "FSLR",
+          11.74
+        ],
+        [
+          "NXT",
+          9.81
+        ],
+        [
+          "ENPH",
+          8.75
+        ],
+        [
+          "ENLT.TA",
+          7.58
+        ],
+        [
+          "SEDG",
+          6.31
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          65.1
+        ],
+        [
+          "Utilities",
+          29.2
+        ],
+        [
+          "Financials",
+          3.5
+        ]
       ]
     },
     {
@@ -14586,6 +17031,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.08,
       "corr_1y": 0.34,
+      "conc_top10": null,
       "aum": 15087474688.0,
       "expense_ratio": 0.18000001,
       "yield": 2.8099999,
@@ -14736,6 +17182,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.13,
       "corr_1y": 0.19,
+      "conc_top10": null,
       "aum": 42895949824.0,
       "expense_ratio": 0.15,
       "yield": 4.5500003,
@@ -14886,6 +17333,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.88,
       "corr_1y": 0.53,
+      "conc_top10": 60.6,
       "aum": 7063491584.0,
       "expense_ratio": 0.69,
       "yield": 4.099999700000001,
@@ -14999,6 +17447,42 @@
         45.31,
         45.52,
         47.78
+      ],
+      "holdings": [
+        [
+          "CCO.TO",
+          23.18
+        ],
+        [
+          "OKLO",
+          7.37
+        ],
+        [
+          "NXE.TO",
+          6.31
+        ],
+        [
+          "UEC",
+          5.85
+        ],
+        [
+          "KAP",
+          4.33
+        ]
+      ],
+      "sectors": [
+        [
+          "Energy",
+          64.1
+        ],
+        [
+          "Industrials",
+          22.7
+        ],
+        [
+          "Utilities",
+          7.4
+        ]
       ]
     },
     {
@@ -15036,6 +17520,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.66,
       "corr_1y": 0.47,
+      "conc_top10": 66.1,
       "aum": 2210069504.0,
       "expense_ratio": 0.75,
       "yield": 2.8399997999999997,
@@ -15149,12 +17634,44 @@
         55.28,
         54.58,
         57.47
+      ],
+      "holdings": [
+        [
+          "CCO.TO",
+          21.65
+        ],
+        [
+          "NXE.TO",
+          12.71
+        ],
+        [
+          "UEC",
+          5.25
+        ],
+        [
+          "PDN.AX",
+          4.75
+        ],
+        [
+          "EFR.TO",
+          4.72
+        ]
+      ],
+      "sectors": [
+        [
+          "Energy",
+          97.7
+        ],
+        [
+          "Materials",
+          2.3
+        ]
       ]
     },
     {
       "ticker": "USMV",
       "current_rank": 9.090909090909092,
-      "abs_strength": 24.427480916030532,
+      "abs_strength": 23.66412213740458,
       "rank_1m_ago": 9.090909090909092,
       "rank_3m_ago": 9.090909090909092,
       "base_rank_6m": 11.818181818181818,
@@ -15169,7 +17686,7 @@
       "ret_1m": -1.3099,
       "ret_3m": 1.3457,
       "ret_6m": 1.3067,
-      "ret_12m": 3.8831,
+      "ret_12m": 3.883,
       "vol_1m": 9.273,
       "vol_3m": 9.0911,
       "vol_12m": 8.6079,
@@ -15186,6 +17703,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.41,
       "corr_1y": 0.61,
+      "conc_top10": 14.6,
       "aum": 23088140288.0,
       "expense_ratio": 0.15,
       "yield": 1.52,
@@ -15210,7 +17728,7 @@
         88.478,
         88.66,
         88.69,
-        89.575,
+        89.576,
         90.413,
         88.592,
         87.589,
@@ -15222,7 +17740,7 @@
         89.235,
         87.474,
         87.699,
-        87.142,
+        87.141,
         85.753,
         87.875,
         88.941,
@@ -15299,6 +17817,42 @@
         95.341,
         95.75,
         94.24
+      ],
+      "holdings": [
+        [
+          "MSFT",
+          1.6
+        ],
+        [
+          "CSCO",
+          1.54
+        ],
+        [
+          "APH",
+          1.49
+        ],
+        [
+          "VZ",
+          1.45
+        ],
+        [
+          "NEM",
+          1.44
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          33.9
+        ],
+        [
+          "Healthcare",
+          12.6
+        ],
+        [
+          "Financials",
+          11.7
+        ]
       ]
     },
     {
@@ -15336,6 +17890,7 @@
       "liquidity_flag": "ok",
       "beta_1y": -1.3,
       "corr_1y": -0.31,
+      "conc_top10": null,
       "aum": 1705716992.0,
       "expense_ratio": 0.86,
       "yield": null,
@@ -15454,7 +18009,7 @@
     {
       "ticker": "UUP",
       "current_rank": 100.0,
-      "abs_strength": 22.900763358778626,
+      "abs_strength": 24.427480916030532,
       "rank_1m_ago": 50.0,
       "rank_3m_ago": 50.0,
       "base_rank_6m": 46.25,
@@ -15466,26 +18021,27 @@
       "category": "Currency",
       "benchmark": "UUP",
       "percentile_rank": 100.0,
-      "ret_1m": 1.8352,
-      "ret_3m": 2.6106,
-      "ret_6m": 4.8979,
-      "ret_12m": 6.8901,
-      "vol_1m": 4.7707,
-      "vol_3m": 5.411,
-      "vol_12m": 6.0738,
-      "sharpe_12m": 1.1344,
+      "ret_1m": 1.7329,
+      "ret_3m": 1.1849,
+      "ret_6m": 4.3409,
+      "ret_12m": 7.1412,
+      "vol_1m": 4.737,
+      "vol_3m": 5.3937,
+      "vol_12m": 6.0626,
+      "sharpe_12m": 1.1779,
       "max_dd_12m": -3.6466,
       "dist_52w_high": 0.0,
-      "drawdown_now": -1.9547,
-      "atr_14": 0.1254,
-      "atr_pct": 0.443,
-      "chandelier_stop": 27.9439,
-      "stop_distance_pct": 1.2584,
-      "dollar_vol_20d": 65196754.46,
-      "dollar_vol_trend": -5.6624,
+      "drawdown_now": -2.3705,
+      "atr_14": 0.1243,
+      "atr_pct": 0.4409,
+      "chandelier_stop": 27.8472,
+      "stop_distance_pct": 1.1809,
+      "dollar_vol_20d": 65768215.43,
+      "dollar_vol_trend": -6.5654,
       "liquidity_flag": "ok",
       "beta_1y": -0.23,
-      "corr_1y": -0.49,
+      "corr_1y": -0.5,
+      "conc_top10": null,
       "aum": 378266112.0,
       "expense_ratio": 0.75,
       "yield": 3.35,
@@ -15598,7 +18154,7 @@
         27.66,
         28.02,
         27.95,
-        28.3
+        28.18
       ]
     },
     {
@@ -15636,6 +18192,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.15,
       "corr_1y": 0.45,
+      "conc_top10": null,
       "aum": 68725825536.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 4.75,
@@ -15769,10 +18326,10 @@
       "ret_1m": 0.6189,
       "ret_3m": 0.6402,
       "ret_6m": 0.9751,
-      "ret_12m": 4.4293,
+      "ret_12m": 4.4294,
       "vol_1m": 2.3769,
       "vol_3m": 2.3514,
-      "vol_12m": 1.9204,
+      "vol_12m": 1.9203,
       "sharpe_12m": 2.3065,
       "max_dd_12m": -1.4012,
       "dist_52w_high": -0.2412,
@@ -15786,6 +18343,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.06,
       "corr_1y": 0.39,
+      "conc_top10": null,
       "aum": 50517524480.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 4.4299997,
@@ -15904,7 +18462,7 @@
     {
       "ticker": "VGK",
       "current_rank": 38.46153846153847,
-      "abs_strength": 43.51145038167939,
+      "abs_strength": 44.274809160305345,
       "rank_1m_ago": 38.46153846153847,
       "rank_3m_ago": 34.61538461538461,
       "base_rank_6m": 44.61538461538462,
@@ -15936,6 +18494,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.97,
       "corr_1y": 0.74,
+      "conc_top10": 18.4,
       "aum": 38120620032.0,
       "expense_ratio": 0.059999997,
       "yield": 2.78,
@@ -16049,12 +18608,48 @@
         85.959,
         88.416,
         88.27
+      ],
+      "holdings": [
+        [
+          "ASML.AS",
+          3.97
+        ],
+        [
+          "HSBA.L",
+          2.04
+        ],
+        [
+          "ROP.SW",
+          1.87
+        ],
+        [
+          "NOVN.SW",
+          1.83
+        ],
+        [
+          "AZN.L",
+          1.76
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          23.4
+        ],
+        [
+          "Industrials",
+          20.2
+        ],
+        [
+          "Healthcare",
+          12.4
+        ]
       ]
     },
     {
       "ticker": "VIG",
       "current_rank": 27.27272727272727,
-      "abs_strength": 44.274809160305345,
+      "abs_strength": 45.038167938931295,
       "rank_1m_ago": 36.36363636363637,
       "rank_3m_ago": 36.36363636363637,
       "base_rank_6m": 44.090909090909086,
@@ -16086,6 +18681,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.71,
       "corr_1y": 0.84,
+      "conc_top10": 32.9,
       "aum": 127799574528.0,
       "expense_ratio": 0.04,
       "yield": 1.47,
@@ -16199,6 +18795,42 @@
         233.28,
         235.73,
         235.19
+      ],
+      "holdings": [
+        [
+          "AVGO",
+          5.39
+        ],
+        [
+          "AAPL",
+          4.55
+        ],
+        [
+          "MSFT",
+          4.26
+        ],
+        [
+          "LLY",
+          3.83
+        ],
+        [
+          "JPM",
+          3.31
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          29.0
+        ],
+        [
+          "Financials",
+          19.9
+        ],
+        [
+          "Healthcare",
+          16.6
+        ]
       ]
     },
     {
@@ -16236,6 +18868,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.16,
       "corr_1y": 0.79,
+      "conc_top10": 47.1,
       "aum": 15874059264.0,
       "expense_ratio": 0.15,
       "yield": 1.43,
@@ -16349,6 +18982,42 @@
         191.246,
         197.683,
         199.92
+      ],
+      "holdings": [
+        [
+          "MU",
+          21.81
+        ],
+        [
+          "CSCO",
+          4.71
+        ],
+        [
+          "GM",
+          3.64
+        ],
+        [
+          "VZ",
+          2.96
+        ],
+        [
+          "XTSLA",
+          2.91
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          42.6
+        ],
+        [
+          "Cons. Cyclical",
+          10.5
+        ],
+        [
+          "Financials",
+          9.8
+        ]
       ]
     },
     {
@@ -16386,6 +19055,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.57,
       "corr_1y": 0.48,
+      "conc_top10": 54.3,
       "aum": 69802549248.0,
       "expense_ratio": 0.13,
       "yield": 3.64,
@@ -16425,7 +19095,7 @@
         85.154,
         81.441,
         85.344,
-        86.354,
+        86.353,
         86.201,
         87.229,
         87.229,
@@ -16448,7 +19118,7 @@
         86.394,
         86.394,
         85.942,
-        87.427,
+        87.428,
         87.175,
         87.35,
         89.088,
@@ -16499,6 +19169,42 @@
         96.79,
         98.51,
         95.56
+      ],
+      "holdings": [
+        [
+          "VRTPX",
+          14.49
+        ],
+        [
+          "WELL",
+          7.65
+        ],
+        [
+          "PLD",
+          7.14
+        ],
+        [
+          "EQIX",
+          5.63
+        ],
+        [
+          "AMT",
+          4.65
+        ]
+      ],
+      "sectors": [
+        [
+          "Real Estate",
+          99.4
+        ],
+        [
+          "Communication",
+          0.4
+        ],
+        [
+          "Energy",
+          0.1
+        ]
       ]
     },
     {
@@ -16536,6 +19242,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.93,
       "corr_1y": 0.69,
+      "conc_top10": 21.8,
       "aum": 3800113920.0,
       "expense_ratio": 0.11999999,
       "yield": 4.67,
@@ -16649,6 +19356,42 @@
         43.96,
         45.69,
         44.84
+      ],
+      "holdings": [
+        [
+          "GMG.AX",
+          4.28
+        ],
+        [
+          "8802.T",
+          2.83
+        ],
+        [
+          "8801.T",
+          2.45
+        ],
+        [
+          "0016.HK",
+          2.37
+        ],
+        [
+          "8830.T",
+          2.01
+        ]
+      ],
+      "sectors": [
+        [
+          "Real Estate",
+          98.5
+        ],
+        [
+          "Cons. Cyclical",
+          0.7
+        ],
+        [
+          "Industrials",
+          0.6
+        ]
       ]
     },
     {
@@ -16686,6 +19429,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.0,
       "corr_1y": 1.0,
+      "conc_top10": 39.2,
       "aum": 1701513003008.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 1.0299999,
@@ -16726,7 +19470,7 @@
         525.743,
         541.076,
         550.48,
-        544.886,
+        544.887,
         543.774,
         552.134,
         543.331,
@@ -16799,6 +19543,42 @@
         678.0,
         681.95,
         688.11
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          7.89
+        ],
+        [
+          "AAPL",
+          7.04
+        ],
+        [
+          "MSFT",
+          5.14
+        ],
+        [
+          "AMZN",
+          4.06
+        ],
+        [
+          "GOOGL",
+          3.4
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          39.1
+        ],
+        [
+          "Financials",
+          10.9
+        ],
+        [
+          "Communication",
+          10.7
+        ]
       ]
     },
     {
@@ -16836,6 +19616,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.01,
       "corr_1y": 0.95,
+      "conc_top10": 22.0,
       "aum": 95332884480.0,
       "expense_ratio": 0.059999997,
       "yield": 1.59,
@@ -16949,6 +19730,42 @@
         153.127,
         155.727,
         157.66
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          4.2
+        ],
+        [
+          "AAPL",
+          3.82
+        ],
+        [
+          "MSFT",
+          2.84
+        ],
+        [
+          "AMZN",
+          2.21
+        ],
+        [
+          "GOOGL",
+          1.9
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          31.1
+        ],
+        [
+          "Financials",
+          15.2
+        ],
+        [
+          "Industrials",
+          11.4
+        ]
       ]
     },
     {
@@ -16986,6 +19803,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.0,
       "corr_1y": 1.0,
+      "conc_top10": 34.6,
       "aum": 2308925030400.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 1.01,
@@ -17043,7 +19861,7 @@
         274.723,
         289.162,
         281.71,
-        286.494,
+        286.493,
         291.672,
         290.14,
         290.002,
@@ -17099,6 +19917,42 @@
         363.38,
         366.36,
         369.99
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          6.7
+        ],
+        [
+          "AAPL",
+          6.29
+        ],
+        [
+          "MSFT",
+          4.59
+        ],
+        [
+          "AMZN",
+          3.59
+        ],
+        [
+          "GOOGL",
+          3.04
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          37.0
+        ],
+        [
+          "Financials",
+          11.3
+        ],
+        [
+          "Communication",
+          9.8
+        ]
       ]
     },
     {
@@ -17136,6 +19990,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.02,
       "corr_1y": 0.13,
+      "conc_top10": null,
       "aum": 70501023744.0,
       "expense_ratio": 0.029999999000000003,
       "yield": 3.5900000000000003,
@@ -17286,6 +20141,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.05,
       "corr_1y": 0.8,
+      "conc_top10": 26.2,
       "aum": 162822127616.0,
       "expense_ratio": 0.059999997,
       "yield": 2.4300002000000003,
@@ -17399,6 +20255,42 @@
         57.961,
         59.479,
         60.77
+      ],
+      "holdings": [
+        [
+          "2330.TW",
+          14.66
+        ],
+        [
+          "0700.HK",
+          2.74
+        ],
+        [
+          "9988.HK",
+          2.26
+        ],
+        [
+          "2454.TW",
+          1.62
+        ],
+        [
+          "2308.TW",
+          1.2
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          32.8
+        ],
+        [
+          "Financials",
+          18.9
+        ],
+        [
+          "Cons. Cyclical",
+          9.9
+        ]
       ]
     },
     {
@@ -17436,6 +20328,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.01,
       "corr_1y": 0.35,
+      "conc_top10": 23.7,
       "aum": 269380384.0,
       "expense_ratio": 0.44999999999999996,
       "yield": null,
@@ -17549,6 +20442,38 @@
         32.2,
         30.61,
         29.55
+      ],
+      "holdings": [
+        [
+          "DOCN",
+          3.17
+        ],
+        [
+          "DDOG",
+          2.76
+        ],
+        [
+          "FROG",
+          2.72
+        ],
+        [
+          "PANW",
+          2.44
+        ],
+        [
+          "CRWD",
+          2.43
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          97.3
+        ],
+        [
+          "Healthcare",
+          2.7
+        ]
       ]
     },
     {
@@ -17586,6 +20511,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.06,
       "corr_1y": 0.04,
+      "conc_top10": null,
       "aum": 326091456.0,
       "expense_ratio": 1.0,
       "yield": null,
@@ -17736,6 +20662,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.22,
       "corr_1y": 0.59,
+      "conc_top10": 34.6,
       "aum": 6474359808.0,
       "expense_ratio": 0.34999999,
       "yield": 0.3,
@@ -17849,6 +20776,34 @@
         272.57,
         279.97,
         284.29
+      ],
+      "holdings": [
+        [
+          "RKLB",
+          5.83
+        ],
+        [
+          "CRS",
+          3.36
+        ],
+        [
+          "HEI",
+          3.32
+        ],
+        [
+          "ATI",
+          3.25
+        ],
+        [
+          "LUNR",
+          3.2
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          100.0
+        ]
       ]
     },
     {
@@ -17886,6 +20841,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.97,
       "corr_1y": 0.53,
+      "conc_top10": 15.4,
       "aum": 8392988672.0,
       "expense_ratio": 0.34999999,
       "yield": 0.32,
@@ -17999,6 +20955,38 @@
         128.67,
         133.79,
         140.72
+      ],
+      "holdings": [
+        [
+          "TVTX",
+          1.79
+        ],
+        [
+          "RVMD",
+          1.78
+        ],
+        [
+          "ALKS",
+          1.71
+        ],
+        [
+          "TWST",
+          1.6
+        ],
+        [
+          "TGTX",
+          1.52
+        ]
+      ],
+      "sectors": [
+        [
+          "Healthcare",
+          99.7
+        ],
+        [
+          "Financials",
+          0.3
+        ]
       ]
     },
     {
@@ -18036,6 +21024,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.64,
       "corr_1y": 0.43,
+      "conc_top10": 60.0,
       "aum": 7313517056.0,
       "expense_ratio": 0.08,
       "yield": 1.71,
@@ -18149,23 +21138,55 @@
         50.63,
         52.18,
         51.81
+      ],
+      "holdings": [
+        [
+          "LIN",
+          14.15
+        ],
+        [
+          "NEM",
+          7.29
+        ],
+        [
+          "NUE",
+          6.35
+        ],
+        [
+          "FCX",
+          5.75
+        ],
+        [
+          "VMC",
+          4.58
+        ]
+      ],
+      "sectors": [
+        [
+          "Materials",
+          87.3
+        ],
+        [
+          "Cons. Cyclical",
+          12.7
+        ]
       ]
     },
     {
       "ticker": "XLC",
-      "current_rank": 50.0,
-      "abs_strength": 38.16793893129771,
+      "current_rank": 60.0,
+      "abs_strength": 38.93129770992366,
       "rank_1m_ago": 50.0,
       "rank_3m_ago": 50.0,
       "base_rank_6m": 70.5,
-      "delta_1m": 0.0,
-      "delta_3m": 0.0,
+      "delta_1m": 10.0,
+      "delta_3m": 10.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Communication Services",
       "category": "US Sector",
       "benchmark": "SPY",
-      "percentile_rank": 50.0,
+      "percentile_rank": 60.0,
       "ret_1m": -5.5244,
       "ret_3m": -2.9527,
       "ret_6m": -5.5682,
@@ -18186,6 +21207,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.94,
       "corr_1y": 0.73,
+      "conc_top10": 62.9,
       "aum": 25115598848.0,
       "expense_ratio": 0.08,
       "yield": 1.21,
@@ -18255,7 +21277,7 @@
         105.075,
         106.57,
         110.382,
-        110.214,
+        110.213,
         110.293,
         113.56,
         116.194,
@@ -18299,6 +21321,34 @@
         111.67,
         111.65,
         109.45
+      ],
+      "holdings": [
+        [
+          "META",
+          14.02
+        ],
+        [
+          "GOOGL",
+          9.82
+        ],
+        [
+          "GOOG",
+          7.81
+        ],
+        [
+          "TTWO",
+          4.88
+        ],
+        [
+          "LYV",
+          4.76
+        ]
+      ],
+      "sectors": [
+        [
+          "Communication",
+          100.0
+        ]
       ]
     },
     {
@@ -18319,7 +21369,7 @@
       "ret_1m": -12.2695,
       "ret_3m": -8.8253,
       "ret_6m": 24.5895,
-      "ret_12m": 25.1889,
+      "ret_12m": 25.189,
       "vol_1m": 24.1413,
       "vol_3m": 26.2152,
       "vol_12m": 20.9472,
@@ -18336,6 +21386,7 @@
       "liquidity_flag": "ok",
       "beta_1y": -0.67,
       "corr_1y": -0.36,
+      "conc_top10": 74.9,
       "aum": 38671941632.0,
       "expense_ratio": 0.08,
       "yield": 2.6500002,
@@ -18449,6 +21500,34 @@
         57.67,
         57.55,
         53.77
+      ],
+      "holdings": [
+        [
+          "XOM",
+          22.12
+        ],
+        [
+          "CVX",
+          16.6
+        ],
+        [
+          "COP",
+          6.78
+        ],
+        [
+          "SLB",
+          4.69
+        ],
+        [
+          "WMB",
+          4.33
+        ]
+      ],
+      "sectors": [
+        [
+          "Energy",
+          100.0
+        ]
       ]
     },
     {
@@ -18486,6 +21565,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.79,
       "corr_1y": 0.67,
+      "conc_top10": 56.5,
       "aum": 49419214848.0,
       "expense_ratio": 0.08,
       "yield": 1.54,
@@ -18599,6 +21679,42 @@
         52.3,
         53.34,
         53.57
+      ],
+      "holdings": [
+        [
+          "BRK-B",
+          11.83
+        ],
+        [
+          "JPM",
+          10.98
+        ],
+        [
+          "V",
+          7.46
+        ],
+        [
+          "MA",
+          5.47
+        ],
+        [
+          "BAC",
+          4.66
+        ]
+      ],
+      "sectors": [
+        [
+          "Financials",
+          98.0
+        ],
+        [
+          "Technology",
+          1.8
+        ],
+        [
+          "Industrials",
+          0.2
+        ]
       ]
     },
     {
@@ -18636,6 +21752,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.74,
       "corr_1y": 0.67,
+      "conc_top10": 40.3,
       "aum": 30217220096.0,
       "expense_ratio": 0.08,
       "yield": 1.17999995,
@@ -18749,6 +21866,42 @@
         174.18,
         176.18,
         180.91
+      ],
+      "holdings": [
+        [
+          "CAT",
+          7.55
+        ],
+        [
+          "GE",
+          6.29
+        ],
+        [
+          "GEV",
+          4.84
+        ],
+        [
+          "RTX",
+          4.47
+        ],
+        [
+          "BA",
+          3.36
+        ]
+      ],
+      "sectors": [
+        [
+          "Industrials",
+          93.8
+        ],
+        [
+          "Technology",
+          5.9
+        ],
+        [
+          "Cons. Cyclical",
+          0.3
+        ]
       ]
     },
     {
@@ -18786,6 +21939,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.53,
       "corr_1y": 0.87,
+      "conc_top10": 61.8,
       "aum": 124515713024.0,
       "expense_ratio": 0.08,
       "yield": 0.4,
@@ -18899,12 +22053,44 @@
         180.3,
         184.8,
         191.44
+      ],
+      "holdings": [
+        [
+          "NVDA",
+          13.07
+        ],
+        [
+          "AAPL",
+          11.67
+        ],
+        [
+          "MSFT",
+          8.52
+        ],
+        [
+          "MU",
+          6.78
+        ],
+        [
+          "AVGO",
+          5.4
+        ]
+      ],
+      "sectors": [
+        [
+          "Technology",
+          99.0
+        ],
+        [
+          "Communication",
+          1.0
+        ]
       ]
     },
     {
       "ticker": "XLP",
       "current_rank": 20.0,
-      "abs_strength": 32.82442748091603,
+      "abs_strength": 29.770992366412212,
       "rank_1m_ago": 20.0,
       "rank_3m_ago": 30.0,
       "base_rank_6m": 15.5,
@@ -18916,33 +22102,34 @@
       "category": "US Sector",
       "benchmark": "SPY",
       "percentile_rank": 20.0,
-      "ret_1m": -3.2408,
-      "ret_3m": 2.1946,
-      "ret_6m": 6.5098,
-      "ret_12m": 6.3003,
-      "vol_1m": 16.9953,
-      "vol_3m": 14.5983,
-      "vol_12m": 13.0291,
-      "sharpe_12m": 0.4836,
+      "ret_1m": -2.5844,
+      "ret_3m": 1.8284,
+      "ret_6m": 6.512,
+      "ret_12m": 5.878,
+      "vol_1m": 17.0644,
+      "vol_3m": 14.6716,
+      "vol_12m": 13.021,
+      "sharpe_12m": 0.4514,
       "max_dd_12m": -9.6878,
-      "dist_52w_high": -6.9338,
-      "drawdown_now": -6.9338,
-      "atr_14": 1.2229,
-      "atr_pct": 1.468,
-      "chandelier_stop": 83.0314,
-      "stop_distance_pct": 0.3225,
-      "dollar_vol_20d": 1061528792.19,
-      "dollar_vol_trend": -3.394,
+      "dist_52w_high": -6.5093,
+      "drawdown_now": -6.5093,
+      "atr_14": 1.2585,
+      "atr_pct": 1.5039,
+      "chandelier_stop": 82.9246,
+      "stop_distance_pct": 0.9028,
+      "dollar_vol_20d": 1078031942.74,
+      "dollar_vol_trend": -2.7969,
       "liquidity_flag": "ok",
       "beta_1y": 0.17,
       "corr_1y": 0.16,
+      "conc_top10": 62.1,
       "aum": 14855075840.0,
       "expense_ratio": 0.08,
       "yield": 2.6199998,
       "pe_ratio": 25.72349,
       "holdings_turnover": 8.0,
       "is_bullish": false,
-      "days_in_trend": 73.0,
+      "days_in_trend": 72.0,
       "last_signal": -1.0,
       "spark": [
         73.179,
@@ -19048,13 +22235,45 @@
         82.91,
         83.44,
         85.82,
-        83.3
+        83.68
+      ],
+      "holdings": [
+        [
+          "WMT",
+          10.83
+        ],
+        [
+          "COST",
+          9.06
+        ],
+        [
+          "PG",
+          7.12
+        ],
+        [
+          "KO",
+          6.53
+        ],
+        [
+          "PM",
+          5.9
+        ]
+      ],
+      "sectors": [
+        [
+          "Cons. Defensive",
+          99.0
+        ],
+        [
+          "Cons. Cyclical",
+          1.0
+        ]
       ]
     },
     {
       "ticker": "XLRE",
       "current_rank": 40.0,
-      "abs_strength": 29.770992366412212,
+      "abs_strength": 30.53435114503817,
       "rank_1m_ago": 20.0,
       "rank_3m_ago": 20.0,
       "base_rank_6m": 22.0,
@@ -19086,6 +22305,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.53,
       "corr_1y": 0.43,
+      "conc_top10": 58.4,
       "aum": 7948565504.0,
       "expense_ratio": 0.08,
       "yield": 3.18,
@@ -19199,50 +22419,79 @@
         44.7,
         45.36,
         43.86
+      ],
+      "holdings": [
+        [
+          "WELL",
+          9.86
+        ],
+        [
+          "PLD",
+          9.18
+        ],
+        [
+          "EQIX",
+          7.22
+        ],
+        [
+          "AMT",
+          6.02
+        ],
+        [
+          "SPG",
+          4.68
+        ]
+      ],
+      "sectors": [
+        [
+          "Real Estate",
+          100.0
+        ]
       ]
     },
     {
       "ticker": "XLU",
-      "current_rank": 60.0,
-      "abs_strength": 38.93129770992366,
+      "current_rank": 40.0,
+      "abs_strength": 35.87786259541985,
       "rank_1m_ago": 60.0,
       "rank_3m_ago": 60.0,
       "base_rank_6m": 62.5,
-      "delta_1m": 0.0,
-      "delta_3m": 0.0,
+      "delta_1m": -20.0,
+      "delta_3m": -20.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Utilities Select",
       "category": "US Sector",
       "benchmark": "SPY",
-      "percentile_rank": 60.0,
-      "ret_1m": 0.9472,
-      "ret_3m": -3.1523,
-      "ret_6m": 5.5079,
-      "ret_12m": 14.5829,
-      "vol_1m": 18.5212,
-      "vol_3m": 16.676,
-      "vol_12m": 14.6963,
-      "sharpe_12m": 0.9923,
+      "percentile_rank": 40.0,
+      "ret_1m": 1.1834,
+      "ret_3m": -4.1925,
+      "ret_6m": 4.3643,
+      "ret_12m": 12.8738,
+      "vol_1m": 18.4162,
+      "vol_3m": 18.5379,
+      "vol_12m": 14.6847,
+      "sharpe_12m": 0.8767,
       "max_dd_12m": -9.1848,
-      "dist_52w_high": -5.5669,
-      "drawdown_now": -5.5669,
-      "atr_14": 0.7212,
-      "atr_pct": 1.6112,
-      "chandelier_stop": 43.4765,
-      "stop_distance_pct": 2.8675,
-      "dollar_vol_20d": 924480918.08,
-      "dollar_vol_trend": -6.5965,
+      "dist_52w_high": -6.1998,
+      "drawdown_now": -6.1998,
+      "atr_14": 0.7089,
+      "atr_pct": 1.5946,
+      "chandelier_stop": 43.5132,
+      "stop_distance_pct": 2.1297,
+      "dollar_vol_20d": 881201318.3,
+      "dollar_vol_trend": -10.5635,
       "liquidity_flag": "ok",
       "beta_1y": -0.02,
       "corr_1y": -0.01,
+      "conc_top10": 58.1,
       "aum": 22354980864.0,
       "expense_ratio": 0.08,
       "yield": 2.6800001,
       "pe_ratio": 20.588797,
       "holdings_turnover": 2.0,
       "is_bullish": false,
-      "days_in_trend": 63.0,
+      "days_in_trend": 62.0,
       "last_signal": -1.0,
       "spark": [
         32.404,
@@ -19348,28 +22597,56 @@
         44.42,
         44.35,
         44.53,
-        44.76
+        44.46
+      ],
+      "holdings": [
+        [
+          "NEE",
+          13.19
+        ],
+        [
+          "SO",
+          7.37
+        ],
+        [
+          "DUK",
+          6.94
+        ],
+        [
+          "CEG",
+          6.52
+        ],
+        [
+          "AEP",
+          4.98
+        ]
+      ],
+      "sectors": [
+        [
+          "Utilities",
+          100.0
+        ]
       ]
     },
     {
       "ticker": "XLV",
-      "current_rank": 40.0,
-      "abs_strength": 35.87786259541985,
+      "current_rank": 50.0,
+      "abs_strength": 36.6412213740458,
       "rank_1m_ago": 40.0,
       "rank_3m_ago": 20.0,
       "base_rank_6m": 37.5,
-      "delta_1m": 0.0,
-      "delta_3m": 20.0,
+      "delta_1m": 10.0,
+      "delta_3m": 30.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Health Care Select",
       "category": "US Sector",
       "benchmark": "SPY",
-      "percentile_rank": 40.0,
+      "percentile_rank": 50.0,
       "ret_1m": 1.4119,
       "ret_3m": 2.3219,
       "ret_6m": -2.2178,
-      "ret_12m": 13.9316,
+      "ret_12m": 13.9315,
       "vol_1m": 18.1417,
       "vol_3m": 16.01,
       "vol_12m": 15.0503,
@@ -19386,6 +22663,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 0.41,
       "corr_1y": 0.32,
+      "conc_top10": 60.5,
       "aum": 38248288256.0,
       "expense_ratio": 0.08,
       "yield": 1.68,
@@ -19499,6 +22777,34 @@
         153.01,
         153.81,
         149.4
+      ],
+      "holdings": [
+        [
+          "LLY",
+          16.18
+        ],
+        [
+          "JNJ",
+          10.03
+        ],
+        [
+          "ABBV",
+          7.11
+        ],
+        [
+          "UNH",
+          6.37
+        ],
+        [
+          "MRK",
+          5.45
+        ]
+      ],
+      "sectors": [
+        [
+          "Healthcare",
+          100.0
+        ]
       ]
     },
     {
@@ -19536,6 +22842,7 @@
       "liquidity_flag": "ok",
       "beta_1y": 1.28,
       "corr_1y": 0.87,
+      "conc_top10": 72.1,
       "aum": 23781842944.0,
       "expense_ratio": 0.08,
       "yield": 0.74,
@@ -19649,6 +22956,42 @@
         114.86,
         116.6,
         117.16
+      ],
+      "holdings": [
+        [
+          "AMZN",
+          27.56
+        ],
+        [
+          "TSLA",
+          20.04
+        ],
+        [
+          "HD",
+          5.16
+        ],
+        [
+          "TJX",
+          3.85
+        ],
+        [
+          "MCD",
+          3.64
+        ]
+      ],
+      "sectors": [
+        [
+          "Cons. Cyclical",
+          99.0
+        ],
+        [
+          "Technology",
+          0.9
+        ],
+        [
+          "Industrials",
+          0.1
+        ]
       ]
     }
   ],
@@ -19723,16 +23066,16 @@
         "source": "yfinance ^VIX",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 16.4,
+        "value": 17.04,
         "zone": "base",
         "base_threshold": 20.0,
         "alarm_threshold": 25.0,
-        "dist_to_alarm": 8.6,
+        "dist_to_alarm": 7.96,
         "z": null,
         "z_base": null,
         "z_alarm": null,
-        "trend_4w": "up",
-        "change_4w_pct": 22.39
+        "trend_4w": "down",
+        "change_4w_pct": -5.73
       },
       {
         "key": "breakeven_10y",
@@ -19791,12 +23134,12 @@
         "source": "yfinance XLY/XLP",
         "kind": "robust_z",
         "stress_dir": "low",
-        "value": 1.4065,
+        "value": 1.3801,
         "zone": "base",
         "base_threshold": null,
         "alarm_threshold": null,
         "dist_to_alarm": null,
-        "z": 0.21,
+        "z": 0.04,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "down",
@@ -19870,13 +23213,13 @@
       },
       {
         "indicator": "VIX",
-        "value": 16.4,
+        "value": 17.04,
         "kind": "abs",
         "base": 20.0,
         "alarm": 25.0,
         "z": null,
         "zone": "base",
-        "trend": "up"
+        "trend": "down"
       },
       {
         "indicator": "10Y breakeven",
@@ -19910,11 +23253,11 @@
       },
       {
         "indicator": "XLY/XLP",
-        "value": 1.4065,
+        "value": 1.3801,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 0.21,
+        "z": 0.04,
         "zone": "base",
         "trend": "down"
       },
@@ -19971,10 +23314,10 @@
         "indicator": "VIX",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 8.6,
+        "dist_to_alarm": 7.96,
         "z": null,
-        "trend_4w": "up",
-        "change_4w_pct": 22.39
+        "trend_4w": "down",
+        "change_4w_pct": -5.73
       },
       {
         "indicator": "10Y breakeven",
@@ -20008,7 +23351,7 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 0.21,
+        "z": 0.04,
         "trend_4w": "down",
         "change_4w_pct": -4.47
       },
