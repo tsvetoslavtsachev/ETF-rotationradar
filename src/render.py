@@ -42,6 +42,7 @@ def render_frontend_data(
     macro: "dict | None" = None,
     betas_df: "pd.DataFrame | None" = None,
     lookthrough_df: "pd.DataFrame | None" = None,
+    cot_df: "pd.DataFrame | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -78,6 +79,10 @@ def render_frontend_data(
     # Merge ETF look-through (S18 batch 3) — conc_top10 + JSON колони (парсват се долу)
     if lookthrough_df is not None and not lookthrough_df.empty:
         df = df.merge(lookthrough_df, on="ticker", how="left")
+
+    # Merge COT позициониране (S18 batch 4) — cot_pctile + tooltip скалари
+    if cot_df is not None and not cot_df.empty:
+        df = df.merge(cot_df, on="ticker", how="left")
 
     # Merge Fundamentals
     if not fundamentals_df.empty:

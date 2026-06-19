@@ -241,6 +241,33 @@ try:
         "parsed holdings missing from payload"
     assert "top_holdings_json" not in qqq, "raw JSON column should be stripped from payload"
 
+    step("12. COT positioning (synthetic summarize + render coverage, без мрежа)")
+    from src.cot import summarize_cot
+    # текущ net силно над историята → percentile ~100; net=190, OI=1000 → 19% от OI
+    cot_rows = [{"m_money_positions_long_all": "200", "m_money_positions_short_all": "10",
+                 "open_interest_all": "1000", "report_date_as_yyyy_mm_dd": "2026-06-09T00:00:00.000"}]
+    cot_rows += [{"m_money_positions_long_all": "100", "m_money_positions_short_all": "80",
+                  "open_interest_all": "1000", "report_date_as_yyyy_mm_dd": f"2026-0{1+i%6}-01T00:00:00.000"}
+                 for i in range(11)]
+    summ = summarize_cot(cot_rows, "mm")
+    print(f"cot summ={summ}")
+    assert summ["cot_pctile"] == 100, "current net above all history should be ~100 pctile"
+    assert summ["cot_net"] == 190 and summ["cot_pct_oi"] == 19.0, "net/%OI mismatch"
+    assert summ["cot_date"] == "2026-06-09", "report date parse failed"
+    # TFF leveraged-money полета (различен суфикс) се разпознават
+    lev = summarize_cot([{"lev_money_positions_long": "50", "lev_money_positions_short": "70",
+                          "open_interest_all": "500", "report_date_as_yyyy_mm_dd": "2026-06-09"}] * 10, "lev")
+    assert lev["cot_net"] == -20, "leveraged net (long-short) should be -20"
+    # render coverage: cot скаларите влизат в payload-а (GLD е в smoke вселената)
+    cot_df = pd.DataFrame([{"ticker": "GLD", "cot_pctile": 100, "cot_net": 190, "cot_pct_oi": 19.0,
+                            "cot_date": "2026-06-09", "cot_market": "Gold (COMEX)", "cot_kind": "Managed money"}])
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map, cot_df=cot_df)
+    payload4 = json.load(open(out))
+    gld = next(e for e in payload4["etfs"] if e["ticker"] == "GLD")
+    assert gld.get("cot_pctile") == 100 and gld.get("cot_market") == "Gold (COMEX)", \
+        "COT fields missing from payload"
+
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
     print("\n\n>>> SMOKE TEST FAILED <<<")

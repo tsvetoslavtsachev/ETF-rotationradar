@@ -33,6 +33,7 @@ from src.macro_context import compute_macro_context, compute_gold_copper_item, M
 from src.flows import append_aum_snapshot, load_aum_history, compute_flows
 from src.beta import compute_betas
 from src.lookthrough import compute_lookthrough
+from src.cot import compute_cot
 from src.render import render_frontend_data
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -210,6 +211,13 @@ def main():
     n_conc = int(lookthrough["conc_top10"].notna().sum()) if not lookthrough.empty else 0
     print(f"Look-through: {n_conc} ETFs with concentration data")
 
+    # 6.10 COT позициониране (S18 batch 4) — CFTC keyless Socrata за commodity/rate
+    #      ETF. MM net (стоки) / LEV net (лихви), percentile vs 3г; кеш ~седмично.
+    print("\nFetching COT positioning (CFTC)...")
+    cot = compute_cot(tickers, cache_path=DATA_DIR / "cot.parquet")
+    n_cot = int(cot["cot_pctile"].notna().sum()) if not cot.empty else 0
+    print(f"COT: {n_cot} ETFs with positioning percentile")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     name_map = get_name_map()
@@ -219,7 +227,7 @@ def main():
         category_map, name_map, benchmark_map, output_path,
         barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
         spark_map=spark_map, macro=macro_context, betas_df=betas,
-        lookthrough_df=lookthrough
+        lookthrough_df=lookthrough, cot_df=cot
     )
 
     print("\n=== Update Complete ===")

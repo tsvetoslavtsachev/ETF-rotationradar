@@ -151,7 +151,7 @@ const EXPORT_COLS = [
   ["stop_distance_pct", "Stop%"], ["expense_ratio", "ExpRatio%"], ["yield", "Yield%"],
   ["pe_ratio", "PE"], ["aum", "AUM"], ["dollar_vol_20d", "DollarVol20d"],
   ["est_flow_pct", "Flow%"], ["beta_1y", "Beta1Y"], ["corr_1y", "Corr1Y"],
-  ["conc_top10", "ConcTop10%"],
+  ["conc_top10", "ConcTop10%"], ["cot_pctile", "COTpctile"], ["cot_net", "COTnet"],
 ];
 function csvCell(v) {
   if (v == null) return "";
@@ -187,6 +187,17 @@ function concTooltip(e) {
   }
   // escape за HTML title атрибута (кавички/амперсанд)
   return parts.join(" | ").replace(/"/g, "&quot;").replace(/&(?!quot;)/g, "&amp;");
+}
+
+// ── COT tooltip (S18) — net позициониране + детайли за percentile-а ──
+function cotTooltip(e) {
+  if (e.cot_pctile == null) return "";
+  const dir = e.cot_net > 0 ? "нетно ДЪЛГИ" : e.cot_net < 0 ? "нетно КЪСИ" : "неутрални";
+  const oi = e.cot_pct_oi != null ? ` (${e.cot_pct_oi}% от OI)` : "";
+  const net = e.cot_net != null ? Math.abs(Number(e.cot_net)).toLocaleString("en-US") : "—";
+  const t = `${e.cot_market || ""} · ${e.cot_kind || ""}: ${dir} ${net} контракта${oi}`
+    + ` | percentile ${e.cot_pctile}% спрямо 3г${e.cot_date ? " · " + e.cot_date : ""}`;
+  return t.replace(/"/g, "&quot;").replace(/&(?!quot;)/g, "&amp;");
 }
 
 // ── Rotation Radar ─────────────────────────────────────────
@@ -287,6 +298,7 @@ function renderScreener() {
       <td class="num-cell">${e.beta_1y != null ? fmtNum(e.beta_1y, 2) : "—"}</td>
       <td class="num-cell">${e.corr_1y != null ? fmtNum(e.corr_1y, 2) : "—"}</td>
       <td class="num-cell" title="${concTooltip(e)}">${e.conc_top10 != null ? fmtNum(e.conc_top10, 1) + "%" : "—"}</td>
+      <td class="num-cell" title="${cotTooltip(e)}">${e.cot_pctile != null ? e.cot_pctile + "%" : "—"}</td>
     </tr>`;
   }).join("");
 }
