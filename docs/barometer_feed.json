@@ -33,7 +33,7 @@
     },
     {
       "indicator": "VIX",
-      "value": 17.13,
+      "value": 16.78,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
@@ -134,10 +134,10 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 7.87,
+      "dist_to_alarm": 8.22,
       "z": null,
       "trend_4w": "down",
-      "change_4w_pct": -5.48
+      "change_4w_pct": -6.43
     },
     {
       "indicator": "10Y breakeven",
