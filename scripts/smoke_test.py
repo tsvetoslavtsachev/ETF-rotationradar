@@ -342,6 +342,31 @@ try:
     assert payload6.get("heatstrip") and payload6["heatstrip"]["available"], "heatstrip missing from payload"
     assert payload6["heatstrip"]["categories"][0] == "Hot", "heatstrip payload order wrong"
 
+    step("15. calibration drift-gate (evaluate_drift pure logic, без мрежа)")
+    from scripts.backtest_thresholds import evaluate_drift, BANDS
+    # (a) числа близо до baseline → всичко OK, нула флагове
+    calm = {"quad_hi_occ": 20.6, "quad_lo_occ": 17.1, "quad_hi_flip": 8.0,
+            "quad_lo_flip": 9.0, "alarm2_rate": 6.9,
+            "rz": {"XLE/SPY": 2.2, "IWM/SPY": 8.0, "VUG/VTV": 4.98, "MOVE": 0.2}}
+    rows_calm, flag_calm = evaluate_drift(calm)
+    print(f"drift calm: any_flag={flag_calm}")
+    assert not flag_calm, "baseline-ish numbers should not flag"
+    assert all(r["status"] == "OK" for r in rows_calm), "all rows OK on calm input"
+    # (b) изместен VUG/VTV (10% > 8% band) + трепка (20% > 15%) → флаг
+    drifted = dict(calm)
+    drifted["quad_hi_flip"] = 20.0
+    drifted["rz"] = dict(calm["rz"]); drifted["rz"]["VUG/VTV"] = 10.0
+    rows_dr, flag_dr = evaluate_drift(drifted)
+    print(f"drift drifted: any_flag={flag_dr}")
+    assert flag_dr, "drifted numbers should flag"
+    flagged = {r["name"] for r in rows_dr if r["status"] == "FLAG"}
+    assert any("VUG/VTV" in n for n in flagged), "VUG/VTV >8% should flag"
+    assert any("HI flip" in n for n in flagged), "HI flip >15% should flag"
+    # (c) sanity: occupancy сама (без band) никога не флагва, дори да дрейфне силно
+    occ_only = dict(calm); occ_only["quad_hi_occ"] = 50.0
+    _, flag_occ = evaluate_drift(occ_only)
+    assert not flag_occ, "occupancy has no band → must not flag alone"
+
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
     print("\n\n>>> SMOKE TEST FAILED <<<")

@@ -39,6 +39,78 @@ DATA = ROOT / "data"
 CACHE = Path(__file__).parent / ".bt_cache"
 CACHE.mkdir(exist_ok=True)
 
+# ─────────────────────────────────────────────────────────────────────────────
+# DRIFT-GATE (S20c) — полугодишна самопроверка на трите обръщача.
+#
+# Скелетът горе ПЕЧАТА base-rate-овете. Драйф-портата ги СРАВНЯВА с baseline-а
+# от S16 (числата, калибрирани на 2026-06-19) и с owner-sourced диапазоните,
+# които Цветослав записа дословно в S16 TODO. Изход: trust-map OK/🚩 + exit-code.
+#
+# ЖЕЛЯЗНО ПРАВИЛО (S16): портата НЕ пипа праговете — само флагва за човешки
+# sign-off. Остава read-only за pipeline данните.
+# ─────────────────────────────────────────────────────────────────────────────
+BASELINE_DATE = "2026-06-19"
+# Измерени в S16 (trailing-2г прозорец). Реферетни точки; драйфът = колко се е
+# отместил ТЕКУЩИЯТ 2г прозорец спрямо тях. (Информативни — флагът пали на BANDS.)
+BASELINE = {
+    "quad_hi_occ": 20.6,   # % base_rank_6m ≥ HIGH(80)
+    "quad_lo_occ": 17.1,   # % base_rank_6m ≤ LOW(25)
+    "alarm2_rate": 4.95,   # % седмици с raw alarm_count ≥ 2 (пост-VUG→2.5 калибр. състояние; raw предкалибр. беше 6.9)
+    "rz_xle_spy": 2.2,     # XLE/SPY alarm-дял @W=504
+    "rz_iwm_spy": 8.0,     # IWM/SPY
+    "rz_vug_vtv": 4.98,    # VUG/VTV @z_alarm=2.5
+}
+# Owner-sourced флаг-диапазони (S16 TODO, дословно: "XLE/SPY > 10%, VUG/VTV пак
+# > 8%, quadrant трепка > 15%"). Едностранни горни граници — флаг при measured > band.
+BANDS = {
+    "quad_flip_max": 15.0,    # гранична трепка (flip-rate на live прага) > 15%
+    "alarm2_max": 10.0,       # raw alarm_count≥2 fitka > 10%
+    "rz_xle_spy_max": 10.0,   # XLE/SPY alarm > 10%
+    "rz_vug_vtv_max": 8.0,    # VUG/VTV alarm > 8%
+    "rz_generic_max": 15.0,   # sanity: всеки ДРУГ robust_z индикатор > 15%
+}
+
+
+def evaluate_drift(measured: dict) -> "tuple[list, bool]":
+    """
+    ЧИСТА функция (тестваема без мрежа). Взема измерените base-rate-ове, връща
+    (rows, any_flag). Всеки row = dict {name, measured, baseline, band, status}.
+    status = "OK" | "FLAG". Флаг пали при measured > band (owner-sourced граница).
+    """
+    rows = []
+    any_flag = False
+
+    def add(name, val, baseline, band):
+        nonlocal any_flag
+        flag = val is not None and band is not None and val > band
+        any_flag = any_flag or flag
+        rows.append({
+            "name": name,
+            "measured": None if val is None else round(float(val), 2),
+            "baseline": baseline,
+            "band": band,
+            "status": "FLAG" if flag else "OK",
+        })
+
+    # Quadrant — трепка (по-важна от occupancy: окупацията S16 нарочно изравни).
+    add("quadrant HI flip-rate", measured.get("quad_hi_flip"), None, BANDS["quad_flip_max"])
+    add("quadrant LO flip-rate", measured.get("quad_lo_flip"), None, BANDS["quad_flip_max"])
+    # Окупация — информативна (baseline за справка, без band → никога не флагва сама).
+    add("quadrant HI occ (≥80)", measured.get("quad_hi_occ"), BASELINE["quad_hi_occ"], None)
+    add("quadrant LO occ (≤25)", measured.get("quad_lo_occ"), BASELINE["quad_lo_occ"], None)
+    # Барометър — raw alarm_count≥2 fitka.
+    add("alarm_count≥2 rate", measured.get("alarm2_rate"), BASELINE["alarm2_rate"], BANDS["alarm2_max"])
+    # robust_z — двата с явни owner-граници + sanity за останалите.
+    rz = measured.get("rz", {})
+    add("robust_z XLE/SPY", rz.get("XLE/SPY"), BASELINE["rz_xle_spy"], BANDS["rz_xle_spy_max"])
+    add("robust_z VUG/VTV", rz.get("VUG/VTV"), BASELINE["rz_vug_vtv"], BANDS["rz_vug_vtv_max"])
+    for name, val in rz.items():
+        if name in ("XLE/SPY", "VUG/VTV"):
+            continue
+        add(f"robust_z {name}", val, None, BANDS["rz_generic_max"])
+
+    return rows, any_flag
+
 BAROMETER_TICKERS = ["SPY", "XLE", "GLD", "TLT", "^VIX", "^MOVE",
                      "HYG", "LQD", "XLY", "XLP", "IWM", "VUG", "VTV"]
 
@@ -99,7 +171,7 @@ def backtest_quadrant() -> None:
     panel = pd.concat(rows, ignore_index=True) if rows else pd.DataFrame()
     if panel.empty:
         print("No finite base_rank_6m observations — abort BT1.")
-        return
+        return {}
 
     usable_dates = sorted(panel["date"].unique())
     print(f"Usable (finite base_rank_6m): {len(panel)} obs across "
@@ -173,6 +245,17 @@ def backtest_quadrant() -> None:
               f"(p25={np.percentile(holds,25):.0f}%, "
               f"p75={np.percentile(holds,75):.0f}%)")
 
+    # Headline метрики за драйф-портата (на ЖИВИТЕ прагове HIGH/LOW).
+    c_live = crossings(HIGH_BASE_THRESHOLD, LOW_BASE_THRESHOLD)
+    hi_flip = (c_live["hi_border_flip"] / c_live["hi_border"] * 100) if c_live["hi_border"] else 0.0
+    lo_flip = (c_live["lo_border_flip"] / c_live["lo_border"] * 100) if c_live["lo_border"] else 0.0
+    return {
+        "quad_hi_occ": float((b >= HIGH_BASE_THRESHOLD).mean() * 100),
+        "quad_lo_occ": float((b <= LOW_BASE_THRESHOLD).mean() * 100),
+        "quad_hi_flip": float(hi_flip),
+        "quad_lo_flip": float(lo_flip),
+    }
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # BT2 — CONF_NET
@@ -233,6 +316,9 @@ def backtest_conf_net(prices: pd.DataFrame, fred: dict) -> None:
                   f"base={int(r['base'])} net={int(r['net'])}  "
                   f"[{r['alarm_names']}]")
 
+    # Headline за драйф-портата: дял седмици с raw alarm_count≥2 (живият механизъм).
+    return {"alarm2_rate": float((df["alarm"] >= 2).mean() * 100)}
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # BT3 — robust_z per indicator (window sensitivity)
@@ -264,6 +350,7 @@ def backtest_robust_z(prices: pd.DataFrame) -> None:
     rz_inds = [i for i in INDICATORS if i["kind"] == "robust_z"]
     print(f"{len(rz_inds)} robust_z индикатора: "
           f"{', '.join(i['name'] for i in rz_inds)}")
+    measured_rz = {}  # {name: alarm-дял @W=504} за драйф-портата
 
     # guard: репликацията съвпада с live _robust_z @504 на последния бар
     sample = _series_for(rz_inds[0], prices, {})
@@ -300,16 +387,56 @@ def backtest_robust_z(prices: pd.DataFrame) -> None:
             if w == 504:
                 gray504 = (1 - alarm - base) * 100
                 zmax504 = rz.abs().max()
+                # Драйф-портата ползва ПЕР-ИНДИКАТОРНИЯ z_alarm (VUG/VTV=2.5), за
+                # да съвпада с живото поведение — [a] горе ползва глобалния 2.0.
+                za = ind.get("z_alarm", Z_ALARM)
+                if ind["stress_dir"] == "high":
+                    measured_rz[ind["name"]] = float((rz >= za).mean() * 100)
+                else:
+                    measured_rz[ind["name"]] = float((rz <= -za).mean() * 100)
         print(f"    {ind['name']:<12s} {ind['stress_dir']:<5s} "
               f"{row[0]:7.2f}% {row[1]:7.2f}% {row[2]:7.2f}%  "
               f"{gray504:9.1f}% {zmax504:10.2f}")
 
     print("\n    (base%@504 = калм-дял; gray = междинна зона; "
           "alarm+base+gray=100)")
+    return {"rz": measured_rz}
+
+
+def _print_trust_map(rows: list, any_flag: bool) -> None:
+    _hr(f"DRIFT TRUST-MAP  (baseline {BASELINE_DATE} · owner-sourced bands)")
+    print(f"    {'обръщач':<26s} {'сега':>8s} {'baseline':>9s} "
+          f"{'band':>7s}  статус")
+    for r in rows:
+        m = "—" if r["measured"] is None else f"{r['measured']:.2f}"
+        b = "—" if r["baseline"] is None else f"{r['baseline']:.2f}"
+        bd = "—" if r["band"] is None else f">{r['band']:.0f}"
+        mark = "🚩 FLAG" if r["status"] == "FLAG" else "✓ OK"
+        print(f"    {r['name']:<26s} {m:>8s} {b:>9s} {bd:>7s}  {mark}")
+    print()
+    if any_flag:
+        print("🚩 DRIFT ОТКРИТ — поне един обръщач излезе от owner-диапазона.")
+        print("   Праговете НЕ са пипани (правило S16). Нужен е човешки sign-off:")
+        print("   пусни пълния backtest, прегледай trust-map-а, реши retune ръчно.")
+    else:
+        print("✓ Всички обръщачи в диапазона — нищо за правене. Праговете държат.")
+
+
+def drift_check(prices: pd.DataFrame, fred: dict) -> bool:
+    """Пуска трите backtest-а, събира headline числата, оценява драйфа.
+    Връща any_flag (True → има отклонение за човешки преглед)."""
+    measured = {}
+    measured.update(backtest_quadrant() or {})
+    measured.update(backtest_conf_net(prices, fred) or {})
+    measured.update(backtest_robust_z(prices) or {})
+    rows, any_flag = evaluate_drift(measured)
+    _print_trust_map(rows, any_flag)
+    return any_flag
 
 
 def main():
     refresh = "--refresh" in sys.argv
+    drift = "--drift-check" in sys.argv
     prices = get_prices(years=5, refresh=refresh)
     print(f"Prices: {prices.shape[0]} bars × {prices.shape[1]} tickers "
           f"({prices.index[0].date()} → {prices.index[-1].date()})")
@@ -319,6 +446,13 @@ def main():
     fred = load_fred()
     print(f"FRED: hy_spread {len(fred['hy_spread'])} pts, "
           f"breakeven {len(fred['breakeven_10y'])} pts")
+
+    if drift:
+        any_flag = drift_check(prices, fred)
+        print("\n" + "=" * 78)
+        print("DONE — read-only drift-check. Нищо не е записано в pipeline данните.")
+        print("=" * 78)
+        sys.exit(1 if any_flag else 0)
 
     backtest_quadrant()
     backtest_conf_net(prices, fred)

@@ -1,0 +1,49 @@
+name: Semi-annual Calibration Drift Check
+
+# S20c — полугодишна самопроверка на трите "verdict-flipper" прага (quadrant,
+# барометър confluence, robust_z). Read-only: НЕ пипа праговете, НЕ commit-ва нищо.
+# Сравнява текущите base-rate-ове с S16 baseline-а + owner-sourced диапазоните.
+# При отклонение → exit 1 → Action става ЧЕРВЕН → GitHub праща известие за
+# човешки sign-off (правило S16: ретюн само ръчно).
+
+on:
+  schedule:
+    - cron: "0 6 2 1 *"   # 2 януари 06:00 UTC
+    - cron: "0 6 1 7 *"   # 1 юли 06:00 UTC
+  workflow_dispatch:       # ръчен trigger по всяко време
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read        # read-only — нищо не се записва
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run calibration drift-check
+        id: drift
+        run: |
+          set -o pipefail
+          PYTHONUTF8=1 PYTHONIOENCODING=utf-8 \
+            python scripts/backtest_thresholds.py --drift-check | tee drift_report.txt
+
+      - name: Surface trust-map in run summary
+        if: always()
+        run: |
+          {
+            echo "## Calibration drift trust-map";
+            echo '```';
+            tail -n 28 drift_report.txt 2>/dev/null || echo "(no report produced)";
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
