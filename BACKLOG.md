@@ -123,8 +123,11 @@ VUG-driven (лято'25). Оцелелите 5 alarm-седмици са по-т
 · daily_update exit 0 (днес alarm=0/base=10 "Спокоен режим") · preview :8137 (10 чипа,
 нов банер текст, VUG чип "|z|>2.5", 0 console грешки).
 
-**TODO — редовен калибрационен инструмент (1–2×/год):** `backtest_thresholds.py` е
-диагностичният скелет. Да се обвие в редовен ритуал — semi-annual re-run, който мери
-base-rate drift на трите обръщача и флагва ако нещо излезе от диапазона (напр. XLE/SPY >
-10%, VUG/VTV пак > 8%, quadrant трепка > 15%). Кандидат за scheduled task. Прагът НЕ се
-пипа авто — само се показва trust-map за човешко sign-off (като S16).
+**TODO — редовен калибрационен инструмент (1–2×/год):** ✅ **РЕАЛИЗИРАН — S20c (2026-06-19,
+commit fc29f34).** `backtest_thresholds.py --drift-check`: пуска живия код над ~5г, вади
+base-rate-овете на трите обръщача, сравнява със S16 baseline + owner-диапазоните (quadrant
+flip >15%, alarm_count≥2 >10%, XLE/SPY >10%, VUG/VTV >8%), печата OK/🚩 trust-map и exit 1
+при флаг. Read-only — НЕ пипа праг (S16 правило). Полугодишен GitHub Actions cron
+(`.github/workflows/calibration_drift.yml`, 2 яну + 1 юли + workflow_dispatch); 🚩 → червен
+Action + trust-map в summary → известие за човешки sign-off. Живо днес: всичко OK, exit 0,
+възпроизвежда S16 baseline точно. robust_z capture чете пер-индикаторния z_alarm (VUG/VTV=2.5).
