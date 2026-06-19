@@ -148,7 +148,7 @@ function sparkline(data) {
 const EXPORT_COLS = [
   ["ticker", "Ticker"], ["name", "Name"], ["category", "Category"],
   ["percentile_rank", "Rank%"], ["ret_1m", "Ret1M%"], ["ret_3m", "Ret3M%"],
-  ["ret_12m", "Ret12M%"], ["sharpe_12m", "Sharpe"], ["max_dd_12m", "MaxDD%"],
+  ["ret_12m", "Ret12M%"], ["sharpe_12m", "Sharpe (rf=0)"], ["max_dd_12m", "MaxDD%"],
   ["dist_52w_high", "vs52wH%"], ["drawdown_now", "DDnow%"], ["atr_pct", "ATR%"],
   ["stop_distance_pct", "Stop%"], ["expense_ratio", "ExpRatio%"], ["yield", "Yield%"],
   ["pe_ratio", "PE"], ["aum", "AUM"], ["dollar_vol_20d", "DollarVol20d"],

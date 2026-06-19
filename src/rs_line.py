@@ -67,11 +67,14 @@ def generate_rs_signals(
             
         last_row = rs_df.iloc[-1]
         
-        # Calculate days since last crossover
+        # Дни от последния crossover — в ТЪРГОВСКИ дни (брой барове), не календарни.
+        # За trading инструмент календарните надуват ~+45% (уикенди/празници) и
+        # подвеждат "In trend: Nd" + ≤30 "нов crossover" филтъра. Броим баровете
+        # на/след crossover-а минус самия него.
         crossovers = rs_df[rs_df["signal_change"] != 0].copy()
         if not crossovers.empty:
             last_cross_date = crossovers.index[-1]
-            days_since = (rs_df.index[-1] - last_cross_date).days
+            days_since = int(len(rs_df.loc[last_cross_date:]) - 1)
             last_signal = crossovers.iloc[-1]["signal_change"]
         else:
             days_since = np.nan
