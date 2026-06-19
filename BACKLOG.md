@@ -32,9 +32,9 @@ All items are **free** (no paid API). Grouped by value-to-effort.
 - [x] ~~CFTC COT positioning for commodity/rate ETFs (CFTC Socrata, keyless)~~ — **S18 batch 4 (2026-06-19)**: `src/cot.py` (отделен модул, seed `data/cot.parquet`). Net positioning percentile vs 3г (156с): стоки=Managed Money net (disaggregated 72hh-3qpy), лихви=Leveraged Funds net (TFF gpe5-46if). Пинирано по `cftc_contract_market_code` (INIT-22 урок). 12 ETF: GLD/IAU/SLV/CPER/USO/WEAT/CORN/PALL/PPLT (MM) + SHY/IEF/TLT (LEV). Screener колона „COT %ile" + tooltip (net, %OI, дата, дълъг/къс). Живо: CPER 94% (мед crowded long), TLT 1% (lev funds най-късо облигацията за 3г). UNG в мапинга но не във вселената → self-skip.
 
 ## Tier 3 — bigger UX
-- [ ] "Movers since last run" diff panel (`ranks_history.parquet` already stores the series)
+- [x] ~~"Movers since last run" diff panel~~ — **S19 (2026-06-19)**: панел „📊 Движения от {prev}" на върха на Rotation Radar таба. **Седмица-за-седмица** (~5 търговски дни) ΔRank diff — НЕ ден-за-ден (CI вече прави дневни snapshot-и → „последен run" = вчера = шум; седмично ляга върху петъчния ритъм и запълва дупката под 1м/3м). Две части: най-големи движители (|ΔRank|≥15) + ротация в челото (влизащи/изпадащи от топ-15). Праг ≥15 = горен децил на седмичните движения (p90=15.4, изчислено от 98 W-FRI двойки). `src/rank_history.py::compute_movers` (нула нови вызови, чете готовата `ranks_history.parquet`); `render.py` `movers=` → `payload["movers"]`; `app.js::renderMovers` (независим от cat/window филтрите, рисува се в init). smoke step 13 (синтетичен ΔRank diff + render coverage).
 - [ ] Category-rotation-over-time heat-strip (10 cats × ~26 weeks)
-- [ ] Printable weekly BG snapshot (`@media print` + `window.print()`)
+- [x] ~~Printable weekly BG snapshot (`@media print` + `window.print()`)~~ — **S18 (2026-06-19)**: бутон 🖨 форсира светла тема → `window.print()` → възстановява; `@media print` (само активен таб, скрити контроли, запазени цветове, page margins). Чист фронтенд (commit 1d5bf2f).
 
 ## Open question (needs owner confirmation)
 - [ ] **XLE/SPY barometer thresholds basis** — pipeline computes the ratio from *dividend-adjusted* closes (~0.078, fits the 0.060/0.070 thresholds). Confirm the published thresholds are calibrated on the adjusted basis; otherwise recalibrate. (GLD/TLT is unaffected — gold pays no dividend.)

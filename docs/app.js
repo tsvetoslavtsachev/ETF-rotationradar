@@ -45,6 +45,7 @@ function init() {
 
   renderBarometer();
   renderMacro();
+  renderMovers();
 
   document.getElementById("window-filter").addEventListener("change", renderAll);
   document.getElementById("screener-sort").addEventListener("change", () => {
@@ -198,6 +199,71 @@ function cotTooltip(e) {
   const t = `${e.cot_market || ""} · ${e.cot_kind || ""}: ${dir} ${net} контракта${oi}`
     + ` | percentile ${e.cot_pctile}% спрямо 3г${e.cot_date ? " · " + e.cot_date : ""}`;
   return t.replace(/"/g, "&quot;").replace(/&(?!quot;)/g, "&amp;");
+}
+
+// ── Movers since last week (Tier 3 UX) ─────────────────────
+// Седмица-за-седмица ΔRank diff + ротация в челото. Независим от cat/window
+// филтрите — рисува се веднъж в init() (като Барометъра/Макро стрипа).
+function renderMovers() {
+  const el = document.getElementById("movers-panel");
+  if (!el) return;
+  const m = DATA.movers;
+  if (!m || !m.available) { el.style.display = "none"; return; }
+
+  const moverRow = (r, dir) => {
+    const cls = dir === "up" ? "positive" : "negative";
+    const arrow = dir === "up" ? "▲" : "▼";
+    const d = r.delta != null ? (r.delta > 0 ? "+" : "") + r.delta : "—";
+    const ctx = (r.prev != null && r.now != null) ? `${r.prev}→${r.now}` : "";
+    return `<div class="mv-row">
+      <span class="mv-arrow ${cls}">${arrow}</span>
+      <span class="q-ticker">${r.ticker}</span>
+      <span class="q-cat-badge">${r.category || ""}</span>
+      <span class="mv-name">${r.name || ""}</span>
+      <span class="mv-ctx">${ctx}</span>
+      <span class="mv-delta ${cls}">${d}</span>
+    </div>`;
+  };
+
+  // Двата списъка — нагоре после надолу. По 8 на страна (праг ≥15 рядко дава повече).
+  const upRows = m.up.slice(0, 8).map(r => moverRow(r, "up")).join("");
+  const downRows = m.down.slice(0, 8).map(r => moverRow(r, "down")).join("");
+  const moversHtml = (upRows + downRows) ||
+    `<div class="mv-empty">Спокойна седмица — нито един ETF не мръдна с ${m.threshold}+ ранг пункта.</div>`;
+
+  // Ротация в челото: pill-ове с tooltip (now = текущ momentum-перцентил 0–100).
+  const pill = (r, dir) => {
+    const cls = dir === "in" ? "positive" : "negative";
+    const tip = dir === "in"
+      ? `${r.name || r.ticker} · влезе в топ-${m.top_n} (ранг ${r.now}%)`
+      : `${r.name || r.ticker} · напусна топ-${m.top_n} (ранг ${r.prev}%→${r.now}%)`;
+    return `<span class="mv-pill ${cls}" title="${tip.replace(/"/g, "&quot;")}">`
+      + `${r.ticker}<span class="mv-ctx">${r.now != null ? r.now : "—"}</span></span>`;
+  };
+  const entered = m.entered.length
+    ? m.entered.map(r => pill(r, "in")).join("")
+    : `<span class="mv-none">няма промяна</span>`;
+  const left = m.left.length
+    ? m.left.map(r => pill(r, "out")).join("")
+    : `<span class="mv-none">няма промяна</span>`;
+
+  el.innerHTML = `
+    <div class="reg-head">
+      <span class="reg-title">📊 Движения от ${m.prev_date}</span>
+      <span class="reg-asof">седмица за седмица · |ΔRank| ≥ ${m.threshold}</span>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-col">
+        <div class="mv-subhead">Най-големи движители</div>
+        ${moversHtml}
+      </div>
+      <div class="mv-col">
+        <div class="mv-subhead">Ротация в челото (топ-${m.top_n})</div>
+        <div class="mv-rot"><span class="mv-rot-label positive">▲ влязоха</span><div class="mv-pills">${entered}</div></div>
+        <div class="mv-rot"><span class="mv-rot-label negative">▼ напуснаха</span><div class="mv-pills">${left}</div></div>
+      </div>
+    </div>`;
+  el.style.display = "block";
 }
 
 // ── Rotation Radar ─────────────────────────────────────────

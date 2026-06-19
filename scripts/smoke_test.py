@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from src.prices import download_prices, download_ohlcv
 from src.signal_engine import compute_cross_section
-from src.rank_history import build_history_from_prices, compute_delta_metrics
+from src.rank_history import build_history_from_prices, compute_delta_metrics, compute_movers
 from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.render import render_frontend_data
@@ -267,6 +267,50 @@ try:
     gld = next(e for e in payload4["etfs"] if e["ticker"] == "GLD")
     assert gld.get("cot_pctile") == 100 and gld.get("cot_market") == "Gold (COMEX)", \
         "COT fields missing from payload"
+
+    step("13. movers since last week (synthetic ΔRank diff + render coverage, без мрежа)")
+    # Две snapshot дати ~5 търговски дни апарт. Конструираме ранговете така, че:
+    #   QQQ +25 (движител нагоре, влиза в топ-2) · XLF -25 (надолу, напуска топ-2)
+    #   XLK -20 (движител надолу) · GLD +20 (движител нагоре, под топ-2)
+    mv_hist = pd.DataFrame([
+        {"date": "2026-06-11", "ticker": "SPY", "percentile_rank": 90.0},
+        {"date": "2026-06-11", "ticker": "QQQ", "percentile_rank": 50.0},
+        {"date": "2026-06-11", "ticker": "XLK", "percentile_rank": 30.0},
+        {"date": "2026-06-11", "ticker": "XLF", "percentile_rank": 85.0},
+        {"date": "2026-06-11", "ticker": "GLD", "percentile_rank": 20.0},
+        {"date": "2026-06-18", "ticker": "SPY", "percentile_rank": 92.0},
+        {"date": "2026-06-18", "ticker": "QQQ", "percentile_rank": 75.0},
+        {"date": "2026-06-18", "ticker": "XLK", "percentile_rank": 10.0},
+        {"date": "2026-06-18", "ticker": "XLF", "percentile_rank": 60.0},
+        {"date": "2026-06-18", "ticker": "GLD", "percentile_rank": 40.0},
+    ])
+    mv_hist["date"] = pd.to_datetime(mv_hist["date"])
+    mv = compute_movers(mv_hist, as_of=pd.Timestamp("2026-06-18"),
+                        threshold=15.0, top_n=2, name_map=name_map, category_map=cat_map)
+    print("movers:", {k: (len(v) if isinstance(v, list) else v) for k, v in mv.items()})
+    assert mv["available"], "movers should be available with 2 snapshots"
+    assert mv["prev_date"] == "2026-06-11" and mv["as_of"] == "2026-06-18", "movers dates wrong"
+    up_t = {r["ticker"] for r in mv["up"]}
+    down_t = {r["ticker"] for r in mv["down"]}
+    assert up_t == {"QQQ", "GLD"}, f"up movers wrong: {up_t}"
+    assert down_t == {"XLF", "XLK"}, f"down movers wrong: {down_t}"
+    qqq_up = next(r for r in mv["up"] if r["ticker"] == "QQQ")
+    assert qqq_up["delta"] == 25 and qqq_up["prev"] == 50 and qqq_up["now"] == 75, "QQQ row values wrong"
+    assert mv["up"][0]["ticker"] == "QQQ", "up should be sorted by ΔRank desc (QQQ +25 first)"
+    assert mv["down"][0]["ticker"] == "XLF", "down should be sorted most-negative first (XLF -25)"
+    assert {r["ticker"] for r in mv["entered"]} == {"QQQ"}, "QQQ should enter top-2"
+    assert {r["ticker"] for r in mv["left"]} == {"XLF"}, "XLF should leave top-2"
+    # праг: при threshold=30 само ±25/±20 НЕ палят → празни списъци, но available
+    mv_strict = compute_movers(mv_hist, as_of=pd.Timestamp("2026-06-18"), threshold=30.0, top_n=2)
+    assert mv_strict["available"] and not mv_strict["up"] and not mv_strict["down"], \
+        "threshold=30 should yield no movers but stay available"
+    # render coverage: movers попада в payload-а
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map, movers=mv)
+    payload5 = json.load(open(out))
+    assert payload5.get("movers") and payload5["movers"]["available"], "movers missing from payload"
+    assert len(payload5["movers"]["up"]) == 2 and len(payload5["movers"]["entered"]) == 1, \
+        "movers payload structure wrong"
 
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:

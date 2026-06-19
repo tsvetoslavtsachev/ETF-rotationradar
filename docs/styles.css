@@ -238,6 +238,46 @@ main {
 .negative { color: var(--red); }
 .neutral { color: var(--text-muted); }
 
+/* ── Movers panel (Tier 3 UX) ──────────────────────────────── */
+.movers-panel .mv-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.25rem;
+}
+@media (max-width: 720px) { .movers-panel .mv-grid { grid-template-columns: 1fr; } }
+.mv-subhead {
+  font-size: 0.74rem; font-weight: 700; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.45rem;
+}
+.mv-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.28rem 0.5rem; border-radius: 6px;
+}
+.mv-row:hover { background: var(--bg3); }
+.mv-arrow { font-size: 0.78rem; width: 0.9rem; text-align: center; }
+.mv-name {
+  color: var(--text-muted); font-size: 0.78rem; flex: 1;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.mv-ctx { color: var(--text-muted); font-size: 0.72rem; font-variant-numeric: tabular-nums; }
+.mv-delta {
+  font-size: 0.85rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  min-width: 2.6rem; text-align: right;
+}
+.mv-empty, .mv-none { color: var(--text-muted); font-size: 0.8rem; padding: 0.28rem 0.5rem; }
+.mv-rot { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.6rem; }
+.mv-rot-label { font-size: 0.74rem; font-weight: 600; min-width: 5.4rem; padding-top: 0.18rem; }
+.mv-pills { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.mv-pill {
+  font-family: monospace; font-weight: 700; font-size: 0.8rem;
+  padding: 0.12rem 0.45rem; border-radius: 5px;
+  border: 1px solid var(--border); border-left-width: 3px; background: var(--bg3);
+  display: inline-flex; align-items: baseline; gap: 0.25rem;
+}
+.mv-pill.positive { border-left-color: var(--green); color: var(--text); }
+.mv-pill.negative { border-left-color: var(--red); color: var(--text); }
+.mv-pill .mv-ctx { font-weight: 400; }
+
 /* ── Screener Table ────────────────────────────────────────── */
 /* Собствен scroll-контейнер: иначе overflow-x:auto прави и overflow-y:auto,
    което чупи sticky хедъра (закача се за обвивката вместо за viewport-а).

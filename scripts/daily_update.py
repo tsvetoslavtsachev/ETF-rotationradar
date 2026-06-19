@@ -23,7 +23,7 @@ from src.universe import (
 )
 from src.prices import download_ohlcv, download_prices
 from src.signal_engine import compute_cross_section
-from src.rank_history import append_snapshot, load_history, compute_delta_metrics
+from src.rank_history import append_snapshot, load_history, compute_delta_metrics, compute_movers
 from src.fundamentals import fetch_fundamentals
 from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
@@ -218,16 +218,31 @@ def main():
     n_cot = int(cot["cot_pctile"].notna().sum()) if not cot.empty else 0
     print(f"COT: {n_cot} ETFs with positioning percentile")
 
+    # 6.11 Движения от миналата седмица (Tier 3 UX) — седмица-за-седмица ΔRank
+    #      diff + ротация в челото (топ-15). Чете готовата rank history (нула
+    #      нови вызови). Прозорец/праг/top_n sign-off-нати (S19): седмично,
+    #      |ΔRank|≥15 (горен децил), топ-15.
+    print("\nComputing movers (week-over-week ΔRank)...")
+    name_map = get_name_map()
+    movers = compute_movers(
+        history, as_of=latest_date, name_map=name_map, category_map=category_map
+    )
+    if movers["available"]:
+        print(f"Movers: {len(movers['up'])} up, {len(movers['down'])} down, "
+              f"{len(movers['entered'])} entered / {len(movers['left'])} left "
+              f"top-{movers['top_n']} (vs {movers['prev_date']})")
+    else:
+        print("Movers: history too short — panel hidden")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
-    name_map = get_name_map()
     output_path = DOCS_DIR / "data.json"
     render_frontend_data(
         deltas, screener, fundamentals, rs_signals,
         category_map, name_map, benchmark_map, output_path,
         barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
         spark_map=spark_map, macro=macro_context, betas_df=betas,
-        lookthrough_df=lookthrough, cot_df=cot
+        lookthrough_df=lookthrough, cot_df=cot, movers=movers
     )
 
     print("\n=== Update Complete ===")

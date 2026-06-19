@@ -136,6 +136,103 @@ def get_faded_bounces(deltas: pd.DataFrame, window: str = "1m", limit: int = 20)
     fb = deltas[deltas[quad_col] == "riser"].copy()
     return fb.nlargest(limit, delta_col)
 
+# ── Movers since last week (Tier 3 UX) ─────────────────────────
+# Седмица-за-седмица ΔRank diff + ротация в челото. Прозорецът, прагът и
+# top_n са sign-off-нати от Цветослав (S19): седмично (~5 търговски дни),
+# защото петъчният ритъм + 1м/3м вече покриват по-дългите хоризонти; праг
+# |ΔRank|≥15 = горния децил на седмичните движения (p90=15.4, изчислено от
+# 98 W-FRI двойки в ranks_history); топ-15 = същия cut като Rotation Radar.
+MOVERS_WINDOW_BDAYS = 5
+MOVERS_THRESHOLD = 15.0
+MOVERS_TOP_N = 15
+
+
+def _snapshot_on_or_before(history: pd.DataFrame, cutoff: pd.Timestamp):
+    """Връща (дата, percentile_rank серия по ticker) за последния snapshot на/преди cutoff."""
+    sub = history[history["date"] <= cutoff]
+    if sub.empty:
+        return None, pd.Series(dtype=float)
+    last_date = sub["date"].max()
+    snap = sub[sub["date"] == last_date].set_index("ticker")["percentile_rank"]
+    return last_date, snap
+
+
+def compute_movers(
+    history: pd.DataFrame,
+    as_of: pd.Timestamp | None = None,
+    window_bdays: int = MOVERS_WINDOW_BDAYS,
+    threshold: float = MOVERS_THRESHOLD,
+    top_n: int = MOVERS_TOP_N,
+    name_map: dict | None = None,
+    category_map: dict | None = None,
+) -> dict:
+    """
+    "Движения от миналата седмица" — сравнява текущия snapshot с snapshot
+    ~window_bdays търговски дни назад. Чете готовата rank history (нула нови
+    цени/вызови). Връща display-ready dict:
+      up/down   — движители с |ΔRank| >= threshold (up низходящо, down по
+                  най-отрицателния първи);
+      entered/  — тикъри, влезли/напуснали топ-N по percentile_rank между
+      left        двата snapshot-а (ротация в челото).
+    Всеки ред: ticker / name / category / prev / now / delta (закръглени).
+    `available=False` (празни списъци) ако историята е твърде къса.
+    """
+    name_map = name_map or {}
+    category_map = category_map or {}
+    empty = {
+        "available": False, "as_of": None, "prev_date": None,
+        "window_bdays": window_bdays, "threshold": threshold, "top_n": top_n,
+        "up": [], "down": [], "entered": [], "left": [],
+    }
+    if history.empty:
+        return empty
+
+    if as_of is None:
+        as_of = history["date"].max()
+    as_of = pd.Timestamp(as_of)
+
+    cur_date, cur = _snapshot_on_or_before(history, as_of)
+    if cur_date is None or cur.empty:
+        return empty
+    cutoff = cur_date - pd.tseries.offsets.BusinessDay(window_bdays)
+    prev_date, prev = _snapshot_on_or_before(history, cutoff)
+    if prev_date is None or prev.empty:
+        return empty
+
+    common = cur.index.intersection(prev.index)
+    delta = (cur[common] - prev[common]).dropna()
+
+    def _round(v):
+        return None if v is None or not np.isfinite(v) else int(round(float(v)))
+
+    def row(t: str) -> dict:
+        p = prev[t] if t in prev.index else np.nan
+        n = cur[t] if t in cur.index else np.nan
+        d = (n - p) if (np.isfinite(p) and np.isfinite(n)) else np.nan
+        return {
+            "ticker": t,
+            "name": name_map.get(t, ""),
+            "category": category_map.get(t, ""),
+            "prev": _round(p), "now": _round(n), "delta": _round(d),
+        }
+
+    up = [row(t) for t in delta[delta >= threshold].sort_values(ascending=False).index]
+    down = [row(t) for t in delta[delta <= -threshold].sort_values().index]
+
+    cur_top = set(cur.nlargest(top_n).index)
+    prev_top = set(prev.nlargest(top_n).index)
+    entered = [row(t) for t in sorted(cur_top - prev_top, key=lambda t: -cur[t])]
+    left = [row(t) for t in sorted(prev_top - cur_top, key=lambda t: -prev.get(t, 0))]
+
+    return {
+        "available": True,
+        "as_of": cur_date.strftime("%Y-%m-%d"),
+        "prev_date": prev_date.strftime("%Y-%m-%d"),
+        "window_bdays": window_bdays, "threshold": threshold, "top_n": top_n,
+        "up": up, "down": down, "entered": entered, "left": left,
+    }
+
+
 def build_history_from_prices(
     prices_df: pd.DataFrame,
     sample_dates: pd.DatetimeIndex,
