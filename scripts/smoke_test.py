@@ -90,6 +90,17 @@ try:
     assert np.isfinite(spy["atr_14"]) and np.isfinite(spy["stop_distance_pct"]), "SPY ATR/stop not finite"
     assert np.isfinite(spy["dollar_vol_20d"]) and spy["liquidity_flag"] == "ok", "SPY liquidity wrong"
 
+    step("6c. compute_betas (90d beta/corr to SPY)")
+    from src.beta import compute_betas
+    betas = compute_betas(prices, tickers)
+    print(betas.to_string())
+    assert not betas.empty, "betas empty"
+    spy_b = betas[betas["ticker"] == "SPY"]
+    assert not spy_b.empty, "SPY beta row missing"
+    # SPY спрямо себе си: beta = var/var = 1.0, corr = 1.0 (точно, до закръгляне)
+    assert abs(spy_b["beta_90d"].iloc[0] - 1.0) < 0.05, "SPY beta to itself should be ~1.0"
+    assert abs(spy_b["corr_90d"].iloc[0] - 1.0) < 0.02, "SPY corr to itself should be ~1.0"
+
     step("7. render_frontend_data")
     out = Path(__file__).parent.parent / "docs" / "_smoke_data.json"
     fund_empty = pd.DataFrame(columns=["ticker"])
@@ -98,13 +109,15 @@ try:
         for t in tickers if t in prices.columns
     }
     render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
-                         ohlcv_df=ohlcv_scr, spark_map=spark_map)
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map, betas_df=betas)
     import json
     payload = json.load(open(out))
     print(f"as_of={payload['as_of']}, n_etfs={len(payload['etfs'])}, categories={payload['categories']}")
     print("Sample record:", json.dumps(payload['etfs'][0], indent=2))
     assert any(isinstance(e.get("spark"), list) and len(e["spark"]) >= 2 for e in payload["etfs"]), \
         "sparkline data missing from rendered payload"
+    assert any(e.get("beta_90d") is not None for e in payload["etfs"]), \
+        "beta_90d missing from rendered payload"
 
     step(f"8. compute_barometer ({len(INDICATORS)} indicators)")
     # S15: 10 индикатора. TIP/IEF + IWF/IWD махнати; XLE/SPY вече robust_z.
@@ -161,7 +174,7 @@ try:
     flow_path.unlink()
 
     step("10. macro context (synthetic, без мрежа)")
-    from src.macro_context import compute_macro_context, MACRO_SERIES
+    from src.macro_context import compute_macro_context, compute_gold_copper_item, MACRO_SERIES
     synth = {
         "stlfsi": pd.Series([0.5] * 40, index=pd.date_range("2025-01-01", periods=40, freq="W-FRI")),
         "nfci": pd.Series([-0.4] * 40, index=pd.date_range("2025-01-01", periods=40, freq="W-FRI")),
@@ -178,12 +191,28 @@ try:
     assert zmap["curve_2s10s"] == "alarm", "инверсия (<0) трябва да е стрес"
     assert zmap["recession_prob"] == "base", "5% recession prob трябва да е калм"
     assert zmap["usd"] == "unknown", "липсваща USD серия трябва да е unknown"
-    # render coverage: macro попада в payload-а
+    # GLD/COPX item (S18) — синтетичен: тих базис + рязък последен скок нагоре
+    # (бягство към злато) → силно положителен robust_z → stress_dir high → alarm.
+    n = 520
+    idx = pd.date_range("2024-01-01", periods=n, freq="B")
+    vals = np.full(n, 4.0) + ((np.arange(n) % 2) * 0.04 - 0.02)  # тих базис ±0.02
+    vals[-8:] = np.linspace(4.0, 5.2, 8)                          # скорошен скок
+    synth_px = pd.DataFrame({"GLD": vals * 50.0, "COPX": np.full(n, 50.0)}, index=idx)
+    gc = compute_gold_copper_item(synth_px, idx[-1])
+    print("GLD/COPX item:", gc)
+    assert gc["value"] is not None and gc["z"] is not None, "GLD/COPX value/z missing"
+    assert gc["zone"] == "alarm", "рязко растящ GLD/COPX (страх) трябва да е стрес"
+    # липсваща COPX крак → unknown (smoke вселената няма COPX)
+    gc_missing = compute_gold_copper_item(prices, prices.index[-1])
+    assert gc_missing["zone"] == "unknown", "липсваща COPX трябва да е unknown"
+    # daily_update append-ва GLD/COPX като 6-ти item; огледалваме това тук
+    mc["items"].append(gc)
+    # render coverage: macro попада в payload-а (5 FRED + 1 price-derived = 6)
     render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
                          ohlcv_df=ohlcv_scr, spark_map=spark_map, macro=mc)
     payload2 = json.load(open(out))
-    assert payload2.get("macro") and len(payload2["macro"]["items"]) == len(MACRO_SERIES), \
-        "macro context missing from rendered payload"
+    assert payload2.get("macro") and len(payload2["macro"]["items"]) == len(MACRO_SERIES) + 1, \
+        "macro context (5 FRED + GLD/COPX) missing from rendered payload"
 
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:

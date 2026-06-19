@@ -40,6 +40,7 @@ def render_frontend_data(
     flows_df: "pd.DataFrame | None" = None,
     spark_map: "dict | None" = None,
     macro: "dict | None" = None,
+    betas_df: "pd.DataFrame | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -68,6 +69,10 @@ def render_frontend_data(
     # Merge fund-flow прокси (S15) — est_flow / est_flow_pct / flow_window_days / flow_dir
     if flows_df is not None and not flows_df.empty:
         df = df.merge(flows_df, on="ticker", how="left")
+
+    # Merge 90д бета / корелация спрямо SPY (S18) — beta_90d / corr_90d
+    if betas_df is not None and not betas_df.empty:
+        df = df.merge(betas_df, on="ticker", how="left")
 
     # Merge Fundamentals
     if not fundamentals_df.empty:

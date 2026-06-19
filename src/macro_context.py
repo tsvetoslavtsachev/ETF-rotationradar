@@ -116,3 +116,39 @@ def compute_macro_context(fred_series: "dict | None", as_of) -> dict:
 
     as_of_str = as_of.strftime("%Y-%m-%d") if hasattr(as_of, "strftime") else str(as_of)
     return {"as_of": as_of_str, "items": items}
+
+
+def compute_gold_copper_item(prices_df, as_of) -> dict:
+    """
+    GLD/COPX (злато / медни миньори) — 'страх срещу растеж' с едно пазарно число.
+    Високо съотношение = бягство към злато (страх/защита); ниско = апетит към
+    цикличната мед (растеж). Price-derived (НЕ FRED), но display-only режимен фон
+    в същия стрип — затова връща item със СЪЩАТА форма като FRED серите.
+
+    Зона през robust_z (~2г, само-калибриращ — без измислен праг); stress_dir='high'
+    (високо съотношение = страх = стрес). ⚠️ COPX са медни МИНЬОРИ (акции с пазарна
+    бета + оперативен ливъридж), не медни фючърси — по-шумен прокси от класическото
+    copper/gold; държано като документирана конвенция (и двата вече във вселената,
+    keyless). Връща zone='unknown' ако някой крак липсва (GLD/COPX извън цените).
+    """
+    item = {
+        "key": "gld_copx", "name": "GLD/COPX", "value": None, "zone": "unknown",
+        "z": None, "note": "злато/мед — страх срещу растеж",
+        "source": "yfinance GLD/COPX (миньори, не фючърси — конвенция)",
+        "trend_4w": "flat", "change_4w_pct": None,
+    }
+    if prices_df is None or "GLD" not in prices_df.columns or "COPX" not in prices_df.columns:
+        return item
+    ratio = (prices_df["GLD"] / prices_df["COPX"])
+    ratio = ratio.replace([np.inf, -np.inf], np.nan).dropna()
+    if ratio.empty:
+        return item
+    zr = _robust_z(ratio)
+    direction, change = _trend_4w(ratio)
+    item.update({
+        "value": round(float(ratio.iloc[-1]), 2),
+        "z": round(zr, 2) if zr is not None else None,
+        "zone": _zone_z(zr, "high"),
+        "trend_4w": direction, "change_4w_pct": change,
+    })
+    return item

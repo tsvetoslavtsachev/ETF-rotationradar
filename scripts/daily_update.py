@@ -29,8 +29,9 @@ from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.fred import fetch_fred_series
 from src.barometer import compute_barometer
-from src.macro_context import compute_macro_context, MACRO_SERIES
+from src.macro_context import compute_macro_context, compute_gold_copper_item, MACRO_SERIES
 from src.flows import append_aum_snapshot, load_aum_history, compute_flows
+from src.beta import compute_betas
 from src.render import render_frontend_data
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -174,9 +175,14 @@ def main():
         )
         time.sleep(8)
     macro_context = compute_macro_context(macro_raw, latest_date)
+    # GLD/COPX (страх-срещу-растеж) — price-derived 6-ти чип в СЪЩИЯ макро-стрип
+    # (DISPLAY-ONLY; не влиза в Барометър confluence). На вече свалените цени.
+    gc_item = compute_gold_copper_item(prices_df, latest_date)
+    macro_context["items"].append(gc_item)
     mi = {i["key"]: i["value"] for i in macro_context["items"]}
     print(f"Macro: STLFSI4={mi['stlfsi']} NFCI={mi['nfci']} USD={mi['usd']} "
-          f"2s10s={mi['curve_2s10s']} RecProb={mi['recession_prob']}")
+          f"2s10s={mi['curve_2s10s']} RecProb={mi['recession_prob']} "
+          f"GLD/COPX={gc_item['value']} (z={gc_item['z']} {gc_item['zone']})")
 
     # 6.6 Sparkline серии — 2г седмично-децимиран Close per ETF (за Rotation Radar)
     spark_src = filter_prices(prices_df, tickers).resample("W-FRI").last()
@@ -187,6 +193,12 @@ def main():
             spark_map[t] = [round(float(x), 3) for x in s.tail(104).tolist()]
     print(f"Built sparkline series for {len(spark_map)} ETFs")
 
+    # 6.8 90д бета / корелация спрямо SPY (S18) — per-ETF Screener колони,
+    #     на вече свалените цени (нула нови вызови). SPY е в prices_df (бенчмарк).
+    print("\nComputing 90d beta/correlation to SPY...")
+    betas = compute_betas(prices_df, tickers)
+    print(f"Computed beta/corr for {len(betas)} ETFs (full {90}-day window)")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     name_map = get_name_map()
@@ -195,7 +207,7 @@ def main():
         deltas, screener, fundamentals, rs_signals,
         category_map, name_map, benchmark_map, output_path,
         barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
-        spark_map=spark_map, macro=macro_context
+        spark_map=spark_map, macro=macro_context, betas_df=betas
     )
 
     print("\n=== Update Complete ===")

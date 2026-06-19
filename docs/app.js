@@ -150,7 +150,7 @@ const EXPORT_COLS = [
   ["dist_52w_high", "vs52wH%"], ["drawdown_now", "DDnow%"], ["atr_pct", "ATR%"],
   ["stop_distance_pct", "Stop%"], ["expense_ratio", "ExpRatio%"], ["yield", "Yield%"],
   ["pe_ratio", "PE"], ["aum", "AUM"], ["dollar_vol_20d", "DollarVol20d"],
-  ["est_flow_pct", "Flow%"],
+  ["est_flow_pct", "Flow%"], ["beta_90d", "Beta90d"], ["corr_90d", "Corr90d"],
 ];
 function csvCell(v) {
   if (v == null) return "";
@@ -270,6 +270,8 @@ function renderScreener() {
       <td class="num-cell">${fmtAUM(e.aum)}</td>
       <td class="num-cell">${fmtDollarVol(e.dollar_vol_20d, e.liquidity_flag)}</td>
       <td class="num-cell">${fmtFlow(e.est_flow_pct, e.est_flow, e.flow_dir, e.flow_window_days)}</td>
+      <td class="num-cell">${e.beta_90d != null ? fmtNum(e.beta_90d, 2) : "—"}</td>
+      <td class="num-cell">${e.corr_90d != null ? fmtNum(e.corr_90d, 2) : "—"}</td>
     </tr>`;
   }).join("");
 }
