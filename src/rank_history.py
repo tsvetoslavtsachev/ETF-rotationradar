@@ -18,7 +18,11 @@ BASE_START_DAYS = 126
 BASE_END_DAYS = 21
 
 HIGH_BASE_THRESHOLD = 80.0
-LOW_BASE_THRESHOLD = 20.0
+# S16 (2026-06-19): LOW 20→25 за симетрични опашки. base_rank_6m (6м средно на
+# percentile) е компресирано към центъра → ≥80 хващаше 20.6%, но ≤20 само 12.3%.
+# 25 изравнява долната опашка към горната ("riser"/"chronic_loser" вече не са
+# недонаселени спрямо "stable_winner"/"decayer").
+LOW_BASE_THRESHOLD = 25.0
 
 def append_snapshot(history_path: Path, snapshot: pd.DataFrame) -> None:
     snap = snapshot[HISTORY_COLUMNS].copy()

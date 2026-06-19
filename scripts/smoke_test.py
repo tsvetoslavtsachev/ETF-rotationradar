@@ -122,6 +122,16 @@ try:
     assert hyg["kind"] == "robust_z" and hyg["z"] is not None, "HYG/LQD z missing"
     xle = next(i for i in bar["indicators"] if i["key"] == "xle_spy")
     assert xle["kind"] == "robust_z", "XLE/SPY should be robust_z after S15"
+    # S16: VUG/VTV има вдигнат собствен alarm-праг 2.5 (trend-contamination)
+    vug = next(i for i in bar["indicators"] if i["key"] == "vug_vtv")
+    assert vug["z_alarm"] == 2.5, "VUG/VTV z_alarm should be 2.5 after S16"
+    # S16: confluence alarm-страната пали на суров alarm_count ≥ ALARM_CONF
+    c = bar["confluence"]
+    assert c["alarm_conf_threshold"] == 2, "alarm_conf_threshold should be 2"
+    if c["alarm_count"] >= c["alarm_conf_threshold"]:
+        assert c["has_confluence"] and c["direction"] == "alarm", "alarm cluster should tilt alarm"
+    if c["direction"] == "alarm":
+        assert c["alarm_count"] >= c["alarm_conf_threshold"], "alarm tilt requires raw alarm_count"
 
     step("9. flows proxy (synthetic 2-snapshot AUM history)")
     import tempfile

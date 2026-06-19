@@ -273,9 +273,9 @@ function renderBarometer() {
   const aC = conf.alarm_count ?? 0, bC = conf.base_count ?? 0;
   let verdict, vcolor;
   if (conf.has_confluence && conf.direction === "alarm") {
-    verdict = `⚠ Дислокация — нетен наклон към тревога (${aC} тревога / ${bC} база)`; vcolor = "var(--red)";
+    verdict = `⚠ Дислокация — ${aC} едновременни тревоги (${aC} тревога / ${bC} база)`; vcolor = "var(--red)";
   } else if (conf.has_confluence && conf.direction === "base") {
-    verdict = `✓ Спокоен режим — нетен наклон към база (${bC} база / ${aC} тревога)`; vcolor = "var(--green)";
+    verdict = `✓ Спокоен режим — превес на база (${bC} база / ${aC} тревога)`; vcolor = "var(--green)";
   } else {
     verdict = `Смесен сигнал (${aC} тревога / ${bC} база)`; vcolor = "var(--yellow)";
   }

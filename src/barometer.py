@@ -27,8 +27,15 @@ import pandas as pd
 # ── Параметри на robust-z и confluence ──────────────────────────────────────
 Z_WINDOW = 504   # ~2 търговски години история за median/MAD
 Z_BASE = 1.0     # |z| под това = база (калм)
-Z_ALARM = 2.0    # |z| извън това (в стрес-посоката) = тревога
-CONF_NET = 2     # нетна разлика alarm−base за да има confluence tilt
+Z_ALARM = 2.0    # |z| извън това (в стрес-посоката) = тревога (глобален default;
+                 # индикатор може да го override-не със собствен "z_alarm")
+# S16 калибрация (бектест 2026-06-19): нетната метрика (alarm−base) НИКОГА не
+# достигаше тревога — base доминира структурно (8/10 индикатора калм по подразб.),
+# net e закован ≈ −8. Затова alarm-страната пали на СУРОВ брой едновременни
+# тревоги (ALARM_CONF), а калм-страната остава нетна (CONF_NET).
+ALARM_CONF = 2   # ≥2 едновременни alarm-сензора → регионна тревога (~7% от седмиците,
+                 # ляга върху реален стрес: апр'25 HY+VIX, лято'25, март'26)
+CONF_NET = 2     # нетен превес на калм страната (base−alarm) → "спокоен режим"
 
 # ── Дефиниция на индикаторите (в реда на показване) ─────────────────────────
 # Абсолютните прагове са сорснати; robust_z няма абс. праг (self-calibrating).
@@ -64,7 +71,12 @@ INDICATORS = [
     {"key": "iwm_spy", "name": "IWM/SPY", "kind": "robust_z", "stress_dir": "low",
      "src": ("ratio", "IWM", "SPY"), "decimals": 4, "source": "yfinance IWM/SPY"},
     {"key": "vug_vtv", "name": "VUG/VTV", "kind": "robust_z", "stress_dir": "high",
-     "src": ("ratio", "VUG", "VTV"), "decimals": 4, "source": "yfinance VUG/VTV (растеж/стойност)"},
+     "src": ("ratio", "VUG", "VTV"), "decimals": 4, "z_alarm": 2.5,
+     "source": "yfinance VUG/VTV (растеж/стойност; z_alarm 2.5 — S16)"},
+    # S16: VUG/VTV е растежен ТРЕНД, не дислокация — robust_z @2.0 палеше 23% от
+    # времето (trend-contamination, диво прозорец-чувствителен). Вдигнат праг 2.5
+    # → ~5% base-rate (наравно с XLE/SPY и IWM/SPY). Растежната еуфория пак се
+    # лови, но само в острия връх.
 ]
 
 
@@ -124,19 +136,19 @@ def _zone_abs(value, base, alarm, stress_dir) -> str:
     return "gray"
 
 
-def _zone_z(z, stress_dir) -> str:
+def _zone_z(z, stress_dir, z_alarm: float = Z_ALARM, z_base: float = Z_BASE) -> str:
     if z is None or not np.isfinite(z):
         return "unknown"
     if stress_dir == "high":
-        if z >= Z_ALARM:
+        if z >= z_alarm:
             return "alarm"
-        if z <= Z_BASE:
+        if z <= z_base:
             return "base"
         return "gray"
     # stress_dir == "low": много отрицателен z = стрес
-    if z <= -Z_ALARM:
+    if z <= -z_alarm:
         return "alarm"
-    if z >= -Z_BASE:
+    if z >= -z_base:
         return "base"
     return "gray"
 
@@ -191,7 +203,8 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
         else:  # robust_z
             zr = _robust_z(series)
             z = round(zr, 2) if zr is not None else None
-            zone = _zone_z(zr, ind["stress_dir"])
+            z_alarm_i = ind.get("z_alarm", Z_ALARM)
+            zone = _zone_z(zr, ind["stress_dir"], z_alarm=z_alarm_i, z_base=Z_BASE)
             base_t, alarm_t, dist_alarm = None, None, None
 
         rec = {
@@ -201,7 +214,7 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
             "base_threshold": base_t, "alarm_threshold": alarm_t,
             "dist_to_alarm": dist_alarm,
             "z": z, "z_base": Z_BASE if ind["kind"] == "robust_z" else None,
-            "z_alarm": Z_ALARM if ind["kind"] == "robust_z" else None,
+            "z_alarm": ind.get("z_alarm", Z_ALARM) if ind["kind"] == "robust_z" else None,
             "trend_4w": direction, "change_4w_pct": change,
         }
         indicators.append(rec)
@@ -220,11 +233,13 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
     gray = [i["name"] for i in indicators if i["zone"] == "gray"]
     unknown = [i["name"] for i in indicators if i["zone"] == "unknown"]
 
-    # Нетна confluence: tilt само ако едната страна води с ≥ CONF_NET.
+    # Confluence (S16): alarm-страната пали на СУРОВ брой едновременни тревоги
+    # (≥ ALARM_CONF) — стрес-клъстер бие калм фона. Калм-страната остава нетна
+    # (base−alarm ≥ CONF_NET). Стрес-клъстерът има приоритет пред калм фона.
     net = len(alarm) - len(base)
-    if net >= CONF_NET:
+    if len(alarm) >= ALARM_CONF:
         has_conf, conf_dir = True, "alarm"
-    elif -net >= CONF_NET:
+    elif (len(base) - len(alarm)) >= CONF_NET:
         has_conf, conf_dir = True, "base"
     else:
         has_conf, conf_dir = False, None
@@ -233,7 +248,8 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
         "alarm_count": len(alarm), "base_count": len(base),
         "gray_count": len(gray), "unknown_count": len(unknown),
         "alarm": alarm, "base": base, "gray": gray,
-        "net": net, "conf_net_threshold": CONF_NET,
+        "net": net,
+        "alarm_conf_threshold": ALARM_CONF, "conf_net_threshold": CONF_NET,
         "has_confluence": has_conf, "direction": conf_dir,
     }
 

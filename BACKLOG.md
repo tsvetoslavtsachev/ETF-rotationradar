@@ -75,9 +75,9 @@ Decisions from the review-first audit:
 
 ### Deferred heuristics — reconsider + test once flows/health infra exists (decision 4)
 "What each currently drives" — so we know what a recalibration would move. `[VERDICT]` = changes a shown classification; `[display]` = cosmetic.
-- **Quadrant 80/20** (rank_history.py) → which quadrant an ETF lands in → the whole Rotation Radar tab. `[VERDICT]`
-- **CONF_NET=2** (barometer.py) → whether the banner shows an alarm/base confluence tilt → regime headline. `[VERDICT]`
-- **robust_z Z_BASE/Z_ALARM/Z_WINDOW = 1.0/2.0/504** (barometer.py) → base/gray/alarm zones for the 7 self-calibrating ratios. `[VERDICT]`
+- [x] ~~**Quadrant 80/20**~~ → **S16: LOW 20→25** (виж секцията долу). `[VERDICT]` РЕШЕН 2026-06-19
+- [x] ~~**CONF_NET=2**~~ → **S16: alarm-страна на raw alarm_count≥2** (net мъртва). `[VERDICT]` РЕШЕН 2026-06-19
+- [x] ~~**robust_z 1.0/2.0/504**~~ → **S16: W=504 & праг 2.0 запазени; VUG/VTV→2.5**. `[VERDICT]` РЕШЕН 2026-06-19
 - **Liquidity $5M** (screener.py) → `liquidity_flag` thin/ok → position-sizing caution. `[flag]`
 - **ΔRank BusinessDay / US holidays** (rank_history.py) → 1m/3m rank-change windows → feeds quadrant. `[minor verdict]`
 - **Chandelier ATR(14) vs classic ATR(22)** (screener.py) → chandelier_stop + stop_distance_pct → trailing-stop level. `[display]`
@@ -85,3 +85,45 @@ Decisions from the review-first audit:
 - **days_in_trend calendar days** (rs_line.py) → "days in trend" on RS cards (~+40% vs trading days). `[display]`
 - **trend_4w ±2%** (barometer.py) → up/down/flat arrow per indicator. `[display]`
 - **PE gate 3–100** (fundamentals.py) → show/null a P/E → data hygiene. `[display]`
+
+## S16 — verdict-flipper калибрация (BACKTEST-FIRST, 2026-06-19)
+Read-only харнес `scripts/backtest_thresholds.py` (reuse-ва живия barometer/quadrant
+код; guard: реплика на robust_z == live, Δ=0). Бектест 2г, после калибрация.
+Trust-map → решения на Цветослав → retune. Всички base-rate числа verified (изчислени).
+
+**Измерено (2г):**
+- **Quadrant**: base_rank_6m ≥80 хваща 20.6%, ≤20 само 12.3% (компресия към центъра).
+  Гранична трепка ~8–9%/седмица (приемлива). → **LOW 20→25** (долна опашка 12.3%→17.1%,
+  симетрична с 20.6% горе). HIGH 80 запазен.
+- **CONF_NET**: net=alarm−base пали тревога **0/101 седмици** — base доминира структурно
+  (8/10 калм по подразбиране), net закован ≈ −8. Стойността "2" недостижима. raw
+  alarm_count≥2 пали 6.9% и ляга върху реален стрес (апр'25 HY+VIX, лято'25, март'26).
+  → **alarm-страна сменена на raw alarm_count≥2** (`ALARM_CONF`); калм-страна остава net
+  (`CONF_NET`). Ключове в confluence dict непроменени → app.js без структурна промяна.
+- **robust_z**: per-сензор alarm base-rate @504 — XLE/SPY 2.2% ✓, IWM/SPY 8.0% ✓ (здрави);
+  MOVE 0.2% / HYG/LQD 0% / XLY/XLP 0% (неми in-sample, коректно калм — НЕ разхлабени);
+  VUG/VTV **23%** ⚠ (растежен ТРЕНД, не дислокация; диво прозорец-чувствителен 1/11/23%
+  при 756/252/504). → **W=504 & праг 2.0 запазени; VUG/VTV собствен z_alarm=2.5** (→4.98%,
+  измерено). Механизъм: per-индикатор `"z_alarm"` override в INDICATORS + `_zone_z(...,z_alarm)`.
+
+**Странична последица (флагната):** вдигането на VUG/VTV на 2.5 го маха и от confluence
+броя в седмиците с 2.0≤z<2.5 → alarm-tilt пада 6.9%→**5.0%**; падналите са точно
+VUG-driven (лято'25). Оцелелите 5 alarm-седмици са по-твърдите HY/VIX/XLE клъстери.
+Чипът и confluence-приносът ползват ЕДИН праг (2.5) — консистентно.
+
+**VUG/VTV остава ЕДНОСТРАНЕН (само еуфория, високо z) — нарочно.** Въпрос (Цветослав):
+хваща ли обратното — бягство към дефанзивни? Измерено: VUG/VTV z за 2г не слезе под
+−1.14 (дефанзивна опашка z≤−2 = 0.0%, нула дни). И по принцип долната страна е
+ДВУСМИСЛЕНА: value = и циклични (финанси/енергия/индустрия), не само дефанзивни → срив
+на growth/value може да е здрава рефлация, не стрес. Чистото бягство към дефанзивни се
+лови от **XLY/XLP** (`stress_dir="low"`), не от тук. Затова НЕ правим VUG/VTV two-sided.
+
+**Verify gates green:** smoke_test ✓ (нов assert за alarm_conf_threshold + VUG z_alarm)
+· daily_update exit 0 (днес alarm=0/base=10 "Спокоен режим") · preview :8137 (10 чипа,
+нов банер текст, VUG чип "|z|>2.5", 0 console грешки).
+
+**TODO — редовен калибрационен инструмент (1–2×/год):** `backtest_thresholds.py` е
+диагностичният скелет. Да се обвие в редовен ритуал — semi-annual re-run, който мери
+base-rate drift на трите обръщача и флагва ако нещо излезе от диапазона (напр. XLE/SPY >
+10%, VUG/VTV пак > 8%, quadrant трепка > 15%). Кандидат за scheduled task. Прагът НЕ се
+пипа авто — само се показва trust-map за човешко sign-off (като S16).
