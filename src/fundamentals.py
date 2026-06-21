@@ -18,7 +18,7 @@ import yfinance as yf
 
 # NB: `duration` е премахнат — yfinance bond_holdings дава ненадеждни стойности
 # (напр. TLT ~3.5г при реални ~16г), а грешно число към абонати е по-лошо от никакво.
-COLUMNS = ["ticker", "aum", "expense_ratio", "yield", "pe_ratio", "holdings_turnover"]
+COLUMNS = ["ticker", "aum", "shares_out", "expense_ratio", "yield", "pe_ratio", "holdings_turnover"]
 
 # Категории, за които P/E има смисъл. За облигации/суровини/валути/волатилност
 # info["trailingPE"] връща боклук (напр. SHY ~3720, AGG ~125) — занулява се.
@@ -48,6 +48,13 @@ def _fetch_one(ticker: str, max_retries: int = 3) -> tuple[dict, bool]:
             aum = info.get("totalAssets") or info.get("netAssets")
             if aum:
                 record["aum"] = float(aum)
+
+            # Дялове (shares outstanding) — основният вход за flows v2. Идва от
+            # СЪЩИЯ .info dict (нула нови заявки). Менят се само при
+            # creation/redemption → чист поток (price × Δshares).
+            so = info.get("sharesOutstanding")
+            if so:
+                record["shares_out"] = float(so)
 
             div_yield = info.get("yield") or info.get("trailingAnnualDividendYield")
             if div_yield:

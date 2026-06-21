@@ -28,6 +28,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run daily update
+        env:
+          # Официален FRED API (S15 hardening). Без този secret кодът пада на
+          # keyless fredgraph (bot-stalled от CI) → stale/unknown breakeven+макро.
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/daily_update.py
 
       - name: Commit and push changes

@@ -12,6 +12,7 @@ import sys
 import os
 import time
 from pathlib import Path
+import numpy as np
 import pandas as pd
 
 # Add project root to path
@@ -31,7 +32,10 @@ from src.screener import run_screener, run_ohlcv_screener
 from src.fred import fetch_fred_series
 from src.barometer import compute_barometer
 from src.macro_context import compute_macro_context, compute_gold_copper_item, MACRO_SERIES
-from src.flows import append_aum_snapshot, load_aum_history, compute_flows
+from src.flows import (
+    append_aum_snapshot, load_aum_history, compute_flows_aum,
+    append_shares_snapshot, load_shares_history, compute_flows,
+)
 from src.beta import compute_betas
 from src.lookthrough import compute_lookthrough
 from src.cot import compute_cot
@@ -102,18 +106,35 @@ def main():
     )
     print(f"Fetched fundamentals for {len(fundamentals)} ETFs")
 
-    # 4b. Fund-flow прокси (S15) — записваме днешния AUM snapshot, после смятаме
-    #     нетния поток за прозореца (мащаб+посока). Пълни се напред; "—" докато
-    #     историята покрие прозореца.
-    print("\nComputing fund-flow proxy...")
-    aum_map = dict(zip(fundamentals["ticker"], fundamentals["aum"])) if not fundamentals.empty else {}
+    # 4b. Fund-flow (S15 v2) — основният път брои ДЯЛОВЕТЕ: записваме днешния
+    #     shares-outstanding snapshot, после поток = цена × Δдялове (чист, без
+    #     ценово замърсяване). AUM snapshot-ът се трупа ПАРАЛЕЛНО за крос-чек.
+    #     Пълни се напред; "—" докато историята покрие прозореца.
+    print("\nComputing fund flows (v2: price x Δshares)...")
+    fund = fundamentals if not fundamentals.empty else None
+    shares_map = dict(zip(fund["ticker"], fund["shares_out"])) if fund is not None else {}
+    aum_map = dict(zip(fund["ticker"], fund["aum"])) if fund is not None else {}
+
+    shares_hist_path = DATA_DIR / "shares_history.parquet"
+    append_shares_snapshot(shares_hist_path, shares_map, latest_date)
+    shares_history = load_shares_history(shares_hist_path)
+    flows = compute_flows(shares_history, prices_df, latest_date)
+
     aum_hist_path = DATA_DIR / "aum_history.parquet"
     append_aum_snapshot(aum_hist_path, aum_map, latest_date)
     aum_history = load_aum_history(aum_hist_path)
-    flows = compute_flows(aum_history, prices_df, latest_date)
-    n_snap = aum_history["date"].nunique() if not aum_history.empty else 0
-    print(f"Flows: {len(flows)} ETFs with usable est. net flow "
-          f"(AUM history: {n_snap} daily snapshots)")
+
+    n_snap = shares_history["date"].nunique() if not shares_history.empty else 0
+    print(f"Flows v2: {len(flows)} ETFs with usable net flow "
+          f"(shares history: {n_snap} snapshots)")
+    # Крос-чек срещу v1 AUM-проксито (диагностика за validation gate-а; не се рендира).
+    flows_aum = compute_flows_aum(aum_history, prices_df, latest_date)
+    if not flows.empty and not flows_aum.empty:
+        cmp = flows.merge(flows_aum, on="ticker", suffixes=("_v2", "_aum"))
+        if not cmp.empty:
+            agree = (np.sign(cmp["est_flow_v2"]) == np.sign(cmp["est_flow_aum"])).mean()
+            print(f"Flows cross-check: {len(cmp)} overlap, "
+                  f"{agree*100:.0f}% same direction (v2 shares vs v1 AUM)")
 
     # 5. RS Line Signals
     print("\nComputing RS Line signals...")

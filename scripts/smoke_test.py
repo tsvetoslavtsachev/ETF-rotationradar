@@ -18,7 +18,10 @@ from src.rs_line import generate_rs_signals
 from src.screener import run_screener, run_ohlcv_screener
 from src.render import render_frontend_data
 from src.barometer import compute_barometer, INDICATORS
-from src.flows import append_aum_snapshot, load_aum_history, compute_flows
+from src.flows import (
+    append_shares_snapshot, load_shares_history, compute_flows,
+    append_aum_snapshot, load_aum_history, compute_flows_aum,
+)
 from src.fred import fetch_fred_series
 
 # Tiny universe: >=2 per category so category z-scores are well-defined
@@ -155,25 +158,53 @@ try:
     if c["direction"] == "alarm":
         assert c["alarm_count"] >= c["alarm_conf_threshold"], "alarm tilt requires raw alarm_count"
 
-    step("9. flows proxy (synthetic 2-snapshot AUM history)")
+    # S15 contract: публикуваният barometer_feed.json (това, което чете
+    # behavioral-tracker скилът) трябва да носи ТОЧНО len(INDICATORS) readings.
+    # Затваря открития "12 vs 11" thread от Фаза-1 одита — феедът и скилът са 10.
+    feed_path = Path(__file__).parent.parent / "docs" / "barometer_feed.json"
+    if feed_path.exists():
+        feed = json.load(open(feed_path, encoding="utf-8"))
+        n_feed = len(feed.get("readings", []))
+        assert n_feed == len(INDICATORS) == 10, \
+            f"barometer_feed contract: feed={n_feed} != INDICATORS={len(INDICATORS)} (behavioral-tracker очаква 10)"
+
+    step("9. flows v2 (synthetic 2-snapshot SHARES history: price x Δshares)")
     import tempfile
-    flow_path = Path(tempfile.gettempdir()) / "_smoke_aum_history.parquet"
+    flow_path = Path(tempfile.gettempdir()) / "_smoke_shares_history.parquet"
     if flow_path.exists():
         flow_path.unlink()
     d_now = prices.index[-1]
     d_prior = prices.index[-22]  # ~1 месец назад
-    # снимка отпреди месец: SPY с базов AUM; снимка сега: SPY +5% AUM (приток)
-    append_aum_snapshot(flow_path, {"SPY": 100_000_000_000.0, "QQQ": 50_000_000_000.0}, d_prior)
-    append_aum_snapshot(flow_path, {"SPY": 105_000_000_000.0, "QQQ": 50_000_000_000.0}, d_now)
-    aum_hist = load_aum_history(flow_path)
-    assert aum_hist["date"].nunique() == 2, "expected 2 AUM snapshots"
-    flows = compute_flows(aum_hist, prices, d_now)
+    # снимка отпреди месец: SPY с базови дялове; снимка сега: SPY +5% дялове = приток
+    append_shares_snapshot(flow_path, {"SPY": 1_000_000_000.0, "QQQ": 500_000_000.0}, d_prior)
+    append_shares_snapshot(flow_path, {"SPY": 1_050_000_000.0, "QQQ": 500_000_000.0}, d_now)
+    sh_hist = load_shares_history(flow_path)
+    assert sh_hist["date"].nunique() == 2, "expected 2 shares snapshots"
+    flows = compute_flows(sh_hist, prices, d_now)
     print(flows.to_string())
     assert not flows.empty, "flows empty with 2 valid snapshots"
     spy_flow = flows[flows["ticker"] == "SPY"]
     assert not spy_flow.empty and np.isfinite(spy_flow["est_flow"].iloc[0]), "SPY flow not finite"
     assert spy_flow["flow_window_days"].iloc[0] >= 3, "flow window too short"
+    # +5% дялове → приток (positive); QQQ непроменени дялове → flat/no row
+    assert spy_flow["flow_dir"].iloc[0] == "in", "SPY +5% shares трябва да е приток"
+    p_spy_now = float(prices["SPY"].dropna().iloc[-1])
+    expected = round(p_spy_now * 50_000_000.0, 0)  # цена_сега × Δдялове (50M)
+    assert abs(spy_flow["est_flow"].iloc[0] - expected) < 1.0, "v2 поток != цена×Δдялове"
+    # QQQ с непроменени дялове → нулев поток → flat (или изключен)
+    qqq_flow = flows[flows["ticker"] == "QQQ"]
+    if not qqq_flow.empty:
+        assert qqq_flow["flow_dir"].iloc[0] == "flat", "QQQ непроменени дялове трябва flat"
+    # крос-чек: AUM-проксито (v1) още работи на отделна история
+    aum_path = Path(tempfile.gettempdir()) / "_smoke_aum_history.parquet"
+    if aum_path.exists():
+        aum_path.unlink()
+    append_aum_snapshot(aum_path, {"SPY": 100_000_000_000.0}, d_prior)
+    append_aum_snapshot(aum_path, {"SPY": 105_000_000_000.0}, d_now)
+    flows_aum = compute_flows_aum(load_aum_history(aum_path), prices, d_now)
+    assert not flows_aum.empty, "v1 AUM крос-чек трябва да връща ред"
     flow_path.unlink()
+    aum_path.unlink()
 
     step("10. macro context (synthetic, без мрежа)")
     from src.macro_context import compute_macro_context, compute_gold_copper_item, MACRO_SERIES
@@ -366,6 +397,25 @@ try:
     occ_only = dict(calm); occ_only["quad_hi_occ"] = 50.0
     _, flag_occ = evaluate_drift(occ_only)
     assert not flag_occ, "occupancy has no band → must not flag alone"
+
+    step("16. FRED API JSON parser (S15 hardening, без мрежа)")
+    from src.fred import _parse_api_json
+    fake = {"observations": [
+        {"date": "2026-06-15", "value": "2.31"},
+        {"date": "2026-06-16", "value": "."},      # липсваща → пропусната
+        {"date": "2026-06-17", "value": "2.29"},
+    ]}
+    s_api = _parse_api_json(fake, "T10YIE")
+    print(f"parsed {len(s_api)} obs, last={float(s_api.iloc[-1])}")
+    assert len(s_api) == 2, "missing-value '.' трябва да се пропусне"
+    assert abs(float(s_api.iloc[-1]) - 2.29) < 1e-9, "последна стойност грешна"
+    assert str(s_api.index[-1].date()) == "2026-06-17", "дата parse грешен"
+    # празен/all-missing отговор хвърля (за да задейства fallback горе)
+    try:
+        _parse_api_json({"observations": [{"date": "2026-06-15", "value": "."}]}, "X")
+        raise AssertionError("all-missing трябва да хвърли")
+    except ValueError:
+        pass
 
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
