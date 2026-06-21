@@ -39,6 +39,7 @@ from src.flows import (
 from src.beta import compute_betas
 from src.lookthrough import compute_lookthrough
 from src.cot import compute_cot
+from src.intermarket import compute_intermarket, INTERMARKET_ANCHORS
 from src.render import render_frontend_data
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -268,6 +269,16 @@ def main():
     else:
         print("Heat-strip: history too short — panel hidden")
 
+    # 6.13 Intermarket корелации (INIT-22 S17 Build B) — седмична корелация на
+    #      всеки ETF спрямо 10 кросmarket котви (2 прозореца: 26с/52с). Уникалната
+    #      леща, портната от старото ETF-Dashboard преди неговия retire. Котвите са
+    #      във вселената → чете вече свалените цени, нула нови заявки. ADDITIVE.
+    print("\nComputing intermarket correlations (weekly vs 10 anchors)...")
+    intermarket = compute_intermarket(etf_prices, INTERMARKET_ANCHORS)
+    print(f"Intermarket: {len(intermarket['data'])} ETFs × "
+          f"{len(intermarket['anchors'])} anchors "
+          f"(windows {intermarket['windows']}w, {intermarket['basis']})")
+
     # 7. Render to JSON
     print("\nRendering frontend data...")
     output_path = DOCS_DIR / "data.json"
@@ -277,7 +288,7 @@ def main():
         barometer=barometer, ohlcv_df=ohlcv_metrics, flows_df=flows,
         spark_map=spark_map, macro=macro_context, betas_df=betas,
         lookthrough_df=lookthrough, cot_df=cot, movers=movers,
-        heatstrip=heatstrip
+        heatstrip=heatstrip, intermarket=intermarket
     )
 
     print("\n=== Update Complete ===")

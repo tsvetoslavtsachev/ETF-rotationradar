@@ -45,6 +45,7 @@ def render_frontend_data(
     cot_df: "pd.DataFrame | None" = None,
     movers: "dict | None" = None,
     heatstrip: "dict | None" = None,
+    intermarket: "dict | None" = None,
 ) -> None:
     """
     Обединява всички данни и ги запазва като JSON за UI-а.
@@ -145,6 +146,8 @@ def render_frontend_data(
         payload["movers"] = movers
     if heatstrip is not None:
         payload["heatstrip"] = heatstrip
+    if intermarket is not None:
+        payload["intermarket"] = intermarket
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:

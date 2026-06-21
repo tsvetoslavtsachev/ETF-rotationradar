@@ -417,6 +417,43 @@ try:
     except ValueError:
         pass
 
+    step("17. intermarket correlations (weekly vs anchors + render coverage)")
+    from src.intermarket import compute_intermarket, INTERMARKET_ANCHORS
+    # (a) реални цени — котвите, налични в smoke вселената, са SPY/GLD/TLT
+    im = compute_intermarket(prices, INTERMARKET_ANCHORS)
+    print(f"intermarket: basis={im['basis']} windows={im['windows']} "
+          f"anchors={im['anchors']} n_etfs={len(im['data'])}")
+    assert im["basis"] == "weekly" and im["windows"] == [26, 52], "intermarket meta wrong"
+    assert {"SPY", "GLD", "TLT"}.issubset(set(im["anchors"])), \
+        f"smoke anchors missing: {im['anchors']}"
+    assert "SPY" in im["data"], "SPY row missing from intermarket data"
+    assert "SPY" not in im["data"]["SPY"], "anchor-vs-self трябва да се пропусне"
+    for anc, cc in im["data"]["SPY"].items():
+        for w in ("c26", "c52"):
+            assert cc[w] is None or (-1.0 <= cc[w] <= 1.0), f"corr извън [-1,1] {anc}.{w}={cc[w]}"
+    # (b) детерминистичен: цена×k → същи доходности → corr ~+1; (1−r) серия → −r → ~−1
+    idx = pd.date_range("2024-01-01", periods=80, freq="W-FRI")
+    rng = np.random.RandomState(0)
+    r = pd.Series(rng.randn(80) * 0.01, index=idx)
+    p_aaa = pd.Series(100 * (1 + r).cumprod().values, index=idx)
+    p_same = p_aaa * 3.0                                  # мащаб → идентични доходности
+    p_opp = pd.Series(100 * (1 - r).cumprod().values, index=idx)  # доходности = −r
+    synth = pd.DataFrame({"AAA": p_aaa, "SAME": p_same, "OPP": p_opp})
+    im2 = compute_intermarket(synth, anchors=["AAA"])
+    same = im2["data"]["SAME"]["AAA"]["c52"]
+    opp = im2["data"]["OPP"]["AAA"]["c52"]
+    print(f"synthetic vs AAA: SAME={same} OPP={opp}")
+    assert same is not None and same > 0.95, f"мащабирана серия трябва corr ~+1, дадено {same}"
+    assert opp is not None and opp < -0.95, f"огледална серия трябва corr ~-1, дадено {opp}"
+    assert "AAA" not in im2["data"], "котвата спрямо себе си → без собствен ред"
+    # render coverage: intermarket попада в payload-а
+    render_frontend_data(deltas, scr, fund_empty, rs, cat_map, name_map, bm_map, out,
+                         ohlcv_df=ohlcv_scr, spark_map=spark_map, intermarket=im)
+    payload7 = json.load(open(out))
+    assert payload7.get("intermarket") and payload7["intermarket"]["data"].get("SPY"), \
+        "intermarket missing from rendered payload"
+    assert payload7["intermarket"]["anchors"], "intermarket anchors missing from payload"
+
     print("\n\n>>> SMOKE TEST PASSED <<<")
 except Exception:
     print("\n\n>>> SMOKE TEST FAILED <<<")

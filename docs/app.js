@@ -32,7 +32,7 @@ function init() {
 
   // Populate category filters
   const cats = DATA.categories || [];
-  ["cat-filter", "screener-cat-filter", "rs-cat-filter"].forEach(id => {
+  ["cat-filter", "screener-cat-filter", "rs-cat-filter", "intermarket-cat-filter"].forEach(id => {
     const sel = document.getElementById(id);
     cats.forEach(c => {
       const opt = document.createElement("option");
@@ -74,6 +74,7 @@ function renderAll() {
   renderScreener();
   renderRS();
   renderHeatmap();
+  renderIntermarket();
 }
 
 // ── Helpers ────────────────────────────────────────────────
@@ -595,6 +596,58 @@ function renderHeatmap() {
       <div class="heatmap-top">Leaders: ${topHtml || "—"}</div>
     </div>`;
   }).join("");
+}
+
+// ── Intermarket correlations (INIT-22 S17 Build B) ─────────
+// Седмична корелация на всеки ETF спрямо 10 кросmarket котви, 2 прозореца.
+// Headline = 26с (скорошно скачване); 52с (структурно) в hover. Седмична основа
+// по конвенцията на инструмента — лекува часовия десинхрон на международни/
+// суровинни ETF спрямо US-сесийните котви (същата причина като бетата в S18).
+function corrCell(c, isSelf) {
+  if (isSelf) return `<td class="num-cell" style="color:var(--text-muted)">·</td>`;
+  if (!c || (c.c26 == null && c.c52 == null)) {
+    return `<td class="num-cell" style="color:var(--text-muted)">—</td>`;
+  }
+  const v = c.c26 != null ? c.c26 : c.c52;        // headline = 26с, fallback 52с
+  const a = Math.abs(v);
+  const rgb = v > 0 ? "63,185,80" : "248,81,73";  // зелено / червено (като чиповете)
+  const bg = a < 0.15 ? "transparent" : `rgba(${rgb},${(a * 0.32).toFixed(2)})`;
+  const cls = v > 0.15 ? "positive" : v < -0.15 ? "negative" : "neutral";
+  const f = x => (x != null ? x.toFixed(2) : "—");
+  const tip = `26с: ${f(c.c26)} · 52с: ${f(c.c52)}`;
+  return `<td class="num-cell" style="background:${bg}" title="${tip}"><span class="${cls}">${v.toFixed(2)}</span></td>`;
+}
+function renderIntermarket() {
+  const wrap = document.getElementById("intermarket-wrap");
+  if (!wrap) return;
+  const note = document.getElementById("intermarket-note");
+  const im = DATA.intermarket;
+  if (!im || !im.data || !Array.isArray(im.anchors) || !im.anchors.length) {
+    if (note) note.textContent = "";
+    wrap.innerHTML = `<div style="color:var(--text-muted);padding:1rem">Няма intermarket данни.</div>`;
+    return;
+  }
+  const w = im.windows || [26, 52];
+  if (note) {
+    note.textContent = `Седмична корелация на доходностите спрямо котвите · `
+      + `показано ${w[0]} седмици (hover за ${w[1]}с) · `
+      + `зелено = движат се заедно, червено = в обратни посоки`;
+  }
+  const anchors = im.anchors;
+  const etfs = filteredByCategory("intermarket-cat-filter").filter(e => im.data[e.ticker]);
+  if (!etfs.length) {
+    wrap.innerHTML = `<div style="color:var(--text-muted);padding:1rem">Няма ETF с данни за този филтър.</div>`;
+    return;
+  }
+  const head = `<tr><th>Ticker</th><th>Name</th>`
+    + anchors.map(a => `<th class="num-cell" title="кросmarket котва">${a}</th>`).join("")
+    + `</tr>`;
+  const body = etfs.map(e => {
+    const block = im.data[e.ticker] || {};
+    const cells = anchors.map(a => corrCell(block[a], a === e.ticker)).join("");
+    return `<tr><td class="ticker-cell">${e.ticker}</td><td>${e.name || "—"}</td>${cells}</tr>`;
+  }).join("");
+  wrap.innerHTML = `<table id="intermarket-table"><thead>${head}</thead><tbody>${body}</tbody></table>`;
 }
 
 // ── Theme toggle (light / dark) ────────────────────────────
