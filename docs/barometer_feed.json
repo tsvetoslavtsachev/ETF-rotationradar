@@ -33,12 +33,12 @@
     },
     {
       "indicator": "VIX",
-      "value": 18.63,
+      "value": 20.06,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
       "z": null,
-      "zone": "base",
+      "zone": "gray",
       "trend": "up"
     },
     {
@@ -53,11 +53,11 @@
     },
     {
       "indicator": "MOVE",
-      "value": 67.1,
+      "value": 65.39,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -1.19,
+      "z": -1.28,
       "zone": "base",
       "trend": "down"
     },
@@ -132,12 +132,12 @@
     },
     {
       "indicator": "VIX",
-      "zone": "base",
+      "zone": "gray",
       "kind": "abs",
-      "dist_to_alarm": 6.37,
+      "dist_to_alarm": 4.94,
       "z": null,
       "trend_4w": "up",
-      "change_4w_pct": 22.39
+      "change_4w_pct": 2.47
     },
     {
       "indicator": "10Y breakeven",
@@ -153,7 +153,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -1.19,
+      "z": -1.28,
       "trend_4w": "down",
       "change_4w_pct": -2.75
     },
@@ -196,15 +196,14 @@
   ],
   "confluence": {
     "alarm_count": 0,
-    "base_count": 10,
-    "gray_count": 0,
+    "base_count": 9,
+    "gray_count": 1,
     "unknown_count": 0,
     "alarm": [],
     "base": [
       "HY-spread",
       "XLE/SPY",
       "GLD/TLT",
-      "VIX",
       "10Y breakeven",
       "MOVE",
       "HYG/LQD",
@@ -212,8 +211,10 @@
       "IWM/SPY",
       "VUG/VTV"
     ],
-    "gray": [],
-    "net": -10,
+    "gray": [
+      "VIX"
+    ],
+    "net": -9,
     "alarm_conf_threshold": 2,
     "conf_net_threshold": 2,
     "has_confluence": true,
