@@ -11,6 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      # INIT-22 P6 strangler. Set BOTH repo secrets to source ETF prices from the canonical
+      # price-archive base (mechanism = checkout via read PAT, Tsvetoslav 2026-06-26):
+      #   DATACORE_RO_PAT       -> data-core (private)     : the P1 reader datacore.archive
+      #   PRICE_ARCHIVE_RO_PAT  -> price-archive (private) : the canonical daily bars (the data)
+      # ABSENT (either one) -> the base checkouts are skipped and scripts/daily_update.py falls
+      # back to its OLD yfinance fetch (production unchanged -- strangler: the radar never stops).
+      # collectors is PUBLIC (the reader collectors/price/consumer.py) -> no token.
+      DATACORE_RO_PAT: ${{ secrets.DATACORE_RO_PAT }}
+      PRICE_ARCHIVE_RO_PAT: ${{ secrets.PRICE_ARCHIVE_RO_PAT }}
 
     steps:
       - name: Checkout repository
@@ -27,17 +37,60 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run daily update
+      # ---- P6: canonical prices come FROM the price-archive base; only when BOTH PATs are set ----
+      - name: Checkout data-core (P1 reader, read-only)
+        if: ${{ env.DATACORE_RO_PAT != '' && env.PRICE_ARCHIVE_RO_PAT != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: tsvetoslavtsachev/data-core
+          token: ${{ env.DATACORE_RO_PAT }}   # Contents=READ only -- cannot corrupt canon
+          path: .data-core
+          fetch-depth: 1
+      - name: Checkout price-archive (canonical daily bars, read-only)
+        if: ${{ env.DATACORE_RO_PAT != '' && env.PRICE_ARCHIVE_RO_PAT != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: tsvetoslavtsachev/price-archive
+          token: ${{ env.PRICE_ARCHIVE_RO_PAT }}   # Contents=READ only
+          path: .price-archive
+          fetch-depth: 1
+      - name: Checkout collectors (public, the price reader)
+        if: ${{ env.DATACORE_RO_PAT != '' && env.PRICE_ARCHIVE_RO_PAT != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: tsvetoslavtsachev/collectors
+          path: .collectors
+          fetch-depth: 1
+
+      - name: Run daily update (base-first canonical prices; yfinance CLOSED fallback)
         env:
           # Официален FRED API (S15 hardening). Без този secret кодът пада на
           # keyless fredgraph (bot-stalled от CI) → stale/unknown breakeven+макро.
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          # When the base checkouts ran, the consumer reads canon from .price-archive via the P1
+          # reader on PYTHONPATH; otherwise these point at absent dirs and the import fails ->
+          # daily_update.py transparently uses the OLD yfinance fetch (CLOSED fallback).
+          DATACORE_ROOT: ${{ github.workspace }}/.price-archive
+          PYTHONPATH: ${{ github.workspace }}/.data-core:${{ github.workspace }}/.collectors
         run: python scripts/daily_update.py
+
+      # P6 guard: with the PATs set, base sourcing is INTENDED — fail RED (before any commit) if any
+      # ETF silently fell back to yfinance, so an un-audited fetch can never quietly republish ranks.
+      - name: Assert base-sourced (no silent yfinance fallback)
+        if: ${{ env.DATACORE_RO_PAT != '' && env.PRICE_ARCHIVE_RO_PAT != '' }}
+        run: python scripts/assert_base_sourced.py
 
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data/ docs/data.json docs/barometer_feed.json
-          git diff --staged --quiet || git commit -m "chore: daily ETF update $(date -u +%Y-%m-%d)"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: daily ETF update $(date -u +%Y-%m-%d)"
+            # The P6 base checkouts widened the checkout->push window; rebase onto any concurrent
+            # landing so the push stays fast-forward (mirrors weekly-refresh.yml / price-daily.yml).
+            git pull --rebase origin main
+            git push
+          fi

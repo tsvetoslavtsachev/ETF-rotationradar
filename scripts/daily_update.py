@@ -23,6 +23,17 @@ from src.universe import (
     get_category_map, get_name_map, get_benchmark_map
 )
 from src.prices import download_ohlcv, download_prices
+# INIT-22 P6 strangler: read canonical daily bars FROM the price-archive (base) first, keeping the
+# OLD yfinance fetch as a CLOSED fallback so production never stops. The reader lives WITH the price
+# citizen (collectors/price/consumer.py) so every consumer shares ONE canonical reader. If
+# collectors/data-core are not importable (a bare local run with no archive checkout), we degrade to
+# the pure fetch -- the ultimate CLOSED fallback. The CI guard (scripts/assert_base_sourced.py),
+# gated on the read PAT, fails RED if any symbol silently fell back while base sourcing was intended.
+try:
+    from collectors.price.consumer import load_ohlcv_base_first
+    _HAVE_BASE = True
+except ImportError:
+    _HAVE_BASE = False
 from src.signal_engine import compute_cross_section
 from src.rank_history import append_snapshot, load_history, compute_delta_metrics, compute_movers
 from src.heatstrip import compute_heatstrip
@@ -60,6 +71,29 @@ def filter_prices(prices_df: pd.DataFrame, tickers: list) -> pd.DataFrame:
     return prices_df[available]
 
 
+def _write_price_source(source_map: dict, prices_df: pd.DataFrame, expected: int) -> None:
+    """Write per-symbol price provenance (base vs fetch) for scripts/assert_base_sourced.py.
+
+    The guard fails RED if any expected symbol came from the OLD yfinance fetch -- or is MISSING
+    (dropped/dead, shrinking the published universe) -- while base sourcing was intended (the read
+    PAT is present in CI). ``expected`` (the requested universe size) is recorded so a human (and a
+    cross-check) can see coverage; the guard itself anchors on src/universe.py independently. A
+    pure-fallback local run writes all-fetch; the guard is gated on the PAT so it does not fire
+    there (the fallback is legitimate without the archive checkout). INIT-22 P6 strangler
+    discipline (mirror of A1 cot_source)."""
+    import json
+    as_of = prices_df.index[-1].strftime("%Y-%m-%d") if not prices_df.empty else None
+    n_base = sum(1 for v in source_map.values() if v == "base")
+    payload = {
+        "as_of": as_of,
+        "by_symbol": dict(sorted(source_map.items())),
+        "summary": {"expected": expected, "covered": len(source_map), "base": n_base,
+                    "fetch": len(source_map) - n_base},
+    }
+    (DATA_DIR / "price_source.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def main():
     print("=== ETF Rotation Radar: Daily Update ===")
 
@@ -69,18 +103,29 @@ def main():
     all_tickers = list(set(tickers + benchmarks))
     print(f"Universe: {len(tickers)} ETFs, {len(benchmarks)} Benchmarks")
 
-    # 2. Download Prices (OHLCV — едно сваляне; Close храни стария pipeline,
-    #    пълният OHLCV храни новите метрики ATR/стоп/ликвидност)
-    print("\nDownloading prices (last 2 years)...")
-    ohlcv = download_ohlcv(all_tickers, period="2y")
+    # 2. Prices (OHLCV) — base-first каноничен прочит от price-archive (INIT-22 P6), със стария
+    #    yfinance fetch като CLOSED fallback (производството не спира). Close храни стария pipeline
+    #    (momentum/рангове), пълният OHLCV храни ATR/стоп/ликвидност. Барометър-екстрите (^VIX/
+    #    ^MOVE/VUG/VTV) НЕ са в архива → остават на yfinance по-долу (извън cut-over обхвата).
+    print("\nLoading prices (last 2 years; base-first canonical, yfinance fallback)...")
+    if _HAVE_BASE:
+        ohlcv, price_source = load_ohlcv_base_first(
+            all_tickers, fetch_fallback=download_ohlcv, period="2y")
+    else:
+        ohlcv = download_ohlcv(all_tickers, period="2y")
+        price_source = {t: "fetch" for t in all_tickers}
     prices_df = ohlcv.get("Close", pd.DataFrame())
     if prices_df.empty:
-        # S15 health: провал на свалянето е МЪРТЪВ канал → излизаме с грешка,
+        # S15 health: провал на зареждането е МЪРТЪВ канал → излизаме с грешка,
         # за да светне GitHub Action червен (не тихо зелено със застинали данни).
-        print("ERROR: price download returned empty — dead data channel, failing loudly.")
+        print("ERROR: price load returned empty — dead data channel, failing loudly.")
         sys.exit(1)
-    print(f"Downloaded prices up to {prices_df.index[-1].strftime('%Y-%m-%d')}")
+    n_base = sum(1 for v in price_source.values() if v == "base")
+    print(f"Loaded prices up to {prices_df.index[-1].strftime('%Y-%m-%d')} "
+          f"(source: {n_base} base / {len(price_source) - n_base} fetch)")
     print(f"Price DataFrame shape: {prices_df.shape}, columns type: {type(prices_df.columns).__name__}")
+    # Per-symbol provenance for the assert_base_sourced CI guard (P6 strangler discipline).
+    _write_price_source(price_source, prices_df, expected=len(all_tickers))
 
     # 3. Signal Engine & Rank History
     print("\nComputing cross-section and updating history...")

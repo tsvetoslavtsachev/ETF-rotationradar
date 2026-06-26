@@ -3,3 +3,4 @@ numpy>=1.24.0
 yfinance>=0.2.36
 pyarrow>=14.0.0
 fastparquet>=2023.10.0
+pyyaml>=6.0          # INIT-22 P6: collectors/price/consumer.py reads the price universe from config.yaml
