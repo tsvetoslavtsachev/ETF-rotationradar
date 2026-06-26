@@ -33,13 +33,13 @@
     },
     {
       "indicator": "VIX",
-      "value": 20.06,
+      "value": 18.41,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
       "z": null,
-      "zone": "gray",
-      "trend": "up"
+      "zone": "base",
+      "trend": "down"
     },
     {
       "indicator": "10Y breakeven",
@@ -53,11 +53,11 @@
     },
     {
       "indicator": "MOVE",
-      "value": 65.39,
+      "value": 66.79,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -1.28,
+      "z": -1.2,
       "zone": "base",
       "trend": "down"
     },
@@ -93,11 +93,11 @@
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.3767,
+      "value": 0.379,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.94,
+      "z": -0.87,
       "zone": "base",
       "trend": "down"
     }
@@ -132,12 +132,12 @@
     },
     {
       "indicator": "VIX",
-      "zone": "gray",
+      "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 4.94,
+      "dist_to_alarm": 6.59,
       "z": null,
-      "trend_4w": "up",
-      "change_4w_pct": 2.47
+      "trend_4w": "down",
+      "change_4w_pct": -2.01
     },
     {
       "indicator": "10Y breakeven",
@@ -153,9 +153,9 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -1.28,
+      "z": -1.2,
       "trend_4w": "down",
-      "change_4w_pct": -2.75
+      "change_4w_pct": -6.38
     },
     {
       "indicator": "HYG/LQD",
@@ -189,21 +189,22 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.94,
+      "z": -0.87,
       "trend_4w": "down",
-      "change_4w_pct": -4.77
+      "change_4w_pct": -6.82
     }
   ],
   "confluence": {
     "alarm_count": 0,
-    "base_count": 9,
-    "gray_count": 1,
+    "base_count": 10,
+    "gray_count": 0,
     "unknown_count": 0,
     "alarm": [],
     "base": [
       "HY-spread",
       "XLE/SPY",
       "GLD/TLT",
+      "VIX",
       "10Y breakeven",
       "MOVE",
       "HYG/LQD",
@@ -211,10 +212,8 @@
       "IWM/SPY",
       "VUG/VTV"
     ],
-    "gray": [
-      "VIX"
-    ],
-    "net": -9,
+    "gray": [],
+    "net": -10,
     "alarm_conf_threshold": 2,
     "conf_net_threshold": 2,
     "has_confluence": true,
