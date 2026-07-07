@@ -6,7 +6,7 @@ NIE PIPE pipeline-а. Чете data/ranks_history.parquet + FRED parquet кеш�
 base-rate-овете на трите прага. Нищо не се записва в pipeline данните.
 
 Трите обръщача:
-  1. Quadrant 80/20         (rank_history.py: HIGH/LOW_BASE_THRESHOLD)
+  1. Quadrant 80/25         (rank_history.py: HIGH/LOW_BASE_THRESHOLD; LOW=25 от S16)
   2. CONF_NET = 2           (barometer.py)
   3. robust_z 1.0/2.0/504   (barometer.py: Z_BASE/Z_ALARM/Z_WINDOW)
 
@@ -146,7 +146,7 @@ def load_fred() -> dict:
 # BT1 — Quadrant 80/20
 # ─────────────────────────────────────────────────────────────────────────────
 def backtest_quadrant() -> None:
-    _hr("BT1 · QUADRANT 80/20  (rank_history.py)")
+    _hr("BT1 · QUADRANT 80/25  (rank_history.py)")
     print(f"Live thresholds: HIGH={HIGH_BASE_THRESHOLD}  LOW={LOW_BASE_THRESHOLD}")
 
     history = load_history(DATA / "ranks_history.parquet")
