@@ -82,6 +82,64 @@ INDICATORS = [
     # лови, но само в острия връх.
 ]
 
+# ── П2 (аналитичен одит 07.07.2026): ГРУПОВА confluence ──────────────────────────
+# PCA върху седмични Δ показа ~5 независими фактора (N_eff=5.09), не 10. Суровият
+# alarm_count третираше корелирани гласове като независими (двойно броене: XLY/XLP↔
+# VUG/VTV ρ=0.62; HY↔VIX 0.67). Затова тревогата вече пали само при ≥ GROUP_CONF
+# РАЗЛИЧНИ фактор-семейства в alarm — две съседни в едно семейство не се броят двойно.
+# GLD/TLT е КОНТЕКСТ, не глас (трендов/режимен; robust_z го замразява в alarm 55% —
+# виж _etf_radar_analytics/MANDATE). Кривата (T10Y2Y) се добавя като контекст на П3.
+# Старите ключове (alarm_count/net/has_confluence/direction) остават непокътнати за
+# backward-compat (feed консуматори); ОСНОВНИЯТ сигнал е *_grouped.
+FACTOR_GROUPS = {
+    "credit":        ["hy_spread", "hyg_lqd"],       # ЛИДЕР (без двойно тегло засега)
+    "volatility":    ["vix", "move"],
+    "infl_rates":    ["breakeven_10y", "xle_spy"],
+    "risk_appetite": ["xly_xlp", "iwm_spy"],
+    "growth_value":  ["vug_vtv"],
+}
+CONTEXT_ROWS = ["gld_tlt"]   # показва се, оцветява прочита, НЕ гласува (+ t10y2y на П3)
+GROUP_CONF = 2               # ≥2 РАЗЛИЧНИ семейства в тревога → регионална тревога
+
+
+def _group_confluence(indicators: list) -> dict:
+    """П2: агрегира индикаторите в 5 фактор-семейства и брои РАЗЛИЧНИ семейства в
+    тревога (маха двойното броене на корелирани гласове). GLD/TLT = контекст, не глас.
+    direction_grouped: 'alarm' (≥GROUP_CONF семейства), 'base' (0 семейства в стрес),
+    'single' (точно 1 семейство — не потвърдено)."""
+    zone_by_key = {i["key"]: i["zone"] for i in indicators}
+    groups = {}
+    for gname, keys in FACTOR_GROUPS.items():
+        alarm_members = [k for k in keys if zone_by_key.get(k) == "alarm"]
+        base_members = [k for k in keys if zone_by_key.get(k) == "base"]
+        groups[gname] = {
+            "members": keys,
+            "in_alarm": len(alarm_members) > 0,
+            "all_base": len(keys) > 0 and len(base_members) == len(keys),
+            "alarm_members": alarm_members,
+        }
+    alarm_groups = [g for g, v in groups.items() if v["in_alarm"]]
+    base_groups = [g for g, v in groups.items() if v["all_base"]]
+    n_alarm = len(alarm_groups)
+    if n_alarm >= GROUP_CONF:
+        direction = "alarm"
+    elif n_alarm == 0:
+        direction = "base"
+    else:
+        direction = "single"
+    context = {k: {"zone": zone_by_key.get(k),
+                   "note": "режимен маркер — не глас в брояча"}
+               for k in CONTEXT_ROWS if k in zone_by_key}
+    return {
+        "factor_groups": groups,
+        "alarm_groups": alarm_groups, "alarm_group_count": n_alarm,
+        "base_groups": base_groups,
+        "context_rows": context,
+        "group_conf_threshold": GROUP_CONF,
+        "has_confluence_grouped": direction in ("alarm", "base"),
+        "direction_grouped": direction,
+    }
+
 
 def _ratio_series(prices_df: pd.DataFrame, num: str, den: str) -> pd.Series:
     if num in prices_df.columns and den in prices_df.columns:
@@ -258,6 +316,8 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
         "alarm_conf_threshold": ALARM_CONF, "conf_net_threshold": CONF_NET,
         "has_confluence": has_conf, "direction": conf_dir,
     }
+    # П2 (07.07): групова confluence — ОСНОВНИЯТ сигнал (старите ключове са backward-compat).
+    confluence.update(_group_confluence(indicators))
 
     as_of_str = as_of.strftime("%Y-%m-%d") if hasattr(as_of, "strftime") else str(as_of)
     return {
