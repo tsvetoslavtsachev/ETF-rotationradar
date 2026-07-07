@@ -200,7 +200,8 @@ def main():
     ohlcv_metrics = run_ohlcv_screener(etf_ohlcv)
     print(f"Computed OHLCV metrics (ATR/stop/liquidity) for {len(ohlcv_metrics)} ETFs")
 
-    # 6.5 Behavioral Barometer (ELANA дислокации) — 10 индикатора (S15)
+    # 6.5 Behavioral Barometer (ELANA дислокации) — 10 индикатора в 5 фактор-семейства
+    #     (групова confluence, П2) + 2 контекстни реда: GLD/TLT + крива 2s10s (П3, не гласуват)
     print("\nComputing behavioral barometer...")
     # Тикъри ИЗВЪН вселената (^VIX, ^MOVE, VUG, VTV) — само за барометъра,
     # не влизат в screener/momentum. Сваляме ги отделно и обединяваме.
@@ -224,8 +225,17 @@ def main():
             print(f"Derived breakeven: {len(be)} points, last={float(be.iloc[-1]):.2f}")
     time.sleep(15)
     hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
+    # П3: кривата 2s10s (T10Y2Y) за контекстния ред — чете се от кеша (обновяван от
+    # macro блока по-долу; кривата е бавен лидер, 1-ден кеш е без значение). Graceful.
+    try:
+        _c = pd.read_parquet(DATA_DIR / "fred_T10Y2Y.parquet")
+        t10y2y = pd.Series(_c["value"].values, index=pd.to_datetime(_c["date"])).dropna()
+    except Exception:
+        t10y2y = None
     barometer = compute_barometer(
-        barometer_prices, {"hy_spread": hy, "breakeven_10y": be}, latest_date
+        barometer_prices,
+        {"hy_spread": hy, "breakeven_10y": be, "t10y2y": t10y2y},
+        latest_date,
     )
     ind = {i["key"]: i["value"] for i in barometer["indicators"]}
     conf = barometer["confluence"]

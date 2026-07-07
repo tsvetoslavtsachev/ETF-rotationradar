@@ -98,8 +98,15 @@ FACTOR_GROUPS = {
     "risk_appetite": ["xly_xlp", "iwm_spy"],
     "growth_value":  ["vug_vtv"],
 }
-CONTEXT_ROWS = ["gld_tlt"]   # показва се, оцветява прочита, НЕ гласува (+ t10y2y на П3)
+CONTEXT_ROWS = ["gld_tlt"]   # показва се, оцветява прочита, НЕ гласува (+ t10y2y от П3)
 GROUP_CONF = 2               # ≥2 РАЗЛИЧНИ семейства в тревога → регионална тревога
+
+# П3 (07.07): кривата на доходността (T10Y2Y, 2s10s) като КОНТЕКСТЕН РЕД / лидерен
+# бадж. Бавен ЛИДЕР (инвертира ~година преди рецесия) → НЕ гласува в бързия съвпадащ
+# брояч. Оцветява прочита: „стрес-клъстер при ИНВЕРТИРАНА крива" ≠ „при стръмна".
+# abs при инверсия (stress_dir low): <0 = инверсия, >0.5 = стръмна, между = плоска.
+CURVE_INVERT = 0.0    # < 0 = инверсия (лидерен стрес-контекст)
+CURVE_STEEP = 0.5     # > 0.5 = стръмна (здрава)
 
 
 def _group_confluence(indicators: list) -> dict:
@@ -139,6 +146,23 @@ def _group_confluence(indicators: list) -> dict:
         "has_confluence_grouped": direction in ("alarm", "base"),
         "direction_grouped": direction,
     }
+
+
+def _curve_context(fred_series: dict) -> "dict | None":
+    """П3: кривата 2s10s (T10Y2Y) като контекстен ред — лидерен бадж, НЕ глас.
+    Връща None ако серията липсва (graceful). Зони: инвертирана (<0) / плоска / стръмна (>0.5)."""
+    s = fred_series.get("t10y2y")
+    if not isinstance(s, pd.Series) or s.dropna().empty:
+        return None
+    val = float(s.dropna().iloc[-1])
+    if val < CURVE_INVERT:
+        zone, label = "alarm", "инвертирана"
+    elif val > CURVE_STEEP:
+        zone, label = "base", "стръмна"
+    else:
+        zone, label = "gray", "плоска"
+    return {"value": round(val, 2), "zone": zone, "label": label,
+            "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча"}
 
 
 def _ratio_series(prices_df: pd.DataFrame, num: str, den: str) -> pd.Series:
@@ -318,6 +342,10 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
     }
     # П2 (07.07): групова confluence — ОСНОВНИЯТ сигнал (старите ключове са backward-compat).
     confluence.update(_group_confluence(indicators))
+    # П3 (07.07): кривата 2s10s като контекстен ред (лидерен бадж, НЕ глас). Graceful ако липсва.
+    curve = _curve_context(fred_series)
+    if curve is not None:
+        confluence.setdefault("context_rows", {})["t10y2y"] = curve
 
     as_of_str = as_of.strftime("%Y-%m-%d") if hasattr(as_of, "strftime") else str(as_of)
     return {

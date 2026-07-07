@@ -125,7 +125,8 @@ try:
         "beta_1y missing from rendered payload"
 
     step(f"8. compute_barometer ({len(INDICATORS)} indicators)")
-    # S15: 10 индикатора. TIP/IEF + IWF/IWD махнати; XLE/SPY вече robust_z.
+    # 10 индикатора (S15) в 5 фактор-семейства (групова confluence, П2) + контекстни
+    # редове GLD/TLT + крива (П3, не гласуват). TIP/IEF + IWF/IWD махнати; XLE/SPY robust_z.
     bar_tickers = ["SPY", "XLE", "GLD", "TLT", "HYG", "LQD", "XLY", "XLP",
                    "IWM", "VUG", "VTV", "^VIX", "^MOVE"]
     bpx = download_prices(bar_tickers, period="2y")
@@ -145,6 +146,13 @@ try:
     assert vix["value"] and 5 < vix["value"] < 100, "VIX value implausible"
     hyg = next(i for i in bar["indicators"] if i["key"] == "hyg_lqd")
     assert hyg["kind"] == "robust_z" and hyg["z"] is not None, "HYG/LQD z missing"
+    # П2/П3: групова confluence + контекстни редове (backward-compat: старите ключове остават)
+    conf = bar["confluence"]
+    assert {"alarm_group_count", "alarm_groups", "direction_grouped", "context_rows"} <= conf.keys(), \
+        "grouped confluence keys missing (П2)"
+    assert {"alarm_count", "net", "has_confluence", "direction"} <= conf.keys(), \
+        "legacy confluence keys removed (backward-compat нарушен)"
+    assert "gld_tlt" in conf["context_rows"], "GLD/TLT трябва да е контекстен ред (П2), не глас"
     xle = next(i for i in bar["indicators"] if i["key"] == "xle_spy")
     assert xle["kind"] == "robust_z", "XLE/SPY should be robust_z after S15"
     # S16: VUG/VTV има вдигнат собствен alarm-праг 2.5 (trend-contamination)
