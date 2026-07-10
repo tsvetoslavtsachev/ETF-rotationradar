@@ -49,22 +49,33 @@ CONF_NET = 2     # нетен превес на калм страната (base�
 #   • TIP/IEF махнат — беше breakeven прокси по време на FRED блокадата; реалният
 #     T10YIE отново е жив, проксито дублираше.
 #   • IWF/IWD махнат — дублираше VUG/VTV (растеж/стойност). Задържаме Vanguard.
+#
+# B7 [Вълна 1]: провенанс на КАЛИБРИРАНИТЕ abs прагове (`calibrated` поле). Датата е
+# документираният owner calibration sign-off (BACKLOG.md „S15 — owner calibration
+# sign-off (2026-06-18)") — праговете са сорснати от behavioral-tracker шаблон + VRM
+# canvas и приети на този преглед; НЕ са бектест-калибрирани self-calibrating (това са
+# robust_z сензорите). NB за преглед: P4 примерът в 10-PROPOSAL цитира „2026-06-22" —
+# това е датата на TREASURY, заимствана илюстративно; тук ползваме ВЕРИФИЦИРАНАТА
+# барометърна дата (2026-06-18) per anti-illusion протокола. abs прагът РЕШАВА зоната;
+# robust z (2г) се показва ПАРАЛЕЛНО като вторичен контекст (двоен етикет, не слят).
+ABS_CALIBRATED = "2026-06-18"
+
 INDICATORS = [
     {"key": "hy_spread", "name": "HY-spread", "kind": "abs", "stress_dir": "high",
      "src": ("fred", "hy_spread"), "base": 3.00, "alarm": 3.50, "decimals": 2,
-     "source": "FRED BAMLH0A0HYM2"},
+     "calibrated": ABS_CALIBRATED, "source": "FRED BAMLH0A0HYM2"},
     {"key": "xle_spy", "name": "XLE/SPY", "kind": "robust_z", "stress_dir": "high",
      "src": ("ratio", "XLE", "SPY"), "decimals": 4,
      "source": "yfinance XLE/SPY (self-calibrating, S15)"},
     {"key": "gld_tlt", "name": "GLD/TLT", "kind": "abs", "stress_dir": "high",
      "src": ("ratio", "GLD", "TLT"), "base": 5.20, "alarm": 5.50, "decimals": 2,
-     "source": "yfinance GLD/TLT"},
+     "calibrated": ABS_CALIBRATED, "source": "yfinance GLD/TLT"},
     {"key": "vix", "name": "VIX", "kind": "abs", "stress_dir": "high",
      "src": ("level", "^VIX"), "base": 20.0, "alarm": 25.0, "decimals": 2,
-     "source": "yfinance ^VIX"},
+     "calibrated": ABS_CALIBRATED, "source": "yfinance ^VIX"},
     {"key": "breakeven_10y", "name": "10Y breakeven", "kind": "abs", "stress_dir": "high",
      "src": ("fred", "breakeven_10y"), "base": 2.40, "alarm": 2.60, "decimals": 2,
-     "source": "FRED T10YIE"},
+     "calibrated": ABS_CALIBRATED, "source": "FRED T10YIE"},
     {"key": "move", "name": "MOVE", "kind": "robust_z", "stress_dir": "high",
      "src": ("level", "^MOVE"), "decimals": 2, "source": "yfinance ^MOVE"},
     {"key": "hyg_lqd", "name": "HYG/LQD", "kind": "robust_z", "stress_dir": "low",
@@ -285,7 +296,11 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
 
         if ind["kind"] == "abs":
             zone = _zone_abs(value, ind["base"], ind["alarm"], ind["stress_dir"])
-            z = None
+            # B7 [Вълна 1]: КАЛИБРИРАНИЯТ abs праг РЕШАВА зоната; robust z (2г) се смята
+            # ПАРАЛЕЛНО само като ВТОРИЧЕН контекст на лицето (двоен етикет, не слят).
+            # z_base/z_alarm остават None → z НЕ гейтва зоната при abs.
+            zr = _robust_z(series)
+            z = round(zr, 2) if zr is not None else None
             base_t, alarm_t = ind["base"], ind["alarm"]
             dist_alarm = round(ind["alarm"] - value, ind["decimals"]) if value is not None else None
         else:  # robust_z
@@ -300,6 +315,7 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
             "kind": ind["kind"], "stress_dir": ind["stress_dir"],
             "value": vr, "zone": zone,
             "base_threshold": base_t, "alarm_threshold": alarm_t,
+            "calibrated": ind.get("calibrated"),   # abs: провенанс дата на прага; robust_z: None
             "dist_to_alarm": dist_alarm,
             "z": z, "z_base": Z_BASE if ind["kind"] == "robust_z" else None,
             "z_alarm": ind.get("z_alarm", Z_ALARM) if ind["kind"] == "robust_z" else None,

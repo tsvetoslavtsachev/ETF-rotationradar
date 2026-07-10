@@ -18,6 +18,7 @@ The ETF Rotation Radar applies the same systematic framework used in the SP500 a
   - **Chronic Losers** — low base, still falling
 - **Pristine RS Line** — each ETF's price divided by its *category benchmark* (not always SPY), with EMA10/SMA50 crossover signals.
 - **Behavioral Barometer (macro-regime banner)** — three dislocation indicators computed live every day: **HY-spread** (FRED `BAMLH0A0HYM2`), **XLE/SPY**, and **GLD/TLT**, each scored against base/alarm thresholds with a confluence verdict. Also exported as `docs/barometer_feed.json` for downstream tooling.
+  - **Dual method label (КОКПИТ Wave 1, B7):** `abs`-threshold rows show BOTH the calibrated threshold that decides the zone — `abs праг X [CALIBRATED 2026-06-18]` (owner sign-off, S15; NOT the P4 illustration's treasury date) — AND a secondary 2y `robust z` for context, labeled separately (never fused). The abs threshold still drives the zone; `z` is display-only (`z_base`/`z_alarm` stay `None`). Each `abs` indicator carries a `calibrated` provenance field; the banner shows an О4 badge `НАБЛЮДЕНИЕ, НЕ СИГНАЛ · съвпадащ`.
 - **Fundamental Screener** — Return 1/3/12M, Sharpe, MaxDD, **distance from 52-week high**, **current drawdown**, Expense Ratio, Yield, P/E (equity ETFs only), AUM — all from free yfinance data, with a local cache to avoid rate limits.
 
 > **Note:** leveraged / inverse / volatility products (e.g. 3x funds, VIX ETFs) are intentionally excluded — daily-reset leverage distorts 12-1 momentum z-scores relative to their category peers.

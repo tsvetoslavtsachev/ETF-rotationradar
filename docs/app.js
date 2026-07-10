@@ -492,9 +492,15 @@ function renderBarometer() {
     verdict = `Смесен сигнал (${aC} тревога / ${bC} база)`; vcolor = "var(--yellow)";
   }
 
-  const thresholdLabel = i => i.kind === "robust_z"
-    ? `z ${i.z != null ? i.z : "—"} (тревога |z|>${i.z_alarm})`
-    : `база ${i.base_threshold} / тревога ${i.alarm_threshold}`;
+  // B7 [Вълна 1]: двоен етикет на abs редовете — калибрираният abs праг (решава
+  // зоната) И вторичният robust z (2г), етикетирани ПООТДЕЛНО, не слети.
+  const thresholdLabel = i => {
+    if (i.kind === "robust_z")
+      return `z ${i.z != null ? i.z : "—"} (тревога |z|>${i.z_alarm})`;
+    const cal = i.calibrated ? ` [CALIBRATED ${i.calibrated}]` : "";
+    const zpart = i.z != null ? ` · z ${i.z} (2г robust)` : "";
+    return `abs праг ${i.alarm_threshold}${cal}${zpart}`;
+  };
   const chips = b.indicators.map(i => `
     <div class="reg-chip" style="border-color:${zoneColor(i.zone)};background:${zoneBG(i.zone)}">
       <span class="reg-name">${i.name}</span>
@@ -505,6 +511,7 @@ function renderBarometer() {
   el.innerHTML = `
     <div class="reg-head">
       <span class="reg-title">⬡ Барометър на дислокациите</span>
+      <span class="reg-o4" title="Организмов договор О4: наблюдение, не сигнал. Confluence е СЪВПАДАЩ капитулационен маркер, не изпреварващо предупреждение.">НАБЛЮДЕНИЕ, НЕ СИГНАЛ · съвпадащ</span>
       <span class="reg-verdict" style="color:${vcolor}">${verdict}</span>
       <span class="reg-asof">${b.as_of || ""}</span>
     </div>
