@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-31",
+  "as_of": "2026-08-03",
   "snapshot": [
     {
       "indicator": "HY-spread",
@@ -13,11 +13,11 @@
     },
     {
       "indicator": "XLE/SPY",
-      "value": 0.0797,
+      "value": 0.0776,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 0.94,
+      "z": 0.64,
       "zone": "base",
       "trend": "up"
     },
@@ -33,11 +33,11 @@
     },
     {
       "indicator": "VIX",
-      "value": 15.86,
+      "value": 16.5,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
-      "z": -0.61,
+      "z": -0.36,
       "zone": "base",
       "trend": "up"
     },
@@ -53,51 +53,51 @@
     },
     {
       "indicator": "MOVE",
-      "value": 80.48,
+      "value": 77.56,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.26,
+      "z": -0.4,
       "zone": "base",
       "trend": "up"
     },
     {
       "indicator": "HYG/LQD",
-      "value": 0.748,
+      "value": 0.7474,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 2.67,
+      "z": 2.6,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "XLY/XLP",
-      "value": 1.365,
+      "value": 1.393,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.15,
+      "z": 0.07,
       "zone": "base",
       "trend": "down"
     },
     {
       "indicator": "IWM/SPY",
-      "value": 0.3898,
+      "value": 0.391,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 0.8,
+      "z": 0.86,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.394,
+      "value": 0.398,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.4,
+      "z": -0.28,
       "zone": "base",
       "trend": "down"
     }
@@ -117,7 +117,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 0.94,
+      "z": 0.64,
       "trend_4w": "up",
       "change_4w_pct": 6.54
     },
@@ -134,8 +134,8 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 9.14,
-      "z": -0.61,
+      "dist_to_alarm": 8.5,
+      "z": -0.36,
       "trend_4w": "up",
       "change_4w_pct": 2.28
     },
@@ -153,7 +153,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.26,
+      "z": -0.4,
       "trend_4w": "up",
       "change_4w_pct": 3.14
     },
@@ -162,7 +162,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 2.67,
+      "z": 2.6,
       "trend_4w": "flat",
       "change_4w_pct": 0.78
     },
@@ -171,7 +171,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.15,
+      "z": 0.07,
       "trend_4w": "down",
       "change_4w_pct": -3.03
     },
@@ -180,7 +180,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 0.8,
+      "z": 0.86,
       "trend_4w": "flat",
       "change_4w_pct": -0.48
     },
@@ -189,7 +189,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.4,
+      "z": -0.28,
       "trend_4w": "down",
       "change_4w_pct": -3.16
     }
@@ -279,7 +279,7 @@
         "note": "режимен маркер — не глас в брояча"
       },
       "t10y2y": {
-        "value": 0.47,
+        "value": 0.45,
         "zone": "gray",
         "label": "плоска",
         "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча"
