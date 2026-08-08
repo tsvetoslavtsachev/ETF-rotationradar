@@ -4,6 +4,9 @@ on:
   schedule:
     # Run every weekday at 22:00 UTC (after US market close)
     - cron: "0 22 * * 1-5"
+    # Sat 03:07 UTC — after price-daily (00:37) writes Friday's close, before the
+    # satellite collect (06:13); odd minutes dodge the round-hour scheduler queue
+    - cron: "7 3 * * 6"
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
