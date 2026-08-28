@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-25",
+  "as_of": "2026-08-26",
   "snapshot": [
     {
       "indicator": "HY-spread",
@@ -13,31 +13,31 @@
     },
     {
       "indicator": "XLE/SPY",
-      "value": 0.081,
+      "value": 0.0815,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 1.13,
+      "z": 1.2,
       "zone": "gray",
       "trend": "up"
     },
     {
       "indicator": "GLD/TLT",
-      "value": 5.13,
+      "value": 5.06,
       "kind": "abs",
       "base": 5.2,
       "alarm": 5.5,
-      "z": 1.18,
+      "z": 1.11,
       "zone": "base",
       "trend": "up"
     },
     {
       "indicator": "VIX",
-      "value": 15.21,
+      "value": 14.51,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
-      "z": -0.78,
+      "z": -1.04,
       "zone": "base",
       "trend": "down"
     },
@@ -53,51 +53,51 @@
     },
     {
       "indicator": "MOVE",
-      "value": 69.44,
+      "value": 69.86,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.75,
+      "z": -0.72,
       "zone": "base",
       "trend": "down"
     },
     {
       "indicator": "HYG/LQD",
-      "value": 0.7479,
+      "value": 0.7483,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 2.59,
+      "z": 2.63,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "XLY/XLP",
-      "value": 1.3633,
+      "value": 1.3581,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.21,
+      "z": -0.26,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "IWM/SPY",
-      "value": 0.3907,
+      "value": 0.3902,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 0.82,
+      "z": 0.79,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.3854,
+      "value": 0.3943,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.72,
+      "z": -0.41,
       "zone": "base",
       "trend": "flat"
     }
@@ -117,7 +117,7 @@
       "zone": "gray",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 1.13,
+      "z": 1.2,
       "trend_4w": "up",
       "change_4w_pct": 5.7
     },
@@ -125,8 +125,8 @@
       "indicator": "GLD/TLT",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 0.37,
-      "z": 1.18,
+      "dist_to_alarm": 0.44,
+      "z": 1.11,
       "trend_4w": "up",
       "change_4w_pct": 7.52
     },
@@ -134,8 +134,8 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 9.79,
-      "z": -0.78,
+      "dist_to_alarm": 10.49,
+      "z": -1.04,
       "trend_4w": "down",
       "change_4w_pct": -4.89
     },
@@ -153,7 +153,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.75,
+      "z": -0.72,
       "trend_4w": "down",
       "change_4w_pct": -7.78
     },
@@ -162,7 +162,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 2.59,
+      "z": 2.63,
       "trend_4w": "flat",
       "change_4w_pct": 0.53
     },
@@ -171,7 +171,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.21,
+      "z": -0.26,
       "trend_4w": "flat",
       "change_4w_pct": -1.0
     },
@@ -180,7 +180,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 0.82,
+      "z": 0.79,
       "trend_4w": "flat",
       "change_4w_pct": 0.63
     },
@@ -189,7 +189,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.72,
+      "z": -0.41,
       "trend_4w": "flat",
       "change_4w_pct": -0.86
     }
@@ -279,7 +279,7 @@
         "note": "режимен маркер — не глас в брояча"
       },
       "t10y2y": {
-        "value": 0.46,
+        "value": 0.47,
         "zone": "gray",
         "label": "плоска",
         "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча"
