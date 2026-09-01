@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-28",
+  "as_of": "2026-08-31",
   "snapshot": [
     {
       "indicator": "HY-spread",
@@ -13,33 +13,33 @@
     },
     {
       "indicator": "XLE/SPY",
-      "value": 0.0815,
+      "value": 0.0834,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 1.19,
+      "z": 1.46,
       "zone": "gray",
       "trend": "up"
     },
     {
       "indicator": "GLD/TLT",
-      "value": 4.93,
+      "value": 4.95,
       "kind": "abs",
       "base": 5.2,
       "alarm": 5.5,
-      "z": 0.95,
+      "z": 0.96,
       "zone": "base",
       "trend": "up"
     },
     {
       "indicator": "VIX",
-      "value": 14.92,
+      "value": 16.34,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
-      "z": -0.88,
+      "z": -0.35,
       "zone": "base",
-      "trend": "flat"
+      "trend": "down"
     },
     {
       "indicator": "10Y breakeven",
@@ -53,27 +53,27 @@
     },
     {
       "indicator": "MOVE",
-      "value": 75.32,
+      "value": 77.88,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.42,
+      "z": -0.28,
       "zone": "base",
-      "trend": "flat"
+      "trend": "down"
     },
     {
       "indicator": "HYG/LQD",
-      "value": 0.7498,
+      "value": 0.7514,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 2.79,
+      "z": 2.98,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "XLY/XLP",
-      "value": 1.3717,
+      "value": 1.372,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
@@ -83,21 +83,21 @@
     },
     {
       "indicator": "IWM/SPY",
-      "value": 0.3844,
+      "value": 0.3832,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 0.48,
+      "z": 0.41,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.3924,
+      "value": 0.3901,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.48,
+      "z": -0.56,
       "zone": "base",
       "trend": "flat"
     }
@@ -117,7 +117,7 @@
       "zone": "gray",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 1.19,
+      "z": 1.46,
       "trend_4w": "up",
       "change_4w_pct": 6.8
     },
@@ -125,8 +125,8 @@
       "indicator": "GLD/TLT",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 0.57,
-      "z": 0.95,
+      "dist_to_alarm": 0.55,
+      "z": 0.96,
       "trend_4w": "up",
       "change_4w_pct": 3.96
     },
@@ -134,10 +134,10 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 10.08,
-      "z": -0.88,
-      "trend_4w": "flat",
-      "change_4w_pct": 1.41
+      "dist_to_alarm": 8.66,
+      "z": -0.35,
+      "trend_4w": "down",
+      "change_4w_pct": -4.89
     },
     {
       "indicator": "10Y breakeven",
@@ -153,16 +153,16 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.42,
-      "trend_4w": "flat",
-      "change_4w_pct": 1.95
+      "z": -0.28,
+      "trend_4w": "down",
+      "change_4w_pct": -7.78
     },
     {
       "indicator": "HYG/LQD",
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 2.79,
+      "z": 2.98,
       "trend_4w": "flat",
       "change_4w_pct": 0.21
     },
@@ -180,7 +180,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 0.48,
+      "z": 0.41,
       "trend_4w": "flat",
       "change_4w_pct": -0.87
     },
@@ -189,9 +189,9 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.48,
+      "z": -0.56,
       "trend_4w": "flat",
-      "change_4w_pct": -1.49
+      "change_4w_pct": -0.86
     }
   ],
   "confluence": {
@@ -279,7 +279,7 @@
         "note": "режимен маркер — не глас в брояча"
       },
       "t10y2y": {
-        "value": 0.39,
+        "value": 0.41,
         "zone": "gray",
         "label": "плоска",
         "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча"
