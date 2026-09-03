@@ -34,6 +34,16 @@ try:
     _HAVE_BASE = True
 except ImportError:
     _HAVE_BASE = False
+# АТЛ4 П10: същият шаблон за ПАЗАРНИЯ КОНТЕКСТ. HY спредът и breakeven-ът текяха по ДВА пътя
+# (data-core тегли BAMLH0A0HYM2/T10YIE в mkt_hy_oas/mkt_breakeven_10y, барометърът тегли същите
+# два тикера сам). Историята вече идва от канона, а собственото теглене остава САМО за опашката
+# след последната канонична точка (месечният... по-точно СЕДМИЧНИЯТ колект на data-core върви
+# по събота, барометърът върви всеки ден). Четецът живее при гражданина, не в това репо.
+try:
+    from collectors.vrm.consumer import load_series_base_first
+    _HAVE_CONTEXT_BASE = True
+except ImportError:
+    _HAVE_CONTEXT_BASE = False
 from src.signal_engine import compute_cross_section
 from src.rank_history import append_snapshot, load_history, compute_delta_metrics, compute_movers
 from src.heatstrip import compute_heatstrip
@@ -69,6 +79,26 @@ def filter_prices(prices_df: pd.DataFrame, tickers: list) -> pd.DataFrame:
 
     available = [t for t in tickers if t in prices_df.columns]
     return prices_df[available]
+
+
+def _write_context_source(source_map: dict, detail: dict, as_of) -> None:
+    """Произходът на пазарния контекст (канон срещу собствено теглене) за
+    scripts/assert_context_base_sourced.py. АТЛ4 П10.
+
+    Гейтът пали ЧЕРВЕНО при три неща: показател, обслужен само от старото теглене (`fetch`,
+    тоест канонът е недостъпен); разминаване между двата пътя по обща дата (`conflict`, тоест
+    повторно разцепване); и опашка, по-дълга от прага (седмичният колект е пропуснал пускания).
+    Празен source_map значи, че четецът изобщо не е бил наличен -- локален пуск без checkout;
+    гейтът е заключен за PAT-а в CI и там не пали."""
+    import json
+    payload = {
+        "as_of": as_of.strftime("%Y-%m-%d") if hasattr(as_of, "strftime") else str(as_of),
+        "by_indicator": dict(sorted(source_map.items())),
+        "detail": {k: detail[k] for k in sorted(detail)},
+        "reader_available": bool(source_map),
+    }
+    (DATA_DIR / "context_source.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2, default=str) + "\n", encoding="utf-8")
 
 
 def _write_price_source(source_map: dict, prices_df: pd.DataFrame, expected: int) -> None:
@@ -225,6 +255,27 @@ def main():
             print(f"Derived breakeven: {len(be)} points, last={float(be.iloc[-1]):.2f}")
     time.sleep(15)
     hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
+    # АТЛ4 П10 · МОСТЪТ КАНОН/БАРОМЕТЪР. Дотук `be` и `hy` са СТАРИЯТ пряк път. Сега канонът
+    # поема ИСТОРИЯТА, а тези две серии остават само за ОПАШКАТА след последната канонична точка.
+    # Гейтът е вътре в четеца: двата пътя трябва да съвпадат по общите дати (сверено 2026-09-03:
+    # 784 общи дати при HY и 5919 при breakeven, НУЛА разминавания). Разминаване значи повторно
+    # разцепване, четецът връща `conflict`, канонът се пази и CI пали червено.
+    context_source, context_detail = {}, {}
+    if _HAVE_CONTEXT_BASE:
+        _fetched = {"hy_spread": hy, "breakeven_10y": be}
+        _series, context_source, context_detail = load_series_base_first(
+            {"hy_spread": "mkt_hy_oas", "breakeven_10y": "mkt_breakeven_10y"},
+            fetch_fallback=lambda k: _fetched.get(k),
+            as_of=latest_date)
+        hy, be = _series["hy_spread"], _series["breakeven_10y"]
+        for _k, _src in sorted(context_source.items()):
+            _d = context_detail[_k]
+            print(f"  context {_k}: {_src} (канон {_d['base_rows']} до {_d['base_last']}"
+                  f" + опашка {_d['tail_rows']}; застъпване {_d['overlap']},"
+                  f" разминавания {_d['overlap_mismatches']})")
+    else:
+        print("  context: data-core/collectors не са налични -> старият пряк път (CLOSED fallback)")
+    _write_context_source(context_source, context_detail, latest_date)
     # П3: кривата 2s10s (T10Y2Y) за контекстния ред — чете се от кеша (обновяван от
     # macro блока по-долу; кривата е бавен лидер, 1-ден кеш е без значение). Graceful.
     try:

@@ -83,6 +83,14 @@ jobs:
         if: ${{ env.DATACORE_RO_PAT != '' && env.PRICE_ARCHIVE_RO_PAT != '' }}
         run: python scripts/assert_base_sourced.py
 
+      # P10 guard (ATL4): with the data-core checkout present, the canon is the single owner of the
+      # HY spread's and the breakeven's history and the FRED pull only tops up the tail. Fail RED
+      # before any commit if the well re-split -- unreachable canon, a disagreement on a shared
+      # date, or a tail longer than the declared threshold. Needs only the data-core PAT.
+      - name: Assert market context base-sourced (no re-split of the well)
+        if: ${{ env.DATACORE_RO_PAT != '' }}
+        run: python scripts/assert_context_base_sourced.py
+
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
