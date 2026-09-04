@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-02",
+  "as_of": "2026-09-04",
   "snapshot": [
     {
       "indicator": "HY-spread",
@@ -33,11 +33,11 @@
     },
     {
       "indicator": "VIX",
-      "value": 14.32,
+      "value": 14.53,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
-      "z": -1.1,
+      "z": -1.02,
       "zone": "base",
       "trend": "flat"
     },
@@ -53,11 +53,11 @@
     },
     {
       "indicator": "MOVE",
-      "value": 74.68,
+      "value": 73.1,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.44,
+      "z": -0.52,
       "zone": "base",
       "trend": "flat"
     },
@@ -67,7 +67,7 @@
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 3.03,
+      "z": 3.04,
       "zone": "base",
       "trend": "flat"
     },
@@ -87,17 +87,17 @@
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 0.46,
+      "z": 0.47,
       "zone": "base",
       "trend": "flat"
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.3915,
+      "value": 0.3906,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.5,
+      "z": -0.54,
       "zone": "base",
       "trend": "flat"
     }
@@ -134,10 +134,10 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 10.68,
-      "z": -1.1,
+      "dist_to_alarm": 10.47,
+      "z": -1.02,
       "trend_4w": "flat",
-      "change_4w_pct": 1.41
+      "change_4w_pct": -1.43
     },
     {
       "indicator": "10Y breakeven",
@@ -153,16 +153,16 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.44,
+      "z": -0.52,
       "trend_4w": "flat",
-      "change_4w_pct": 1.95
+      "change_4w_pct": 0.77
     },
     {
       "indicator": "HYG/LQD",
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 3.03,
+      "z": 3.04,
       "trend_4w": "flat",
       "change_4w_pct": 0.21
     },
@@ -180,7 +180,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 0.46,
+      "z": 0.47,
       "trend_4w": "flat",
       "change_4w_pct": -0.87
     },
@@ -189,9 +189,9 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.5,
+      "z": -0.54,
       "trend_4w": "flat",
-      "change_4w_pct": -1.49
+      "change_4w_pct": 0.57
     }
   ],
   "confluence": {
@@ -279,7 +279,7 @@
         "note": "режимен маркер — не глас в брояча"
       },
       "t10y2y": {
-        "value": 0.41,
+        "value": 0.43,
         "zone": "gray",
         "label": "плоска",
         "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча"
