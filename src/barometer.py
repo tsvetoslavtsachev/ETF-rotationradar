@@ -322,10 +322,19 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
             "trend_4w": direction, "change_4w_pct": change,
         }
         indicators.append(rec)
-        snapshot.append({
+        snap_row = {
             "indicator": ind["name"], "value": vr, "kind": ind["kind"],
             "base": base_t, "alarm": alarm_t, "z": z, "zone": zone, "trend": direction,
-        })
+        }
+        # ЧИС3 казус 1: ^VIX/^MOVE идват от yfinance в реално време, докато as_of
+        # на фийда следва ETF фрейма от архива (един ден назад в делник). value_date
+        # носи датата на СОБСТВЕНАТА серия на индикатора, за да не се бърка с as_of.
+        if ind["src"][0] == "level" and ind["src"][1] in ("^VIX", "^MOVE") and len(series):
+            last_idx = series.dropna().index[-1]
+            snap_row["value_date"] = (
+                last_idx.strftime("%Y-%m-%d") if hasattr(last_idx, "strftime") else str(last_idx)
+            )
+        snapshot.append(snap_row)
         readings.append({
             "indicator": ind["name"], "zone": zone, "kind": ind["kind"],
             "dist_to_alarm": dist_alarm, "z": z,
