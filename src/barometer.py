@@ -249,6 +249,26 @@ def _zone_z(z, stress_dir, z_alarm: float = Z_ALARM, z_base: float = Z_BASE) -> 
     return "gray"
 
 
+HISTORY_POINTS = 26  # седмични точки за искровата линия на уиджета (~половин година)
+
+
+def _date_str(idx) -> str:
+    return idx.strftime("%Y-%m-%d") if hasattr(idx, "strftime") else str(idx)
+
+
+def _history(series: "pd.Series | None", decimals: int) -> list:
+    """Последните HISTORY_POINTS седмични (W-FRI, последна стойност) точки на серията,
+    [{date, value}]; празен списък при липсваща серия. Само за визуализация."""
+    if series is None or not len(series):
+        return []
+    s = series.dropna()
+    if isinstance(s.index, pd.DatetimeIndex):
+        # последното реално наблюдение във всяка седмица, с истинската му дата
+        s = s.groupby(s.index.to_period("W-FRI")).tail(1)
+    s = s.iloc[-HISTORY_POINTS:]
+    return [{"date": _date_str(i), "value": round(float(v), decimals)} for i, v in s.items()]
+
+
 def _trend_4w(series: "pd.Series | None") -> "tuple[str, float | None]":
     """Връща (посока, промяна_в_%). Посока: 'up' | 'down' | 'flat'.
     NB (одит 07.07): `change_4w_pct` е реално ~2-СЕДМИЧЕН ROC (midpoint-to-midpoint:
@@ -325,15 +345,20 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
         snap_row = {
             "indicator": ind["name"], "value": vr, "kind": ind["kind"],
             "base": base_t, "alarm": alarm_t, "z": z, "zone": zone, "trend": direction,
+            # 11.09.2026 (уиджетът barometer-widget): фийдът носи и това, което решава
+            # цвета и скалата, за да няма преписани прагове в чужд конфиг.
+            "stress_dir": ind["stress_dir"],
+            "z_base": Z_BASE if ind["kind"] == "robust_z" else None,
+            "z_alarm": ind.get("z_alarm", Z_ALARM) if ind["kind"] == "robust_z" else None,
+            "history": _history(series, ind["decimals"]),
         }
         # ЧИС3 казус 1: ^VIX/^MOVE идват от yfinance в реално време, докато as_of
         # на фийда следва ETF фрейма от архива (един ден назад в делник). value_date
         # носи датата на СОБСТВЕНАТА серия на индикатора, за да не се бърка с as_of.
-        if ind["src"][0] == "level" and ind["src"][1] in ("^VIX", "^MOVE") and len(series):
-            last_idx = series.dropna().index[-1]
-            snap_row["value_date"] = (
-                last_idx.strftime("%Y-%m-%d") if hasattr(last_idx, "strftime") else str(last_idx)
-            )
+        # От 11.09.2026 полето е при ВСЕКИ индикатор със серия (FRED сериите също
+        # изостават от ETF фрейма); липсва само когато няма серия.
+        if len(series):
+            snap_row["value_date"] = _date_str(series.dropna().index[-1])
         snapshot.append(snap_row)
         readings.append({
             "indicator": ind["name"], "zone": zone, "kind": ind["kind"],

@@ -43,11 +43,34 @@ def test_vix_move_carry_value_date_ahead_of_as_of():
     assert vix_row["value_date"] != feed["as_of"]
 
 
-def test_other_indicators_have_no_value_date():
+def test_every_indicator_with_a_series_carries_its_own_value_date():
+    # 11.09.2026: value_date е при всеки индикатор; ETF ratio-тата свършват на as_of,
+    # ^VIX/^MOVE са ден напред, FRED серии без данни нямат поле.
     df = _frame()
-    feed = compute_barometer(df, {}, df.index[-2])
+    as_of = df.index[-2]
+    feed = compute_barometer(df, {}, as_of)
     xle_row = _snap(feed, "XLE/SPY")
-    assert "value_date" not in xle_row
+    assert xle_row["value_date"] == feed["as_of"]
+    hy_row = _snap(feed, "HY-spread")
+    assert "value_date" not in hy_row and hy_row["zone"] == "unknown"
+
+
+def test_snapshot_carries_direction_thresholds_and_history():
+    df = _frame(n=60)
+    feed = compute_barometer(df, {}, df.index[-1])
+    rows = {r["indicator"]: r for r in feed["snapshot"]}
+    assert rows["HYG/LQD"]["stress_dir"] == "low" and rows["VIX"]["stress_dir"] == "high"
+    # robust_z носи z-праговете, abs не (там z не решава зоната)
+    assert rows["XLE/SPY"]["z_base"] == 1.0 and rows["XLE/SPY"]["z_alarm"] == 2.0
+    assert rows["VUG/VTV"]["z_alarm"] == 2.5
+    assert rows["VIX"]["z_base"] is None and rows["VIX"]["z_alarm"] is None
+    # историята: седмични точки, дата + стойност, последната е текущата стойност
+    hist = rows["XLE/SPY"]["history"]
+    assert 0 < len(hist) <= 26
+    assert all(set(p) == {"date", "value"} for p in hist)
+    assert hist[-1]["value"] == rows["XLE/SPY"]["value"]
+    assert hist[-1]["date"] == rows["XLE/SPY"]["value_date"]
+    assert rows["HY-spread"]["history"] == []  # без серия -> празно, не измислено
 
 
 def test_value_date_matches_as_of_when_series_aligned():
