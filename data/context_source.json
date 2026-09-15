@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-11",
+  "as_of": "2026-09-14",
   "by_indicator": {
     "breakeven_10y": "base+tail",
     "hy_spread": "base+tail"
@@ -14,7 +14,7 @@
       "overlap": 5928,
       "overlap_mismatches": 0,
       "worst_abs_diff": 0.0,
-      "tail_bdays": 0,
+      "tail_bdays": 1,
       "max_tail_bdays": 10,
       "why": null
     },
@@ -27,7 +27,7 @@
       "overlap": 784,
       "overlap_mismatches": 0,
       "worst_abs_diff": 0.0,
-      "tail_bdays": 1,
+      "tail_bdays": 2,
       "max_tail_bdays": 10,
       "why": null
     }
