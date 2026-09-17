@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-15",
+  "as_of": "2026-09-16",
   "snapshot": [
     {
       "indicator": "HY-spread",
@@ -123,11 +123,11 @@
     },
     {
       "indicator": "XLE/SPY",
-      "value": 0.087,
+      "value": 0.0849,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 1.89,
+      "z": 1.6,
       "zone": "gray",
       "trend": "up",
       "stress_dir": "high",
@@ -235,19 +235,19 @@
           "value": 0.0852
         },
         {
-          "date": "2026-09-15",
-          "value": 0.087
+          "date": "2026-09-16",
+          "value": 0.0849
         }
       ],
-      "value_date": "2026-09-15"
+      "value_date": "2026-09-16"
     },
     {
       "indicator": "GLD/TLT",
-      "value": 4.88,
+      "value": 4.84,
       "kind": "abs",
       "base": 5.2,
       "alarm": 5.5,
-      "z": 0.83,
+      "z": 0.79,
       "zone": "base",
       "trend": "down",
       "stress_dir": "high",
@@ -355,19 +355,19 @@
           "value": 4.93
         },
         {
-          "date": "2026-09-15",
-          "value": 4.88
+          "date": "2026-09-16",
+          "value": 4.84
         }
       ],
-      "value_date": "2026-09-15"
+      "value_date": "2026-09-16"
     },
     {
       "indicator": "VIX",
-      "value": 17.71,
+      "value": 15.44,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
-      "z": 0.18,
+      "z": -0.68,
       "zone": "base",
       "trend": "up",
       "stress_dir": "high",
@@ -475,11 +475,11 @@
           "value": 15.84
         },
         {
-          "date": "2026-09-16",
-          "value": 17.71
+          "date": "2026-09-17",
+          "value": 15.44
         }
       ],
-      "value_date": "2026-09-16"
+      "value_date": "2026-09-17"
     },
     {
       "indicator": "10Y breakeven",
@@ -603,11 +603,11 @@
     },
     {
       "indicator": "MOVE",
-      "value": 80.73,
+      "value": 76.22,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.08,
+      "z": -0.33,
       "zone": "base",
       "trend": "up",
       "stress_dir": "high",
@@ -715,19 +715,19 @@
           "value": 82.21
         },
         {
-          "date": "2026-09-16",
-          "value": 80.73
+          "date": "2026-09-17",
+          "value": 76.22
         }
       ],
-      "value_date": "2026-09-16"
+      "value_date": "2026-09-17"
     },
     {
       "indicator": "HYG/LQD",
-      "value": 0.7516,
+      "value": 0.7508,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 3.05,
+      "z": 2.94,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "low",
@@ -835,19 +835,19 @@
           "value": 0.7535
         },
         {
-          "date": "2026-09-15",
-          "value": 0.7516
+          "date": "2026-09-16",
+          "value": 0.7508
         }
       ],
-      "value_date": "2026-09-15"
+      "value_date": "2026-09-16"
     },
     {
       "indicator": "XLY/XLP",
-      "value": 1.3243,
+      "value": 1.3222,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.6,
+      "z": -0.63,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "low",
@@ -955,11 +955,11 @@
           "value": 1.3548
         },
         {
-          "date": "2026-09-15",
-          "value": 1.3243
+          "date": "2026-09-16",
+          "value": 1.3222
         }
       ],
-      "value_date": "2026-09-15"
+      "value_date": "2026-09-16"
     },
     {
       "indicator": "IWM/SPY",
@@ -1075,19 +1075,19 @@
           "value": 0.377
         },
         {
-          "date": "2026-09-15",
+          "date": "2026-09-16",
           "value": 0.3765
         }
       ],
-      "value_date": "2026-09-15"
+      "value_date": "2026-09-16"
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.3909,
+      "value": 0.3987,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.55,
+      "z": -0.27,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "high",
@@ -1195,11 +1195,11 @@
           "value": 0.393
         },
         {
-          "date": "2026-09-15",
-          "value": 0.3909
+          "date": "2026-09-17",
+          "value": 0.3987
         }
       ],
-      "value_date": "2026-09-15"
+      "value_date": "2026-09-17"
     }
   ],
   "readings": [
@@ -1217,7 +1217,7 @@
       "zone": "gray",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 1.89,
+      "z": 1.6,
       "trend_4w": "up",
       "change_4w_pct": 2.32
     },
@@ -1225,8 +1225,8 @@
       "indicator": "GLD/TLT",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 0.62,
-      "z": 0.83,
+      "dist_to_alarm": 0.66,
+      "z": 0.79,
       "trend_4w": "down",
       "change_4w_pct": -2.5
     },
@@ -1234,8 +1234,8 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 7.29,
-      "z": 0.18,
+      "dist_to_alarm": 9.56,
+      "z": -0.68,
       "trend_4w": "up",
       "change_4w_pct": 2.74
     },
@@ -1253,7 +1253,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.08,
+      "z": -0.33,
       "trend_4w": "up",
       "change_4w_pct": 7.58
     },
@@ -1262,7 +1262,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 3.05,
+      "z": 2.94,
       "trend_4w": "flat",
       "change_4w_pct": 0.3
     },
@@ -1271,7 +1271,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.6,
+      "z": -0.63,
       "trend_4w": "flat",
       "change_4w_pct": -1.12
     },
@@ -1289,7 +1289,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.55,
+      "z": -0.27,
       "trend_4w": "flat",
       "change_4w_pct": 0.52
     }
@@ -1379,7 +1379,7 @@
         "note": "режимен маркер — не глас в брояча"
       },
       "t10y2y": {
-        "value": 0.32,
+        "value": 0.27,
         "zone": "gray",
         "label": "плоска",
         "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча"
