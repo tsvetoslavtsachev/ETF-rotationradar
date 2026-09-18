@@ -127,7 +127,7 @@
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 1.6,
+      "z": 1.59,
       "zone": "gray",
       "trend": "up",
       "stress_dir": "high",
@@ -247,7 +247,7 @@
       "kind": "abs",
       "base": 5.2,
       "alarm": 5.5,
-      "z": 0.79,
+      "z": 0.78,
       "zone": "base",
       "trend": "down",
       "stress_dir": "high",
@@ -363,11 +363,11 @@
     },
     {
       "indicator": "VIX",
-      "value": 15.44,
+      "value": 14.81,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
-      "z": -0.68,
+      "z": -0.92,
       "zone": "base",
       "trend": "up",
       "stress_dir": "high",
@@ -475,11 +475,11 @@
           "value": 15.84
         },
         {
-          "date": "2026-09-17",
-          "value": 15.44
+          "date": "2026-09-18",
+          "value": 14.81
         }
       ],
-      "value_date": "2026-09-17"
+      "value_date": "2026-09-18"
     },
     {
       "indicator": "10Y breakeven",
@@ -603,11 +603,11 @@
     },
     {
       "indicator": "MOVE",
-      "value": 76.22,
+      "value": 80.64,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.33,
+      "z": -0.07,
       "zone": "base",
       "trend": "up",
       "stress_dir": "high",
@@ -715,11 +715,11 @@
           "value": 82.21
         },
         {
-          "date": "2026-09-17",
-          "value": 76.22
+          "date": "2026-09-18",
+          "value": 80.64
         }
       ],
-      "value_date": "2026-09-17"
+      "value_date": "2026-09-18"
     },
     {
       "indicator": "HYG/LQD",
@@ -967,7 +967,7 @@
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 0.09,
+      "z": 0.1,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "low",
@@ -1083,11 +1083,11 @@
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.3987,
+      "value": 0.4011,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.27,
+      "z": -0.19,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "high",
@@ -1195,11 +1195,11 @@
           "value": 0.393
         },
         {
-          "date": "2026-09-17",
-          "value": 0.3987
+          "date": "2026-09-18",
+          "value": 0.4011
         }
       ],
-      "value_date": "2026-09-17"
+      "value_date": "2026-09-18"
     }
   ],
   "readings": [
@@ -1217,7 +1217,7 @@
       "zone": "gray",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 1.6,
+      "z": 1.59,
       "trend_4w": "up",
       "change_4w_pct": 2.32
     },
@@ -1226,7 +1226,7 @@
       "zone": "base",
       "kind": "abs",
       "dist_to_alarm": 0.66,
-      "z": 0.79,
+      "z": 0.78,
       "trend_4w": "down",
       "change_4w_pct": -2.5
     },
@@ -1234,10 +1234,10 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 9.56,
-      "z": -0.68,
+      "dist_to_alarm": 10.19,
+      "z": -0.92,
       "trend_4w": "up",
-      "change_4w_pct": 2.74
+      "change_4w_pct": 5.84
     },
     {
       "indicator": "10Y breakeven",
@@ -1253,9 +1253,9 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.33,
+      "z": -0.07,
       "trend_4w": "up",
-      "change_4w_pct": 7.58
+      "change_4w_pct": 13.03
     },
     {
       "indicator": "HYG/LQD",
@@ -1280,7 +1280,7 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 0.09,
+      "z": 0.1,
       "trend_4w": "flat",
       "change_4w_pct": -1.78
     },
@@ -1289,9 +1289,9 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.27,
+      "z": -0.19,
       "trend_4w": "flat",
-      "change_4w_pct": 0.52
+      "change_4w_pct": 1.35
     }
   ],
   "confluence": {

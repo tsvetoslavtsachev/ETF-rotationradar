@@ -2816,9 +2816,9 @@
       "corr_1y": 0.06,
       "conc_top10": null,
       "cot_pctile": 100.0,
-      "cot_net": 414459.0,
-      "cot_pct_oi": 23.0,
-      "cot_date": "2026-09-08",
+      "cot_net": 414460.0,
+      "cot_pct_oi": 22.5,
+      "cot_date": "2026-09-15",
       "cot_market": "Corn",
       "cot_kind": "Managed money",
       "aum": 165107968.0,
@@ -2977,10 +2977,10 @@
       "beta_1y": 1.03,
       "corr_1y": 0.63,
       "conc_top10": null,
-      "cot_pctile": 100.0,
-      "cot_net": 82154.0,
-      "cot_pct_oi": 27.6,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 87.0,
+      "cot_net": 65106.0,
+      "cot_pct_oi": 22.5,
+      "cot_date": "2026-09-15",
       "cot_market": "Copper",
       "cot_kind": "Managed money",
       "aum": 750299264.0,
@@ -9151,10 +9151,10 @@
       "beta_1y": 0.77,
       "corr_1y": 0.4,
       "conc_top10": null,
-      "cot_pctile": 55.0,
-      "cot_net": 134972.0,
-      "cot_pct_oi": 32.8,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 53.0,
+      "cot_net": 133116.0,
+      "cot_pct_oi": 32.5,
+      "cot_date": "2026-09-15",
       "cot_market": "Gold (COMEX)",
       "cot_kind": "Managed money",
       "aum": 152861196288.0,
@@ -9831,10 +9831,10 @@
       "beta_1y": 0.77,
       "corr_1y": 0.4,
       "conc_top10": null,
-      "cot_pctile": 55.0,
-      "cot_net": 134972.0,
-      "cot_pct_oi": 32.8,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 53.0,
+      "cot_net": 133116.0,
+      "cot_pct_oi": 32.5,
+      "cot_date": "2026-09-15",
       "cot_market": "Gold (COMEX)",
       "cot_kind": "Managed money",
       "aum": 67539091456.0,
@@ -10381,10 +10381,10 @@
       "beta_1y": 0.1,
       "corr_1y": 0.28,
       "conc_top10": null,
-      "cot_pctile": 46.0,
-      "cot_net": -1938754.0,
-      "cot_pct_oi": -37.1,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 54.0,
+      "cot_net": -1868126.0,
+      "cot_pct_oi": -34.7,
+      "cot_date": "2026-09-15",
       "cot_market": "UST 10Y Note",
       "cot_kind": "Leveraged funds",
       "aum": 41824055296.0,
@@ -13816,7 +13816,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.76,
       "corr_1y": 0.68,
-      "conc_top10": 7.4,
+      "conc_top10": 7.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -13940,38 +13940,38 @@
       ],
       "holdings": [
         [
-          "ILMN",
-          0.87
+          "TWLO",
+          1.0
         ],
         [
-          "TWLO",
-          0.84
+          "ILMN",
+          0.91
         ],
         [
           "FTI",
-          0.8
+          0.87
         ],
         [
-          "CW",
-          0.75
+          "P",
+          0.82
         ],
         [
-          "CRS",
-          0.73
+          "OKTA",
+          0.81
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          23.4
+          22.2
         ],
         [
           "Technology",
-          15.7
+          17.1
         ],
         [
           "Financials",
-          14.0
+          13.4
         ]
       ]
     },
@@ -14573,10 +14573,10 @@
       "beta_1y": 1.43,
       "corr_1y": 0.37,
       "conc_top10": null,
-      "cot_pctile": 73.0,
-      "cot_net": -4339.0,
-      "cot_pct_oi": -25.9,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 62.0,
+      "cot_net": -5688.0,
+      "cot_pct_oi": -34.0,
+      "cot_date": "2026-09-15",
       "cot_market": "Palladium",
       "cot_kind": "Managed money",
       "aum": 769060096.0,
@@ -15293,10 +15293,10 @@
       "beta_1y": 1.42,
       "corr_1y": 0.33,
       "conc_top10": null,
-      "cot_pctile": 54.0,
-      "cot_net": 9787.0,
-      "cot_pct_oi": 14.4,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 53.0,
+      "cot_net": 8972.0,
+      "cot_pct_oi": 13.7,
+      "cot_date": "2026-09-15",
       "cot_market": "Platinum",
       "cot_kind": "Managed money",
       "aum": 2298330624.0,
@@ -16636,9 +16636,9 @@
       "corr_1y": 0.25,
       "conc_top10": null,
       "cot_pctile": 97.0,
-      "cot_net": -1290479.0,
-      "cot_pct_oi": -29.7,
-      "cot_date": "2026-09-08",
+      "cot_net": -1294575.0,
+      "cot_pct_oi": -29.2,
+      "cot_date": "2026-09-15",
       "cot_market": "UST 2Y Note",
       "cot_kind": "Leveraged funds",
       "aum": 25913065472.0,
@@ -17157,10 +17157,10 @@
       "beta_1y": 1.77,
       "corr_1y": 0.4,
       "conc_top10": null,
-      "cot_pctile": 35.0,
-      "cot_net": 14386.0,
-      "cot_pct_oi": 13.9,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 31.0,
+      "cot_net": 13124.0,
+      "cot_pct_oi": 12.7,
+      "cot_date": "2026-09-15",
       "cot_market": "Silver",
       "cot_kind": "Managed money",
       "aum": 34683150336.0,
@@ -18242,7 +18242,7 @@
       "sharpe_12m": -0.6774,
       "max_dd_12m": -8.75,
       "dist_52w_high": -8.5578,
-      "drawdown_now": -12.4374,
+      "drawdown_now": -11.3384,
       "atr_14": 0.6721,
       "atr_pct": 0.831,
       "chandelier_stop": 81.2646,
@@ -18257,10 +18257,10 @@
       "beta_1y": 0.13,
       "corr_1y": 0.2,
       "conc_top10": null,
-      "cot_pctile": 11.0,
-      "cot_net": -864271.0,
-      "cot_pct_oi": -36.0,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 18.0,
+      "cot_net": -813426.0,
+      "cot_pct_oi": -32.9,
+      "cot_date": "2026-09-15",
       "cot_market": "Ultra UST Bond",
       "cot_kind": "Leveraged funds",
       "aum": 47046328320.0,
@@ -19009,10 +19009,10 @@
       "beta_1y": -1.24,
       "corr_1y": -0.28,
       "conc_top10": null,
-      "cot_pctile": 58.0,
-      "cot_net": 111731.0,
-      "cot_pct_oi": 5.8,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 56.0,
+      "cot_net": 106279.0,
+      "cot_pct_oi": 5.4,
+      "cot_date": "2026-09-15",
       "cot_market": "WTI Crude (NYMEX)",
       "cot_kind": "Managed money",
       "aum": 1897174656.0,
@@ -19781,37 +19781,37 @@
       "holdings": [
         [
           "ASML.AS",
-          3.93
+          4.02
         ],
         [
           "HSBA.L",
-          2.26
+          2.16
         ],
         [
           "ROP.SW",
-          1.9
+          1.88
         ],
         [
           "NOVN.SW",
-          1.8
+          1.74
         ],
         [
-          "NESN.SW",
-          1.59
+          "SHEL.L",
+          1.58
         ]
       ],
       "sectors": [
         [
           "Financials",
-          25.2
+          25.3
         ],
         [
           "Industrials",
-          19.9
+          19.8
         ],
         [
           "Healthcare",
-          12.3
+          12.1
         ]
       ]
     },
@@ -19854,7 +19854,7 @@
       "flow_dir": null,
       "beta_1y": 0.64,
       "corr_1y": 0.81,
-      "conc_top10": 33.3,
+      "conc_top10": 33.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -19978,30 +19978,30 @@
       ],
       "holdings": [
         [
-          "AVGO",
-          4.62
+          "MSFT",
+          4.68
         ],
         [
           "AAPL",
-          4.44
+          4.51
         ],
         [
-          "MSFT",
-          4.33
+          "AVGO",
+          4.35
         ],
         [
           "JPM",
-          4.06
+          4.07
         ],
         [
           "LLY",
-          3.92
+          3.9
         ]
       ],
       "sectors": [
         [
           "Technology",
-          26.0
+          26.3
         ],
         [
           "Financials",
@@ -20009,7 +20009,7 @@
         ],
         [
           "Healthcare",
-          17.8
+          18.3
         ]
       ]
     },
@@ -20250,7 +20250,7 @@
       "flow_dir": null,
       "beta_1y": 0.36,
       "corr_1y": 0.31,
-      "conc_top10": 54.6,
+      "conc_top10": 55.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -20375,29 +20375,29 @@
       "holdings": [
         [
           "VRTPX",
-          14.41
+          14.53
         ],
         [
           "WELL",
-          8.46
+          8.72
         ],
         [
           "PLD",
-          6.97
+          6.89
         ],
         [
           "EQIX",
-          5.2
+          5.45
         ],
         [
           "AMT",
-          4.18
+          4.33
         ]
       ],
       "sectors": [
         [
           "Real Estate",
-          99.5
+          99.4
         ],
         [
           "Communication",
@@ -20448,7 +20448,7 @@
       "flow_dir": null,
       "beta_1y": 0.76,
       "corr_1y": 0.59,
-      "conc_top10": 21.7,
+      "conc_top10": 21.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -20573,7 +20573,7 @@
       "holdings": [
         [
           "GMG.AX",
-          3.96
+          3.89
         ],
         [
           "8802.T",
@@ -20585,11 +20585,11 @@
         ],
         [
           "0016.HK",
-          2.24
+          2.18
         ],
         [
           "8830.T",
-          1.95
+          1.86
         ]
       ],
       "sectors": [
@@ -20603,7 +20603,7 @@
         ],
         [
           "Cons. Cyclical",
-          0.5
+          0.6
         ]
       ]
     },
@@ -20646,7 +20646,7 @@
       "flow_dir": null,
       "beta_1y": 1.0,
       "corr_1y": 1.0,
-      "conc_top10": 37.6,
+      "conc_top10": 37.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -20771,37 +20771,37 @@
       "holdings": [
         [
           "NVDA",
-          7.55
+          8.08
         ],
         [
           "AAPL",
-          7.04
+          7.03
         ],
         [
           "MSFT",
-          5.36
+          5.7
         ],
         [
           "AMZN",
-          4.13
+          3.84
         ],
         [
           "GOOGL",
-          3.24
+          3.01
         ]
       ],
       "sectors": [
         [
           "Technology",
-          37.4
+          38.7
         ],
         [
           "Financials",
-          12.2
+          12.0
         ],
         [
           "Communication",
-          9.9
+          9.5
         ]
       ]
     },
@@ -20844,7 +20844,7 @@
       "flow_dir": null,
       "beta_1y": 0.99,
       "corr_1y": 0.95,
-      "conc_top10": 21.3,
+      "conc_top10": 21.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -20969,7 +20969,7 @@
       "holdings": [
         [
           "NVDA",
-          4.03
+          4.32
         ],
         [
           "AAPL",
@@ -20977,29 +20977,29 @@
         ],
         [
           "MSFT",
-          2.97
+          3.16
         ],
         [
           "AMZN",
-          2.27
+          2.11
         ],
         [
           "GOOGL",
-          1.82
+          1.68
         ]
       ],
       "sectors": [
         [
           "Technology",
-          29.2
+          30.3
         ],
         [
           "Financials",
-          16.8
+          16.5
         ],
         [
           "Industrials",
-          11.5
+          11.1
         ]
       ]
     },
@@ -21042,7 +21042,7 @@
       "flow_dir": null,
       "beta_1y": 0.99,
       "corr_1y": 0.99,
-      "conc_top10": 33.2,
+      "conc_top10": 33.5,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -21167,37 +21167,37 @@
       "holdings": [
         [
           "NVDA",
-          6.4
+          6.87
         ],
         [
           "AAPL",
-          6.29
+          6.3
         ],
         [
           "MSFT",
-          4.78
+          5.1
         ],
         [
           "AMZN",
-          3.64
+          3.41
         ],
         [
           "GOOGL",
-          2.89
+          2.7
         ]
       ],
       "sectors": [
         [
           "Technology",
-          35.1
+          36.4
         ],
         [
           "Financials",
-          12.6
+          12.4
         ],
         [
           "Healthcare",
-          9.9
+          10.1
         ]
       ]
     },
@@ -21402,7 +21402,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.03,
       "corr_1y": 0.79,
-      "conc_top10": 26.4,
+      "conc_top10": 25.9,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -21527,37 +21527,37 @@
       "holdings": [
         [
           "2330.TW",
-          14.99
+          14.72
         ],
         [
           "0700.HK",
-          3.19
+          2.9
         ],
         [
           "9988.HK",
-          2.33
+          2.19
         ],
         [
           "2454.TW",
-          1.31
+          1.47
         ],
         [
-          "00939",
-          0.86
+          "2308.TW",
+          0.9
         ]
       ],
       "sectors": [
         [
           "Technology",
-          30.3
+          31.8
         ],
         [
           "Financials",
-          20.6
+          20.2
         ],
         [
           "Cons. Cyclical",
-          10.5
+          9.9
         ]
       ]
     },
@@ -21795,10 +21795,10 @@
       "beta_1y": 0.12,
       "corr_1y": 0.07,
       "conc_top10": null,
-      "cot_pctile": 98.0,
-      "cot_net": 4873.0,
-      "cot_pct_oi": 1.0,
-      "cot_date": "2026-09-08",
+      "cot_pctile": 96.0,
+      "cot_net": -3674.0,
+      "cot_pct_oi": -0.8,
+      "cot_date": "2026-09-15",
       "cot_market": "Wheat SRW",
       "cot_kind": "Managed money",
       "aum": 363096448.0,
@@ -24464,7 +24464,7 @@
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": 1.6,
+        "z": 1.59,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "up",
@@ -24482,7 +24482,7 @@
         "alarm_threshold": 5.5,
         "calibrated": "2026-06-18",
         "dist_to_alarm": 0.66,
-        "z": 0.79,
+        "z": 0.78,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "down",
@@ -24494,17 +24494,17 @@
         "source": "yfinance ^VIX",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 15.44,
+        "value": 14.81,
         "zone": "base",
         "base_threshold": 20.0,
         "alarm_threshold": 25.0,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 9.56,
-        "z": -0.68,
+        "dist_to_alarm": 10.19,
+        "z": -0.92,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "up",
-        "change_4w_pct": 2.74
+        "change_4w_pct": 5.84
       },
       {
         "key": "breakeven_10y",
@@ -24530,17 +24530,17 @@
         "source": "yfinance ^MOVE",
         "kind": "robust_z",
         "stress_dir": "high",
-        "value": 76.22,
+        "value": 80.64,
         "zone": "base",
         "base_threshold": null,
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": -0.33,
+        "z": -0.07,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "up",
-        "change_4w_pct": 7.58
+        "change_4w_pct": 13.03
       },
       {
         "key": "hyg_lqd",
@@ -24590,7 +24590,7 @@
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": 0.09,
+        "z": 0.1,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "flat",
@@ -24602,17 +24602,17 @@
         "source": "yfinance VUG/VTV (\u0440\u0430\u0441\u0442\u0435\u0436/\u0441\u0442\u043e\u0439\u043d\u043e\u0441\u0442; z_alarm 2.5 \u2014 S16)",
         "kind": "robust_z",
         "stress_dir": "high",
-        "value": 0.3987,
+        "value": 0.4011,
         "zone": "base",
         "base_threshold": null,
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": -0.27,
+        "z": -0.19,
         "z_base": 1.0,
         "z_alarm": 2.5,
         "trend_4w": "flat",
-        "change_4w_pct": 0.52
+        "change_4w_pct": 1.35
       }
     ],
     "snapshot": [
@@ -24742,7 +24742,7 @@
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 1.6,
+        "z": 1.59,
         "zone": "gray",
         "trend": "up",
         "stress_dir": "high",
@@ -24862,7 +24862,7 @@
         "kind": "abs",
         "base": 5.2,
         "alarm": 5.5,
-        "z": 0.79,
+        "z": 0.78,
         "zone": "base",
         "trend": "down",
         "stress_dir": "high",
@@ -24978,11 +24978,11 @@
       },
       {
         "indicator": "VIX",
-        "value": 15.44,
+        "value": 14.81,
         "kind": "abs",
         "base": 20.0,
         "alarm": 25.0,
-        "z": -0.68,
+        "z": -0.92,
         "zone": "base",
         "trend": "up",
         "stress_dir": "high",
@@ -25090,11 +25090,11 @@
             "value": 15.84
           },
           {
-            "date": "2026-09-17",
-            "value": 15.44
+            "date": "2026-09-18",
+            "value": 14.81
           }
         ],
-        "value_date": "2026-09-17"
+        "value_date": "2026-09-18"
       },
       {
         "indicator": "10Y breakeven",
@@ -25218,11 +25218,11 @@
       },
       {
         "indicator": "MOVE",
-        "value": 76.22,
+        "value": 80.64,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": -0.33,
+        "z": -0.07,
         "zone": "base",
         "trend": "up",
         "stress_dir": "high",
@@ -25330,11 +25330,11 @@
             "value": 82.21
           },
           {
-            "date": "2026-09-17",
-            "value": 76.22
+            "date": "2026-09-18",
+            "value": 80.64
           }
         ],
-        "value_date": "2026-09-17"
+        "value_date": "2026-09-18"
       },
       {
         "indicator": "HYG/LQD",
@@ -25582,7 +25582,7 @@
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 0.09,
+        "z": 0.1,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "low",
@@ -25698,11 +25698,11 @@
       },
       {
         "indicator": "VUG/VTV",
-        "value": 0.3987,
+        "value": 0.4011,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": -0.27,
+        "z": -0.19,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "high",
@@ -25810,11 +25810,11 @@
             "value": 0.393
           },
           {
-            "date": "2026-09-17",
-            "value": 0.3987
+            "date": "2026-09-18",
+            "value": 0.4011
           }
         ],
-        "value_date": "2026-09-17"
+        "value_date": "2026-09-18"
       }
     ],
     "readings": [
@@ -25832,7 +25832,7 @@
         "zone": "gray",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 1.6,
+        "z": 1.59,
         "trend_4w": "up",
         "change_4w_pct": 2.32
       },
@@ -25841,7 +25841,7 @@
         "zone": "base",
         "kind": "abs",
         "dist_to_alarm": 0.66,
-        "z": 0.79,
+        "z": 0.78,
         "trend_4w": "down",
         "change_4w_pct": -2.5
       },
@@ -25849,10 +25849,10 @@
         "indicator": "VIX",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 9.56,
-        "z": -0.68,
+        "dist_to_alarm": 10.19,
+        "z": -0.92,
         "trend_4w": "up",
-        "change_4w_pct": 2.74
+        "change_4w_pct": 5.84
       },
       {
         "indicator": "10Y breakeven",
@@ -25868,9 +25868,9 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": -0.33,
+        "z": -0.07,
         "trend_4w": "up",
-        "change_4w_pct": 7.58
+        "change_4w_pct": 13.03
       },
       {
         "indicator": "HYG/LQD",
@@ -25895,7 +25895,7 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 0.09,
+        "z": 0.1,
         "trend_4w": "flat",
         "change_4w_pct": -1.78
       },
@@ -25904,9 +25904,9 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": -0.27,
+        "z": -0.19,
         "trend_4w": "flat",
-        "change_4w_pct": 0.52
+        "change_4w_pct": 1.35
       }
     ],
     "confluence": {
