@@ -18242,7 +18242,7 @@
       "sharpe_12m": -0.6774,
       "max_dd_12m": -8.75,
       "dist_52w_high": -8.5578,
-      "drawdown_now": -11.3384,
+      "drawdown_now": -11.0436,
       "atr_14": 0.6721,
       "atr_pct": 0.831,
       "chandelier_stop": 81.2646,
@@ -24440,13 +24440,13 @@
         "source": "FRED BAMLH0A0HYM2",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 2.76,
+        "value": 2.7,
         "zone": "base",
         "base_threshold": 3.0,
         "alarm_threshold": 3.5,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 0.74,
-        "z": -0.47,
+        "dist_to_alarm": 0.8,
+        "z": -0.78,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "flat",
@@ -24482,7 +24482,7 @@
         "alarm_threshold": 5.5,
         "calibrated": "2026-06-18",
         "dist_to_alarm": 0.66,
-        "z": 0.78,
+        "z": 0.77,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "down",
@@ -24522,7 +24522,7 @@
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "flat",
-        "change_4w_pct": 1.29
+        "change_4w_pct": 0.64
       },
       {
         "key": "move",
@@ -24540,7 +24540,7 @@
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "up",
-        "change_4w_pct": 13.03
+        "change_4w_pct": 13.04
       },
       {
         "key": "hyg_lqd",
@@ -24618,11 +24618,11 @@
     "snapshot": [
       {
         "indicator": "HY-spread",
-        "value": 2.76,
+        "value": 2.7,
         "kind": "abs",
         "base": 3.0,
         "alarm": 3.5,
-        "z": -0.47,
+        "z": -0.78,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "high",
@@ -24730,11 +24730,11 @@
             "value": 2.65
           },
           {
-            "date": "2026-09-15",
-            "value": 2.76
+            "date": "2026-09-17",
+            "value": 2.7
           }
         ],
-        "value_date": "2026-09-15"
+        "value_date": "2026-09-17"
       },
       {
         "indicator": "XLE/SPY",
@@ -24862,7 +24862,7 @@
         "kind": "abs",
         "base": 5.2,
         "alarm": 5.5,
-        "z": 0.78,
+        "z": 0.77,
         "zone": "base",
         "trend": "down",
         "stress_dir": "high",
@@ -25210,11 +25210,11 @@
             "value": 2.36
           },
           {
-            "date": "2026-09-16",
+            "date": "2026-09-18",
             "value": 2.33
           }
         ],
-        "value_date": "2026-09-16"
+        "value_date": "2026-09-18"
       },
       {
         "indicator": "MOVE",
@@ -25822,8 +25822,8 @@
         "indicator": "HY-spread",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 0.74,
-        "z": -0.47,
+        "dist_to_alarm": 0.8,
+        "z": -0.78,
         "trend_4w": "flat",
         "change_4w_pct": 0.57
       },
@@ -25841,7 +25841,7 @@
         "zone": "base",
         "kind": "abs",
         "dist_to_alarm": 0.66,
-        "z": 0.78,
+        "z": 0.77,
         "trend_4w": "down",
         "change_4w_pct": -2.5
       },
@@ -25861,7 +25861,7 @@
         "dist_to_alarm": 0.27,
         "z": 0.13,
         "trend_4w": "flat",
-        "change_4w_pct": 1.29
+        "change_4w_pct": 0.64
       },
       {
         "indicator": "MOVE",
@@ -25870,7 +25870,7 @@
         "dist_to_alarm": null,
         "z": -0.07,
         "trend_4w": "up",
-        "change_4w_pct": 13.03
+        "change_4w_pct": 13.04
       },
       {
         "indicator": "HYG/LQD",
@@ -26044,13 +26044,13 @@
       {
         "key": "curve_2s10s",
         "name": "\u041a\u0440\u0438\u0432\u0430 2s10s",
-        "value": 0.27,
+        "value": 0.25,
         "zone": "gray",
         "z": null,
         "note": "\u0438\u043d\u0432\u0435\u0440\u0441\u0438\u044f (<0) = \u043f\u0440\u0435\u0434\u0443\u043f\u0440\u0435\u0434\u0438\u0442\u0435\u043b\u0435\u043d \u0441\u0438\u0433\u043d\u0430\u043b",
         "source": "FRED T10Y2Y",
         "trend_4w": "down",
-        "change_4w_pct": -16.85
+        "change_4w_pct": -27.5
       },
       {
         "key": "recession_prob",

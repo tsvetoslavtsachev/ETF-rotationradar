@@ -3,11 +3,11 @@
   "snapshot": [
     {
       "indicator": "HY-spread",
-      "value": 2.76,
+      "value": 2.7,
       "kind": "abs",
       "base": 3.0,
       "alarm": 3.5,
-      "z": -0.47,
+      "z": -0.78,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "high",
@@ -115,11 +115,11 @@
           "value": 2.65
         },
         {
-          "date": "2026-09-15",
-          "value": 2.76
+          "date": "2026-09-17",
+          "value": 2.7
         }
       ],
-      "value_date": "2026-09-15"
+      "value_date": "2026-09-17"
     },
     {
       "indicator": "XLE/SPY",
@@ -247,7 +247,7 @@
       "kind": "abs",
       "base": 5.2,
       "alarm": 5.5,
-      "z": 0.78,
+      "z": 0.77,
       "zone": "base",
       "trend": "down",
       "stress_dir": "high",
@@ -595,11 +595,11 @@
           "value": 2.36
         },
         {
-          "date": "2026-09-16",
+          "date": "2026-09-18",
           "value": 2.33
         }
       ],
-      "value_date": "2026-09-16"
+      "value_date": "2026-09-18"
     },
     {
       "indicator": "MOVE",
@@ -1207,8 +1207,8 @@
       "indicator": "HY-spread",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 0.74,
-      "z": -0.47,
+      "dist_to_alarm": 0.8,
+      "z": -0.78,
       "trend_4w": "flat",
       "change_4w_pct": 0.57
     },
@@ -1226,7 +1226,7 @@
       "zone": "base",
       "kind": "abs",
       "dist_to_alarm": 0.66,
-      "z": 0.78,
+      "z": 0.77,
       "trend_4w": "down",
       "change_4w_pct": -2.5
     },
@@ -1246,7 +1246,7 @@
       "dist_to_alarm": 0.27,
       "z": 0.13,
       "trend_4w": "flat",
-      "change_4w_pct": 1.29
+      "change_4w_pct": 0.64
     },
     {
       "indicator": "MOVE",
@@ -1255,7 +1255,7 @@
       "dist_to_alarm": null,
       "z": -0.07,
       "trend_4w": "up",
-      "change_4w_pct": 13.03
+      "change_4w_pct": 13.04
     },
     {
       "indicator": "HYG/LQD",
