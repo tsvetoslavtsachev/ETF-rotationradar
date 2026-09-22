@@ -18242,7 +18242,7 @@
       "sharpe_12m": -0.6774,
       "max_dd_12m": -8.75,
       "dist_52w_high": -8.5578,
-      "drawdown_now": -11.0436,
+      "drawdown_now": -10.637,
       "atr_14": 0.6721,
       "atr_pct": 0.831,
       "chandelier_stop": 81.2646,
@@ -24440,17 +24440,17 @@
         "source": "FRED BAMLH0A0HYM2",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 2.7,
+        "value": 2.68,
         "zone": "base",
         "base_threshold": 3.0,
         "alarm_threshold": 3.5,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 0.8,
-        "z": -0.78,
+        "dist_to_alarm": 0.82,
+        "z": -0.88,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "flat",
-        "change_4w_pct": 0.57
+        "change_4w_pct": 0.95
       },
       {
         "key": "xle_spy",
@@ -24494,13 +24494,13 @@
         "source": "yfinance ^VIX",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 14.81,
+        "value": 14.87,
         "zone": "base",
         "base_threshold": 20.0,
         "alarm_threshold": 25.0,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 10.19,
-        "z": -0.92,
+        "dist_to_alarm": 10.13,
+        "z": -0.88,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "up",
@@ -24512,13 +24512,13 @@
         "source": "FRED T10YIE",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 2.33,
+        "value": 2.34,
         "zone": "base",
         "base_threshold": 2.4,
         "alarm_threshold": 2.6,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 0.27,
-        "z": 0.13,
+        "dist_to_alarm": 0.26,
+        "z": 0.27,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "flat",
@@ -24530,13 +24530,13 @@
         "source": "yfinance ^MOVE",
         "kind": "robust_z",
         "stress_dir": "high",
-        "value": 80.64,
+        "value": 81.2,
         "zone": "base",
         "base_threshold": null,
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": -0.07,
+        "z": -0.03,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "up",
@@ -24618,11 +24618,11 @@
     "snapshot": [
       {
         "indicator": "HY-spread",
-        "value": 2.7,
+        "value": 2.68,
         "kind": "abs",
         "base": 3.0,
         "alarm": 3.5,
-        "z": -0.78,
+        "z": -0.88,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "high",
@@ -24730,11 +24730,11 @@
             "value": 2.65
           },
           {
-            "date": "2026-09-17",
-            "value": 2.7
+            "date": "2026-09-18",
+            "value": 2.68
           }
         ],
-        "value_date": "2026-09-17"
+        "value_date": "2026-09-18"
       },
       {
         "indicator": "XLE/SPY",
@@ -24978,21 +24978,17 @@
       },
       {
         "indicator": "VIX",
-        "value": 14.81,
+        "value": 14.87,
         "kind": "abs",
         "base": 20.0,
         "alarm": 25.0,
-        "z": -0.92,
+        "z": -0.88,
         "zone": "base",
         "trend": "up",
         "stress_dir": "high",
         "z_base": null,
         "z_alarm": null,
         "history": [
-          {
-            "date": "2026-03-27",
-            "value": 31.05
-          },
           {
             "date": "2026-04-02",
             "value": 23.87
@@ -25092,27 +25088,27 @@
           {
             "date": "2026-09-18",
             "value": 14.81
+          },
+          {
+            "date": "2026-09-21",
+            "value": 14.87
           }
         ],
-        "value_date": "2026-09-18"
+        "value_date": "2026-09-21"
       },
       {
         "indicator": "10Y breakeven",
-        "value": 2.33,
+        "value": 2.34,
         "kind": "abs",
         "base": 2.4,
         "alarm": 2.6,
-        "z": 0.13,
+        "z": 0.27,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "high",
         "z_base": null,
         "z_alarm": null,
         "history": [
-          {
-            "date": "2026-03-27",
-            "value": 2.31
-          },
           {
             "date": "2026-04-03",
             "value": 2.36
@@ -25212,27 +25208,27 @@
           {
             "date": "2026-09-18",
             "value": 2.33
+          },
+          {
+            "date": "2026-09-21",
+            "value": 2.34
           }
         ],
-        "value_date": "2026-09-18"
+        "value_date": "2026-09-21"
       },
       {
         "indicator": "MOVE",
-        "value": 80.64,
+        "value": 81.2,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": -0.07,
+        "z": -0.03,
         "zone": "base",
         "trend": "up",
         "stress_dir": "high",
         "z_base": 1.0,
         "z_alarm": 2.0,
         "history": [
-          {
-            "date": "2026-03-27",
-            "value": 111.95
-          },
           {
             "date": "2026-04-02",
             "value": 84.41
@@ -25332,9 +25328,13 @@
           {
             "date": "2026-09-18",
             "value": 80.64
+          },
+          {
+            "date": "2026-09-21",
+            "value": 81.2
           }
         ],
-        "value_date": "2026-09-18"
+        "value_date": "2026-09-21"
       },
       {
         "indicator": "HYG/LQD",
@@ -25822,10 +25822,10 @@
         "indicator": "HY-spread",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 0.8,
-        "z": -0.78,
+        "dist_to_alarm": 0.82,
+        "z": -0.88,
         "trend_4w": "flat",
-        "change_4w_pct": 0.57
+        "change_4w_pct": 0.95
       },
       {
         "indicator": "XLE/SPY",
@@ -25849,8 +25849,8 @@
         "indicator": "VIX",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 10.19,
-        "z": -0.92,
+        "dist_to_alarm": 10.13,
+        "z": -0.88,
         "trend_4w": "up",
         "change_4w_pct": 5.84
       },
@@ -25858,8 +25858,8 @@
         "indicator": "10Y breakeven",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 0.27,
-        "z": 0.13,
+        "dist_to_alarm": 0.26,
+        "z": 0.27,
         "trend_4w": "flat",
         "change_4w_pct": 0.64
       },
@@ -25868,7 +25868,7 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": -0.07,
+        "z": -0.03,
         "trend_4w": "up",
         "change_4w_pct": 13.04
       },
@@ -25994,7 +25994,7 @@
           "note": "\u0440\u0435\u0436\u0438\u043c\u0435\u043d \u043c\u0430\u0440\u043a\u0435\u0440 \u2014 \u043d\u0435 \u0433\u043b\u0430\u0441 \u0432 \u0431\u0440\u043e\u044f\u0447\u0430"
         },
         "t10y2y": {
-          "value": 0.27,
+          "value": 0.25,
           "zone": "gray",
           "label": "\u043f\u043b\u043e\u0441\u043a\u0430",
           "note": "\u043b\u0438\u0434\u0435\u0440\u0435\u043d \u0431\u0430\u0434\u0436 (\u043a\u0440\u0438\u0432\u0430 2s10s) \u2014 \u043e\u0446\u0432\u0435\u0442\u044f\u0432\u0430 \u043f\u0440\u043e\u0447\u0438\u0442\u0430, \u041d\u0415 \u0433\u043b\u0430\u0441 \u0432 \u0431\u0440\u043e\u044f\u0447\u0430"
@@ -26033,18 +26033,18 @@
       {
         "key": "usd",
         "name": "USD (Broad)",
-        "value": 118.21,
+        "value": 119.51,
         "zone": "base",
-        "z": -1.16,
+        "z": -0.57,
         "note": "\u0441\u0442\u0435\u0433\u043d\u0430\u0442 \u0441\u0438\u043b\u0435\u043d \u0434\u043e\u043b\u0430\u0440 = \u0433\u043b\u043e\u0431\u0430\u043b\u043d\u043e \u0437\u0430\u0442\u044f\u0433\u0430\u043d\u0435",
         "source": "FRED DTWEXBGS",
         "trend_4w": "flat",
-        "change_4w_pct": -0.22
+        "change_4w_pct": 0.38
       },
       {
         "key": "curve_2s10s",
         "name": "\u041a\u0440\u0438\u0432\u0430 2s10s",
-        "value": 0.25,
+        "value": 0.2,
         "zone": "gray",
         "z": null,
         "note": "\u0438\u043d\u0432\u0435\u0440\u0441\u0438\u044f (<0) = \u043f\u0440\u0435\u0434\u0443\u043f\u0440\u0435\u0434\u0438\u0442\u0435\u043b\u0435\u043d \u0441\u0438\u0433\u043d\u0430\u043b",
