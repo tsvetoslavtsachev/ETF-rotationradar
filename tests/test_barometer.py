@@ -79,3 +79,60 @@ def test_value_date_matches_as_of_when_series_aligned():
     feed = compute_barometer(df, {}, as_of)
     vix_row = _snap(feed, "VIX")
     assert vix_row["value_date"] == feed["as_of"]
+
+
+# ── 27.09.2026 · свежест на всяко число (казусът VIX W39) ────────────────────
+# Моделът е data-core (digest.py: свежо / „забавя" / „залежал"; m_pulse: кохорта и кой
+# изостава). Застоял VIX трябва да излезе маркиран, не пренесен като днешен.
+
+def test_stale_vix_is_marked_stale_not_carried_as_today():
+    df = _frame(vix_extra_day=False)
+    df.loc[df.index[-4:], "^VIX"] = np.nan  # VIX спира 4 сесии преди останалите
+    feed = compute_barometer(df, {}, df.index[-1])
+    vix = _snap(feed, "VIX")
+    assert vix["value_date"] == df.index[-5].strftime("%Y-%m-%d")
+    assert vix["lag_sessions"] == 4
+    assert vix["freshness"] == "stale" and vix["stale"] is True
+    assert feed["freshness"]["stale"] == ["VIX"]
+    assert feed["freshness"]["newest_cohort"] == df.index[-1].strftime("%Y-%m-%d")
+    reading = next(r for r in feed["readings"] if r["indicator"] == "VIX")
+    assert reading["stale"] is True and reading["value_date"] == vix["value_date"]
+
+
+def test_normal_weekday_lag_marks_nothing():
+    # ETF архивът с ден назад, VIX/MOVE в реално време: това е нормата, не застой.
+    df = _frame()
+    feed = compute_barometer(df, {}, df.index[-2])
+    dated = [r for r in feed["snapshot"] if "value_date" in r]
+    assert dated and all(r["freshness"] == "fresh" and r["stale"] is False for r in dated)
+    assert _snap(feed, "XLE/SPY")["lag_sessions"] == 1
+    assert feed["freshness"]["late"] == [] and feed["freshness"]["stale"] == []
+
+
+def test_two_sessions_behind_is_late_not_stale():
+    df = _frame(vix_extra_day=False)
+    df.loc[df.index[-2:], "^VIX"] = np.nan
+    feed = compute_barometer(df, {}, df.index[-1])
+    vix = _snap(feed, "VIX")
+    assert (vix["lag_sessions"], vix["freshness"], vix["stale"]) == (2, "late", False)
+    assert feed["freshness"]["late"] == ["VIX"]
+
+
+def test_missing_series_has_no_freshness_but_is_listed():
+    feed = compute_barometer(_frame(), {}, _frame().index[-2])
+    hy = _snap(feed, "HY-spread")
+    assert "stale" not in hy and "freshness" not in hy
+    assert "HY-spread" in feed["freshness"]["missing"]
+
+
+def test_value_since_separates_coincidence_from_recycled_print():
+    df = _frame(vix_extra_day=False)
+    idx = df.index
+    # истинско съвпадение (CBOE 21.09 = 25.09 = 14,87): стойността се движи между двете
+    df.loc[idx[-5:], "^VIX"] = [14.87, 14.21, 15.18, 15.67, 14.87]
+    vix = _snap(compute_barometer(df, {}, idx[-1]), "VIX")
+    assert vix["value_since"] == idx[-1].strftime("%Y-%m-%d")
+    # рециклиран отпечатък: същото число стои от три сесии
+    df.loc[idx[-3:], "^VIX"] = 15.67
+    vix = _snap(compute_barometer(df, {}, idx[-1]), "VIX")
+    assert vix["value_since"] == idx[-3].strftime("%Y-%m-%d")

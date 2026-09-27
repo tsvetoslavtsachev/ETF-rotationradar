@@ -163,6 +163,7 @@ def render_frontend_data(
             "snapshot": barometer.get("snapshot"),
             "readings": barometer.get("readings"),
             "confluence": barometer.get("confluence"),
+            "freshness": barometer.get("freshness"),
         }
         with open(feed_path, "w", encoding="utf-8") as f:
             json.dump(feed, f, indent=2, ensure_ascii=False, default=_json_default)

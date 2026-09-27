@@ -294,6 +294,9 @@ def main():
           f"VIX={ind['vix']} BE={ind['breakeven_10y']} MOVE={ind['move']} "
           f"| alarm={conf['alarm_count']} base={conf['base_count']} net={conf['net']} "
           f"conf={conf['has_confluence']} {conf['direction'] or ''}")
+    fr = barometer["freshness"]
+    print(f"Barometer freshness: cohort={fr['newest_cohort']} late={fr['late']} "
+          f"stale={fr['stale']} missing={fr['missing']}")
 
     # 6.7 Макро контекст strip (Tier 2, S17) — keyless FRED режимни overlays.
     #     DISPLAY-ONLY (не влиза в Барометър confluence). Всяка серия с parquet

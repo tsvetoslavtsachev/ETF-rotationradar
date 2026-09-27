@@ -40,6 +40,17 @@ ALARM_CONF = 2   # ≥2 едновременни alarm-сензора → рег
                  # Структурен фикс (групова confluence) — виж _etf_radar_analytics/MANDATE (П2).
 CONF_NET = 2     # нетен превес на калм страната (base−alarm) → "спокоен режим"
 
+# ── Свежест на всяко число (27.09.2026, казусът VIX W39) ─────────────────────
+# Моделът е от data-core: digest.py дава три светлини по честотата (зелено / „забавя" /
+# „залежал"), m_pulse freshness мери кохортата (най-новата дата във флота) и кой
+# изостава от нея. Тук кохортата е най-новата value_date сред редовете на фийда, а
+# изоставането се брои в делнични сесии до нея (np.busday_count, празниците не се
+# изключват -> празник добавя най-много 1). Праговете са от документираните закъснения:
+# 1 сесия е нормата (ETF архивът в делнична вечер, ЧИС3 казус 1; FRED публикува на
+# следващия ден). Мерено върху 15-те фийда 11-26.09.2026: VIX 15/15 на 0, HY 10/15 на 1.
+FRESH_LAG = 1    # <= 1 сесия зад кохортата = свежо
+STALE_LAG = 3    # >= 3 сесии = „залежал" (stale: true); 2 = „забавя"
+
 # ── Дефиниция на индикаторите (в реда на показване) ─────────────────────────
 # Абсолютните прагове са сорснати; robust_z няма абс. праг (self-calibrating).
 # S15 (2026-06-18) калибрация:
@@ -173,6 +184,7 @@ def _curve_context(fred_series: dict) -> "dict | None":
     else:
         zone, label = "gray", "плоска"
     return {"value": round(val, 2), "zone": zone, "label": label,
+            "value_date": _date_str(s.dropna().index[-1]),
             "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча"}
 
 
@@ -254,6 +266,47 @@ HISTORY_POINTS = 26  # седмични точки за искровата ли�
 
 def _date_str(idx) -> str:
     return idx.strftime("%Y-%m-%d") if hasattr(idx, "strftime") else str(idx)
+
+
+def _value_since(series: pd.Series, decimals: int) -> str:
+    """Първата дата на сегашната серия от еднакви (закръглени) стойности. Рециклиран
+    отпечатък (Yahoo връща стар ^MOVE под нова дата, ЧИС3 казус 2) стои назад във времето;
+    истинско съвпадение със стара стойност (VIX 21.09 = 25.09 = 14,87) започва скоро."""
+    s = series.dropna().round(decimals)
+    changed = s[s != s.iloc[-1]]
+    if not len(changed):
+        return _date_str(s.index[0])
+    return _date_str(s.index[s.index > changed.index[-1]][0])
+
+
+def _freshness_level(lag: int) -> str:
+    if lag <= FRESH_LAG:
+        return "fresh"
+    if lag < STALE_LAG:
+        return "late"
+    return "stale"
+
+
+def _mark_freshness(rows: list) -> dict:
+    """Слага на всеки ред със value_date: lag_sessions, freshness, stale. Връща блока за
+    фийда: кохортата, праговете и кой изостава. Редовете без серия остават без полета."""
+    dated = [r for r in rows if r.get("value_date")]
+    newest = max((r["value_date"] for r in dated), default=None)
+    late, stale = [], []
+    for r in dated:
+        lag = int(np.busday_count(r["value_date"], newest))
+        level = _freshness_level(lag)
+        r["lag_sessions"], r["freshness"], r["stale"] = lag, level, level == "stale"
+        if level == "late":
+            late.append(r["indicator"])
+        elif level == "stale":
+            stale.append(r["indicator"])
+    return {
+        "newest_cohort": newest, "unit": "weekday sessions",
+        "fresh_lag": FRESH_LAG, "stale_lag": STALE_LAG,
+        "late": late, "stale": stale,
+        "missing": [r["indicator"] for r in rows if not r.get("value_date")],
+    }
 
 
 def _history(series: "pd.Series | None", decimals: int) -> list:
@@ -359,12 +412,23 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
         # изостават от ETF фрейма); липсва само когато няма серия.
         if len(series):
             snap_row["value_date"] = _date_str(series.dropna().index[-1])
+            # 27.09.2026: откога стойността стои същата (мостът в collectors различава
+            # рециклиран отпечатък от истинско съвпадение по това поле).
+            snap_row["value_since"] = _value_since(series, ind["decimals"])
         snapshot.append(snap_row)
         readings.append({
             "indicator": ind["name"], "zone": zone, "kind": ind["kind"],
             "dist_to_alarm": dist_alarm, "z": z,
             "trend_4w": direction, "change_4w_pct": change,
         })
+
+    # 27.09.2026: всяко число носи своята дата и присъда за свежест; застоялото е
+    # маркирано, не мълчаливо пренесено. Зоните и броячите НЕ се пипат (маркиране, не филтър).
+    freshness = _mark_freshness(snapshot)
+    for snap_row, reading in zip(snapshot, readings):
+        for k in ("value_date", "lag_sessions", "freshness", "stale"):
+            if k in snap_row:
+                reading[k] = snap_row[k]
 
     alarm = [i["name"] for i in indicators if i["zone"] == "alarm"]
     base = [i["name"] for i in indicators if i["zone"] == "base"]
@@ -395,6 +459,10 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
     # П3 (07.07): кривата 2s10s като контекстен ред (лидерен бадж, НЕ глас). Graceful ако липсва.
     curve = _curve_context(fred_series)
     if curve is not None:
+        if freshness["newest_cohort"]:
+            lag = max(0, int(np.busday_count(curve["value_date"], freshness["newest_cohort"])))
+            level = _freshness_level(lag)
+            curve.update({"lag_sessions": lag, "freshness": level, "stale": level == "stale"})
         confluence.setdefault("context_rows", {})["t10y2y"] = curve
 
     as_of_str = as_of.strftime("%Y-%m-%d") if hasattr(as_of, "strftime") else str(as_of)
@@ -404,4 +472,5 @@ def compute_barometer(prices_df: pd.DataFrame, fred_series: "dict | None", as_of
         "snapshot": snapshot,
         "readings": readings,
         "confluence": confluence,
+        "freshness": freshness,
     }
