@@ -100,13 +100,15 @@ def _fetch_remote(series_id: str) -> pd.Series:
 def fetch_fred_series(
     series_id: str,
     cache_path: "str | Path | None" = None,
-    max_age_days: int = 1,
+    max_age_days: "int | None" = 1,
     max_retries: int = 3,
 ) -> pd.Series:
     """
     Връща pd.Series (DatetimeIndex -> float) за FRED серия.
     Primary = официален API + FRED_API_KEY; fallback = keyless fredgraph; после
     stale кеш; ако и той липсва — празна серия.
+    max_age_days=None: винаги тегли, кешът е само резерва при провал (27.09.2026:
+    при дневен бот TTL от 1 ден кара всеки втори пуск да ползва вчерашното теглене).
     """
     cpath = Path(cache_path) if cache_path is not None else None
     now = pd.Timestamp.now().normalize()
@@ -118,7 +120,8 @@ def fetch_fred_series(
             cdf = pd.read_parquet(cpath)
             cached = pd.Series(cdf["value"].values, index=pd.to_datetime(cdf["date"]), name=series_id)
             fetched_at = pd.Timestamp(cdf["fetched_at"].iloc[0]).normalize() if "fetched_at" in cdf else None
-            if fetched_at is not None and (now - fetched_at).days <= max_age_days:
+            if (max_age_days is not None and fetched_at is not None
+                    and (now - fetched_at).days <= max_age_days):
                 return cached
         except Exception as e:
             print(f"FRED cache read failed for {series_id}: {e}")

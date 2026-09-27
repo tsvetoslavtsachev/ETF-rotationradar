@@ -241,20 +241,25 @@ def main():
     # T10YIE се тегли ПЪРВА: fredgraph пуска заявки пестеливо (rate limit),
     # а тя единствена няма посят кеш. HY има stale-cache fallback и се движи
     # бавно — ден закъснение е приемлив.
-    be = fetch_fred_series("T10YIE", cache_path=DATA_DIR / "fred_T10YIE.parquet")
+    # 27.09.2026: барометърните FRED серии се теглят ВСЕКИ пуск (max_age_days=None),
+    # кешът е само резерва. С 1-дневния TTL всеки втори дневен пуск тихо ползваше
+    # вчерашното теглене: 11-26.09 при прясно теглене HY е 10/10 на 1 сесия зад
+    # кохортата, при кеш 5/5 на 2-3. CI-то тегли с FRED_API_KEY (лимитът е на keyless).
+    be = fetch_fred_series("T10YIE", cache_path=DATA_DIR / "fred_T10YIE.parquet", max_age_days=None)
     if be.dropna().empty:
         # Резервен път ПО ДЕФИНИЦИЯ: breakeven = 10г номинална минус 10г TIPS
         # доходност (DGS10 - DFII10) — същата стойност, същите прагове.
         print("T10YIE unavailable -> deriving breakeven as DGS10 - DFII10...")
         time.sleep(15)
-        dgs10 = fetch_fred_series("DGS10", cache_path=DATA_DIR / "fred_DGS10.parquet")
+        dgs10 = fetch_fred_series("DGS10", cache_path=DATA_DIR / "fred_DGS10.parquet", max_age_days=None)
         time.sleep(15)
-        dfii10 = fetch_fred_series("DFII10", cache_path=DATA_DIR / "fred_DFII10.parquet")
+        dfii10 = fetch_fred_series("DFII10", cache_path=DATA_DIR / "fred_DFII10.parquet", max_age_days=None)
         if len(dgs10.dropna()) and len(dfii10.dropna()):
             be = (dgs10 - dfii10).dropna()
             print(f"Derived breakeven: {len(be)} points, last={float(be.iloc[-1]):.2f}")
     time.sleep(15)
-    hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet")
+    hy = fetch_fred_series("BAMLH0A0HYM2", cache_path=DATA_DIR / "fred_BAMLH0A0HYM2.parquet",
+                           max_age_days=None)
     # АТЛ4 П10 · МОСТЪТ КАНОН/БАРОМЕТЪР. Дотук `be` и `hy` са СТАРИЯТ пряк път. Сега канонът
     # поема ИСТОРИЯТА, а тези две серии остават само за ОПАШКАТА след последната канонична точка.
     # Гейтът е вътре в четеца: двата пътя трябва да съвпадат по общите дати (сверено 2026-09-03:
