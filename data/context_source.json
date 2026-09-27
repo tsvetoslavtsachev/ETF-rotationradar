@@ -1,33 +1,33 @@
 {
   "as_of": "2026-09-25",
   "by_indicator": {
-    "breakeven_10y": "base+tail",
-    "hy_spread": "base+tail"
+    "breakeven_10y": "base",
+    "hy_spread": "base"
   },
   "detail": {
     "breakeven_10y": {
       "series_id": "mkt_breakeven_10y",
-      "base_rows": 5934,
-      "tail_rows": 4,
-      "base_last": "2026-09-21",
+      "base_rows": 5938,
+      "tail_rows": 0,
+      "base_last": "2026-09-25",
       "fetch_last": "2026-09-25",
-      "overlap": 5934,
+      "overlap": 5938,
       "overlap_mismatches": 0,
       "worst_abs_diff": 0.0,
-      "tail_bdays": 4,
+      "tail_bdays": 0,
       "max_tail_bdays": 10,
       "why": null
     },
     "hy_spread": {
       "series_id": "mkt_hy_oas",
-      "base_rows": 785,
-      "tail_rows": 4,
-      "base_last": "2026-09-18",
+      "base_rows": 787,
+      "tail_rows": 0,
+      "base_last": "2026-09-24",
       "fetch_last": "2026-09-24",
-      "overlap": 783,
+      "overlap": 787,
       "overlap_mismatches": 0,
       "worst_abs_diff": 0.0,
-      "tail_bdays": 5,
+      "tail_bdays": 1,
       "max_tail_bdays": 10,
       "why": null
     }
