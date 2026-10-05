@@ -17,7 +17,7 @@ PARTIAL universe does not trip).
 
 Run only when the read PAT is set (the workflow gates it); with the secret absent the yfinance
 fallback is legitimate and this is skipped. Mirrors
-dashboards/cot-monitor/scripts/assert_base_sourced.py (A1 cot_source guard).
+markets/cot-monitor/scripts/assert_base_sourced.py (A1 cot_source guard).
 """
 from __future__ import annotations
 import json
