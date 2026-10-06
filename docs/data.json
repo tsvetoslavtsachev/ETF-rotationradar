@@ -40,7 +40,7 @@
       "flow_dir": null,
       "beta_1y": 0.98,
       "corr_1y": 0.95,
-      "conc_top10": 24.2,
+      "conc_top10": 25.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -165,37 +165,37 @@
       "holdings": [
         [
           "NVDA",
-          4.87
+          5.09
         ],
         [
           "AAPL",
-          4.46
+          4.74
         ],
         [
           "MSFT",
-          3.43
+          3.51
         ],
         [
           "AMZN",
-          2.41
+          2.34
         ],
         [
           "GOOGL",
-          1.91
+          1.96
         ]
       ],
       "sectors": [
         [
           "Technology",
-          32.2
+          33.9
         ],
         [
           "Financials",
-          16.6
+          16.0
         ],
         [
           "Industrials",
-          10.2
+          10.0
         ]
       ]
     },
@@ -400,7 +400,7 @@
       "flow_dir": null,
       "beta_1y": 1.83,
       "corr_1y": 0.85,
-      "conc_top10": 32.4,
+      "conc_top10": 32.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -525,37 +525,37 @@
       "holdings": [
         [
           "PLTR",
-          4.12
+          4.08
         ],
         [
           "MSFT",
           3.62
         ],
         [
-          "ORCL",
-          3.39
-        ],
-        [
           "SPCX",
-          3.31
+          3.43
         ],
         [
-          "NFLX",
-          3.21
+          "INTC",
+          3.23
+        ],
+        [
+          "META",
+          3.22
         ]
       ],
       "sectors": [
         [
           "Technology",
-          69.9
+          70.8
         ],
         [
           "Communication",
-          12.8
+          12.7
         ],
         [
           "Cons. Cyclical",
-          9.1
+          8.5
         ]
       ]
     },
@@ -598,7 +598,7 @@
       "flow_dir": null,
       "beta_1y": 1.36,
       "corr_1y": 0.37,
-      "conc_top10": 59.3,
+      "conc_top10": 62.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -722,24 +722,24 @@
       ],
       "holdings": [
         [
-          "TXG",
-          9.58
+          "TWST",
+          10.31
         ],
         [
-          "TWST",
-          9.13
+          "TXG",
+          10.02
         ],
         [
           "TEM",
-          7.91
+          8.93
         ],
         [
           "CRSP",
-          6.1
+          5.24
         ],
         [
-          "PSNL",
-          5.93
+          "ABSI",
+          5.06
         ]
       ],
       "sectors": [
@@ -788,7 +788,7 @@
       "flow_dir": null,
       "beta_1y": 1.97,
       "corr_1y": 0.7,
-      "conc_top10": 50.6,
+      "conc_top10": 49.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -913,37 +913,37 @@
       "holdings": [
         [
           "TSLA",
-          9.58
+          9.08
         ],
         [
           "SPCX",
-          6.14
-        ],
-        [
-          "CRCL",
-          5.71
+          6.18
         ],
         [
           "TEM",
-          5.55
+          5.91
         ],
         [
-          "COIN",
-          4.74
+          "CRCL",
+          4.57
+        ],
+        [
+          "CRSP",
+          4.45
         ]
       ],
       "sectors": [
         [
           "Healthcare",
-          28.6
+          30.1
         ],
         [
           "Technology",
-          27.0
+          26.7
         ],
         [
           "Financials",
-          17.2
+          16.0
         ]
       ]
     },
@@ -1148,7 +1148,7 @@
       "flow_dir": null,
       "beta_1y": 1.8,
       "corr_1y": 0.63,
-      "conc_top10": 32.2,
+      "conc_top10": 32.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -1272,38 +1272,38 @@
       ],
       "holdings": [
         [
-          "FIGR",
-          4.45
+          "HOOD",
+          4.04
         ],
         [
-          "HOOD",
-          3.7
+          "FIGR",
+          3.56
+        ],
+        [
+          "AMD",
+          3.54
         ],
         [
           "GLXY",
-          3.58
+          3.37
         ],
         [
           "CIFR",
-          3.23
-        ],
-        [
-          "OPRA",
-          3.15
+          3.36
         ]
       ],
       "sectors": [
         [
           "Financials",
-          56.7
+          54.8
         ],
         [
           "Technology",
-          32.3
+          35.0
         ],
         [
           "Cons. Cyclical",
-          6.5
+          5.8
         ]
       ]
     },
@@ -1670,7 +1670,7 @@
       "flow_dir": null,
       "beta_1y": 1.74,
       "corr_1y": 0.83,
-      "conc_top10": 60.0,
+      "conc_top10": 56.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -1794,38 +1794,38 @@
       ],
       "holdings": [
         [
-          "6861.T",
-          10.77
-        ],
-        [
-          "NVDA",
-          9.64
-        ],
-        [
-          "ABBN.SW",
-          9.19
+          "ISRG",
+          8.59
         ],
         [
           "6954.T",
-          7.65
+          8.24
         ],
         [
-          "ISRG",
-          6.07
+          "6861.T",
+          8.22
+        ],
+        [
+          "NVDA",
+          8.0
+        ],
+        [
+          "ABBN.SW",
+          7.85
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          47.9
+          51.2
         ],
         [
           "Technology",
-          34.5
+          29.2
         ],
         [
           "Healthcare",
-          8.0
+          11.4
         ]
       ]
     },
@@ -1868,7 +1868,7 @@
       "flow_dir": null,
       "beta_1y": 1.22,
       "corr_1y": 0.39,
-      "conc_top10": 62.5,
+      "conc_top10": 64.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -1993,23 +1993,23 @@
       "holdings": [
         [
           "OKTA",
-          8.69
-        ],
-        [
-          "PANW",
-          7.88
+          9.95
         ],
         [
           "CRWD",
-          7.67
+          8.32
+        ],
+        [
+          "PANW",
+          7.76
         ],
         [
           "FTNT",
-          7.5
+          7.43
         ],
         [
           "QLYS",
-          5.94
+          5.66
         ]
       ],
       "sectors": [
@@ -2058,7 +2058,7 @@
       "flow_dir": null,
       "beta_1y": 1.16,
       "corr_1y": 0.53,
-      "conc_top10": 57.9,
+      "conc_top10": 58.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -2182,38 +2182,38 @@
       ],
       "holdings": [
         [
-          "PANW",
-          9.68
-        ],
-        [
           "CRWD",
-          9.02
+          8.89
         ],
         [
           "FTNT",
-          8.84
+          8.11
+        ],
+        [
+          "PANW",
+          8.07
         ],
         [
           "CSCO",
-          6.55
+          7.56
         ],
         [
           "AVGO",
-          5.91
+          7.36
         ]
       ],
       "sectors": [
         [
           "Technology",
-          95.0
+          94.9
         ],
         [
           "Industrials",
-          3.1
+          2.9
         ],
         [
           "Communication",
-          1.9
+          2.2
         ]
       ]
     },
@@ -2256,7 +2256,7 @@
       "flow_dir": null,
       "beta_1y": 1.06,
       "corr_1y": 0.4,
-      "conc_top10": 47.9,
+      "conc_top10": 50.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -2381,37 +2381,37 @@
       "holdings": [
         [
           "SNOW",
-          6.94
-        ],
-        [
-          "PAYC",
-          5.39
+          7.19
         ],
         [
           "DDOG",
-          5.12
+          5.99
         ],
         [
-          "NOW",
-          4.79
+          "TWLO",
+          5.71
         ],
         [
-          "WDAY",
-          4.61
+          "PAYC",
+          4.96
+        ],
+        [
+          "NET",
+          4.9
         ]
       ],
       "sectors": [
         [
           "Technology",
-          92.2
+          92.5
         ],
         [
           "Communication",
-          3.5
+          3.4
         ],
         [
           "Real Estate",
-          2.6
+          2.5
         ]
       ]
     },
@@ -2454,7 +2454,7 @@
       "flow_dir": null,
       "beta_1y": 1.33,
       "corr_1y": 0.55,
-      "conc_top10": 34.9,
+      "conc_top10": 36.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -2579,37 +2579,37 @@
       "holdings": [
         [
           "ACA",
-          4.08
+          4.22
         ],
         [
-          "CEG",
-          3.91
-        ],
-        [
-          "FCEL",
-          3.67
+          "BE",
+          4.19
         ],
         [
           "GEV",
-          3.57
+          3.9
         ],
         [
-          "AES",
-          3.48
+          "CEG",
+          3.72
+        ],
+        [
+          "CIG",
+          3.63
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          33.9
+          35.2
         ],
         [
           "Utilities",
-          32.8
+          32.6
         ],
         [
           "Technology",
-          28.2
+          27.1
         ]
       ]
     },
@@ -3587,37 +3587,37 @@
       "holdings": [
         [
           "MSFT",
-          3.5
+          3.22
         ],
         [
-          "JPM",
-          3.17
-        ],
-        [
-          "JNJ",
-          3.14
-        ],
-        [
-          "ABBV",
-          2.99
+          "AAPL",
+          3.16
         ],
         [
           "XOM",
-          2.94
+          3.11
+        ],
+        [
+          "ABBV",
+          2.91
+        ],
+        [
+          "JNJ",
+          2.9
         ]
       ],
       "sectors": [
         [
           "Financials",
-          21.1
-        ],
-        [
-          "Healthcare",
-          18.4
+          19.7
         ],
         [
           "Technology",
-          17.6
+          19.3
+        ],
+        [
+          "Healthcare",
+          17.4
         ]
       ]
     },
@@ -3660,7 +3660,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.75,
       "corr_1y": 0.82,
-      "conc_top10": 55.0,
+      "conc_top10": 55.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -3785,37 +3785,37 @@
       "holdings": [
         [
           "GS",
-          11.45
+          10.48
         ],
         [
           "CAT",
-          8.9
+          9.44
         ],
         [
           "MSFT",
-          5.66
+          5.97
         ],
         [
           "AMGN",
-          4.8
+          4.91
         ],
         [
           "UNH",
-          4.35
+          4.27
         ]
       ],
       "sectors": [
         [
           "Financials",
-          27.5
+          26.3
         ],
         [
           "Technology",
-          18.4
+          19.0
         ],
         [
           "Industrials",
-          15.5
+          16.0
         ]
       ]
     },
@@ -3858,7 +3858,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.15,
       "corr_1y": 0.15,
-      "conc_top10": 19.6,
+      "conc_top10": 19.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -3982,30 +3982,30 @@
       ],
       "holdings": [
         [
-          "PFE",
-          2.29
+          "HPQ",
+          2.49
         ],
         [
-          "HPQ",
-          2.24
+          "PFE",
+          2.44
         ],
         [
           "PRU",
-          2.14
-        ],
-        [
-          "TROW",
-          2.12
+          2.2
         ],
         [
           "MO",
-          2.09
+          2.19
+        ],
+        [
+          "TROW",
+          2.11
         ]
       ],
       "sectors": [
         [
           "Financials",
-          25.8
+          25.6
         ],
         [
           "Utilities",
@@ -4013,7 +4013,7 @@
         ],
         [
           "Cons. Defensive",
-          14.0
+          13.8
         ]
       ]
     },
@@ -4056,7 +4056,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.26,
       "corr_1y": 0.7,
-      "conc_top10": 37.3,
+      "conc_top10": 38.9,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -4181,37 +4181,37 @@
       "holdings": [
         [
           "2330.TW",
-          15.07
+          15.57
         ],
         [
           "005930.KQ",
-          7.16
+          7.53
         ],
         [
           "000660.KQ",
-          5.45
+          5.88
         ],
         [
           "0700.HK",
-          2.86
+          2.73
         ],
         [
           "9988.HK",
-          1.97
+          1.85
         ]
       ],
       "sectors": [
         [
           "Technology",
-          42.3
+          44.2
         ],
         [
           "Financials",
-          19.3
+          19.1
         ],
         [
           "Cons. Cyclical",
-          8.1
+          7.5
         ]
       ]
     },
@@ -4614,7 +4614,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.78,
       "corr_1y": 0.57,
-      "conc_top10": 65.3,
+      "conc_top10": 65.2,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -4739,33 +4739,33 @@
       "holdings": [
         [
           "BHP.AX",
-          16.35
+          15.42
         ],
         [
           "CBA.AX",
-          13.0
+          12.61
         ],
         [
           "NAB.AX",
-          5.85
+          6.09
         ],
         [
           "WBC.AX",
-          5.74
+          5.99
         ],
         [
           "ANZ.AX",
-          5.45
+          5.77
         ]
       ],
       "sectors": [
         [
           "Financials",
-          41.1
+          42.0
         ],
         [
           "Materials",
-          26.7
+          25.4
         ],
         [
           "Cons. Cyclical",
@@ -4812,7 +4812,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.63,
       "corr_1y": 0.62,
-      "conc_top10": 44.2,
+      "conc_top10": 45.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -4937,37 +4937,37 @@
       "holdings": [
         [
           "RY",
-          9.0
+          9.15
         ],
         [
           "TD",
-          6.34
+          6.52
         ],
         [
           "SHOP",
-          5.67
+          6.02
         ],
         [
           "BMO.TO",
-          3.69
+          3.83
         ],
         [
           "BNS.TO",
-          3.56
+          3.74
         ]
       ],
       "sectors": [
         [
           "Financials",
-          39.2
+          39.9
         ],
         [
           "Energy",
-          17.9
+          17.3
         ],
         [
           "Materials",
-          16.1
+          15.2
         ]
       ]
     },
@@ -5010,7 +5010,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.01,
       "corr_1y": 0.71,
-      "conc_top10": 63.2,
+      "conc_top10": 63.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -5135,37 +5135,37 @@
       "holdings": [
         [
           "SIE.DE",
-          12.07
+          12.14
         ],
         [
           "SAP.DE",
-          11.31
+          11.46
         ],
         [
           "ALV.DE",
-          10.02
+          9.64
         ],
         [
           "ENR.DE",
-          6.44
+          6.73
         ],
         [
           "DTE.DE",
-          5.63
+          5.4
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          28.7
+          28.9
         ],
         [
           "Financials",
-          23.2
+          22.9
         ],
         [
           "Technology",
-          15.9
+          16.4
         ]
       ]
     },
@@ -5208,7 +5208,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.03,
       "corr_1y": 0.69,
-      "conc_top10": 70.9,
+      "conc_top10": 73.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -5333,37 +5333,37 @@
       "holdings": [
         [
           "UCG.MI",
-          16.78
+          18.01
         ],
         [
           "ISP.MI",
-          13.6
+          15.01
         ],
         [
           "ENEL.MI",
-          10.34
-        ],
-        [
-          "RACE.MI",
-          5.16
+          10.59
         ],
         [
           "ENI.MI",
-          5.05
+          4.69
+        ],
+        [
+          "PRY.MI",
+          4.69
         ]
       ],
       "sectors": [
         [
           "Financials",
-          52.6
+          54.1
         ],
         [
           "Utilities",
-          16.3
+          16.5
         ],
         [
           "Industrials",
-          9.7
+          12.0
         ]
       ]
     },
@@ -5406,7 +5406,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.03,
       "corr_1y": 0.64,
-      "conc_top10": 30.1,
+      "conc_top10": 30.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -5531,37 +5531,37 @@
       "holdings": [
         [
           "8306.T",
-          4.63
+          4.66
         ],
         [
           "7203.T",
-          3.53
-        ],
-        [
-          "8316.T",
-          2.99
+          3.27
         ],
         [
           "8035.T",
-          2.96
+          3.1
+        ],
+        [
+          "8316.T",
+          2.98
         ],
         [
           "6857.T",
-          2.9
+          2.96
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          22.9
+          22.8
         ],
         [
           "Technology",
-          21.5
+          22.0
         ],
         [
           "Financials",
-          19.1
+          19.3
         ]
       ]
     },
@@ -5604,7 +5604,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.83,
       "corr_1y": 0.61,
-      "conc_top10": 74.1,
+      "conc_top10": 74.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -5729,37 +5729,37 @@
       "holdings": [
         [
           "SAN.MC",
-          19.25
+          19.22
         ],
         [
           "BBVA.MC",
-          14.02
+          14.26
         ],
         [
           "IBE.MC",
-          12.13
+          12.77
+        ],
+        [
+          "REP.MC",
+          4.99
         ],
         [
           "CABK.MC",
-          4.62
-        ],
-        [
-          "ITX.MC",
-          4.44
+          4.54
         ]
       ],
       "sectors": [
         [
           "Financials",
-          45.4
+          45.6
         ],
         [
           "Utilities",
-          20.0
+          20.7
         ],
         [
           "Industrials",
-          14.4
+          14.1
         ]
       ]
     },
@@ -5802,7 +5802,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.9,
       "corr_1y": 0.63,
-      "conc_top10": 59.1,
+      "conc_top10": 59.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -5927,37 +5927,37 @@
       "holdings": [
         [
           "SU.PA",
-          8.65
+          8.96
         ],
         [
           "TTE.PA",
-          7.83
-        ],
-        [
-          "AIR.PA",
-          6.26
+          8.2
         ],
         [
           "SAF.PA",
-          6.21
+          6.44
         ],
         [
-          "MC.PA",
-          6.0
+          "AIR.PA",
+          6.32
+        ],
+        [
+          "AI.PA",
+          5.94
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          32.9
+          33.4
         ],
         [
           "Financials",
-          13.5
+          13.4
         ],
         [
           "Cons. Cyclical",
-          11.8
+          10.8
         ]
       ]
     },
@@ -6000,7 +6000,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.69,
       "corr_1y": 0.59,
-      "conc_top10": 81.0,
+      "conc_top10": 83.5,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -6124,38 +6124,38 @@
       ],
       "holdings": [
         [
-          "D05.SI",
-          22.66
+          "O39.SI",
+          23.66
         ],
         [
-          "O39.SI",
-          22.24
+          "D05.SI",
+          23.34
+        ],
+        [
+          "BS6.SI",
+          4.93
+        ],
+        [
+          "U11.SI",
+          4.83
         ],
         [
           "BN4.SI",
           4.6
-        ],
-        [
-          "F34.SI",
-          4.59
-        ],
-        [
-          "Z74.SI",
-          4.56
         ]
       ],
       "sectors": [
         [
           "Financials",
-          54.6
+          56.1
         ],
         [
           "Industrials",
-          18.1
+          18.6
         ],
         [
           "Real Estate",
-          9.1
+          8.7
         ]
       ]
     },
@@ -6198,7 +6198,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.67,
       "corr_1y": 0.71,
-      "conc_top10": 48.0,
+      "conc_top10": 49.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -6323,33 +6323,33 @@
       "holdings": [
         [
           "2330.TW",
-          22.13
+          21.89
         ],
         [
           "2454.TW",
-          5.97
+          7.18
         ],
         [
           "2308.TW",
-          3.96
+          3.9
         ],
         [
           "2317.TW",
-          3.34
+          3.22
         ],
         [
           "3711.TW",
-          2.56
+          2.96
         ]
       ],
       "sectors": [
         [
           "Technology",
-          73.9
+          74.2
         ],
         [
           "Financials",
-          14.0
+          14.3
         ],
         [
           "Materials",
@@ -6396,7 +6396,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.53,
       "corr_1y": 0.48,
-      "conc_top10": 52.3,
+      "conc_top10": 53.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -6521,37 +6521,37 @@
       "holdings": [
         [
           "HSBA.L",
-          11.0
+          11.05
         ],
         [
           "SHEL.L",
-          7.79
+          8.87
         ],
         [
           "AZN.L",
-          7.58
+          7.97
         ],
         [
           "RR.L",
-          5.35
+          5.24
         ],
         [
           "ULVR.L",
-          4.33
+          4.26
         ]
       ],
       "sectors": [
         [
           "Financials",
-          26.4
+          26.1
         ],
         [
           "Cons. Defensive",
-          14.3
+          14.1
         ],
         [
           "Industrials",
-          13.9
+          13.3
         ]
       ]
     },
@@ -6594,7 +6594,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.72,
       "corr_1y": 0.43,
-      "conc_top10": 64.6,
+      "conc_top10": 64.9,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -6719,37 +6719,37 @@
       "holdings": [
         [
           "GMEXICOB.MX",
-          16.62
+          16.36
         ],
         [
           "GFNORTEO.MX",
-          11.08
+          11.13
         ],
         [
           "FEMSAUBD.MX",
-          8.28
+          8.77
         ],
         [
           "AMXB.MX",
-          7.23
+          7.19
         ],
         [
-          "CEMEXCPO.MX",
-          4.43
+          "WALMEX.MX",
+          4.36
         ]
       ],
       "sectors": [
         [
           "Materials",
-          27.3
+          26.8
         ],
         [
           "Cons. Defensive",
-          24.4
+          24.8
         ],
         [
           "Financials",
-          19.7
+          19.5
         ]
       ]
     },
@@ -6792,7 +6792,7 @@
       "flow_dir": "flat",
       "beta_1y": 2.35,
       "corr_1y": 0.58,
-      "conc_top10": 60.8,
+      "conc_top10": 61.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -6917,37 +6917,37 @@
       "holdings": [
         [
           "000660.KQ",
-          23.69
+          23.72
         ],
         [
           "005930.KQ",
-          22.24
+          22.78
         ],
         [
           "402340.KQ",
-          2.86
+          3.11
         ],
         [
           "009150.KQ",
-          2.66
+          2.73
         ],
         [
           "105560.KQ",
-          1.99
+          1.92
         ]
       ],
       "sectors": [
         [
           "Technology",
-          54.6
+          56.9
         ],
         [
           "Industrials",
-          17.0
+          16.4
         ],
         [
           "Financials",
-          11.1
+          10.9
         ]
       ]
     },
@@ -6990,7 +6990,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.49,
       "corr_1y": 0.23,
-      "conc_top10": 57.1,
+      "conc_top10": 56.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -7115,37 +7115,37 @@
       "holdings": [
         [
           "VALE3.SA",
-          10.12
-        ],
-        [
-          "NU",
-          9.45
+          8.92
         ],
         [
           "ITUB4",
-          7.65
+          8.41
+        ],
+        [
+          "NU",
+          8.06
         ],
         [
           "PETR4",
-          7.01
+          7.51
         ],
         [
           "PETR3.SA",
-          6.62
+          6.96
         ]
       ],
       "sectors": [
         [
           "Financials",
-          34.1
+          34.4
         ],
         [
           "Energy",
-          17.4
+          18.1
         ],
         [
           "Materials",
-          14.5
+          13.0
         ]
       ]
     },
@@ -7188,7 +7188,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.97,
       "corr_1y": 0.72,
-      "conc_top10": 29.9,
+      "conc_top10": 30.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -7313,37 +7313,37 @@
       "holdings": [
         [
           "ASML.AS",
-          8.39
+          9.41
         ],
         [
           "SIE.DE",
-          3.07
+          3.02
         ],
         [
           "SAP.DE",
-          2.88
+          2.86
         ],
         [
           "SAN.MC",
-          2.69
+          2.67
         ],
         [
-          "ALV.DE",
-          2.55
+          "SU.PA",
+          2.44
         ]
       ],
       "sectors": [
         [
           "Financials",
-          26.5
+          26.3
         ],
         [
           "Industrials",
-          20.1
+          20.0
         ],
         [
           "Technology",
-          15.7
+          16.9
         ]
       ]
     },
@@ -7386,7 +7386,7 @@
       "flow_dir": null,
       "beta_1y": 0.44,
       "corr_1y": 0.36,
-      "conc_top10": 54.4,
+      "conc_top10": 54.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -7510,38 +7510,38 @@
       ],
       "holdings": [
         [
-          "VWS.CO",
-          11.15
+          "NDX1.DE",
+          8.4
         ],
         [
           "ORSTED.CO",
-          7.68
-        ],
-        [
-          "NDX1.DE",
-          7.42
+          8.06
         ],
         [
           "EDPR.LS",
-          7.25
+          7.63
         ],
         [
-          "NPI.TO",
-          5.86
+          "VWS.CO",
+          7.43
+        ],
+        [
+          "00916",
+          5.7
         ]
       ],
       "sectors": [
         [
           "Utilities",
-          51.6
+          49.1
         ],
         [
           "Industrials",
-          45.2
+          47.7
         ],
         [
           "Cons. Cyclical",
-          2.0
+          2.1
         ]
       ]
     },
@@ -7584,7 +7584,7 @@
       "flow_dir": null,
       "beta_1y": 1.55,
       "corr_1y": 0.62,
-      "conc_top10": 51.7,
+      "conc_top10": 51.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -7709,37 +7709,37 @@
       "holdings": [
         [
           "HOOD",
-          7.38
-        ],
-        [
-          "XYZ",
-          6.92
+          8.56
         ],
         [
           "PYPL",
-          6.28
+          6.74
+        ],
+        [
+          "XYZ",
+          6.67
         ],
         [
           "COIN",
-          5.19
+          5.55
         ],
         [
-          "ADYEN.AS",
-          4.78
+          "FISV",
+          4.33
         ]
       ],
       "sectors": [
         [
           "Technology",
-          53.6
+          51.2
         ],
         [
           "Financials",
-          40.6
+          43.2
         ],
         [
           "Industrials",
-          4.4
+          4.2
         ]
       ]
     },
@@ -8268,7 +8268,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.73,
       "corr_1y": 0.47,
-      "conc_top10": 58.4,
+      "conc_top10": 57.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -8392,38 +8392,38 @@
       ],
       "holdings": [
         [
-          "9988.HK",
-          9.52
-        ],
-        [
           "00939",
-          9.37
+          9.13
         ],
         [
           "0700.HK",
-          8.65
+          9.12
+        ],
+        [
+          "9988.HK",
+          8.98
         ],
         [
           "01398",
-          6.37
+          6.42
         ],
         [
           "1810.HK",
-          5.01
+          4.53
         ]
       ],
       "sectors": [
         [
           "Financials",
-          36.1
+          36.4
         ],
         [
           "Cons. Cyclical",
-          26.5
+          25.6
         ],
         [
           "Communication",
-          15.6
+          15.2
         ]
       ]
     },
@@ -8952,7 +8952,7 @@
       "flow_dir": null,
       "beta_1y": 0.07,
       "corr_1y": 0.08,
-      "conc_top10": 39.4,
+      "conc_top10": 39.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -9076,38 +9076,38 @@
       ],
       "holdings": [
         [
-          "TCL.AX",
-          5.48
+          "AENA.MC",
+          5.46
         ],
         [
-          "AENA.MC",
-          5.44
+          "TCL.AX",
+          5.21
         ],
         [
           "NEE",
-          4.76
+          4.64
         ],
         [
           "IBE.MC",
-          4.12
+          4.37
         ],
         [
           "ENB.TO",
-          3.93
+          3.82
         ]
       ],
       "sectors": [
         [
           "Utilities",
-          39.8
+          40.1
         ],
         [
           "Industrials",
-          38.6
+          38.8
         ],
         [
           "Energy",
-          21.5
+          21.0
         ]
       ]
     },
@@ -9474,7 +9474,7 @@
       "flow_dir": null,
       "beta_1y": 1.02,
       "corr_1y": 0.43,
-      "conc_top10": 53.1,
+      "conc_top10": 54.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -9598,34 +9598,34 @@
       ],
       "holdings": [
         [
-          "PANW",
-          6.62
+          "AVGO",
+          6.66
         ],
         [
           "CRWD",
-          6.02
+          6.27
+        ],
+        [
+          "PANW",
+          5.89
+        ],
+        [
+          "CSCO",
+          5.75
         ],
         [
           "NET",
-          5.41
-        ],
-        [
-          "FTNT",
-          5.35
-        ],
-        [
-          "AVGO",
-          5.29
+          5.58
         ]
       ],
       "sectors": [
         [
           "Technology",
-          91.2
+          91.4
         ],
         [
           "Industrials",
-          8.8
+          8.6
         ]
       ]
     },
@@ -9992,7 +9992,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.63,
       "corr_1y": 0.38,
-      "conc_top10": 47.3,
+      "conc_top10": 49.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -10116,24 +10116,24 @@
       ],
       "holdings": [
         [
+          "GILD",
+          8.08
+        ],
+        [
           "AMGN",
-          8.45
+          7.78
         ],
         [
           "VRTX",
-          8.06
-        ],
-        [
-          "GILD",
-          7.21
+          7.62
         ],
         [
           "REGN",
-          5.72
+          5.28
         ],
         [
-          "ARGX",
-          3.8
+          "MRNA",
+          4.94
         ]
       ],
       "sectors": [
@@ -10182,7 +10182,7 @@
       "flow_dir": null,
       "beta_1y": 1.14,
       "corr_1y": 0.58,
-      "conc_top10": 49.9,
+      "conc_top10": 51.2,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -10306,24 +10306,24 @@
       ],
       "holdings": [
         [
-          "FSLR",
-          7.87
+          "BE",
+          9.71
         ],
         [
           "600900.SS",
-          7.75
+          8.05
         ],
         [
-          "BE",
-          7.09
+          "FSLR",
+          6.96
         ],
         [
           "NXT",
-          6.53
+          6.33
         ],
         [
-          "VWS.CO",
-          4.57
+          "ENPH",
+          4.2
         ]
       ],
       "sectors": [
@@ -10333,11 +10333,11 @@
         ],
         [
           "Technology",
-          32.0
+          30.1
         ],
         [
           "Industrials",
-          25.3
+          27.1
         ]
       ]
     },
@@ -10542,7 +10542,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.26,
       "corr_1y": 0.72,
-      "conc_top10": 32.7,
+      "conc_top10": 34.2,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -10667,37 +10667,37 @@
       "holdings": [
         [
           "2330.TW",
-          13.2
+          13.71
         ],
         [
           "005930.KQ",
-          6.28
+          6.62
         ],
         [
           "000660.KQ",
-          4.78
+          5.18
         ],
         [
           "0700.HK",
-          2.51
+          2.41
         ],
         [
           "9988.HK",
-          1.73
+          1.63
         ]
       ],
       "sectors": [
         [
           "Technology",
-          40.1
+          42.0
         ],
         [
           "Financials",
-          18.3
+          18.1
         ],
         [
           "Cons. Cyclical",
-          8.4
+          7.8
         ]
       ]
     },
@@ -10740,7 +10740,7 @@
       "flow_dir": null,
       "beta_1y": 0.84,
       "corr_1y": 0.7,
-      "conc_top10": 18.8,
+      "conc_top10": 19.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -10865,33 +10865,33 @@
       "holdings": [
         [
           "ASML.AS",
-          4.07
+          4.6
         ],
         [
           "HSBA.L",
-          2.21
+          2.23
         ],
         [
           "ROP.SW",
-          1.91
-        ],
-        [
-          "NOVN.SW",
-          1.73
+          1.92
         ],
         [
           "SHEL.L",
-          1.57
+          1.79
+        ],
+        [
+          "NOVN.SW",
+          1.72
         ]
       ],
       "sectors": [
         [
           "Financials",
-          24.2
+          24.0
         ],
         [
           "Industrials",
-          19.8
+          19.7
         ],
         [
           "Healthcare",
@@ -10938,7 +10938,7 @@
       "flow_dir": null,
       "beta_1y": 0.29,
       "corr_1y": 0.24,
-      "conc_top10": 33.1,
+      "conc_top10": 33.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -11062,38 +11062,38 @@
       ],
       "holdings": [
         [
-          "UNP",
-          4.61
-        ],
-        [
-          "NEE",
-          4.0
-        ],
-        [
           "CAT",
-          3.68
+          4.27
         ],
         [
-          "CSX",
-          3.54
+          "UNP",
+          4.03
         ],
         [
           "PWR",
-          3.41
+          3.94
+        ],
+        [
+          "NEE",
+          3.89
+        ],
+        [
+          "CSX",
+          3.55
         ]
       ],
       "sectors": [
         [
           "Utilities",
-          41.5
+          41.0
         ],
         [
           "Industrials",
-          36.0
+          37.1
         ],
         [
           "Materials",
-          13.3
+          13.1
         ]
       ]
     },
@@ -11136,7 +11136,7 @@
       "flow_dir": null,
       "beta_1y": 0.44,
       "corr_1y": 0.3,
-      "conc_top10": 74.6,
+      "conc_top10": 75.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -11261,23 +11261,23 @@
       "holdings": [
         [
           "ABT",
-          18.54
+          17.77
         ],
         [
           "ISRG",
-          12.87
+          14.92
         ],
         [
-          "SYK",
-          10.77
+          "MDT",
+          11.47
         ],
         [
-          "BDX",
-          5.18
+          "IDXX",
+          4.58
         ],
         [
           "DXCM",
-          4.9
+          4.55
         ]
       ],
       "sectors": [
@@ -11326,7 +11326,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.75,
       "corr_1y": 0.66,
-      "conc_top10": 7.8,
+      "conc_top10": 7.9,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -11451,37 +11451,37 @@
       "holdings": [
         [
           "TWLO",
-          1.0
-        ],
-        [
-          "ILMN",
-          0.91
-        ],
-        [
-          "FTI",
-          0.87
-        ],
-        [
-          "P",
-          0.82
+          1.32
         ],
         [
           "OKTA",
-          0.81
+          1.02
+        ],
+        [
+          "FTI",
+          0.78
+        ],
+        [
+          "NVT",
+          0.76
+        ],
+        [
+          "ATI",
+          0.76
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          22.3
+          22.2
         ],
         [
           "Technology",
-          16.9
+          18.1
         ],
         [
           "Financials",
-          14.1
+          13.6
         ]
       ]
     },
@@ -11524,7 +11524,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.74,
       "corr_1y": 0.57,
-      "conc_top10": 6.8,
+      "conc_top10": 6.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -11649,37 +11649,37 @@
       "holdings": [
         [
           "XTSLA",
-          1.99
+          1.71
         ],
         [
-          "CORT",
-          0.6
+          "FORM",
+          0.68
+        ],
+        [
+          "VSAT",
+          0.56
         ],
         [
           "GKOS",
-          0.59
+          0.56
         ],
         [
-          "PAYC",
-          0.55
-        ],
-        [
-          "EAT",
+          "QRVO",
           0.55
         ]
       ],
       "sectors": [
         [
           "Financials",
-          17.8
-        ],
-        [
-          "Industrials",
-          15.3
+          17.2
         ],
         [
           "Technology",
-          14.8
+          16.0
+        ],
+        [
+          "Industrials",
+          15.6
         ]
       ]
     },
@@ -11920,7 +11920,7 @@
       "flow_dir": null,
       "beta_1y": 1.05,
       "corr_1y": 0.56,
-      "conc_top10": 77.6,
+      "conc_top10": 74.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -12045,23 +12045,23 @@
       "holdings": [
         [
           "GE",
-          21.59
+          20.97
         ],
         [
           "RTX",
-          17.24
+          16.19
         ],
         [
           "BA",
-          9.08
+          7.49
         ],
         [
-          "GD",
-          4.83
+          "HWM",
+          4.61
         ],
         [
           "LMT",
-          4.71
+          4.6
         ]
       ],
       "sectors": [
@@ -12110,7 +12110,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.01,
       "corr_1y": 1.0,
-      "conc_top10": 37.7,
+      "conc_top10": 39.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -12235,37 +12235,37 @@
       "holdings": [
         [
           "NVDA",
-          8.07
+          8.37
         ],
         [
           "AAPL",
-          7.02
+          7.36
         ],
         [
           "MSFT",
-          5.69
+          5.77
         ],
         [
           "AMZN",
-          3.84
+          3.7
         ],
         [
           "GOOGL",
-          3.0
+          3.06
         ]
       ],
       "sectors": [
         [
           "Technology",
-          38.7
+          40.5
         ],
         [
           "Financials",
-          12.1
+          11.2
         ],
         [
           "Communication",
-          9.5
+          10.0
         ]
       ]
     },
@@ -12308,7 +12308,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.63,
       "corr_1y": 0.78,
-      "conc_top10": 28.6,
+      "conc_top10": 29.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -12433,37 +12433,37 @@
       "holdings": [
         [
           "AMZN",
-          6.13
+          6.09
         ],
         [
           "AAPL",
-          5.57
+          6.06
         ],
         [
           "MSFT",
-          5.0
-        ],
-        [
-          "JPM",
-          2.53
+          5.24
         ],
         [
           "BRK-B",
-          2.49
+          2.55
+        ],
+        [
+          "JPM",
+          2.43
         ]
       ],
       "sectors": [
         [
           "Technology",
-          20.6
+          21.9
         ],
         [
           "Financials",
-          18.8
+          18.0
         ],
         [
           "Healthcare",
-          13.1
+          13.4
         ]
       ]
     },
@@ -12506,7 +12506,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.31,
       "corr_1y": 0.95,
-      "conc_top10": 56.8,
+      "conc_top10": 57.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -12631,37 +12631,37 @@
       "holdings": [
         [
           "NVDA",
-          15.45
+          15.66
         ],
         [
           "AAPL",
-          7.45
+          7.67
         ],
         [
           "GOOGL",
-          5.93
+          5.89
         ],
         [
           "MSFT",
-          5.65
+          5.6
         ],
         [
           "AVGO",
-          5.17
+          4.8
         ]
       ],
       "sectors": [
         [
           "Technology",
-          55.4
+          56.7
         ],
         [
           "Communication",
-          15.8
+          16.2
         ],
         [
-          "Cons. Cyclical",
-          8.1
+          "Industrials",
+          7.4
         ]
       ]
     },
@@ -12704,7 +12704,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.95,
       "corr_1y": 0.72,
-      "conc_top10": 3.2,
+      "conc_top10": 3.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -12828,38 +12828,38 @@
       ],
       "holdings": [
         [
-          "FROG",
-          0.35
+          "XTSLA",
+          0.48
+        ],
+        [
+          "TWST",
+          0.43
         ],
         [
           "MOG-A",
-          0.34
+          0.37
         ],
         [
-          "XTSLA",
-          0.34
+          "FROG",
+          0.36
         ],
         [
-          "UMBF",
-          0.34
-        ],
-        [
-          "GKOS",
-          0.33
+          "TXG",
+          0.36
         ]
       ],
       "sectors": [
         [
           "Healthcare",
-          21.0
+          20.9
         ],
         [
           "Financials",
-          18.1
+          18.0
         ],
         [
           "Technology",
-          13.8
+          14.5
         ]
       ]
     },
@@ -13027,33 +13027,33 @@
       "holdings": [
         [
           "WELL",
-          11.22
+          10.29
         ],
         [
           "PLD",
-          9.1
-        ],
-        [
-          "DLR",
-          4.71
-        ],
-        [
-          "SPG",
-          4.52
+          9.26
         ],
         [
           "EQIX",
-          4.51
+          4.76
+        ],
+        [
+          "DLR",
+          4.58
+        ],
+        [
+          "SPG",
+          4.58
         ]
       ],
       "sectors": [
         [
           "Real Estate",
-          99.5
+          99.6
         ],
         [
           "Communication",
-          0.5
+          0.4
         ]
       ]
     },
@@ -13258,7 +13258,7 @@
       "flow_dir": null,
       "beta_1y": 1.2,
       "corr_1y": 0.59,
-      "conc_top10": 61.2,
+      "conc_top10": 61.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -13383,37 +13383,37 @@
       "holdings": [
         [
           "0700.HK",
-          10.25
+          10.34
         ],
         [
           "9988.HK",
-          8.65
+          8.56
         ],
         [
           "PDD",
-          8.27
+          8.14
         ],
         [
           "3690.HK",
-          7.29
+          6.98
         ],
         [
           "9999.HK",
-          6.25
+          6.63
         ]
       ],
       "sectors": [
         [
           "Communication",
-          36.6
+          37.0
         ],
         [
           "Cons. Cyclical",
-          34.3
+          33.4
         ],
         [
           "Technology",
-          17.0
+          17.3
         ]
       ]
     },
@@ -13618,7 +13618,7 @@
       "flow_dir": null,
       "beta_1y": 0.85,
       "corr_1y": 0.59,
-      "conc_top10": 41.3,
+      "conc_top10": 41.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -13743,37 +13743,37 @@
       "holdings": [
         [
           "0700.HK",
-          13.87
+          13.79
         ],
         [
           "9988.HK",
-          9.56
+          9.33
         ],
         [
           "00939",
-          3.99
+          4.31
         ],
         [
           "01398",
-          2.46
+          2.61
         ],
         [
           "1810.HK",
-          2.35
+          2.25
         ]
       ],
       "sectors": [
         [
           "Cons. Cyclical",
-          23.4
+          22.5
         ],
         [
           "Financials",
-          20.0
+          21.0
         ],
         [
           "Communication",
-          18.2
+          18.1
         ]
       ]
     },
@@ -14014,7 +14014,7 @@
       "flow_dir": null,
       "beta_1y": 1.24,
       "corr_1y": 0.74,
-      "conc_top10": 34.9,
+      "conc_top10": 37.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -14138,38 +14138,38 @@
       ],
       "holdings": [
         [
-          "MU",
-          5.15
+          "AMD",
+          6.25
         ],
         [
-          "AMD",
-          5.08
+          "MU",
+          5.42
         ],
         [
           "INTC",
-          3.73
+          4.75
         ],
         [
           "CSCO",
-          3.61
+          3.33
         ],
         [
           "JNJ",
-          3.4
+          3.21
         ]
       ],
       "sectors": [
         [
           "Technology",
-          51.4
+          54.9
         ],
         [
           "Industrials",
-          10.8
+          10.1
         ],
         [
           "Healthcare",
-          10.2
+          9.4
         ]
       ]
     },
@@ -14374,7 +14374,7 @@
       "flow_dir": null,
       "beta_1y": 1.53,
       "corr_1y": 0.55,
-      "conc_top10": 60.4,
+      "conc_top10": 62.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -14499,37 +14499,37 @@
       "holdings": [
         [
           "CEG",
-          8.68
+          8.46
         ],
         [
           "CCO.TO",
-          8.0
+          8.13
         ],
         [
           "PEG",
-          6.19
+          7.67
         ],
         [
           "FORTUM.HE",
-          5.8
+          7.06
         ],
         [
-          "UEC",
-          5.63
+          "BWXT",
+          6.21
         ]
       ],
       "sectors": [
         [
           "Energy",
-          53.1
+          46.6
         ],
         [
           "Utilities",
-          28.8
+          33.5
         ],
         [
           "Industrials",
-          16.2
+          18.6
         ]
       ]
     },
@@ -14734,7 +14734,7 @@
       "flow_dir": null,
       "beta_1y": 0.71,
       "corr_1y": 0.48,
-      "conc_top10": 31.8,
+      "conc_top10": 32.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -14859,33 +14859,33 @@
       "holdings": [
         [
           "DE",
-          3.39
+          3.62
         ],
         [
           "FAST",
-          3.36
+          3.53
         ],
         [
           "EMR",
-          3.32
+          3.52
         ],
         [
-          "NUE",
-          3.26
+          "ETN",
+          3.4
         ],
         [
-          "PH",
-          3.13
+          "PWR",
+          3.23
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          74.2
+          75.2
         ],
         [
           "Materials",
-          19.7
+          18.7
         ],
         [
           "Utilities",
@@ -15094,7 +15094,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.03,
       "corr_1y": 0.58,
-      "conc_top10": 54.3,
+      "conc_top10": 60.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -15218,34 +15218,34 @@
       ],
       "holdings": [
         [
-          "RTX",
-          8.38
+          "GE",
+          9.1
         ],
         [
-          "GE",
-          6.94
+          "RTX",
+          9.04
         ],
         [
           "BA",
-          6.84
+          8.75
         ],
         [
           "LMT",
-          6.59
+          8.02
         ],
         [
           "GD",
-          5.04
+          5.21
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          88.9
+          90.4
         ],
         [
           "Technology",
-          10.9
+          9.5
         ],
         [
           "Communication",
@@ -15454,7 +15454,7 @@
       "flow_dir": null,
       "beta_1y": 1.75,
       "corr_1y": 0.71,
-      "conc_top10": 60.9,
+      "conc_top10": 60.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -15578,38 +15578,38 @@
       ],
       "holdings": [
         [
-          "TSLA",
-          9.13
+          "BE",
+          10.85
         ],
         [
           "MPWR",
-          8.75
-        ],
-        [
-          "BE",
-          7.83
-        ],
-        [
-          "FSLR",
-          7.12
+          8.59
         ],
         [
           "ON",
-          6.64
+          8.38
+        ],
+        [
+          "TSLA",
+          7.79
+        ],
+        [
+          "RIVN",
+          6.79
         ]
       ],
       "sectors": [
         [
           "Technology",
-          40.1
+          38.8
         ],
         [
           "Industrials",
-          22.8
+          24.4
         ],
         [
           "Cons. Cyclical",
-          16.2
+          15.3
         ]
       ]
     },
@@ -15652,7 +15652,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.4,
       "corr_1y": 0.93,
-      "conc_top10": 46.3,
+      "conc_top10": 46.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -15777,37 +15777,37 @@
       "holdings": [
         [
           "NVDA",
-          8.51
+          8.33
         ],
         [
           "AAPL",
-          7.41
+          7.35
         ],
         [
           "MSFT",
-          6.0
+          5.76
         ],
         [
           "MU",
-          4.75
+          5.02
         ],
         [
-          "AMZN",
-          4.45
+          "AMD",
+          4.17
         ]
       ],
       "sectors": [
         [
           "Technology",
-          59.2
+          60.3
         ],
         [
           "Communication",
-          12.7
+          12.6
         ],
         [
           "Cons. Cyclical",
-          11.1
+          10.1
         ]
       ]
     },
@@ -15850,7 +15850,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.85,
       "corr_1y": 0.93,
-      "conc_top10": 43.6,
+      "conc_top10": 46.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -15975,37 +15975,37 @@
       "holdings": [
         [
           "MSFT",
-          7.75
+          7.84
         ],
         [
           "AAPL",
-          6.76
+          7.11
         ],
         [
           "NVDA",
-          6.39
+          6.61
         ],
         [
           "META",
-          3.76
+          4.77
         ],
         [
-          "LLY",
-          3.66
+          "LRCX",
+          3.89
         ]
       ],
       "sectors": [
         [
           "Technology",
-          40.0
+          41.0
         ],
         [
           "Financials",
-          12.0
+          11.3
         ],
         [
           "Communication",
-          9.8
+          10.6
         ]
       ]
     },
@@ -16048,7 +16048,7 @@
       "flow_dir": null,
       "beta_1y": 1.68,
       "corr_1y": 0.83,
-      "conc_top10": 17.8,
+      "conc_top10": 17.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -16172,38 +16172,38 @@
       ],
       "holdings": [
         [
+          "ISRG",
+          1.93
+        ],
+        [
+          "6324.T",
+          1.74
+        ],
+        [
+          "CELT",
+          1.74
+        ],
+        [
           "ILMN",
-          1.97
+          1.73
         ],
         [
-          "AUTO.OL",
-          1.95
-        ],
-        [
-          "G1A.DE",
-          1.86
-        ],
-        [
-          "ZBRA",
-          1.85
-        ],
-        [
-          "2395.TW",
-          1.78
+          "6954.T",
+          1.73
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          46.6
+          45.2
         ],
         [
           "Technology",
-          41.6
+          42.6
         ],
         [
           "Healthcare",
-          6.0
+          5.9
         ]
       ]
     },
@@ -16246,7 +16246,7 @@
       "flow_dir": null,
       "beta_1y": 0.21,
       "corr_1y": 0.23,
-      "conc_top10": 41.8,
+      "conc_top10": 41.5,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -16370,38 +16370,38 @@
       ],
       "holdings": [
         [
+          "TXN",
+          4.66
+        ],
+        [
+          "QCOM",
+          4.56
+        ],
+        [
+          "PG",
+          4.23
+        ],
+        [
           "MRK",
-          4.78
-        ],
-        [
-          "ABT",
-          4.77
-        ],
-        [
-          "AMGN",
-          4.72
+          4.15
         ],
         [
           "KO",
-          4.2
-        ],
-        [
-          "VZ",
-          3.97
+          4.15
         ]
       ],
       "sectors": [
         [
-          "Healthcare",
-          21.5
-        ],
-        [
           "Cons. Defensive",
-          19.5
+          20.1
         ],
         [
-          "Energy",
-          15.4
+          "Healthcare",
+          19.3
+        ],
+        [
+          "Technology",
+          16.0
         ]
       ]
     },
@@ -16444,7 +16444,7 @@
       "flow_dir": null,
       "beta_1y": 0.3,
       "corr_1y": 0.24,
-      "conc_top10": 51.5,
+      "conc_top10": 51.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -16569,23 +16569,23 @@
       "holdings": [
         [
           "WELL",
-          11.05
+          10.2
         ],
         [
           "PLD",
-          8.77
-        ],
-        [
-          "SPG",
-          4.6
-        ],
-        [
-          "DLR",
-          4.5
+          8.84
         ],
         [
           "EQIX",
-          4.23
+          4.68
+        ],
+        [
+          "SPG",
+          4.57
+        ],
+        [
+          "AMT",
+          4.55
         ]
       ],
       "sectors": [
@@ -16958,7 +16958,7 @@
       "flow_dir": null,
       "beta_1y": 0.71,
       "corr_1y": 0.78,
-      "conc_top10": 3.4,
+      "conc_top10": 3.9,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -17082,34 +17082,34 @@
       ],
       "holdings": [
         [
-          "TEAM",
+          "OKTA",
+          0.49
+        ],
+        [
+          "DELL",
           0.42
         ],
         [
-          "OKTA",
-          0.39
+          "NTRA",
+          0.41
         ],
         [
-          "VMRK",
-          0.37
+          "TEAM",
+          0.41
         ],
         [
-          "SN",
-          0.36
-        ],
-        [
-          "SNOW",
-          0.35
+          "ILMN",
+          0.38
         ]
       ],
       "sectors": [
         [
           "Technology",
-          19.8
+          20.9
         ],
         [
           "Financials",
-          15.7
+          15.1
         ],
         [
           "Industrials",
@@ -17318,7 +17318,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.99,
       "corr_1y": 0.73,
-      "conc_top10": 71.7,
+      "conc_top10": 67.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -17443,23 +17443,23 @@
       "holdings": [
         [
           "NVDA",
-          22.63
+          19.31
         ],
         [
           "TSM",
-          9.65
-        ],
-        [
-          "AVGO",
-          6.11
-        ],
-        [
-          "MU",
-          5.45
+          9.28
         ],
         [
           "AMD",
-          5.36
+          5.54
+        ],
+        [
+          "AVGO",
+          5.27
+        ],
+        [
+          "MU",
+          4.92
         ]
       ],
       "sectors": [
@@ -17508,7 +17508,7 @@
       "flow_dir": "flat",
       "beta_1y": 2.17,
       "corr_1y": 0.7,
-      "conc_top10": 61.4,
+      "conc_top10": 61.2,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -17632,24 +17632,24 @@
       ],
       "holdings": [
         [
-          "NVDA",
-          9.43
-        ],
-        [
-          "MU",
-          8.91
+          "INTC",
+          9.59
         ],
         [
           "AMD",
-          8.23
+          9.28
+        ],
+        [
+          "MU",
+          7.93
+        ],
+        [
+          "NVDA",
+          7.39
         ],
         [
           "AVGO",
-          7.48
-        ],
-        [
-          "INTC",
-          5.09
+          6.77
         ]
       ],
       "sectors": [
@@ -17698,7 +17698,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.0,
       "corr_1y": 1.0,
-      "conc_top10": 37.8,
+      "conc_top10": 39.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -17823,37 +17823,37 @@
       "holdings": [
         [
           "NVDA",
-          8.08
+          8.36
         ],
         [
           "AAPL",
-          7.03
+          7.35
         ],
         [
           "MSFT",
-          5.69
+          5.76
         ],
         [
           "AMZN",
-          3.84
+          3.7
         ],
         [
           "GOOGL",
-          3.01
+          3.05
         ]
       ],
       "sectors": [
         [
           "Technology",
-          38.7
+          40.5
         ],
         [
           "Financials",
-          12.1
+          11.2
         ],
         [
           "Communication",
-          9.5
+          10.0
         ]
       ]
     },
@@ -17896,7 +17896,7 @@
       "flow_dir": null,
       "beta_1y": 1.1,
       "corr_1y": 0.42,
-      "conc_top10": 56.8,
+      "conc_top10": 59.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -18020,38 +18020,38 @@
       ],
       "holdings": [
         [
-          "FSLR",
-          9.89
+          "NXT",
+          10.05
         ],
         [
-          "NXT",
-          8.81
+          "FSLR",
+          8.96
         ],
         [
           "ENLT.TA",
-          7.22
+          7.95
         ],
         [
           "ENPH",
-          6.55
+          7.14
         ],
         [
           "DORL.TA",
-          4.68
+          4.98
         ]
       ],
       "sectors": [
         [
           "Technology",
-          59.9
+          60.9
         ],
         [
           "Utilities",
-          31.3
+          30.6
         ],
         [
           "Financials",
-          4.6
+          4.8
         ]
       ]
     },
@@ -18242,7 +18242,7 @@
       "sharpe_12m": -0.9801,
       "max_dd_12m": -12.0626,
       "dist_52w_high": -12.049,
-      "drawdown_now": -12.4939,
+      "drawdown_now": -12.049,
       "atr_14": 0.812,
       "atr_pct": 1.0481,
       "chandelier_stop": 79.7329,
@@ -18418,7 +18418,7 @@
       "flow_dir": null,
       "beta_1y": 1.98,
       "corr_1y": 0.57,
-      "conc_top10": 55.9,
+      "conc_top10": 54.2,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -18543,37 +18543,37 @@
       "holdings": [
         [
           "CCO.TO",
-          21.95
+          22.03
         ],
         [
           "NXE.TO",
-          6.01
+          5.98
         ],
         [
           "OKLO",
-          5.5
+          5.72
         ],
         [
           "UEC",
-          5.3
+          4.66
         ],
         [
           "KAP",
-          4.48
+          4.37
         ]
       ],
       "sectors": [
         [
           "Energy",
-          64.5
+          62.4
         ],
         [
           "Industrials",
-          23.7
+          25.8
         ],
         [
           "Utilities",
-          5.9
+          6.1
         ]
       ]
     },
@@ -18616,7 +18616,7 @@
       "flow_dir": null,
       "beta_1y": 1.7,
       "corr_1y": 0.48,
-      "conc_top10": 77.9,
+      "conc_top10": 79.9,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -18741,33 +18741,33 @@
       "holdings": [
         [
           "CCO.TO",
-          18.91
+          20.49
         ],
         [
           "U-U.TO",
-          13.63
+          15.26
         ],
         [
           "NXE.TO",
-          12.42
+          12.95
         ],
         [
-          "DML.TO",
-          5.22
+          "1164.HK",
+          4.76
         ],
         [
-          "PDN.AX",
-          4.95
+          "KAP",
+          4.7
         ]
       ],
       "sectors": [
         [
           "Energy",
-          98.2
+          98.6
         ],
         [
           "Materials",
-          1.8
+          1.4
         ]
       ]
     },
@@ -18810,7 +18810,7 @@
       "flow_dir": null,
       "beta_1y": 0.38,
       "corr_1y": 0.54,
-      "conc_top10": 14.8,
+      "conc_top10": 15.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -18934,38 +18934,38 @@
       ],
       "holdings": [
         [
-          "MSFT",
-          1.56
+          "APH",
+          1.68
         ],
         [
-          "APH",
-          1.52
+          "MSFT",
+          1.65
         ],
         [
           "NVDA",
-          1.52
-        ],
-        [
-          "MSI",
-          1.51
+          1.63
         ],
         [
           "WELL",
-          1.5
+          1.52
+        ],
+        [
+          "JNJ",
+          1.51
         ]
       ],
       "sectors": [
         [
           "Technology",
-          32.8
+          33.8
         ],
         [
           "Healthcare",
-          14.1
+          14.3
         ],
         [
           "Financials",
-          13.2
+          12.8
         ]
       ]
     },
@@ -20052,7 +20052,7 @@
       "flow_dir": null,
       "beta_1y": 1.04,
       "corr_1y": 0.67,
-      "conc_top10": 44.1,
+      "conc_top10": 46.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -20177,37 +20177,37 @@
       "holdings": [
         [
           "MU",
-          21.13
+          23.85
         ],
         [
           "CSCO",
-          4.24
+          4.19
         ],
         [
           "GM",
-          3.71
+          3.36
         ],
         [
           "VZ",
-          3.03
+          2.82
         ],
         [
           "T",
-          2.71
+          2.59
         ]
       ],
       "sectors": [
         [
           "Technology",
-          41.2
+          44.6
         ],
         [
           "Financials",
-          10.8
+          10.2
         ],
         [
           "Communication",
-          10.1
+          9.3
         ]
       ]
     },
@@ -21600,7 +21600,7 @@
       "flow_dir": null,
       "beta_1y": 1.09,
       "corr_1y": 0.35,
-      "conc_top10": 16.9,
+      "conc_top10": 19.2,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -21725,33 +21725,33 @@
       "holdings": [
         [
           "OKTA",
-          1.86
-        ],
-        [
-          "CRM",
-          1.78
+          2.38
         ],
         [
           "CRWD",
-          1.75
+          2.13
         ],
         [
-          "NOW",
-          1.67
+          "TWLO",
+          2.0
         ],
         [
-          "VEEV",
-          1.67
+          "PD",
+          1.88
+        ],
+        [
+          "NTSK",
+          1.85
         ]
       ],
       "sectors": [
         [
           "Technology",
-          95.4
+          95.1
         ],
         [
           "Healthcare",
-          4.6
+          4.9
         ]
       ]
     },
@@ -21956,7 +21956,7 @@
       "flow_dir": null,
       "beta_1y": 1.44,
       "corr_1y": 0.6,
-      "conc_top10": 31.8,
+      "conc_top10": 30.1,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -22080,24 +22080,24 @@
       ],
       "holdings": [
         [
-          "AXON",
-          3.61
+          "RKLB",
+          3.33
         ],
         [
-          "VSEC",
-          3.43
+          "MOG-A",
+          3.13
         ],
         [
-          "RTX",
-          3.34
+          "HONA",
+          3.08
         ],
         [
-          "ACHR",
-          3.26
+          "AVAV",
+          2.99
         ],
         [
-          "ATI",
-          3.17
+          "WWD",
+          2.93
         ]
       ],
       "sectors": [
@@ -22146,7 +22146,7 @@
       "flow_dir": null,
       "beta_1y": 0.89,
       "corr_1y": 0.44,
-      "conc_top10": 15.6,
+      "conc_top10": 16.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -22270,24 +22270,24 @@
       ],
       "holdings": [
         [
-          "MRNA",
-          2.81
-        ],
-        [
           "TWST",
-          1.89
+          2.21
         ],
         [
-          "APGE",
-          1.5
+          "MRNA",
+          2.04
         ],
         [
-          "KYMR",
-          1.4
+          "NTRA",
+          1.8
         ],
         [
-          "HALO",
-          1.39
+          "IOVA",
+          1.62
+        ],
+        [
+          "AMGN",
+          1.55
         ]
       ],
       "sectors": [
@@ -22340,7 +22340,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.5,
       "corr_1y": 0.35,
-      "conc_top10": 59.2,
+      "conc_top10": 56.3,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -22465,33 +22465,33 @@
       "holdings": [
         [
           "LIN",
-          13.13
+          12.23
         ],
         [
           "NEM",
-          7.81
+          6.79
         ],
         [
           "FCX",
-          6.32
+          5.62
         ],
         [
-          "CTVA",
-          4.91
+          "ECL",
+          4.75
         ],
         [
-          "APD",
-          4.83
+          "SHW",
+          4.75
         ]
       ],
       "sectors": [
         [
           "Materials",
-          84.5
+          83.2
         ],
         [
           "Cons. Cyclical",
-          15.5
+          16.8
         ]
       ]
     },
@@ -22534,7 +22534,7 @@
       "flow_dir": null,
       "beta_1y": 0.96,
       "corr_1y": 0.75,
-      "conc_top10": 69.3,
+      "conc_top10": 73.7,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -22659,23 +22659,23 @@
       "holdings": [
         [
           "META",
-          16.77
+          22.16
         ],
         [
           "GOOGL",
-          10.3
+          11.63
         ],
         [
           "GOOG",
-          8.2
+          9.33
         ],
         [
-          "T",
-          5.25
+          "WBD",
+          4.94
         ],
         [
-          "VZ",
-          5.02
+          "DIS",
+          4.48
         ]
       ],
       "sectors": [
@@ -22724,7 +22724,7 @@
       "flow_dir": "flat",
       "beta_1y": -0.78,
       "corr_1y": -0.41,
-      "conc_top10": 73.2,
+      "conc_top10": 78.0,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -22849,23 +22849,23 @@
       "holdings": [
         [
           "XOM",
-          19.86
+          24.03
         ],
         [
           "CVX",
-          14.89
+          18.05
         ],
         [
           "COP",
-          6.23
+          6.73
+        ],
+        [
+          "VLO",
+          4.73
         ],
         [
           "MPC",
-          5.42
-        ],
-        [
-          "PSX",
-          5.33
+          4.7
         ]
       ],
       "sectors": [
@@ -22914,7 +22914,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.65,
       "corr_1y": 0.58,
-      "conc_top10": 56.5,
+      "conc_top10": 57.4,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -23038,30 +23038,30 @@
       ],
       "holdings": [
         [
-          "JPM",
-          11.69
+          "BRK-B",
+          12.3
         ],
         [
-          "BRK-B",
-          11.32
+          "JPM",
+          11.66
         ],
         [
           "V",
-          7.71
+          8.12
         ],
         [
           "MA",
-          5.83
+          5.91
         ],
         [
           "BAC",
-          4.96
+          4.69
         ]
       ],
       "sectors": [
         [
           "Financials",
-          98.1
+          98.2
         ],
         [
           "Technology",
@@ -23069,7 +23069,7 @@
         ],
         [
           "Industrials",
-          0.3
+          0.2
         ]
       ]
     },
@@ -23237,33 +23237,33 @@
       "holdings": [
         [
           "CAT",
-          6.67
+          7.01
         ],
         [
           "GE",
-          6.36
-        ],
-        [
-          "RTX",
-          5.08
+          6.09
         ],
         [
           "GEV",
-          4.39
+          4.76
         ],
         [
-          "UNP",
-          3.24
+          "RTX",
+          4.71
+        ],
+        [
+          "DE",
+          3.17
         ]
       ],
       "sectors": [
         [
           "Industrials",
-          92.8
+          93.4
         ],
         [
           "Technology",
-          6.7
+          6.1
         ],
         [
           "Materials",
@@ -23310,7 +23310,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.67,
       "corr_1y": 0.86,
-      "conc_top10": 60.7,
+      "conc_top10": 64.5,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -23435,23 +23435,23 @@
       "holdings": [
         [
           "NVDA",
-          14.36
+          15.47
         ],
         [
           "AAPL",
-          12.5
+          13.6
         ],
         [
           "MSFT",
-          10.12
+          10.66
+        ],
+        [
+          "AMD",
+          5.06
         ],
         [
           "AVGO",
-          4.71
-        ],
-        [
-          "MU",
-          4.0
+          4.68
         ]
       ],
       "sectors": [
@@ -23500,7 +23500,7 @@
       "flow_dir": "flat",
       "beta_1y": 0.05,
       "corr_1y": 0.04,
-      "conc_top10": 61.7,
+      "conc_top10": 63.9,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -23625,33 +23625,33 @@
       "holdings": [
         [
           "WMT",
-          9.82
+          10.54
         ],
         [
           "COST",
-          8.94
-        ],
-        [
-          "KO",
-          7.33
+          9.19
         ],
         [
           "PG",
-          7.22
+          7.69
+        ],
+        [
+          "KO",
+          7.59
         ],
         [
           "PM",
-          6.24
+          6.77
         ]
       ],
       "sectors": [
         [
           "Cons. Defensive",
-          98.2
+          98.5
         ],
         [
           "Cons. Cyclical",
-          1.8
+          1.5
         ]
       ]
     },
@@ -23694,7 +23694,7 @@
       "flow_dir": null,
       "beta_1y": 0.32,
       "corr_1y": 0.26,
-      "conc_top10": 61.4,
+      "conc_top10": 59.6,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -23819,23 +23819,23 @@
       "holdings": [
         [
           "WELL",
-          11.43
+          11.68
         ],
         [
           "PLD",
-          9.09
+          8.68
         ],
         [
           "EQIX",
-          7.07
+          7.02
         ],
         [
           "AMT",
-          5.61
+          5.37
         ],
         [
-          "VMRK",
-          4.94
+          "SPG",
+          4.65
         ]
       ],
       "sectors": [
@@ -24009,23 +24009,23 @@
       "holdings": [
         [
           "NEE",
-          13.05
+          12.71
         ],
         [
           "SO",
-          7.54
+          7.67
         ],
         [
           "DUK",
-          7.1
+          7.15
         ],
         [
           "CEG",
-          6.68
+          6.74
         ],
         [
           "AEP",
-          5.06
+          5.2
         ]
       ],
       "sectors": [
@@ -24199,23 +24199,23 @@
       "holdings": [
         [
           "LLY",
-          14.87
+          15.1
         ],
         [
           "JNJ",
-          10.4
+          10.41
         ],
         [
           "ABBV",
-          7.36
+          7.54
         ],
         [
           "MRK",
-          5.93
+          5.85
         ],
         [
           "UNH",
-          5.75
+          5.38
         ]
       ],
       "sectors": [
@@ -24264,7 +24264,7 @@
       "flow_dir": "flat",
       "beta_1y": 1.25,
       "corr_1y": 0.8,
-      "conc_top10": 68.6,
+      "conc_top10": 67.8,
       "cot_pctile": null,
       "cot_net": null,
       "cot_pct_oi": null,
@@ -24389,33 +24389,33 @@
       "holdings": [
         [
           "AMZN",
-          24.37
+          23.39
         ],
         [
           "TSLA",
-          17.29
+          17.67
         ],
         [
           "HD",
-          5.45
+          5.01
         ],
         [
           "MCD",
-          4.07
+          4.22
         ],
         [
-          "BKNG",
-          3.86
+          "TJX",
+          4.07
         ]
       ],
       "sectors": [
         [
           "Cons. Cyclical",
-          98.8
+          98.7
         ],
         [
           "Technology",
-          1.2
+          1.3
         ]
       ]
     }
@@ -24440,17 +24440,17 @@
         "source": "FRED BAMLH0A0HYM2",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 3.24,
+        "value": 3.1,
         "zone": "gray",
         "base_threshold": 3.0,
         "alarm_threshold": 3.5,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 0.26,
-        "z": 1.88,
+        "dist_to_alarm": 0.4,
+        "z": 1.2,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "up",
-        "change_4w_pct": 5.25
+        "change_4w_pct": 13.13
       },
       {
         "key": "xle_spy",
@@ -24464,7 +24464,7 @@
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": 1.1,
+        "z": 1.13,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "down",
@@ -24482,7 +24482,7 @@
         "alarm_threshold": 5.5,
         "calibrated": "2026-06-18",
         "dist_to_alarm": 0.59,
-        "z": 0.67,
+        "z": 0.68,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "flat",
@@ -24494,13 +24494,13 @@
         "source": "yfinance ^VIX",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 15.31,
+        "value": 15.52,
         "zone": "base",
         "base_threshold": 20.0,
         "alarm_threshold": 25.0,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 9.69,
-        "z": -0.72,
+        "dist_to_alarm": 9.48,
+        "z": -0.64,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "flat",
@@ -24530,13 +24530,13 @@
         "source": "yfinance ^MOVE",
         "kind": "robust_z",
         "stress_dir": "high",
-        "value": 107.29,
+        "value": 113.6,
         "zone": "gray",
         "base_threshold": null,
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": 1.48,
+        "z": 1.86,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "up",
@@ -24554,7 +24554,7 @@
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": 3.35,
+        "z": 3.31,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "flat",
@@ -24590,7 +24590,7 @@
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": -0.48,
+        "z": -0.47,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "down",
@@ -24602,13 +24602,13 @@
         "source": "yfinance VUG/VTV (\u0440\u0430\u0441\u0442\u0435\u0436/\u0441\u0442\u043e\u0439\u043d\u043e\u0441\u0442; z_alarm 2.5 \u2014 S16)",
         "kind": "robust_z",
         "stress_dir": "high",
-        "value": 0.4197,
+        "value": 0.4224,
         "zone": "base",
         "base_threshold": null,
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": 0.4,
+        "z": 0.51,
         "z_base": 1.0,
         "z_alarm": 2.5,
         "trend_4w": "up",
@@ -24618,11 +24618,11 @@
     "snapshot": [
       {
         "indicator": "HY-spread",
-        "value": 3.24,
+        "value": 3.1,
         "kind": "abs",
         "base": 3.0,
         "alarm": 3.5,
-        "z": 1.88,
+        "z": 1.2,
         "zone": "gray",
         "trend": "up",
         "stress_dir": "high",
@@ -24730,12 +24730,12 @@
             "value": 2.93
           },
           {
-            "date": "2026-10-01",
-            "value": 3.24
+            "date": "2026-10-02",
+            "value": 3.1
           }
         ],
-        "value_date": "2026-10-01",
-        "value_since": "2026-10-01",
+        "value_date": "2026-10-02",
+        "value_since": "2026-10-02",
         "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
@@ -24746,7 +24746,7 @@
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 1.1,
+        "z": 1.13,
         "zone": "gray",
         "trend": "down",
         "stress_dir": "high",
@@ -24860,7 +24860,7 @@
         ],
         "value_date": "2026-10-02",
         "value_since": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -24870,7 +24870,7 @@
         "kind": "abs",
         "base": 5.2,
         "alarm": 5.5,
-        "z": 0.67,
+        "z": 0.68,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "high",
@@ -24984,27 +24984,23 @@
         ],
         "value_date": "2026-10-02",
         "value_since": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
       {
         "indicator": "VIX",
-        "value": 15.31,
+        "value": 15.52,
         "kind": "abs",
         "base": 20.0,
         "alarm": 25.0,
-        "z": -0.72,
+        "z": -0.64,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "high",
         "z_base": null,
         "z_alarm": null,
         "history": [
-          {
-            "date": "2026-04-10",
-            "value": 19.23
-          },
           {
             "date": "2026-04-17",
             "value": 17.48
@@ -25104,10 +25100,14 @@
           {
             "date": "2026-10-02",
             "value": 15.31
+          },
+          {
+            "date": "2026-10-05",
+            "value": 15.52
           }
         ],
-        "value_date": "2026-10-02",
-        "value_since": "2026-10-02",
+        "value_date": "2026-10-05",
+        "value_since": "2026-10-05",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -25125,10 +25125,6 @@
         "z_base": null,
         "z_alarm": null,
         "history": [
-          {
-            "date": "2026-04-10",
-            "value": 2.36
-          },
           {
             "date": "2026-04-17",
             "value": 2.36
@@ -25228,9 +25224,13 @@
           {
             "date": "2026-10-02",
             "value": 2.36
+          },
+          {
+            "date": "2026-10-05",
+            "value": 2.36
           }
         ],
-        "value_date": "2026-10-02",
+        "value_date": "2026-10-05",
         "value_since": "2026-09-30",
         "lag_sessions": 0,
         "freshness": "fresh",
@@ -25238,21 +25238,17 @@
       },
       {
         "indicator": "MOVE",
-        "value": 107.29,
+        "value": 113.6,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 1.48,
+        "z": 1.86,
         "zone": "gray",
         "trend": "up",
         "stress_dir": "high",
         "z_base": 1.0,
         "z_alarm": 2.0,
         "history": [
-          {
-            "date": "2026-04-10",
-            "value": 72.15
-          },
           {
             "date": "2026-04-17",
             "value": 65.7
@@ -25352,10 +25348,14 @@
           {
             "date": "2026-10-02",
             "value": 107.29
+          },
+          {
+            "date": "2026-10-05",
+            "value": 113.6
           }
         ],
-        "value_date": "2026-10-02",
-        "value_since": "2026-10-02",
+        "value_date": "2026-10-05",
+        "value_since": "2026-10-05",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -25366,7 +25366,7 @@
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 3.35,
+        "z": 3.31,
         "zone": "base",
         "trend": "flat",
         "stress_dir": "low",
@@ -25480,7 +25480,7 @@
         ],
         "value_date": "2026-10-02",
         "value_since": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -25604,7 +25604,7 @@
         ],
         "value_date": "2026-10-02",
         "value_since": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -25614,7 +25614,7 @@
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": -0.48,
+        "z": -0.47,
         "zone": "base",
         "trend": "down",
         "stress_dir": "low",
@@ -25728,27 +25728,23 @@
         ],
         "value_date": "2026-10-02",
         "value_since": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
       {
         "indicator": "VUG/VTV",
-        "value": 0.4197,
+        "value": 0.4224,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 0.4,
+        "z": 0.51,
         "zone": "base",
         "trend": "up",
         "stress_dir": "high",
         "z_base": 1.0,
         "z_alarm": 2.5,
         "history": [
-          {
-            "date": "2026-04-10",
-            "value": 0.3846
-          },
           {
             "date": "2026-04-17",
             "value": 0.4061
@@ -25848,10 +25844,14 @@
           {
             "date": "2026-10-02",
             "value": 0.4197
+          },
+          {
+            "date": "2026-10-05",
+            "value": 0.4224
           }
         ],
-        "value_date": "2026-10-02",
-        "value_since": "2026-10-02",
+        "value_date": "2026-10-05",
+        "value_since": "2026-10-05",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -25862,11 +25862,11 @@
         "indicator": "HY-spread",
         "zone": "gray",
         "kind": "abs",
-        "dist_to_alarm": 0.26,
-        "z": 1.88,
+        "dist_to_alarm": 0.4,
+        "z": 1.2,
         "trend_4w": "up",
-        "change_4w_pct": 5.25,
-        "value_date": "2026-10-01",
+        "change_4w_pct": 13.13,
+        "value_date": "2026-10-02",
         "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
@@ -25876,11 +25876,11 @@
         "zone": "gray",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 1.1,
+        "z": 1.13,
         "trend_4w": "down",
         "change_4w_pct": -4.04,
         "value_date": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -25889,11 +25889,11 @@
         "zone": "base",
         "kind": "abs",
         "dist_to_alarm": 0.59,
-        "z": 0.67,
+        "z": 0.68,
         "trend_4w": "flat",
         "change_4w_pct": -0.22,
         "value_date": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -25901,11 +25901,11 @@
         "indicator": "VIX",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 9.69,
-        "z": -0.72,
+        "dist_to_alarm": 9.48,
+        "z": -0.64,
         "trend_4w": "flat",
         "change_4w_pct": -1.53,
-        "value_date": "2026-10-02",
+        "value_date": "2026-10-05",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -25918,7 +25918,7 @@
         "z": 0.4,
         "trend_4w": "flat",
         "change_4w_pct": 0.21,
-        "value_date": "2026-10-02",
+        "value_date": "2026-10-05",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -25928,10 +25928,10 @@
         "zone": "gray",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 1.48,
+        "z": 1.86,
         "trend_4w": "up",
         "change_4w_pct": 24.83,
-        "value_date": "2026-10-02",
+        "value_date": "2026-10-05",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -25941,11 +25941,11 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 3.35,
+        "z": 3.31,
         "trend_4w": "flat",
         "change_4w_pct": 0.42,
         "value_date": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -25958,7 +25958,7 @@
         "trend_4w": "flat",
         "change_4w_pct": 0.23,
         "value_date": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -25967,11 +25967,11 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": -0.48,
+        "z": -0.47,
         "trend_4w": "down",
         "change_4w_pct": -2.61,
         "value_date": "2026-10-02",
-        "lag_sessions": 0,
+        "lag_sessions": 1,
         "freshness": "fresh",
         "stale": false
       },
@@ -25980,10 +25980,10 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 0.4,
+        "z": 0.51,
         "trend_4w": "up",
         "change_4w_pct": 4.52,
-        "value_date": "2026-10-02",
+        "value_date": "2026-10-05",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -26077,7 +26077,7 @@
           "label": "\u043f\u043b\u043e\u0441\u043a\u0430",
           "value_date": "2026-10-02",
           "note": "\u043b\u0438\u0434\u0435\u0440\u0435\u043d \u0431\u0430\u0434\u0436 (\u043a\u0440\u0438\u0432\u0430 2s10s) \u2014 \u043e\u0446\u0432\u0435\u0442\u044f\u0432\u0430 \u043f\u0440\u043e\u0447\u0438\u0442\u0430, \u041d\u0415 \u0433\u043b\u0430\u0441 \u0432 \u0431\u0440\u043e\u044f\u0447\u0430",
-          "lag_sessions": 0,
+          "lag_sessions": 1,
           "freshness": "fresh",
           "stale": false
         }
@@ -26087,7 +26087,7 @@
       "direction_grouped": "base"
     },
     "freshness": {
-      "newest_cohort": "2026-10-02",
+      "newest_cohort": "2026-10-05",
       "unit": "weekday sessions",
       "fresh_lag": 1,
       "stale_lag": 3,
@@ -26124,18 +26124,18 @@
       {
         "key": "usd",
         "name": "USD (Broad)",
-        "value": 120.33,
+        "value": 121.38,
         "zone": "base",
-        "z": -0.17,
+        "z": 0.33,
         "note": "\u0441\u0442\u0435\u0433\u043d\u0430\u0442 \u0441\u0438\u043b\u0435\u043d \u0434\u043e\u043b\u0430\u0440 = \u0433\u043b\u043e\u0431\u0430\u043b\u043d\u043e \u0437\u0430\u0442\u044f\u0433\u0430\u043d\u0435",
         "source": "FRED DTWEXBGS",
         "trend_4w": "flat",
-        "change_4w_pct": 1.51
+        "change_4w_pct": 1.68
       },
       {
         "key": "curve_2s10s",
         "name": "\u041a\u0440\u0438\u0432\u0430 2s10s",
-        "value": 0.45,
+        "value": 0.47,
         "zone": "gray",
         "z": null,
         "note": "\u0438\u043d\u0432\u0435\u0440\u0441\u0438\u044f (<0) = \u043f\u0440\u0435\u0434\u0443\u043f\u0440\u0435\u0434\u0438\u0442\u0435\u043b\u0435\u043d \u0441\u0438\u0433\u043d\u0430\u043b",
@@ -26159,7 +26159,7 @@
         "name": "GLD/COPX",
         "value": 4.42,
         "zone": "base",
-        "z": -1.41,
+        "z": -1.4,
         "note": "\u0437\u043b\u0430\u0442\u043e/\u043c\u0435\u0434 \u2014 \u0441\u0442\u0440\u0430\u0445 \u0441\u0440\u0435\u0449\u0443 \u0440\u0430\u0441\u0442\u0435\u0436",
         "source": "yfinance GLD/COPX (\u043c\u0438\u043d\u044c\u043e\u0440\u0438, \u043d\u0435 \u0444\u044e\u0447\u044a\u0440\u0441\u0438 \u2014 \u043a\u043e\u043d\u0432\u0435\u043d\u0446\u0438\u044f)",
         "trend_4w": "flat",
