@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-16",
+  "as_of": "2026-10-19",
   "by_indicator": {
     "breakeven_10y": "base+tail",
     "hy_spread": "base+tail"
@@ -8,26 +8,26 @@
     "breakeven_10y": {
       "series_id": "mkt_breakeven_10y",
       "base_rows": 5952,
-      "tail_rows": 1,
+      "tail_rows": 2,
       "base_last": "2026-10-16",
-      "fetch_last": "2026-10-19",
+      "fetch_last": "2026-10-20",
       "overlap": 5952,
       "overlap_mismatches": 0,
       "worst_abs_diff": 0.0,
-      "tail_bdays": 0,
+      "tail_bdays": 1,
       "max_tail_bdays": 10,
       "why": null
     },
     "hy_spread": {
       "series_id": "mkt_hy_oas",
       "base_rows": 802,
-      "tail_rows": 1,
+      "tail_rows": 2,
       "base_last": "2026-10-15",
-      "fetch_last": "2026-10-16",
-      "overlap": 783,
+      "fetch_last": "2026-10-19",
+      "overlap": 782,
       "overlap_mismatches": 0,
       "worst_abs_diff": 0.0,
-      "tail_bdays": 1,
+      "tail_bdays": 2,
       "max_tail_bdays": 10,
       "why": null
     }
