@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-19",
+  "as_of": "2026-10-20",
   "snapshot": [
     {
       "indicator": "HY-spread",
@@ -121,17 +121,17 @@
       ],
       "value_date": "2026-10-19",
       "value_since": "2026-10-19",
-      "lag_sessions": 1,
-      "freshness": "fresh",
+      "lag_sessions": 2,
+      "freshness": "late",
       "stale": false
     },
     {
       "indicator": "XLE/SPY",
-      "value": 0.0885,
+      "value": 0.0884,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 1.93,
+      "z": 1.91,
       "zone": "gray",
       "trend": "up",
       "stress_dir": "high",
@@ -239,23 +239,23 @@
           "value": 0.0894
         },
         {
-          "date": "2026-10-19",
-          "value": 0.0885
+          "date": "2026-10-20",
+          "value": 0.0884
         }
       ],
-      "value_date": "2026-10-19",
-      "value_since": "2026-10-19",
+      "value_date": "2026-10-20",
+      "value_since": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "GLD/TLT",
-      "value": 4.78,
+      "value": 4.71,
       "kind": "abs",
       "base": 5.2,
       "alarm": 5.5,
-      "z": 0.53,
+      "z": 0.46,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "high",
@@ -363,23 +363,23 @@
           "value": 4.77
         },
         {
-          "date": "2026-10-19",
-          "value": 4.78
+          "date": "2026-10-20",
+          "value": 4.71
         }
       ],
-      "value_date": "2026-10-19",
-      "value_since": "2026-10-19",
+      "value_date": "2026-10-20",
+      "value_since": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "VIX",
-      "value": 17.31,
+      "value": 16.68,
       "kind": "abs",
       "base": 20.0,
       "alarm": 25.0,
-      "z": 0.08,
+      "z": -0.17,
       "zone": "base",
       "trend": "up",
       "stress_dir": "high",
@@ -487,12 +487,12 @@
           "value": 19.99
         },
         {
-          "date": "2026-10-20",
-          "value": 17.31
+          "date": "2026-10-21",
+          "value": 16.68
         }
       ],
-      "value_date": "2026-10-20",
-      "value_since": "2026-10-20",
+      "value_date": "2026-10-21",
+      "value_since": "2026-10-21",
       "lag_sessions": 0,
       "freshness": "fresh",
       "stale": false
@@ -617,18 +617,18 @@
       ],
       "value_date": "2026-10-20",
       "value_since": "2026-10-16",
-      "lag_sessions": 0,
+      "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "MOVE",
-      "value": 101.69,
+      "value": 95.94,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 1.16,
-      "zone": "gray",
+      "z": 0.83,
+      "zone": "base",
       "trend": "flat",
       "stress_dir": "high",
       "z_base": 1.0,
@@ -735,23 +735,23 @@
           "value": 101.1
         },
         {
-          "date": "2026-10-20",
-          "value": 101.69
+          "date": "2026-10-21",
+          "value": 95.94
         }
       ],
-      "value_date": "2026-10-20",
-      "value_since": "2026-10-20",
+      "value_date": "2026-10-21",
+      "value_since": "2026-10-21",
       "lag_sessions": 0,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "HYG/LQD",
-      "value": 0.7468,
+      "value": 0.7443,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": 2.31,
+      "z": 2.06,
       "zone": "base",
       "trend": "flat",
       "stress_dir": "low",
@@ -859,23 +859,23 @@
           "value": 0.7433
         },
         {
-          "date": "2026-10-19",
-          "value": 0.7468
+          "date": "2026-10-20",
+          "value": 0.7443
         }
       ],
-      "value_date": "2026-10-19",
-      "value_since": "2026-10-19",
+      "value_date": "2026-10-20",
+      "value_since": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "XLY/XLP",
-      "value": 1.3125,
+      "value": 1.3162,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.87,
+      "z": -0.83,
       "zone": "base",
       "trend": "down",
       "stress_dir": "low",
@@ -983,24 +983,24 @@
           "value": 1.2835
         },
         {
-          "date": "2026-10-19",
-          "value": 1.3125
+          "date": "2026-10-20",
+          "value": 1.3162
         }
       ],
-      "value_date": "2026-10-19",
-      "value_since": "2026-10-19",
+      "value_date": "2026-10-20",
+      "value_since": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "IWM/SPY",
-      "value": 0.3539,
+      "value": 0.3586,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -1.03,
-      "zone": "gray",
+      "z": -0.77,
+      "zone": "base",
       "trend": "down",
       "stress_dir": "low",
       "z_base": 1.0,
@@ -1107,23 +1107,23 @@
           "value": 0.3543
         },
         {
-          "date": "2026-10-19",
-          "value": 0.3539
+          "date": "2026-10-20",
+          "value": 0.3586
         }
       ],
-      "value_date": "2026-10-19",
-      "value_since": "2026-10-19",
+      "value_date": "2026-10-20",
+      "value_since": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "VUG/VTV",
-      "value": 0.3997,
+      "value": 0.3949,
       "kind": "robust_z",
       "base": null,
       "alarm": null,
-      "z": -0.39,
+      "z": -0.58,
       "zone": "base",
       "trend": "down",
       "stress_dir": "high",
@@ -1231,12 +1231,12 @@
           "value": 0.3936
         },
         {
-          "date": "2026-10-19",
-          "value": 0.3997
+          "date": "2026-10-20",
+          "value": 0.3949
         }
       ],
-      "value_date": "2026-10-19",
-      "value_since": "2026-10-19",
+      "value_date": "2026-10-20",
+      "value_since": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
@@ -1252,8 +1252,8 @@
       "trend_4w": "up",
       "change_4w_pct": 6.47,
       "value_date": "2026-10-19",
-      "lag_sessions": 1,
-      "freshness": "fresh",
+      "lag_sessions": 2,
+      "freshness": "late",
       "stale": false
     },
     {
@@ -1261,10 +1261,10 @@
       "zone": "gray",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 1.93,
+      "z": 1.91,
       "trend_4w": "up",
       "change_4w_pct": 6.75,
-      "value_date": "2026-10-19",
+      "value_date": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
@@ -1273,11 +1273,11 @@
       "indicator": "GLD/TLT",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 0.72,
-      "z": 0.53,
+      "dist_to_alarm": 0.79,
+      "z": 0.46,
       "trend_4w": "flat",
       "change_4w_pct": -1.84,
-      "value_date": "2026-10-19",
+      "value_date": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
@@ -1286,11 +1286,11 @@
       "indicator": "VIX",
       "zone": "base",
       "kind": "abs",
-      "dist_to_alarm": 7.69,
-      "z": 0.08,
+      "dist_to_alarm": 8.32,
+      "z": -0.17,
       "trend_4w": "up",
       "change_4w_pct": 15.41,
-      "value_date": "2026-10-20",
+      "value_date": "2026-10-21",
       "lag_sessions": 0,
       "freshness": "fresh",
       "stale": false
@@ -1304,19 +1304,19 @@
       "trend_4w": "flat",
       "change_4w_pct": -0.43,
       "value_date": "2026-10-20",
-      "lag_sessions": 0,
+      "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "MOVE",
-      "zone": "gray",
+      "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 1.16,
+      "z": 0.83,
       "trend_4w": "flat",
       "change_4w_pct": -1.83,
-      "value_date": "2026-10-20",
+      "value_date": "2026-10-21",
       "lag_sessions": 0,
       "freshness": "fresh",
       "stale": false
@@ -1326,10 +1326,10 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": 2.31,
+      "z": 2.06,
       "trend_4w": "flat",
       "change_4w_pct": -0.8,
-      "value_date": "2026-10-19",
+      "value_date": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
@@ -1339,23 +1339,23 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.87,
+      "z": -0.83,
       "trend_4w": "down",
       "change_4w_pct": -2.86,
-      "value_date": "2026-10-19",
+      "value_date": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
     },
     {
       "indicator": "IWM/SPY",
-      "zone": "gray",
+      "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -1.03,
+      "z": -0.77,
       "trend_4w": "down",
       "change_4w_pct": -2.56,
-      "value_date": "2026-10-19",
+      "value_date": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
@@ -1365,10 +1365,10 @@
       "zone": "base",
       "kind": "robust_z",
       "dist_to_alarm": null,
-      "z": -0.39,
+      "z": -0.58,
       "trend_4w": "down",
       "change_4w_pct": -2.7,
-      "value_date": "2026-10-19",
+      "value_date": "2026-10-20",
       "lag_sessions": 1,
       "freshness": "fresh",
       "stale": false
@@ -1376,25 +1376,25 @@
   ],
   "confluence": {
     "alarm_count": 0,
-    "base_count": 6,
-    "gray_count": 4,
+    "base_count": 8,
+    "gray_count": 2,
     "unknown_count": 0,
     "alarm": [],
     "base": [
       "GLD/TLT",
       "VIX",
       "10Y breakeven",
+      "MOVE",
       "HYG/LQD",
       "XLY/XLP",
+      "IWM/SPY",
       "VUG/VTV"
     ],
     "gray": [
       "HY-spread",
-      "XLE/SPY",
-      "MOVE",
-      "IWM/SPY"
+      "XLE/SPY"
     ],
-    "net": -6,
+    "net": -8,
     "alarm_conf_threshold": 2,
     "conf_net_threshold": 2,
     "has_confluence": true,
@@ -1415,7 +1415,7 @@
           "move"
         ],
         "in_alarm": false,
-        "all_base": false,
+        "all_base": true,
         "alarm_members": []
       },
       "infl_rates": {
@@ -1433,7 +1433,7 @@
           "iwm_spy"
         ],
         "in_alarm": false,
-        "all_base": false,
+        "all_base": true,
         "alarm_members": []
       },
       "growth_value": {
@@ -1448,6 +1448,8 @@
     "alarm_groups": [],
     "alarm_group_count": 0,
     "base_groups": [
+      "volatility",
+      "risk_appetite",
       "growth_value"
     ],
     "context_rows": {
@@ -1461,8 +1463,8 @@
         "label": "плоска",
         "value_date": "2026-10-19",
         "note": "лидерен бадж (крива 2s10s) — оцветява прочита, НЕ глас в брояча",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       }
     },
@@ -1471,11 +1473,13 @@
     "direction_grouped": "base"
   },
   "freshness": {
-    "newest_cohort": "2026-10-20",
+    "newest_cohort": "2026-10-21",
     "unit": "weekday sessions",
     "fresh_lag": 1,
     "stale_lag": 3,
-    "late": [],
+    "late": [
+      "HY-spread"
+    ],
     "stale": [],
     "missing": []
   }
