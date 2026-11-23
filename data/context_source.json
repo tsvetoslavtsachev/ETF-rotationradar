@@ -2,7 +2,7 @@
   "as_of": "2026-11-20",
   "by_indicator": {
     "breakeven_10y": "base",
-    "hy_spread": "base"
+    "hy_spread": "base+tail"
   },
   "detail": {
     "breakeven_10y": {
@@ -21,10 +21,10 @@
     "hy_spread": {
       "series_id": "mkt_hy_oas",
       "base_rows": 827,
-      "tail_rows": 0,
+      "tail_rows": 1,
       "base_last": "2026-11-19",
-      "fetch_last": "2026-11-19",
-      "overlap": 786,
+      "fetch_last": "2026-11-20",
+      "overlap": 783,
       "overlap_mismatches": 0,
       "worst_abs_diff": 0.0,
       "tail_bdays": 1,
