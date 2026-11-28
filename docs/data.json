@@ -1,15 +1,15 @@
 {
-  "as_of": "2026-11-25",
+  "as_of": "2026-11-27",
   "etfs": [
     {
       "ticker": "ACWI",
       "current_rank": 61.53846153846154,
       "abs_strength": 67.93893129770993,
-      "rank_1m_ago": 57.692307692307686,
-      "rank_3m_ago": 38.46153846153847,
-      "base_rank_6m": 50.87412587412587,
-      "delta_1m": 3.846153846153854,
-      "delta_3m": 23.076923076923073,
+      "rank_1m_ago": 53.84615384615385,
+      "rank_3m_ago": 46.15384615384615,
+      "base_rank_6m": 50.982905982905976,
+      "delta_1m": 7.692307692307693,
+      "delta_3m": 15.384615384615387,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI ACWI",
@@ -38,7 +38,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.98,
+      "beta_1y": 0.94,
       "corr_1y": 0.97,
       "conc_top10": 24.2,
       "cot_pctile": null,
@@ -203,10 +203,10 @@
       "ticker": "AGG",
       "current_rank": 33.33333333333333,
       "abs_strength": 22.137404580152673,
-      "rank_1m_ago": 38.88888888888889,
+      "rank_1m_ago": 33.33333333333333,
       "rank_3m_ago": 44.44444444444444,
-      "base_rank_6m": 48.35858585858586,
-      "delta_1m": -5.555555555555564,
+      "base_rank_6m": 48.0246913580247,
+      "delta_1m": 0.0,
       "delta_3m": -11.111111111111114,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -237,7 +237,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": -0.01,
-      "corr_1y": -0.03,
+      "corr_1y": -0.02,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -367,7 +367,7 @@
       "abs_strength": 85.49618320610686,
       "rank_1m_ago": 74.19354838709677,
       "rank_3m_ago": 83.87096774193549,
-      "base_rank_6m": 75.84310850439883,
+      "base_rank_6m": 75.80645161290322,
       "delta_1m": -3.225806451612897,
       "delta_3m": -12.903225806451616,
       "quadrant_1m": "neutral",
@@ -398,8 +398,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.74,
-      "corr_1y": 0.87,
+      "beta_1y": 1.66,
+      "corr_1y": 0.86,
       "conc_top10": 33.2,
       "cot_pctile": null,
       "cot_net": null,
@@ -563,13 +563,13 @@
       "ticker": "ARKG",
       "current_rank": 96.7741935483871,
       "abs_strength": 96.94656488549617,
-      "rank_1m_ago": 93.54838709677419,
+      "rank_1m_ago": 96.7741935483871,
       "rank_3m_ago": 90.32258064516128,
-      "base_rank_6m": 79.69208211143695,
-      "delta_1m": 3.225806451612911,
+      "base_rank_6m": 80.07168458781362,
+      "delta_1m": 0.0,
       "delta_3m": 6.451612903225822,
-      "quadrant_1m": "neutral",
-      "quadrant_3m": "neutral",
+      "quadrant_1m": "stable_winner",
+      "quadrant_3m": "stable_winner",
       "name": "ARK Genomic Revolution",
       "category": "Thematic",
       "benchmark": "SPY",
@@ -589,15 +589,15 @@
       "atr_pct": 6.5381,
       "chandelier_stop": 47.824,
       "stop_distance_pct": -16.7294,
-      "dollar_vol_20d": 227555779.13,
-      "dollar_vol_trend": -4.6249,
+      "dollar_vol_20d": 227577698.08,
+      "dollar_vol_trend": -4.6185,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.51,
-      "corr_1y": 0.47,
+      "beta_1y": 1.46,
+      "corr_1y": 0.48,
       "conc_top10": 58.2,
       "cot_pctile": null,
       "cot_net": null,
@@ -755,7 +755,7 @@
       "abs_strength": 48.854961832061065,
       "rank_1m_ago": 41.935483870967744,
       "rank_3m_ago": 12.903225806451612,
-      "base_rank_6m": 23.020527859237536,
+      "base_rank_6m": 23.44086021505376,
       "delta_1m": 9.677419354838705,
       "delta_3m": 38.70967741935483,
       "quadrant_1m": "riser",
@@ -786,8 +786,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.78,
-      "corr_1y": 0.74,
+      "beta_1y": 1.7,
+      "corr_1y": 0.73,
       "conc_top10": 45.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -951,10 +951,10 @@
       "ticker": "BKLN",
       "current_rank": 94.44444444444444,
       "abs_strength": 35.11450381679389,
-      "rank_1m_ago": 100.0,
+      "rank_1m_ago": 94.44444444444444,
       "rank_3m_ago": 72.22222222222221,
-      "base_rank_6m": 69.50757575757576,
-      "delta_1m": -5.555555555555557,
+      "base_rank_6m": 70.06172839506173,
+      "delta_1m": 0.0,
       "delta_3m": 22.22222222222223,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -984,8 +984,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.05,
-      "corr_1y": 0.27,
+      "beta_1y": 0.04,
+      "corr_1y": 0.24,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -1113,11 +1113,11 @@
       "ticker": "BLOK",
       "current_rank": 25.806451612903224,
       "abs_strength": 10.687022900763358,
-      "rank_1m_ago": 22.58064516129032,
-      "rank_3m_ago": 19.35483870967742,
-      "base_rank_6m": 21.627565982404693,
-      "delta_1m": 3.225806451612904,
-      "delta_3m": 6.451612903225804,
+      "rank_1m_ago": 19.35483870967742,
+      "rank_3m_ago": 22.58064516129032,
+      "base_rank_6m": 21.54121863799283,
+      "delta_1m": 6.451612903225804,
+      "delta_3m": 3.225806451612904,
       "quadrant_1m": "riser",
       "quadrant_3m": "riser",
       "name": "Amplify Transformational Data",
@@ -1146,8 +1146,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.68,
-      "corr_1y": 0.72,
+      "beta_1y": 1.61,
+      "corr_1y": 0.71,
       "conc_top10": 29.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -1311,10 +1311,10 @@
       "ticker": "BND",
       "current_rank": 38.88888888888889,
       "abs_strength": 23.66412213740458,
-      "rank_1m_ago": 44.44444444444444,
+      "rank_1m_ago": 38.88888888888889,
       "rank_3m_ago": 38.88888888888889,
-      "base_rank_6m": 44.44444444444445,
-      "delta_1m": -5.55555555555555,
+      "base_rank_6m": 44.44444444444444,
+      "delta_1m": 0.0,
       "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -1344,8 +1344,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": -0.01,
-      "corr_1y": -0.03,
+      "beta_1y": -0.0,
+      "corr_1y": -0.02,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -1475,7 +1475,7 @@
       "abs_strength": 26.717557251908396,
       "rank_1m_ago": 55.55555555555556,
       "rank_3m_ago": 33.33333333333333,
-      "base_rank_6m": 21.21212121212121,
+      "base_rank_6m": 21.97530864197531,
       "delta_1m": -5.555555555555557,
       "delta_3m": 16.66666666666667,
       "quadrant_1m": "chronic_loser",
@@ -1635,11 +1635,11 @@
       "ticker": "BOTZ",
       "current_rank": 32.25806451612903,
       "abs_strength": 19.083969465648856,
-      "rank_1m_ago": 29.03225806451613,
-      "rank_3m_ago": 25.806451612903224,
-      "base_rank_6m": 30.93841642228739,
-      "delta_1m": 3.2258064516129004,
-      "delta_3m": 6.451612903225808,
+      "rank_1m_ago": 32.25806451612903,
+      "rank_3m_ago": 29.03225806451613,
+      "base_rank_6m": 30.93189964157706,
+      "delta_1m": 0.0,
+      "delta_3m": 3.2258064516129004,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Global X Robotics & AI",
@@ -1668,7 +1668,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.61,
+      "beta_1y": 1.56,
       "corr_1y": 0.85,
       "conc_top10": 58.7,
       "cot_pctile": null,
@@ -1834,10 +1834,10 @@
       "current_rank": 93.54838709677419,
       "abs_strength": 96.18320610687023,
       "rank_1m_ago": 77.41935483870968,
-      "rank_3m_ago": 35.483870967741936,
-      "base_rank_6m": 37.3900293255132,
+      "rank_3m_ago": 38.70967741935484,
+      "base_rank_6m": 38.27956989247312,
       "delta_1m": 16.129032258064512,
-      "delta_3m": 58.064516129032256,
+      "delta_3m": 54.83870967741935,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Global X Cybersecurity",
@@ -1866,7 +1866,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.07,
+      "beta_1y": 1.03,
       "corr_1y": 0.37,
       "conc_top10": 63.1,
       "cot_pctile": null,
@@ -2024,10 +2024,10 @@
       "current_rank": 83.87096774193549,
       "abs_strength": 90.83969465648855,
       "rank_1m_ago": 80.64516129032258,
-      "rank_3m_ago": 64.51612903225806,
-      "base_rank_6m": 55.24193548387097,
+      "rank_3m_ago": 67.74193548387096,
+      "base_rank_6m": 55.80645161290322,
       "delta_1m": 3.225806451612911,
-      "delta_3m": 19.354838709677423,
+      "delta_3m": 16.129032258064527,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "First Trust Cybersecurity",
@@ -2056,8 +2056,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.13,
-      "corr_1y": 0.53,
+      "beta_1y": 1.08,
+      "corr_1y": 0.52,
       "conc_top10": 55.8,
       "cot_pctile": null,
       "cot_net": null,
@@ -2223,7 +2223,7 @@
       "abs_strength": 88.54961832061069,
       "rank_1m_ago": 70.96774193548387,
       "rank_3m_ago": 32.25806451612903,
-      "base_rank_6m": 34.01759530791789,
+      "base_rank_6m": 34.83870967741935,
       "delta_1m": 6.451612903225808,
       "delta_3m": 45.16129032258065,
       "quadrant_1m": "neutral",
@@ -2254,7 +2254,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.23,
+      "beta_1y": 1.19,
       "corr_1y": 0.5,
       "conc_top10": 48.6,
       "cot_pctile": null,
@@ -2419,11 +2419,11 @@
       "ticker": "CNRG",
       "current_rank": 19.35483870967742,
       "abs_strength": 8.396946564885496,
-      "rank_1m_ago": 19.35483870967742,
-      "rank_3m_ago": 74.19354838709677,
-      "base_rank_6m": 67.55865102639297,
-      "delta_1m": 0.0,
-      "delta_3m": -54.838709677419345,
+      "rank_1m_ago": 22.58064516129032,
+      "rank_3m_ago": 70.96774193548387,
+      "base_rank_6m": 66.55913978494624,
+      "delta_1m": -3.2258064516129004,
+      "delta_3m": -51.61290322580645,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "SPDR S&P Kensho Clean Power",
@@ -2452,8 +2452,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.23,
-      "corr_1y": 0.61,
+      "beta_1y": 1.19,
+      "corr_1y": 0.6,
       "conc_top10": 38.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -2618,10 +2618,10 @@
       "current_rank": 81.25,
       "abs_strength": 87.02290076335878,
       "rank_1m_ago": 81.25,
-      "rank_3m_ago": 93.75,
-      "base_rank_6m": 94.60227272727273,
+      "rank_3m_ago": 100.0,
+      "base_rank_6m": 94.30555555555556,
       "delta_1m": 0.0,
-      "delta_3m": -12.5,
+      "delta_3m": -18.75,
       "quadrant_1m": "stable_winner",
       "quadrant_3m": "decayer",
       "name": "Global X Copper Miners",
@@ -2650,8 +2650,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.9,
-      "corr_1y": 0.63,
+      "beta_1y": 1.81,
+      "corr_1y": 0.62,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -2779,12 +2779,12 @@
       "ticker": "CORN",
       "current_rank": 31.25,
       "abs_strength": 25.190839694656486,
-      "rank_1m_ago": 37.5,
-      "rank_3m_ago": 12.5,
-      "base_rank_6m": 13.068181818181818,
-      "delta_1m": -6.25,
-      "delta_3m": 18.75,
-      "quadrant_1m": "chronic_loser",
+      "rank_1m_ago": 25.0,
+      "rank_3m_ago": 6.25,
+      "base_rank_6m": 13.402777777777779,
+      "delta_1m": 6.25,
+      "delta_3m": 25.0,
+      "quadrant_1m": "riser",
       "quadrant_3m": "riser",
       "name": "Teucrium Corn Fund",
       "category": "Commodity",
@@ -2812,8 +2812,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.1,
-      "corr_1y": 0.09,
+      "beta_1y": 0.11,
+      "corr_1y": 0.1,
       "conc_top10": null,
       "cot_pctile": 56.0,
       "cot_net": -33862.0,
@@ -2941,10 +2941,10 @@
       "ticker": "CPER",
       "current_rank": 75.0,
       "abs_strength": 84.7328244274809,
-      "rank_1m_ago": 68.75,
+      "rank_1m_ago": 50.0,
       "rank_3m_ago": 81.25,
-      "base_rank_6m": 51.84659090909091,
-      "delta_1m": 6.25,
+      "base_rank_6m": 51.80555555555556,
+      "delta_1m": 25.0,
       "delta_3m": -6.25,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -2974,8 +2974,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.91,
-      "corr_1y": 0.64,
+      "beta_1y": 0.85,
+      "corr_1y": 0.62,
       "conc_top10": null,
       "cot_pctile": 42.0,
       "cot_net": 28692.0,
@@ -3103,11 +3103,11 @@
       "ticker": "DBA",
       "current_rank": 62.5,
       "abs_strength": 49.61832061068702,
-      "rank_1m_ago": 31.25,
-      "rank_3m_ago": 6.25,
-      "base_rank_6m": 19.673295454545453,
-      "delta_1m": 31.25,
-      "delta_3m": 56.25,
+      "rank_1m_ago": 37.5,
+      "rank_3m_ago": 12.5,
+      "base_rank_6m": 20.069444444444443,
+      "delta_1m": 25.0,
+      "delta_3m": 50.0,
       "quadrant_1m": "riser",
       "quadrant_3m": "riser",
       "name": "Invesco DB Agriculture",
@@ -3136,7 +3136,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.15,
+      "beta_1y": 0.14,
       "corr_1y": 0.21,
       "conc_top10": null,
       "cot_pctile": null,
@@ -3266,10 +3266,10 @@
       "current_rank": 87.5,
       "abs_strength": 91.6030534351145,
       "rank_1m_ago": 87.5,
-      "rank_3m_ago": 62.5,
-      "base_rank_6m": 62.85511363636363,
+      "rank_3m_ago": 68.75,
+      "base_rank_6m": 63.40277777777778,
       "delta_1m": 0.0,
-      "delta_3m": 25.0,
+      "delta_3m": 18.75,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Invesco DB Commodity",
@@ -3298,7 +3298,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": -0.01,
+      "beta_1y": -0.02,
       "corr_1y": -0.01,
       "conc_top10": null,
       "cot_pctile": null,
@@ -3429,7 +3429,7 @@
       "abs_strength": 77.09923664122137,
       "rank_1m_ago": 54.54545454545454,
       "rank_3m_ago": 63.63636363636363,
-      "base_rank_6m": 54.95867768595041,
+      "base_rank_6m": 54.94949494949495,
       "delta_1m": 9.090909090909093,
       "delta_3m": 0.0,
       "quadrant_1m": "neutral",
@@ -3460,8 +3460,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.51,
-      "corr_1y": 0.68,
+      "beta_1y": 0.5,
+      "corr_1y": 0.69,
       "conc_top10": 27.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -3627,7 +3627,7 @@
       "abs_strength": 58.778625954198475,
       "rank_1m_ago": 10.0,
       "rank_3m_ago": 20.0,
-      "base_rank_6m": 23.522727272727273,
+      "base_rank_6m": 23.22222222222222,
       "delta_1m": 0.0,
       "delta_3m": -10.0,
       "quadrant_1m": "chronic_loser",
@@ -3658,7 +3658,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.77,
+      "beta_1y": 0.75,
       "corr_1y": 0.86,
       "conc_top10": 54.3,
       "cot_pctile": null,
@@ -3824,10 +3824,10 @@
       "current_rank": 54.54545454545454,
       "abs_strength": 73.2824427480916,
       "rank_1m_ago": 45.45454545454545,
-      "rank_3m_ago": 54.54545454545454,
-      "base_rank_6m": 57.54132231404958,
+      "rank_3m_ago": 45.45454545454545,
+      "base_rank_6m": 57.272727272727266,
       "delta_1m": 9.090909090909086,
-      "delta_3m": 0.0,
+      "delta_3m": 9.090909090909086,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares Select Dividend",
@@ -3856,8 +3856,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.26,
-      "corr_1y": 0.32,
+      "beta_1y": 0.27,
+      "corr_1y": 0.33,
       "conc_top10": 19.5,
       "cot_pctile": null,
       "cot_net": null,
@@ -4022,10 +4022,10 @@
       "current_rank": 73.07692307692307,
       "abs_strength": 74.80916030534351,
       "rank_1m_ago": 88.46153846153845,
-      "rank_3m_ago": 84.61538461538461,
-      "base_rank_6m": 87.58741258741259,
+      "rank_3m_ago": 88.46153846153845,
+      "base_rank_6m": 87.60683760683762,
       "delta_1m": -15.384615384615387,
-      "delta_3m": -11.538461538461547,
+      "delta_3m": -15.384615384615387,
       "quadrant_1m": "decayer",
       "quadrant_3m": "decayer",
       "name": "iShares MSCI EM",
@@ -4047,14 +4047,14 @@
       "atr_pct": 3.2142,
       "chandelier_stop": 58.2116,
       "stop_distance_pct": -3.2121,
-      "dollar_vol_20d": 2063862873.94,
-      "dollar_vol_trend": 34.1187,
+      "dollar_vol_20d": 2063896431.94,
+      "dollar_vol_trend": 34.1199,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 1.32,
+      "beta_1y": 1.27,
       "corr_1y": 0.78,
       "conc_top10": 37.5,
       "cot_pctile": null,
@@ -4219,10 +4219,10 @@
       "ticker": "EIS",
       "current_rank": 92.3076923076923,
       "abs_strength": 81.67938931297711,
-      "rank_1m_ago": 73.07692307692307,
+      "rank_1m_ago": 84.61538461538461,
       "rank_3m_ago": 76.92307692307693,
-      "base_rank_6m": 83.61013986013985,
-      "delta_1m": 19.23076923076924,
+      "base_rank_6m": 83.54700854700855,
+      "delta_1m": 7.692307692307693,
       "delta_3m": 15.384615384615373,
       "quadrant_1m": "stable_winner",
       "quadrant_3m": "stable_winner",
@@ -4252,8 +4252,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 1.0,
-      "corr_1y": 0.59,
+      "beta_1y": 0.95,
+      "corr_1y": 0.58,
       "conc_top10": 54.5,
       "cot_pctile": null,
       "cot_net": null,
@@ -4419,7 +4419,7 @@
       "abs_strength": 28.24427480916031,
       "rank_1m_ago": 61.111111111111114,
       "rank_3m_ago": 100.0,
-      "base_rank_6m": 96.02272727272727,
+      "base_rank_6m": 95.24691358024691,
       "delta_1m": 0.0,
       "delta_3m": -38.888888888888886,
       "quadrant_1m": "stable_winner",
@@ -4450,7 +4450,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.21,
+      "beta_1y": 0.2,
       "corr_1y": 0.54,
       "conc_top10": null,
       "cot_pctile": null,
@@ -4580,10 +4580,10 @@
       "current_rank": 80.76923076923077,
       "abs_strength": 76.33587786259542,
       "rank_1m_ago": 26.923076923076923,
-      "rank_3m_ago": 26.923076923076923,
-      "base_rank_6m": 27.185314685314687,
+      "rank_3m_ago": 23.076923076923077,
+      "base_rank_6m": 27.17948717948718,
       "delta_1m": 53.846153846153854,
-      "delta_3m": 53.846153846153854,
+      "delta_3m": 57.69230769230769,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Australia",
@@ -4612,8 +4612,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.75,
-      "corr_1y": 0.63,
+      "beta_1y": 0.72,
+      "corr_1y": 0.62,
       "conc_top10": 65.8,
       "cot_pctile": null,
       "cot_net": null,
@@ -4778,10 +4778,10 @@
       "current_rank": 84.61538461538461,
       "abs_strength": 79.38931297709924,
       "rank_1m_ago": 61.53846153846154,
-      "rank_3m_ago": 69.23076923076923,
-      "base_rank_6m": 67.04545454545455,
+      "rank_3m_ago": 65.38461538461539,
+      "base_rank_6m": 66.92307692307692,
       "delta_1m": 23.076923076923073,
-      "delta_3m": 15.384615384615387,
+      "delta_3m": 19.230769230769226,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Canada",
@@ -4810,7 +4810,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.67,
+      "beta_1y": 0.66,
       "corr_1y": 0.69,
       "conc_top10": 45.9,
       "cot_pctile": null,
@@ -4977,7 +4977,7 @@
       "abs_strength": 43.51145038167939,
       "rank_1m_ago": 23.076923076923077,
       "rank_3m_ago": 19.230769230769234,
-      "base_rank_6m": 18.662587412587413,
+      "base_rank_6m": 18.76068376068376,
       "delta_1m": 0.0,
       "delta_3m": 3.846153846153843,
       "quadrant_1m": "chronic_loser",
@@ -5008,8 +5008,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.94,
-      "corr_1y": 0.74,
+      "beta_1y": 0.89,
+      "corr_1y": 0.73,
       "conc_top10": 63.0,
       "cot_pctile": null,
       "cot_net": null,
@@ -5174,10 +5174,10 @@
       "current_rank": 38.46153846153847,
       "abs_strength": 52.67175572519084,
       "rank_1m_ago": 65.38461538461539,
-      "rank_3m_ago": 65.38461538461539,
-      "base_rank_6m": 66.0402097902098,
+      "rank_3m_ago": 69.23076923076923,
+      "base_rank_6m": 66.02564102564102,
       "delta_1m": -26.92307692307692,
-      "delta_3m": -26.92307692307692,
+      "delta_3m": -30.76923076923076,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Italy",
@@ -5206,8 +5206,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.87,
-      "corr_1y": 0.68,
+      "beta_1y": 0.82,
+      "corr_1y": 0.66,
       "conc_top10": 72.6,
       "cot_pctile": null,
       "cot_net": null,
@@ -5371,10 +5371,10 @@
       "ticker": "EWJ",
       "current_rank": 88.46153846153845,
       "abs_strength": 80.1526717557252,
-      "rank_1m_ago": 69.23076923076923,
+      "rank_1m_ago": 80.76923076923077,
       "rank_3m_ago": 61.53846153846154,
-      "base_rank_6m": 71.02272727272727,
-      "delta_1m": 19.230769230769226,
+      "base_rank_6m": 71.11111111111111,
+      "delta_1m": 7.692307692307679,
       "delta_3m": 26.923076923076913,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -5404,7 +5404,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 1.09,
+      "beta_1y": 1.05,
       "corr_1y": 0.74,
       "conc_top10": 29.7,
       "cot_pctile": null,
@@ -5569,12 +5569,12 @@
       "ticker": "EWP",
       "current_rank": 76.92307692307693,
       "abs_strength": 75.57251908396947,
-      "rank_1m_ago": 92.3076923076923,
+      "rank_1m_ago": 73.07692307692307,
       "rank_3m_ago": 92.3076923076923,
-      "base_rank_6m": 83.08566433566433,
-      "delta_1m": -15.384615384615373,
+      "base_rank_6m": 82.99145299145299,
+      "delta_1m": 3.846153846153868,
       "delta_3m": -15.384615384615373,
-      "quadrant_1m": "decayer",
+      "quadrant_1m": "stable_winner",
       "quadrant_3m": "decayer",
       "name": "iShares MSCI Spain",
       "category": "Intl Equity",
@@ -5602,8 +5602,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.73,
-      "corr_1y": 0.61,
+      "beta_1y": 0.69,
+      "corr_1y": 0.6,
       "conc_top10": 73.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -5768,10 +5768,10 @@
       "current_rank": 19.230769230769234,
       "abs_strength": 24.427480916030532,
       "rank_1m_ago": 19.230769230769234,
-      "rank_3m_ago": 23.076923076923077,
-      "base_rank_6m": 22.814685314685313,
+      "rank_3m_ago": 26.923076923076923,
+      "base_rank_6m": 22.735042735042736,
       "delta_1m": 0.0,
-      "delta_3m": -3.846153846153843,
+      "delta_3m": -7.69230769230769,
       "quadrant_1m": "chronic_loser",
       "quadrant_3m": "chronic_loser",
       "name": "iShares MSCI France",
@@ -5800,7 +5800,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.75,
+      "beta_1y": 0.73,
       "corr_1y": 0.63,
       "conc_top10": 59.1,
       "cot_pctile": null,
@@ -5965,11 +5965,11 @@
       "ticker": "EWS",
       "current_rank": 50.0,
       "abs_strength": 61.832061068702295,
-      "rank_1m_ago": 80.76923076923077,
-      "rank_3m_ago": 57.692307692307686,
-      "base_rank_6m": 49.34440559440559,
-      "delta_1m": -30.769230769230774,
-      "delta_3m": -7.692307692307686,
+      "rank_1m_ago": 69.23076923076923,
+      "rank_3m_ago": 50.0,
+      "base_rank_6m": 49.82905982905983,
+      "delta_1m": -19.230769230769226,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Singapore",
@@ -5998,8 +5998,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.72,
-      "corr_1y": 0.65,
+      "beta_1y": 0.68,
+      "corr_1y": 0.64,
       "conc_top10": 84.0,
       "cot_pctile": null,
       "cot_net": null,
@@ -6165,7 +6165,7 @@
       "abs_strength": 98.47328244274809,
       "rank_1m_ago": 96.15384615384616,
       "rank_3m_ago": 96.15384615384616,
-      "base_rank_6m": 96.15384615384617,
+      "base_rank_6m": 96.15384615384616,
       "delta_1m": 3.8461538461538396,
       "delta_3m": 3.8461538461538396,
       "quadrant_1m": "stable_winner",
@@ -6189,14 +6189,14 @@
       "atr_pct": 6.6267,
       "chandelier_stop": 92.6141,
       "stop_distance_pct": -10.9417,
-      "dollar_vol_20d": 1125157824.83,
-      "dollar_vol_trend": 63.2048,
+      "dollar_vol_20d": 1125592755.64,
+      "dollar_vol_trend": 63.2352,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 2.29,
+      "beta_1y": 2.22,
       "corr_1y": 0.83,
       "conc_top10": 47.8,
       "cot_pctile": null,
@@ -6361,10 +6361,10 @@
       "ticker": "EWU",
       "current_rank": 57.692307692307686,
       "abs_strength": 67.17557251908397,
-      "rank_1m_ago": 46.15384615384615,
+      "rank_1m_ago": 50.0,
       "rank_3m_ago": 53.84615384615385,
-      "base_rank_6m": 47.11538461538461,
-      "delta_1m": 11.538461538461533,
+      "base_rank_6m": 47.179487179487175,
+      "delta_1m": 7.692307692307686,
       "delta_3m": 3.8461538461538396,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -6394,7 +6394,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.58,
+      "beta_1y": 0.56,
       "corr_1y": 0.57,
       "conc_top10": 53.5,
       "cot_pctile": null,
@@ -6559,11 +6559,11 @@
       "ticker": "EWW",
       "current_rank": 65.38461538461539,
       "abs_strength": 69.46564885496184,
-      "rank_1m_ago": 50.0,
-      "rank_3m_ago": 80.76923076923077,
-      "base_rank_6m": 65.64685314685315,
-      "delta_1m": 15.384615384615387,
-      "delta_3m": -15.384615384615387,
+      "rank_1m_ago": 38.46153846153847,
+      "rank_3m_ago": 73.07692307692307,
+      "base_rank_6m": 65.12820512820514,
+      "delta_1m": 26.92307692307692,
+      "delta_3m": -7.692307692307679,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Mexico",
@@ -6592,8 +6592,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.57,
-      "corr_1y": 0.41,
+      "beta_1y": 0.55,
+      "corr_1y": 0.4,
       "conc_top10": 64.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -6783,15 +6783,15 @@
       "atr_pct": 6.085,
       "chandelier_stop": 142.8364,
       "stop_distance_pct": -10.5631,
-      "dollar_vol_20d": 2616906444.48,
-      "dollar_vol_trend": 4.4614,
+      "dollar_vol_20d": 2618589144.26,
+      "dollar_vol_trend": 4.5063,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 2.21,
-      "corr_1y": 0.61,
+      "beta_1y": 2.1,
+      "corr_1y": 0.6,
       "conc_top10": 61.7,
       "cot_pctile": null,
       "cot_net": null,
@@ -6955,11 +6955,11 @@
       "ticker": "EWZ",
       "current_rank": 34.61538461538461,
       "abs_strength": 51.14503816793893,
-      "rank_1m_ago": 84.61538461538461,
-      "rank_3m_ago": 88.46153846153845,
-      "base_rank_6m": 75.96153846153847,
-      "delta_1m": -50.0,
-      "delta_3m": -53.84615384615384,
+      "rank_1m_ago": 92.3076923076923,
+      "rank_3m_ago": 80.76923076923077,
+      "base_rank_6m": 76.32478632478633,
+      "delta_1m": -57.69230769230769,
+      "delta_3m": -46.15384615384616,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Brazil",
@@ -6981,15 +6981,15 @@
       "atr_pct": 3.4783,
       "chandelier_stop": 32.0528,
       "stop_distance_pct": -6.276,
-      "dollar_vol_20d": 1227655246.06,
-      "dollar_vol_trend": -26.8894,
+      "dollar_vol_20d": 1231252278.46,
+      "dollar_vol_trend": -26.725,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.88,
-      "corr_1y": 0.34,
+      "beta_1y": 0.87,
+      "corr_1y": 0.35,
       "conc_top10": 49.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -7154,10 +7154,10 @@
       "current_rank": 30.76923076923077,
       "abs_strength": 50.38167938931297,
       "rank_1m_ago": 42.30769230769231,
-      "rank_3m_ago": 50.0,
-      "base_rank_6m": 42.74475524475525,
+      "rank_3m_ago": 57.692307692307686,
+      "base_rank_6m": 42.73504273504273,
       "delta_1m": -11.538461538461537,
-      "delta_3m": -19.23076923076923,
+      "delta_3m": -26.923076923076916,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Eurozone",
@@ -7186,8 +7186,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.88,
-      "corr_1y": 0.74,
+      "beta_1y": 0.84,
+      "corr_1y": 0.73,
       "conc_top10": 29.9,
       "cot_pctile": null,
       "cot_net": null,
@@ -7351,11 +7351,11 @@
       "ticker": "FAN",
       "current_rank": 61.29032258064516,
       "abs_strength": 58.01526717557252,
-      "rank_1m_ago": 64.51612903225806,
-      "rank_3m_ago": 77.41935483870968,
-      "base_rank_6m": 68.32844574780059,
-      "delta_1m": -3.225806451612904,
-      "delta_3m": -16.12903225806452,
+      "rank_1m_ago": 61.29032258064516,
+      "rank_3m_ago": 74.19354838709677,
+      "base_rank_6m": 68.2078853046595,
+      "delta_1m": 0.0,
+      "delta_3m": -12.903225806451609,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "First Trust Global Wind",
@@ -7384,8 +7384,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.5,
-      "corr_1y": 0.42,
+      "beta_1y": 0.48,
+      "corr_1y": 0.41,
       "conc_top10": 54.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -7549,12 +7549,12 @@
       "ticker": "FINX",
       "current_rank": 6.451612903225806,
       "abs_strength": 3.816793893129771,
-      "rank_1m_ago": 3.225806451612903,
+      "rank_1m_ago": 6.451612903225806,
       "rank_3m_ago": 3.225806451612903,
-      "base_rank_6m": 3.922287390029325,
-      "delta_1m": 3.225806451612903,
+      "base_rank_6m": 3.942652329749104,
+      "delta_1m": 0.0,
       "delta_3m": 3.225806451612903,
-      "quadrant_1m": "riser",
+      "quadrant_1m": "chronic_loser",
       "quadrant_3m": "riser",
       "name": "Global X FinTech",
       "category": "Thematic",
@@ -7582,7 +7582,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.36,
+      "beta_1y": 1.32,
       "corr_1y": 0.65,
       "conc_top10": 52.0,
       "cot_pctile": null,
@@ -7747,10 +7747,10 @@
       "ticker": "FLOT",
       "current_rank": 100.0,
       "abs_strength": 35.87786259541985,
-      "rank_1m_ago": 94.44444444444444,
+      "rank_1m_ago": 100.0,
       "rank_3m_ago": 88.88888888888889,
-      "base_rank_6m": 75.82070707070707,
-      "delta_1m": 5.555555555555557,
+      "base_rank_6m": 76.35802469135803,
+      "delta_1m": 0.0,
       "delta_3m": 11.111111111111114,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -7780,7 +7780,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.02,
+      "beta_1y": 0.01,
       "corr_1y": 0.38,
       "conc_top10": null,
       "cot_pctile": null,
@@ -7911,7 +7911,7 @@
       "abs_strength": 14.50381679389313,
       "rank_1m_ago": 75.0,
       "rank_3m_ago": 75.0,
-      "base_rank_6m": 66.19318181818181,
+      "base_rank_6m": 66.38888888888889,
       "delta_1m": -25.0,
       "delta_3m": -25.0,
       "quadrant_1m": "neutral",
@@ -7942,7 +7942,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.09,
+      "beta_1y": 0.08,
       "corr_1y": 0.23,
       "conc_top10": null,
       "cot_pctile": null,
@@ -8073,7 +8073,7 @@
       "abs_strength": 13.740458015267176,
       "rank_1m_ago": 25.0,
       "rank_3m_ago": 50.0,
-      "base_rank_6m": 59.09090909090909,
+      "base_rank_6m": 58.333333333333336,
       "delta_1m": 0.0,
       "delta_3m": -25.0,
       "quadrant_1m": "neutral",
@@ -8105,7 +8105,7 @@
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": 0.07,
-      "corr_1y": 0.15,
+      "corr_1y": 0.16,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -8234,10 +8234,10 @@
       "current_rank": 11.538461538461538,
       "abs_strength": 4.580152671755725,
       "rank_1m_ago": 11.538461538461538,
-      "rank_3m_ago": 15.384615384615385,
-      "base_rank_6m": 11.407342657342657,
+      "rank_3m_ago": 11.538461538461538,
+      "base_rank_6m": 11.41025641025641,
       "delta_1m": 0.0,
-      "delta_3m": -3.8461538461538467,
+      "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
       "quadrant_3m": "chronic_loser",
       "name": "iShares China Large-Cap",
@@ -8259,15 +8259,15 @@
       "atr_pct": 1.6364,
       "chandelier_stop": 33.7134,
       "stop_distance_pct": -7.7106,
-      "dollar_vol_20d": 814756430.78,
-      "dollar_vol_trend": 20.7779,
+      "dollar_vol_20d": 814795712.28,
+      "dollar_vol_trend": 20.7815,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.46,
-      "corr_1y": 0.35,
+      "beta_1y": 0.43,
+      "corr_1y": 0.34,
       "conc_top10": 58.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -8433,7 +8433,7 @@
       "abs_strength": 21.374045801526716,
       "rank_1m_ago": 50.0,
       "rank_3m_ago": 25.0,
-      "base_rank_6m": 27.272727272727273,
+      "base_rank_6m": 27.77777777777778,
       "delta_1m": 25.0,
       "delta_3m": 50.0,
       "quadrant_1m": "neutral",
@@ -8465,7 +8465,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": 0.01,
-      "corr_1y": 0.03,
+      "corr_1y": 0.02,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -8593,10 +8593,10 @@
       "ticker": "GDX",
       "current_rank": 56.25,
       "abs_strength": 45.038167938931295,
-      "rank_1m_ago": 50.0,
+      "rank_1m_ago": 56.25,
       "rank_3m_ago": 50.0,
-      "base_rank_6m": 59.87215909090909,
-      "delta_1m": 6.25,
+      "base_rank_6m": 59.791666666666664,
+      "delta_1m": 0.0,
       "delta_3m": 6.25,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -8619,14 +8619,14 @@
       "atr_pct": 5.2411,
       "chandelier_stop": 80.4021,
       "stop_distance_pct": -8.8133,
-      "dollar_vol_20d": 2373236613.72,
-      "dollar_vol_trend": 17.7036,
+      "dollar_vol_20d": 2373548060.06,
+      "dollar_vol_trend": 17.7133,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.54,
+      "beta_1y": 1.5,
       "corr_1y": 0.42,
       "conc_top10": null,
       "cot_pctile": null,
@@ -8755,10 +8755,10 @@
       "ticker": "GDXJ",
       "current_rank": 43.75,
       "abs_strength": 38.93129770992366,
-      "rank_1m_ago": 56.25,
+      "rank_1m_ago": 62.5,
       "rank_3m_ago": 56.25,
-      "base_rank_6m": 67.04545454545455,
-      "delta_1m": -12.5,
+      "base_rank_6m": 66.94444444444444,
+      "delta_1m": -18.75,
       "delta_3m": -12.5,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -8781,14 +8781,14 @@
       "atr_pct": 5.8817,
       "chandelier_stop": 98.2122,
       "stop_distance_pct": -12.0377,
-      "dollar_vol_20d": 575937477.42,
-      "dollar_vol_trend": 17.4885,
+      "dollar_vol_20d": 576104031.42,
+      "dollar_vol_trend": 17.5098,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.82,
+      "beta_1y": 1.76,
       "corr_1y": 0.45,
       "conc_top10": null,
       "cot_pctile": null,
@@ -8918,10 +8918,10 @@
       "current_rank": 48.38709677419355,
       "abs_strength": 45.80152671755725,
       "rank_1m_ago": 48.38709677419355,
-      "rank_3m_ago": 38.70967741935484,
-      "base_rank_6m": 35.00733137829912,
+      "rank_3m_ago": 35.483870967741936,
+      "base_rank_6m": 35.26881720430107,
       "delta_1m": 0.0,
-      "delta_3m": 9.677419354838712,
+      "delta_3m": 12.903225806451616,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "SPDR Global Infrastructure",
@@ -8951,7 +8951,7 @@
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": 0.2,
-      "corr_1y": 0.26,
+      "corr_1y": 0.27,
       "conc_top10": 38.6,
       "cot_pctile": null,
       "cot_net": null,
@@ -9117,7 +9117,7 @@
       "abs_strength": 16.030534351145036,
       "rank_1m_ago": 12.5,
       "rank_3m_ago": 31.25,
-      "base_rank_6m": 31.960227272727273,
+      "base_rank_6m": 31.52777777777778,
       "delta_1m": 0.0,
       "delta_3m": -18.75,
       "quadrant_1m": "neutral",
@@ -9141,15 +9141,15 @@
       "atr_pct": 2.5849,
       "chandelier_stop": 354.7877,
       "stop_distance_pct": -8.3487,
-      "dollar_vol_20d": 3926351800.21,
-      "dollar_vol_trend": 7.1712,
+      "dollar_vol_20d": 3927232640.74,
+      "dollar_vol_trend": 7.1871,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.76,
-      "corr_1y": 0.45,
+      "beta_1y": 0.72,
+      "corr_1y": 0.44,
       "conc_top10": null,
       "cot_pctile": 21.0,
       "cot_net": 102942.0,
@@ -9277,11 +9277,11 @@
       "ticker": "GOVT",
       "current_rank": 27.77777777777778,
       "abs_strength": 20.610687022900763,
-      "rank_1m_ago": 50.0,
-      "rank_3m_ago": 27.77777777777778,
-      "base_rank_6m": 25.189393939393938,
-      "delta_1m": -22.22222222222222,
-      "delta_3m": 0.0,
+      "rank_1m_ago": 44.44444444444444,
+      "rank_3m_ago": 22.22222222222222,
+      "base_rank_6m": 25.617283950617285,
+      "delta_1m": -16.666666666666664,
+      "delta_3m": 5.555555555555557,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares US Treasury Bond",
@@ -9311,7 +9311,7 @@
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": -0.03,
-      "corr_1y": -0.13,
+      "corr_1y": -0.12,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -9439,11 +9439,11 @@
       "ticker": "HACK",
       "current_rank": 87.09677419354838,
       "abs_strength": 94.65648854961832,
-      "rank_1m_ago": 83.87096774193549,
-      "rank_3m_ago": 70.96774193548387,
-      "base_rank_6m": 57.624633431085044,
-      "delta_1m": 3.225806451612897,
-      "delta_3m": 16.129032258064512,
+      "rank_1m_ago": 87.09677419354838,
+      "rank_3m_ago": 77.41935483870968,
+      "base_rank_6m": 58.27956989247312,
+      "delta_1m": 0.0,
+      "delta_3m": 9.677419354838705,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "ETFMG Prime Cyber Security",
@@ -9472,7 +9472,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.93,
+      "beta_1y": 0.89,
       "corr_1y": 0.41,
       "conc_top10": 51.9,
       "cot_pctile": null,
@@ -9633,12 +9633,12 @@
       "ticker": "HYG",
       "current_rank": 77.77777777777779,
       "abs_strength": 31.297709923664126,
-      "rank_1m_ago": 83.33333333333334,
+      "rank_1m_ago": 66.66666666666666,
       "rank_3m_ago": 77.77777777777779,
-      "base_rank_6m": 81.31313131313132,
-      "delta_1m": -5.555555555555557,
+      "base_rank_6m": 81.0493827160494,
+      "delta_1m": 11.111111111111128,
       "delta_3m": 0.0,
-      "quadrant_1m": "decayer",
+      "quadrant_1m": "stable_winner",
       "quadrant_3m": "stable_winner",
       "name": "iShares High Yield Bond",
       "category": "Fixed Income",
@@ -9667,7 +9667,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": 0.13,
-      "corr_1y": 0.59,
+      "corr_1y": 0.58,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -9797,7 +9797,7 @@
       "abs_strength": 16.793893129770993,
       "rank_1m_ago": 18.75,
       "rank_3m_ago": 37.5,
-      "base_rank_6m": 38.35227272727273,
+      "base_rank_6m": 37.916666666666664,
       "delta_1m": 0.0,
       "delta_3m": -18.75,
       "quadrant_1m": "neutral",
@@ -9821,15 +9821,15 @@
       "atr_pct": 2.573,
       "chandelier_stop": 72.746,
       "stop_distance_pct": -8.3174,
-      "dollar_vol_20d": 493763422.03,
-      "dollar_vol_trend": 17.8419,
+      "dollar_vol_20d": 493831925.23,
+      "dollar_vol_trend": 17.8522,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.76,
-      "corr_1y": 0.45,
+      "beta_1y": 0.72,
+      "corr_1y": 0.44,
       "conc_top10": null,
       "cot_pctile": 21.0,
       "cot_net": 102942.0,
@@ -9957,10 +9957,10 @@
       "ticker": "IBB",
       "current_rank": 67.74193548387096,
       "abs_strength": 83.20610687022901,
-      "rank_1m_ago": 87.09677419354838,
+      "rank_1m_ago": 83.87096774193549,
       "rank_3m_ago": 87.09677419354838,
-      "base_rank_6m": 74.67008797653959,
-      "delta_1m": -19.354838709677423,
+      "base_rank_6m": 74.87455197132617,
+      "delta_1m": -16.129032258064527,
       "delta_3m": -19.354838709677423,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -9990,8 +9990,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.76,
-      "corr_1y": 0.5,
+      "beta_1y": 0.77,
+      "corr_1y": 0.52,
       "conc_top10": 51.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -10148,10 +10148,10 @@
       "current_rank": 29.03225806451613,
       "abs_strength": 17.557251908396946,
       "rank_1m_ago": 45.16129032258064,
-      "rank_3m_ago": 67.74193548387096,
-      "base_rank_6m": 68.32844574780059,
+      "rank_3m_ago": 61.29032258064516,
+      "base_rank_6m": 67.84946236559139,
       "delta_1m": -16.12903225806451,
-      "delta_3m": -38.70967741935483,
+      "delta_3m": -32.258064516129025,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares Global Clean Energy",
@@ -10180,8 +10180,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.02,
-      "corr_1y": 0.57,
+      "beta_1y": 0.97,
+      "corr_1y": 0.56,
       "conc_top10": 51.7,
       "cot_pctile": null,
       "cot_net": null,
@@ -10347,7 +10347,7 @@
       "abs_strength": 12.977099236641221,
       "rank_1m_ago": 16.666666666666664,
       "rank_3m_ago": 11.11111111111111,
-      "base_rank_6m": 19.760101010101007,
+      "base_rank_6m": 19.691358024691358,
       "delta_1m": -5.555555555555554,
       "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
@@ -10378,8 +10378,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": -0.04,
-      "corr_1y": -0.11,
+      "beta_1y": -0.03,
+      "corr_1y": -0.09,
       "conc_top10": null,
       "cot_pctile": 2.0,
       "cot_net": -2482443.0,
@@ -10508,10 +10508,10 @@
       "current_rank": 69.23076923076923,
       "abs_strength": 71.7557251908397,
       "rank_1m_ago": 76.92307692307693,
-      "rank_3m_ago": 73.07692307692307,
-      "base_rank_6m": 82.6923076923077,
+      "rank_3m_ago": 84.61538461538461,
+      "base_rank_6m": 82.60683760683762,
       "delta_1m": -7.692307692307708,
-      "delta_3m": -3.8461538461538396,
+      "delta_3m": -15.384615384615387,
       "quadrant_1m": "decayer",
       "quadrant_3m": "decayer",
       "name": "iShares Core MSCI EM",
@@ -10540,8 +10540,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 1.31,
-      "corr_1y": 0.8,
+      "beta_1y": 1.25,
+      "corr_1y": 0.79,
       "conc_top10": 33.0,
       "cot_pctile": null,
       "cot_net": null,
@@ -10706,10 +10706,10 @@
       "current_rank": 42.30769230769231,
       "abs_strength": 54.961832061068705,
       "rank_1m_ago": 34.61538461538461,
-      "rank_3m_ago": 42.30769230769231,
-      "base_rank_6m": 35.75174825174825,
+      "rank_3m_ago": 34.61538461538461,
+      "base_rank_6m": 35.72649572649573,
       "delta_1m": 7.692307692307693,
-      "delta_3m": 0.0,
+      "delta_3m": 7.692307692307693,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares Core MSCI Europe",
@@ -10738,8 +10738,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.77,
-      "corr_1y": 0.73,
+      "beta_1y": 0.74,
+      "corr_1y": 0.72,
       "conc_top10": 19.9,
       "cot_pctile": null,
       "cot_net": null,
@@ -10903,11 +10903,11 @@
       "ticker": "IFRA",
       "current_rank": 54.83870967741935,
       "abs_strength": 53.43511450381679,
-      "rank_1m_ago": 54.83870967741935,
-      "rank_3m_ago": 45.16129032258064,
-      "base_rank_6m": 48.09384164222874,
-      "delta_1m": 0.0,
-      "delta_3m": 9.677419354838712,
+      "rank_1m_ago": 51.61290322580645,
+      "rank_3m_ago": 41.935483870967744,
+      "base_rank_6m": 48.17204301075268,
+      "delta_1m": 3.225806451612904,
+      "delta_3m": 12.903225806451609,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares US Infrastructure",
@@ -10936,8 +10936,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.44,
-      "corr_1y": 0.41,
+      "beta_1y": 0.43,
+      "corr_1y": 0.42,
       "conc_top10": 33.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -11103,7 +11103,7 @@
       "abs_strength": 6.106870229007633,
       "rank_1m_ago": 16.129032258064516,
       "rank_3m_ago": 6.451612903225806,
-      "base_rank_6m": 7.881231671554252,
+      "base_rank_6m": 8.028673835125447,
       "delta_1m": -6.451612903225806,
       "delta_3m": 3.225806451612904,
       "quadrant_1m": "chronic_loser",
@@ -11134,8 +11134,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.35,
-      "corr_1y": 0.27,
+      "beta_1y": 0.36,
+      "corr_1y": 0.28,
       "conc_top10": 75.8,
       "cot_pctile": null,
       "cot_net": null,
@@ -11292,10 +11292,10 @@
       "current_rank": 30.0,
       "abs_strength": 61.06870229007634,
       "rank_1m_ago": 30.0,
-      "rank_3m_ago": 70.0,
-      "base_rank_6m": 52.27272727272727,
+      "rank_3m_ago": 30.0,
+      "base_rank_6m": 51.77777777777778,
       "delta_1m": 0.0,
-      "delta_3m": -40.0,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares Core S&P Mid-Cap",
@@ -11324,7 +11324,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.76,
+      "beta_1y": 0.74,
       "corr_1y": 0.76,
       "conc_top10": 7.1,
       "cot_pctile": null,
@@ -11491,7 +11491,7 @@
       "abs_strength": 78.62595419847328,
       "rank_1m_ago": 90.0,
       "rank_3m_ago": 90.0,
-      "base_rank_6m": 88.86363636363636,
+      "base_rank_6m": 88.88888888888889,
       "delta_1m": 10.0,
       "delta_3m": 10.0,
       "quadrant_1m": "stable_winner",
@@ -11522,8 +11522,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.69,
-      "corr_1y": 0.65,
+      "beta_1y": 0.67,
+      "corr_1y": 0.66,
       "conc_top10": 6.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -11688,12 +11688,12 @@
       "current_rank": 15.384615384615385,
       "abs_strength": 5.343511450381679,
       "rank_1m_ago": 15.384615384615385,
-      "rank_3m_ago": 11.538461538461538,
-      "base_rank_6m": 11.931818181818182,
+      "rank_3m_ago": 15.384615384615385,
+      "base_rank_6m": 12.008547008547009,
       "delta_1m": 0.0,
-      "delta_3m": 3.8461538461538467,
+      "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
-      "quadrant_3m": "riser",
+      "quadrant_3m": "chronic_loser",
       "name": "iShares MSCI India",
       "category": "Intl Equity",
       "benchmark": "EEM",
@@ -11713,14 +11713,14 @@
       "atr_pct": 1.1741,
       "chandelier_stop": 51.3662,
       "stop_distance_pct": 3.447,
-      "dollar_vol_20d": 412680183.88,
-      "dollar_vol_trend": 33.249,
+      "dollar_vol_20d": 416713009.96,
+      "dollar_vol_trend": 33.9972,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.2,
+      "beta_1y": 0.19,
       "corr_1y": 0.17,
       "conc_top10": 34.9,
       "cot_pctile": null,
@@ -11887,7 +11887,7 @@
       "abs_strength": 34.35114503816794,
       "rank_1m_ago": 35.483870967741936,
       "rank_3m_ago": 51.61290322580645,
-      "base_rank_6m": 45.23460410557185,
+      "base_rank_6m": 45.017921146953405,
       "delta_1m": 3.225806451612904,
       "delta_3m": -12.903225806451609,
       "quadrant_1m": "neutral",
@@ -11918,7 +11918,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.91,
+      "beta_1y": 0.88,
       "corr_1y": 0.58,
       "conc_top10": 76.3,
       "cot_pctile": null,
@@ -12075,11 +12075,11 @@
       "ticker": "IVV",
       "current_rank": 70.0,
       "abs_strength": 68.70229007633588,
-      "rank_1m_ago": 80.0,
-      "rank_3m_ago": 30.0,
-      "base_rank_6m": 45.45454545454545,
-      "delta_1m": -10.0,
-      "delta_3m": 40.0,
+      "rank_1m_ago": 70.0,
+      "rank_3m_ago": 60.0,
+      "base_rank_6m": 46.0,
+      "delta_1m": 0.0,
+      "delta_3m": 10.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares Core S&P 500",
@@ -12108,8 +12108,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 1.0,
-      "corr_1y": 1.0,
+      "beta_1y": 0.96,
+      "corr_1y": 0.99,
       "conc_top10": 37.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -12275,7 +12275,7 @@
       "abs_strength": 83.96946564885496,
       "rank_1m_ago": 72.72727272727273,
       "rank_3m_ago": 90.9090909090909,
-      "base_rank_6m": 82.43801652892563,
+      "base_rank_6m": 82.22222222222223,
       "delta_1m": 9.090909090909093,
       "delta_3m": -9.09090909090908,
       "quadrant_1m": "stable_winner",
@@ -12306,7 +12306,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.62,
+      "beta_1y": 0.6,
       "corr_1y": 0.83,
       "conc_top10": 29.3,
       "cot_pctile": null,
@@ -12471,11 +12471,11 @@
       "ticker": "IWF",
       "current_rank": 9.090909090909092,
       "abs_strength": 36.6412213740458,
-      "rank_1m_ago": 18.181818181818183,
-      "rank_3m_ago": 9.090909090909092,
-      "base_rank_6m": 25.929752066115704,
-      "delta_1m": -9.090909090909092,
-      "delta_3m": 0.0,
+      "rank_1m_ago": 9.090909090909092,
+      "rank_3m_ago": 18.181818181818183,
+      "base_rank_6m": 25.555555555555557,
+      "delta_1m": 0.0,
+      "delta_3m": -9.090909090909092,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares Russell 1000 Growth",
@@ -12504,7 +12504,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 1.37,
+      "beta_1y": 1.32,
       "corr_1y": 0.96,
       "conc_top10": 57.2,
       "cot_pctile": null,
@@ -12669,10 +12669,10 @@
       "ticker": "IWM",
       "current_rank": 80.0,
       "abs_strength": 72.51908396946564,
-      "rank_1m_ago": 40.0,
+      "rank_1m_ago": 80.0,
       "rank_3m_ago": 100.0,
-      "base_rank_6m": 93.75,
-      "delta_1m": 40.0,
+      "base_rank_6m": 93.11111111111111,
+      "delta_1m": 0.0,
       "delta_3m": -20.0,
       "quadrant_1m": "stable_winner",
       "quadrant_3m": "decayer",
@@ -12695,14 +12695,14 @@
       "atr_pct": 2.183,
       "chandelier_stop": 268.5618,
       "stop_distance_pct": 0.1146,
-      "dollar_vol_20d": 7719282769.06,
-      "dollar_vol_trend": 9.8907,
+      "dollar_vol_20d": 7719676663.6,
+      "dollar_vol_trend": 9.8943,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.88,
+      "beta_1y": 0.85,
       "corr_1y": 0.77,
       "conc_top10": 3.5,
       "cot_pctile": null,
@@ -12868,10 +12868,10 @@
       "current_rank": 40.0,
       "abs_strength": 38.16793893129771,
       "rank_1m_ago": 40.0,
-      "rank_3m_ago": 60.0,
-      "base_rank_6m": 46.81818181818182,
+      "rank_3m_ago": 40.0,
+      "base_rank_6m": 46.666666666666664,
       "delta_1m": 0.0,
-      "delta_3m": -20.0,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares US Real Estate",
@@ -12901,7 +12901,7 @@
       "flow_window_days": 29.0,
       "flow_dir": "flat",
       "beta_1y": 0.33,
-      "corr_1y": 0.34,
+      "corr_1y": 0.35,
       "conc_top10": 52.8,
       "cot_pctile": null,
       "cot_net": null,
@@ -13061,13 +13061,13 @@
       "ticker": "JNK",
       "current_rank": 83.33333333333334,
       "abs_strength": 32.82442748091603,
-      "rank_1m_ago": 88.88888888888889,
-      "rank_3m_ago": 83.33333333333334,
-      "base_rank_6m": 89.77272727272727,
-      "delta_1m": -5.555555555555543,
-      "delta_3m": 0.0,
-      "quadrant_1m": "decayer",
-      "quadrant_3m": "stable_winner",
+      "rank_1m_ago": 77.77777777777779,
+      "rank_3m_ago": 94.44444444444444,
+      "base_rank_6m": 89.50617283950618,
+      "delta_1m": 5.555555555555557,
+      "delta_3m": -11.1111111111111,
+      "quadrant_1m": "stable_winner",
+      "quadrant_3m": "decayer",
       "name": "SPDR High Yield Bond",
       "category": "Fixed Income",
       "benchmark": "BND",
@@ -13094,8 +13094,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.14,
-      "corr_1y": 0.58,
+      "beta_1y": 0.13,
+      "corr_1y": 0.57,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -13225,7 +13225,7 @@
       "abs_strength": 0.7633587786259541,
       "rank_1m_ago": 3.8461538461538463,
       "rank_3m_ago": 3.8461538461538463,
-      "base_rank_6m": 4.1520979020979025,
+      "base_rank_6m": 4.145299145299146,
       "delta_1m": 0.0,
       "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
@@ -13249,15 +13249,15 @@
       "atr_pct": 2.6448,
       "chandelier_stop": 23.4703,
       "stop_distance_pct": -10.8657,
-      "dollar_vol_20d": 647371729.64,
-      "dollar_vol_trend": 40.8313,
+      "dollar_vol_20d": 647451222.99,
+      "dollar_vol_trend": 40.8409,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.75,
-      "corr_1y": 0.41,
+      "beta_1y": 0.72,
+      "corr_1y": 0.4,
       "conc_top10": 61.6,
       "cot_pctile": null,
       "cot_net": null,
@@ -13422,10 +13422,10 @@
       "current_rank": 16.666666666666664,
       "abs_strength": 15.267175572519085,
       "rank_1m_ago": 11.11111111111111,
-      "rank_3m_ago": 16.666666666666664,
-      "base_rank_6m": 37.24747474747475,
+      "rank_3m_ago": 27.77777777777778,
+      "base_rank_6m": 36.666666666666664,
       "delta_1m": 5.555555555555554,
-      "delta_3m": 0.0,
+      "delta_3m": -11.111111111111114,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares IG Corp Bond",
@@ -13455,7 +13455,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": 0.03,
-      "corr_1y": 0.09,
+      "corr_1y": 0.1,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -13585,7 +13585,7 @@
       "abs_strength": 3.0534351145038165,
       "rank_1m_ago": 7.6923076923076925,
       "rank_3m_ago": 7.6923076923076925,
-      "base_rank_6m": 12.194055944055945,
+      "base_rank_6m": 12.094017094017095,
       "delta_1m": 0.0,
       "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
@@ -13616,8 +13616,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.56,
-      "corr_1y": 0.46,
+      "beta_1y": 0.54,
+      "corr_1y": 0.45,
       "conc_top10": 42.2,
       "cot_pctile": null,
       "cot_net": null,
@@ -13782,10 +13782,10 @@
       "current_rank": 20.0,
       "abs_strength": 60.30534351145038,
       "rank_1m_ago": 20.0,
-      "rank_3m_ago": 60.0,
-      "base_rank_6m": 37.95454545454545,
+      "rank_3m_ago": 10.0,
+      "base_rank_6m": 37.55555555555556,
       "delta_1m": 0.0,
-      "delta_3m": -40.0,
+      "delta_3m": 10.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "SPDR S&P 400 Mid-Cap",
@@ -13814,8 +13814,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.75,
-      "corr_1y": 0.75,
+      "beta_1y": 0.73,
+      "corr_1y": 0.76,
       "conc_top10": 7.9,
       "cot_pctile": null,
       "cot_net": null,
@@ -13980,12 +13980,12 @@
       "current_rank": 72.72727272727273,
       "abs_strength": 82.44274809160305,
       "rank_1m_ago": 81.81818181818183,
-      "rank_3m_ago": 72.72727272727273,
-      "base_rank_6m": 81.40495867768595,
+      "rank_3m_ago": 81.81818181818183,
+      "base_rank_6m": 81.41414141414141,
       "delta_1m": -9.090909090909093,
-      "delta_3m": 0.0,
+      "delta_3m": -9.090909090909093,
       "quadrant_1m": "decayer",
-      "quadrant_3m": "stable_winner",
+      "quadrant_3m": "decayer",
       "name": "iShares MSCI Momentum",
       "category": "Factor",
       "benchmark": "SPY",
@@ -14012,8 +14012,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.41,
-      "corr_1y": 0.79,
+      "beta_1y": 1.34,
+      "corr_1y": 0.77,
       "conc_top10": 34.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -14177,11 +14177,11 @@
       "ticker": "MUB",
       "current_rank": 55.55555555555556,
       "abs_strength": 27.480916030534353,
-      "rank_1m_ago": 22.22222222222222,
-      "rank_3m_ago": 94.44444444444444,
-      "base_rank_6m": 77.33585858585859,
-      "delta_1m": 33.333333333333336,
-      "delta_3m": -38.888888888888886,
+      "rank_1m_ago": 27.77777777777778,
+      "rank_3m_ago": 83.33333333333334,
+      "base_rank_6m": 76.17283950617283,
+      "delta_1m": 27.77777777777778,
+      "delta_3m": -27.777777777777786,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares National Muni Bond",
@@ -14211,7 +14211,7 @@
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": 0.04,
-      "corr_1y": 0.14,
+      "corr_1y": 0.15,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -14339,10 +14339,10 @@
       "ticker": "NLR",
       "current_rank": 3.225806451612903,
       "abs_strength": 2.2900763358778624,
-      "rank_1m_ago": 6.451612903225806,
+      "rank_1m_ago": 3.225806451612903,
       "rank_3m_ago": 9.67741935483871,
-      "base_rank_6m": 20.01466275659824,
-      "delta_1m": -3.225806451612903,
+      "base_rank_6m": 19.67741935483871,
+      "delta_1m": 0.0,
       "delta_3m": -6.451612903225807,
       "quadrant_1m": "chronic_loser",
       "quadrant_3m": "chronic_loser",
@@ -14372,8 +14372,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.42,
-      "corr_1y": 0.64,
+      "beta_1y": 1.35,
+      "corr_1y": 0.63,
       "conc_top10": 66.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -14538,10 +14538,10 @@
       "current_rank": 6.25,
       "abs_strength": 1.5267175572519083,
       "rank_1m_ago": 6.25,
-      "rank_3m_ago": 25.0,
-      "base_rank_6m": 19.24715909090909,
+      "rank_3m_ago": 18.75,
+      "base_rank_6m": 18.958333333333332,
       "delta_1m": 0.0,
-      "delta_3m": -18.75,
+      "delta_3m": -12.5,
       "quadrant_1m": "chronic_loser",
       "quadrant_3m": "chronic_loser",
       "name": "Aberdeen Palladium ETF",
@@ -14563,15 +14563,15 @@
       "atr_pct": 3.7715,
       "chandelier_stop": 17.7836,
       "stop_distance_pct": -13.2715,
-      "dollar_vol_20d": 23596020.48,
-      "dollar_vol_trend": 8.9143,
+      "dollar_vol_20d": 23606068.48,
+      "dollar_vol_trend": 8.9446,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.27,
-      "corr_1y": 0.41,
+      "beta_1y": 1.18,
+      "corr_1y": 0.39,
       "conc_top10": null,
       "cot_pctile": 6.0,
       "cot_net": -14761.0,
@@ -14701,7 +14701,7 @@
       "abs_strength": 56.48854961832062,
       "rank_1m_ago": 58.06451612903226,
       "rank_3m_ago": 54.83870967741935,
-      "base_rank_6m": 57.47800586510264,
+      "base_rank_6m": 57.491039426523294,
       "delta_1m": 0.0,
       "delta_3m": 3.225806451612911,
       "quadrant_1m": "neutral",
@@ -14732,7 +14732,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.8,
+      "beta_1y": 0.78,
       "corr_1y": 0.59,
       "conc_top10": 33.8,
       "cot_pctile": null,
@@ -14899,7 +14899,7 @@
       "abs_strength": 92.36641221374046,
       "rank_1m_ago": 93.75,
       "rank_3m_ago": 75.0,
-      "base_rank_6m": 68.96306818181819,
+      "base_rank_6m": 69.51388888888889,
       "delta_1m": 0.0,
       "delta_3m": 18.75,
       "quadrant_1m": "neutral",
@@ -14931,7 +14931,7 @@
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": -0.02,
-      "corr_1y": -0.01,
+      "corr_1y": -0.02,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -15060,10 +15060,10 @@
       "current_rank": 45.16129032258064,
       "abs_strength": 41.221374045801525,
       "rank_1m_ago": 38.70967741935484,
-      "rank_3m_ago": 41.935483870967744,
-      "base_rank_6m": 41.01906158357771,
+      "rank_3m_ago": 45.16129032258064,
+      "base_rank_6m": 40.96774193548387,
       "delta_1m": 6.451612903225801,
-      "delta_3m": 3.225806451612897,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Invesco Aerospace & Defense",
@@ -15092,7 +15092,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.96,
+      "beta_1y": 0.93,
       "corr_1y": 0.63,
       "conc_top10": 61.7,
       "cot_pctile": null,
@@ -15257,10 +15257,10 @@
       "ticker": "PPLT",
       "current_rank": 25.0,
       "abs_strength": 22.900763358778626,
-      "rank_1m_ago": 25.0,
+      "rank_1m_ago": 31.25,
       "rank_3m_ago": 43.75,
-      "base_rank_6m": 39.63068181818182,
-      "delta_1m": 0.0,
+      "base_rank_6m": 39.375,
+      "delta_1m": -6.25,
       "delta_3m": -18.75,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -15283,15 +15283,15 @@
       "atr_pct": 3.584,
       "chandelier_stop": 13.0571,
       "stop_distance_pct": -12.9505,
-      "dollar_vol_20d": 33434025.5,
-      "dollar_vol_trend": -1.7579,
+      "dollar_vol_20d": 33444082.7,
+      "dollar_vol_trend": -1.7376,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.17,
-      "corr_1y": 0.34,
+      "beta_1y": 1.09,
+      "corr_1y": 0.32,
       "conc_top10": null,
       "cot_pctile": 15.0,
       "cot_net": -1085.0,
@@ -15419,10 +15419,10 @@
       "ticker": "QCLN",
       "current_rank": 41.935483870967744,
       "abs_strength": 39.69465648854962,
-      "rank_1m_ago": 51.61290322580645,
+      "rank_1m_ago": 54.83870967741935,
       "rank_3m_ago": 80.64516129032258,
-      "base_rank_6m": 78.84897360703813,
-      "delta_1m": -9.677419354838705,
+      "base_rank_6m": 78.31541218637993,
+      "delta_1m": -12.903225806451609,
       "delta_3m": -38.70967741935483,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -15452,8 +15452,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.66,
-      "corr_1y": 0.75,
+      "beta_1y": 1.59,
+      "corr_1y": 0.74,
       "conc_top10": 60.5,
       "cot_pctile": null,
       "cot_net": null,
@@ -15619,7 +15619,7 @@
       "abs_strength": 77.86259541984732,
       "rank_1m_ago": 100.0,
       "rank_3m_ago": 80.0,
-      "base_rank_6m": 85.9090909090909,
+      "base_rank_6m": 86.22222222222223,
       "delta_1m": -10.0,
       "delta_3m": 10.0,
       "quadrant_1m": "decayer",
@@ -15643,15 +15643,15 @@
       "atr_pct": 3.398,
       "chandelier_stop": 661.5179,
       "stop_distance_pct": -4.3519,
-      "dollar_vol_20d": 41970685884.84,
-      "dollar_vol_trend": 37.4483,
+      "dollar_vol_20d": 41983250377.3,
+      "dollar_vol_trend": 37.4715,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 1.37,
-      "corr_1y": 0.94,
+      "beta_1y": 1.31,
+      "corr_1y": 0.93,
       "conc_top10": 46.5,
       "cot_pctile": null,
       "cot_net": null,
@@ -15814,12 +15814,12 @@
     {
       "ticker": "QUAL",
       "current_rank": 36.36363636363637,
-      "abs_strength": 63.358778625954194,
+      "abs_strength": 64.12213740458014,
       "rank_1m_ago": 63.63636363636363,
-      "rank_3m_ago": 45.45454545454545,
-      "base_rank_6m": 47.5206611570248,
+      "rank_3m_ago": 54.54545454545454,
+      "base_rank_6m": 47.878787878787875,
       "delta_1m": -27.272727272727266,
-      "delta_3m": -9.090909090909086,
+      "delta_3m": -18.181818181818173,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares MSCI Quality",
@@ -15848,7 +15848,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.85,
+      "beta_1y": 0.82,
       "corr_1y": 0.95,
       "conc_top10": 44.8,
       "cot_pctile": null,
@@ -16014,10 +16014,10 @@
       "current_rank": 64.51612903225806,
       "abs_strength": 74.04580152671755,
       "rank_1m_ago": 67.74193548387096,
-      "rank_3m_ago": 61.29032258064516,
-      "base_rank_6m": 67.88856304985337,
+      "rank_3m_ago": 64.51612903225806,
+      "base_rank_6m": 67.8853046594982,
       "delta_1m": -3.225806451612897,
-      "delta_3m": 3.225806451612904,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "ROBO Global Robotics",
@@ -16046,8 +16046,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.62,
-      "corr_1y": 0.86,
+      "beta_1y": 1.54,
+      "corr_1y": 0.84,
       "conc_top10": 17.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -16212,10 +16212,10 @@
       "current_rank": 90.9090909090909,
       "abs_strength": 87.78625954198473,
       "rank_1m_ago": 90.9090909090909,
-      "rank_3m_ago": 81.81818181818183,
-      "base_rank_6m": 79.23553719008265,
+      "rank_3m_ago": 72.72727272727273,
+      "base_rank_6m": 79.4949494949495,
       "delta_1m": 0.0,
-      "delta_3m": 9.09090909090908,
+      "delta_3m": 18.181818181818173,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Schwab US Dividend Equity",
@@ -16237,15 +16237,15 @@
       "atr_pct": 1.5457,
       "chandelier_stop": 34.7436,
       "stop_distance_pct": 1.5484,
-      "dollar_vol_20d": 970226184.54,
-      "dollar_vol_trend": 16.1163,
+      "dollar_vol_20d": 970541853.6,
+      "dollar_vol_trend": 16.1401,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": 0.38,
-      "corr_1y": 0.41,
+      "corr_1y": 0.43,
       "conc_top10": 41.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -16443,7 +16443,7 @@
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": 0.29,
-      "corr_1y": 0.29,
+      "corr_1y": 0.31,
       "conc_top10": 51.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -16599,10 +16599,10 @@
       "ticker": "SHY",
       "current_rank": 72.22222222222221,
       "abs_strength": 30.53435114503817,
-      "rank_1m_ago": 77.77777777777779,
+      "rank_1m_ago": 83.33333333333334,
       "rank_3m_ago": 61.111111111111114,
-      "base_rank_6m": 40.593434343434346,
-      "delta_1m": -5.555555555555571,
+      "base_rank_6m": 41.60493827160494,
+      "delta_1m": -11.111111111111128,
       "delta_3m": 11.1111111111111,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -16633,7 +16633,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": -0.01,
-      "corr_1y": -0.14,
+      "corr_1y": -0.13,
       "conc_top10": null,
       "cot_pctile": 96.0,
       "cot_net": -1288895.0,
@@ -16762,10 +16762,10 @@
       "current_rank": 68.75,
       "abs_strength": 55.72519083969466,
       "rank_1m_ago": 75.0,
-      "rank_3m_ago": 68.75,
-      "base_rank_6m": 79.9715909090909,
+      "rank_3m_ago": 62.5,
+      "base_rank_6m": 79.86111111111111,
       "delta_1m": -6.25,
-      "delta_3m": 0.0,
+      "delta_3m": 6.25,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Global X Silver Miners",
@@ -16794,7 +16794,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.85,
+      "beta_1y": 1.79,
       "corr_1y": 0.47,
       "conc_top10": null,
       "cot_pctile": null,
@@ -16925,7 +16925,7 @@
       "abs_strength": 70.22900763358778,
       "rank_1m_ago": 36.36363636363637,
       "rank_3m_ago": 27.27272727272727,
-      "base_rank_6m": 28.40909090909091,
+      "base_rank_6m": 28.58585858585859,
       "delta_1m": 9.090909090909086,
       "delta_3m": 18.181818181818183,
       "quadrant_1m": "neutral",
@@ -16956,7 +16956,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.72,
+      "beta_1y": 0.7,
       "corr_1y": 0.85,
       "conc_top10": 3.7,
       "cot_pctile": null,
@@ -17121,10 +17121,10 @@
       "ticker": "SLV",
       "current_rank": 37.5,
       "abs_strength": 37.404580152671755,
-      "rank_1m_ago": 62.5,
+      "rank_1m_ago": 68.75,
       "rank_3m_ago": 87.5,
-      "base_rank_6m": 86.15056818181819,
-      "delta_1m": -25.0,
+      "base_rank_6m": 85.76388888888889,
+      "delta_1m": -31.25,
       "delta_3m": -50.0,
       "quadrant_1m": "decayer",
       "quadrant_3m": "decayer",
@@ -17147,15 +17147,15 @@
       "atr_pct": 4.9864,
       "chandelier_stop": 43.7002,
       "stop_distance_pct": -17.7902,
-      "dollar_vol_20d": 1065003342.7,
-      "dollar_vol_trend": 11.7027,
+      "dollar_vol_20d": 1065370447.18,
+      "dollar_vol_trend": 11.7276,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 1.63,
-      "corr_1y": 0.44,
+      "beta_1y": 1.53,
+      "corr_1y": 0.43,
       "conc_top10": null,
       "cot_pctile": 3.0,
       "cot_net": 1280.0,
@@ -17283,10 +17283,10 @@
       "ticker": "SMH",
       "current_rank": 90.32258064516128,
       "abs_strength": 95.41984732824427,
-      "rank_1m_ago": 96.7741935483871,
+      "rank_1m_ago": 93.54838709677419,
       "rank_3m_ago": 96.7741935483871,
-      "base_rank_6m": 96.4442815249267,
-      "delta_1m": -6.451612903225822,
+      "base_rank_6m": 96.37992831541219,
+      "delta_1m": -3.225806451612911,
       "delta_3m": -6.451612903225822,
       "quadrant_1m": "decayer",
       "quadrant_3m": "decayer",
@@ -17309,15 +17309,15 @@
       "atr_pct": 7.1733,
       "chandelier_stop": 480.0871,
       "stop_distance_pct": -13.6409,
-      "dollar_vol_20d": 6464688701.22,
-      "dollar_vol_trend": 30.4723,
+      "dollar_vol_20d": 6465370974.1,
+      "dollar_vol_trend": 30.4804,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 2.09,
-      "corr_1y": 0.78,
+      "beta_1y": 1.99,
+      "corr_1y": 0.77,
       "conc_top10": 69.0,
       "cot_pctile": null,
       "cot_net": null,
@@ -17499,15 +17499,15 @@
       "atr_pct": 7.7967,
       "chandelier_stop": 144.7088,
       "stop_distance_pct": -13.0714,
-      "dollar_vol_20d": 6934261647.91,
-      "dollar_vol_trend": 37.7648,
+      "dollar_vol_20d": 6937422753.98,
+      "dollar_vol_trend": 37.8002,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 2.23,
-      "corr_1y": 0.74,
+      "beta_1y": 2.11,
+      "corr_1y": 0.72,
       "conc_top10": 61.0,
       "cot_pctile": null,
       "cot_net": null,
@@ -17661,36 +17661,36 @@
     },
     {
       "ticker": "SPY",
-      "current_rank": 50.0,
-      "abs_strength": 64.8854961832061,
-      "rank_1m_ago": 60.0,
-      "rank_3m_ago": 10.0,
-      "base_rank_6m": 29.886363636363637,
+      "current_rank": 40.0,
+      "abs_strength": 62.59541984732825,
+      "rank_1m_ago": 50.0,
+      "rank_3m_ago": 40.0,
+      "base_rank_6m": 30.444444444444443,
       "delta_1m": -10.0,
-      "delta_3m": 40.0,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "SPDR S&P 500",
       "category": "US Equity",
       "benchmark": "SPY",
-      "percentile_rank": 50.0,
-      "ret_1m": -6.881,
-      "ret_3m": -6.8241,
-      "ret_6m": -4.5414,
-      "ret_12m": 8.3296,
-      "vol_1m": 31.6382,
-      "vol_3m": 19.7347,
-      "vol_12m": 14.9303,
-      "sharpe_12m": 0.5579,
+      "percentile_rank": 40.0,
+      "ret_1m": -5.6959,
+      "ret_3m": -5.098,
+      "ret_6m": -3.2348,
+      "ret_12m": 9.0601,
+      "vol_1m": 32.4046,
+      "vol_3m": 20.0333,
+      "vol_12m": 15.0006,
+      "sharpe_12m": 0.604,
       "max_dd_12m": -11.4595,
-      "dist_52w_high": -8.0081,
-      "drawdown_now": -8.0081,
-      "atr_14": 15.5736,
-      "atr_pct": 2.173,
-      "chandelier_stop": 728.9193,
-      "stop_distance_pct": -1.7049,
-      "dollar_vol_20d": 47742646079.66,
-      "dollar_vol_trend": 29.8175,
+      "dist_52w_high": -6.5166,
+      "drawdown_now": -6.5166,
+      "atr_14": 15.3505,
+      "atr_pct": 2.1077,
+      "chandelier_stop": 729.5886,
+      "stop_distance_pct": -0.1742,
+      "dollar_vol_20d": 47672081922.55,
+      "dollar_vol_trend": 29.5477,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
@@ -17818,7 +17818,7 @@
         735.29,
         754.37,
         689.81,
-        716.7
+        728.32
       ],
       "holdings": [
         [
@@ -17862,10 +17862,10 @@
       "current_rank": 22.58064516129032,
       "abs_strength": 9.16030534351145,
       "rank_1m_ago": 25.806451612903224,
-      "rank_3m_ago": 58.06451612903226,
-      "base_rank_6m": 64.29618768328446,
+      "rank_3m_ago": 48.38709677419355,
+      "base_rank_6m": 63.44086021505377,
       "delta_1m": -3.225806451612904,
-      "delta_3m": -35.48387096774194,
+      "delta_3m": -25.80645161290323,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Invesco Solar",
@@ -17894,7 +17894,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.04,
+      "beta_1y": 1.0,
       "corr_1y": 0.41,
       "conc_top10": 62.3,
       "cot_pctile": null,
@@ -18059,11 +18059,11 @@
       "ticker": "TIP",
       "current_rank": 44.44444444444444,
       "abs_strength": 25.954198473282442,
-      "rank_1m_ago": 33.33333333333333,
-      "rank_3m_ago": 22.22222222222222,
-      "base_rank_6m": 35.858585858585855,
-      "delta_1m": 11.111111111111114,
-      "delta_3m": 22.22222222222222,
+      "rank_1m_ago": 50.0,
+      "rank_3m_ago": 16.666666666666664,
+      "base_rank_6m": 36.04938271604938,
+      "delta_1m": -5.555555555555557,
+      "delta_3m": 27.77777777777778,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "iShares TIPS Bond",
@@ -18093,7 +18093,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": -0.01,
-      "corr_1y": -0.06,
+      "corr_1y": -0.05,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -18223,7 +18223,7 @@
       "abs_strength": 11.450381679389313,
       "rank_1m_ago": 5.555555555555555,
       "rank_3m_ago": 5.555555555555555,
-      "base_rank_6m": 17.108585858585858,
+      "base_rank_6m": 16.85185185185185,
       "delta_1m": 0.0,
       "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
@@ -18247,15 +18247,15 @@
       "atr_pct": 0.9765,
       "chandelier_stop": 80.4007,
       "stop_distance_pct": 2.2365,
-      "dollar_vol_20d": 3177063982.5,
-      "dollar_vol_trend": -2.7408,
+      "dollar_vol_20d": 3177349766.49,
+      "dollar_vol_trend": -2.7348,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": -0.08,
-      "corr_1y": -0.12,
+      "beta_1y": -0.07,
+      "corr_1y": -0.1,
       "conc_top10": null,
       "cot_pctile": 11.0,
       "cot_net": -868604.0,
@@ -18384,10 +18384,10 @@
       "current_rank": 12.903225806451612,
       "abs_strength": 6.870229007633588,
       "rank_1m_ago": 9.67741935483871,
-      "rank_3m_ago": 29.03225806451613,
-      "base_rank_6m": 36.91348973607038,
+      "rank_3m_ago": 25.806451612903224,
+      "base_rank_6m": 36.308243727598565,
       "delta_1m": 3.225806451612902,
-      "delta_3m": -16.12903225806452,
+      "delta_3m": -12.903225806451612,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "VanEck Uranium & Nuclear",
@@ -18416,8 +18416,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.8,
-      "corr_1y": 0.66,
+      "beta_1y": 1.72,
+      "corr_1y": 0.65,
       "conc_top10": 54.2,
       "cot_pctile": null,
       "cot_net": null,
@@ -18582,10 +18582,10 @@
       "current_rank": 16.129032258064516,
       "abs_strength": 7.633587786259542,
       "rank_1m_ago": 12.903225806451612,
-      "rank_3m_ago": 22.58064516129032,
-      "base_rank_6m": 35.00733137829912,
+      "rank_3m_ago": 16.129032258064516,
+      "base_rank_6m": 34.587813620071685,
       "delta_1m": 3.225806451612904,
-      "delta_3m": -6.451612903225804,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Sprott Uranium Miners",
@@ -18614,8 +18614,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.55,
-      "corr_1y": 0.56,
+      "beta_1y": 1.49,
+      "corr_1y": 0.55,
       "conc_top10": 81.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -18775,13 +18775,13 @@
       "ticker": "USMV",
       "current_rank": 18.181818181818183,
       "abs_strength": 51.908396946564885,
-      "rank_1m_ago": 9.090909090909092,
-      "rank_3m_ago": 18.181818181818183,
-      "base_rank_6m": 11.466942148760332,
-      "delta_1m": 9.090909090909092,
-      "delta_3m": 0.0,
-      "quadrant_1m": "riser",
-      "quadrant_3m": "chronic_loser",
+      "rank_1m_ago": 18.181818181818183,
+      "rank_3m_ago": 9.090909090909092,
+      "base_rank_6m": 11.616161616161616,
+      "delta_1m": 0.0,
+      "delta_3m": 9.090909090909092,
+      "quadrant_1m": "chronic_loser",
+      "quadrant_3m": "riser",
       "name": "iShares Min Volatility",
       "category": "Factor",
       "benchmark": "SPY",
@@ -18808,7 +18808,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.53,
+      "beta_1y": 0.52,
       "corr_1y": 0.71,
       "conc_top10": 15.1,
       "cot_pctile": null,
@@ -18974,10 +18974,10 @@
       "current_rank": 100.0,
       "abs_strength": 100.0,
       "rank_1m_ago": 100.0,
-      "rank_3m_ago": 100.0,
-      "base_rank_6m": 88.99147727272727,
+      "rank_3m_ago": 93.75,
+      "base_rank_6m": 89.23611111111111,
       "delta_1m": 0.0,
-      "delta_3m": 0.0,
+      "delta_3m": 6.25,
       "quadrant_1m": "stable_winner",
       "quadrant_3m": "stable_winner",
       "name": "United States Oil Fund",
@@ -19006,8 +19006,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": -0.7,
-      "corr_1y": -0.19,
+      "beta_1y": -0.66,
+      "corr_1y": -0.18,
       "conc_top10": null,
       "cot_pctile": 10.0,
       "cot_net": 15814.0,
@@ -19137,7 +19137,7 @@
       "abs_strength": 40.458015267175576,
       "rank_1m_ago": 100.0,
       "rank_3m_ago": 100.0,
-      "base_rank_6m": 97.44318181818181,
+      "base_rank_6m": 97.5,
       "delta_1m": 0.0,
       "delta_3m": 0.0,
       "quadrant_1m": "stable_winner",
@@ -19297,10 +19297,10 @@
       "ticker": "VCIT",
       "current_rank": 22.22222222222222,
       "abs_strength": 18.3206106870229,
-      "rank_1m_ago": 27.77777777777778,
+      "rank_1m_ago": 22.22222222222222,
       "rank_3m_ago": 50.0,
-      "base_rank_6m": 56.060606060606055,
-      "delta_1m": -5.555555555555557,
+      "base_rank_6m": 55.37037037037037,
+      "delta_1m": 0.0,
       "delta_3m": -27.77777777777778,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -19323,15 +19323,15 @@
       "atr_pct": 0.4328,
       "chandelier_stop": 78.9155,
       "stop_distance_pct": 0.947,
-      "dollar_vol_20d": 972802737.39,
-      "dollar_vol_trend": 5.7211,
+      "dollar_vol_20d": 972914673.74,
+      "dollar_vol_trend": 5.7292,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.02,
-      "corr_1y": 0.08,
+      "beta_1y": 0.03,
+      "corr_1y": 0.09,
       "conc_top10": null,
       "cot_pctile": null,
       "cot_net": null,
@@ -19459,10 +19459,10 @@
       "ticker": "VCSH",
       "current_rank": 66.66666666666666,
       "abs_strength": 29.770992366412212,
-      "rank_1m_ago": 66.66666666666666,
+      "rank_1m_ago": 72.22222222222221,
       "rank_3m_ago": 66.66666666666666,
-      "base_rank_6m": 57.7020202020202,
-      "delta_1m": 0.0,
+      "base_rank_6m": 57.962962962962955,
+      "delta_1m": -5.555555555555557,
       "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -19621,11 +19621,11 @@
       "ticker": "VGK",
       "current_rank": 46.15384615384615,
       "abs_strength": 57.25190839694656,
-      "rank_1m_ago": 38.46153846153847,
-      "rank_3m_ago": 46.15384615384615,
-      "base_rank_6m": 41.04020979020979,
-      "delta_1m": 7.692307692307686,
-      "delta_3m": 0.0,
+      "rank_1m_ago": 46.15384615384615,
+      "rank_3m_ago": 38.46153846153847,
+      "base_rank_6m": 41.06837606837607,
+      "delta_1m": 0.0,
+      "delta_3m": 7.692307692307686,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Vanguard FTSE Europe",
@@ -19654,8 +19654,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.77,
-      "corr_1y": 0.72,
+      "beta_1y": 0.74,
+      "corr_1y": 0.71,
       "conc_top10": 19.6,
       "cot_pctile": null,
       "cot_net": null,
@@ -19821,7 +19821,7 @@
       "abs_strength": 59.541984732824424,
       "rank_1m_ago": 27.27272727272727,
       "rank_3m_ago": 36.36363636363637,
-      "base_rank_6m": 31.09504132231405,
+      "base_rank_6m": 31.01010101010101,
       "delta_1m": 0.0,
       "delta_3m": -9.090909090909097,
       "quadrant_1m": "neutral",
@@ -19852,7 +19852,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.65,
+      "beta_1y": 0.63,
       "corr_1y": 0.82,
       "conc_top10": 34.8,
       "cot_pctile": null,
@@ -20050,8 +20050,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.11,
-      "corr_1y": 0.75,
+      "beta_1y": 1.06,
+      "corr_1y": 0.74,
       "conc_top10": 42.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -20217,7 +20217,7 @@
       "abs_strength": 41.98473282442748,
       "rank_1m_ago": 80.0,
       "rank_3m_ago": 80.0,
-      "base_rank_6m": 79.54545454545455,
+      "base_rank_6m": 79.55555555555556,
       "delta_1m": -20.0,
       "delta_3m": -20.0,
       "quadrant_1m": "neutral",
@@ -20249,7 +20249,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": 0.33,
-      "corr_1y": 0.34,
+      "corr_1y": 0.35,
       "conc_top10": 55.9,
       "cot_pctile": null,
       "cot_net": null,
@@ -20415,7 +20415,7 @@
       "abs_strength": 12.213740458015266,
       "rank_1m_ago": 20.0,
       "rank_3m_ago": 20.0,
-      "base_rank_6m": 24.09090909090909,
+      "base_rank_6m": 24.0,
       "delta_1m": 0.0,
       "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
@@ -20446,7 +20446,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.55,
+      "beta_1y": 0.53,
       "corr_1y": 0.52,
       "conc_top10": 21.2,
       "cot_pctile": null,
@@ -20611,11 +20611,11 @@
       "ticker": "VOO",
       "current_rank": 60.0,
       "abs_strength": 66.41221374045801,
-      "rank_1m_ago": 70.0,
-      "rank_3m_ago": 40.0,
-      "base_rank_6m": 44.20454545454545,
-      "delta_1m": -10.0,
-      "delta_3m": 20.0,
+      "rank_1m_ago": 60.0,
+      "rank_3m_ago": 50.0,
+      "base_rank_6m": 44.77777777777778,
+      "delta_1m": 0.0,
+      "delta_3m": 10.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Vanguard S&P 500",
@@ -20637,15 +20637,15 @@
       "atr_pct": 2.1359,
       "chandelier_stop": 668.6206,
       "stop_distance_pct": -1.4799,
-      "dollar_vol_20d": 7240850159.43,
-      "dollar_vol_trend": 22.3077,
+      "dollar_vol_20d": 7241838464.42,
+      "dollar_vol_trend": 22.3179,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.99,
-      "corr_1y": 1.0,
+      "beta_1y": 0.95,
+      "corr_1y": 0.99,
       "conc_top10": 37.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -20809,11 +20809,11 @@
       "ticker": "VT",
       "current_rank": 53.84615384615385,
       "abs_strength": 65.64885496183206,
-      "rank_1m_ago": 53.84615384615385,
-      "rank_3m_ago": 34.61538461538461,
-      "base_rank_6m": 53.32167832167832,
-      "delta_1m": 0.0,
-      "delta_3m": 19.230769230769234,
+      "rank_1m_ago": 57.692307692307686,
+      "rank_3m_ago": 42.30769230769231,
+      "base_rank_6m": 53.37606837606837,
+      "delta_1m": -3.8461538461538396,
+      "delta_3m": 11.53846153846154,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Vanguard Total World Stock",
@@ -20842,7 +20842,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.98,
+      "beta_1y": 0.94,
       "corr_1y": 0.96,
       "conc_top10": 21.5,
       "cot_pctile": null,
@@ -21005,19 +21005,19 @@
     },
     {
       "ticker": "VTI",
-      "current_rank": 40.0,
-      "abs_strength": 64.12213740458014,
-      "rank_1m_ago": 50.0,
-      "rank_3m_ago": 50.0,
-      "base_rank_6m": 48.18181818181818,
-      "delta_1m": -10.0,
-      "delta_3m": -10.0,
+      "current_rank": 50.0,
+      "abs_strength": 64.8854961832061,
+      "rank_1m_ago": 40.0,
+      "rank_3m_ago": 70.0,
+      "base_rank_6m": 48.0,
+      "delta_1m": 10.0,
+      "delta_3m": -20.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Vanguard Total Market",
       "category": "US Equity",
       "benchmark": "SPY",
-      "percentile_rank": 40.0,
+      "percentile_rank": 50.0,
       "ret_1m": -6.5411,
       "ret_3m": -6.9723,
       "ret_6m": -4.453,
@@ -21040,8 +21040,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.98,
-      "corr_1y": 1.0,
+      "beta_1y": 0.94,
+      "corr_1y": 0.99,
       "conc_top10": 33.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -21205,10 +21205,10 @@
       "ticker": "VTIP",
       "current_rank": 88.88888888888889,
       "abs_strength": 33.587786259541986,
-      "rank_1m_ago": 72.22222222222221,
+      "rank_1m_ago": 88.88888888888889,
       "rank_3m_ago": 55.55555555555556,
-      "base_rank_6m": 56.69191919191919,
-      "delta_1m": 16.66666666666667,
+      "base_rank_6m": 57.345679012345684,
+      "delta_1m": 0.0,
       "delta_3m": 33.33333333333333,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
@@ -21369,7 +21369,7 @@
       "abs_strength": 46.56488549618321,
       "rank_1m_ago": 30.76923076923077,
       "rank_3m_ago": 30.76923076923077,
-      "base_rank_6m": 42.61363636363637,
+      "base_rank_6m": 42.35042735042735,
       "delta_1m": -3.8461538461538467,
       "delta_3m": -3.8461538461538467,
       "quadrant_1m": "neutral",
@@ -21400,7 +21400,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 1.05,
+      "beta_1y": 1.01,
       "corr_1y": 0.84,
       "conc_top10": 26.3,
       "cot_pctile": null,
@@ -21565,13 +21565,13 @@
       "ticker": "WCLD",
       "current_rank": 80.64516129032258,
       "abs_strength": 90.07633587786259,
-      "rank_1m_ago": 61.29032258064516,
-      "rank_3m_ago": 16.129032258064516,
-      "base_rank_6m": 24.596774193548388,
-      "delta_1m": 19.354838709677416,
-      "delta_3m": 64.51612903225806,
-      "quadrant_1m": "riser",
-      "quadrant_3m": "riser",
+      "rank_1m_ago": 64.51612903225806,
+      "rank_3m_ago": 19.35483870967742,
+      "base_rank_6m": 25.44802867383513,
+      "delta_1m": 16.129032258064512,
+      "delta_3m": 61.29032258064515,
+      "quadrant_1m": "neutral",
+      "quadrant_3m": "neutral",
       "name": "WisdomTree Cloud Computing",
       "category": "Thematic",
       "benchmark": "SPY",
@@ -21598,7 +21598,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.13,
+      "beta_1y": 1.09,
       "corr_1y": 0.4,
       "conc_top10": 20.3,
       "cot_pctile": null,
@@ -21760,10 +21760,10 @@
       "current_rank": 50.0,
       "abs_strength": 44.274809160305345,
       "rank_1m_ago": 43.75,
-      "rank_3m_ago": 18.75,
-      "base_rank_6m": 27.769886363636363,
+      "rank_3m_ago": 25.0,
+      "base_rank_6m": 28.125,
       "delta_1m": 6.25,
-      "delta_3m": 31.25,
+      "delta_3m": 25.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Teucrium Wheat Fund",
@@ -21792,8 +21792,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.17,
-      "corr_1y": 0.11,
+      "beta_1y": 0.16,
+      "corr_1y": 0.1,
       "conc_top10": null,
       "cot_pctile": 27.0,
       "cot_net": -84836.0,
@@ -21921,11 +21921,11 @@
       "ticker": "XAR",
       "current_rank": 35.483870967741936,
       "abs_strength": 29.00763358778626,
-      "rank_1m_ago": 32.25806451612903,
-      "rank_3m_ago": 48.38709677419355,
-      "base_rank_6m": 54.54545454545455,
-      "delta_1m": 3.225806451612904,
-      "delta_3m": -12.903225806451616,
+      "rank_1m_ago": 29.03225806451613,
+      "rank_3m_ago": 58.06451612903226,
+      "base_rank_6m": 54.01433691756272,
+      "delta_1m": 6.451612903225804,
+      "delta_3m": -22.580645161290327,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "SPDR Aerospace & Defense",
@@ -21954,7 +21954,7 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.28,
+      "beta_1y": 1.23,
       "corr_1y": 0.63,
       "conc_top10": 32.9,
       "cot_pctile": null,
@@ -22113,7 +22113,7 @@
       "abs_strength": 86.25954198473282,
       "rank_1m_ago": 90.32258064516128,
       "rank_3m_ago": 93.54838709677419,
-      "base_rank_6m": 88.52639296187682,
+      "base_rank_6m": 88.5663082437276,
       "delta_1m": -16.129032258064512,
       "delta_3m": -19.354838709677423,
       "quadrant_1m": "decayer",
@@ -22137,15 +22137,15 @@
       "atr_pct": 3.504,
       "chandelier_stop": 143.8281,
       "stop_distance_pct": 8.1557,
-      "dollar_vol_20d": 1462779544.44,
-      "dollar_vol_trend": 2.2253,
+      "dollar_vol_20d": 1462900126.45,
+      "dollar_vol_trend": 2.2309,
       "liquidity_flag": "ok",
       "est_flow": null,
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 1.01,
-      "corr_1y": 0.54,
+      "beta_1y": 1.02,
+      "corr_1y": 0.56,
       "conc_top10": 18.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -22307,7 +22307,7 @@
       "abs_strength": 80.91603053435115,
       "rank_1m_ago": 70.0,
       "rank_3m_ago": 60.0,
-      "base_rank_6m": 65.3409090909091,
+      "base_rank_6m": 65.44444444444444,
       "delta_1m": 10.0,
       "delta_3m": 20.0,
       "quadrant_1m": "neutral",
@@ -22339,7 +22339,7 @@
       "flow_window_days": 29.0,
       "flow_dir": "flat",
       "beta_1y": 0.61,
-      "corr_1y": 0.48,
+      "corr_1y": 0.49,
       "conc_top10": 58.1,
       "cot_pctile": null,
       "cot_net": null,
@@ -22500,10 +22500,10 @@
       "current_rank": 10.0,
       "abs_strength": 9.923664122137405,
       "rank_1m_ago": 30.0,
-      "rank_3m_ago": 20.0,
-      "base_rank_6m": 23.068181818181817,
+      "rank_3m_ago": 10.0,
+      "base_rank_6m": 23.22222222222222,
       "delta_1m": -20.0,
-      "delta_3m": -10.0,
+      "delta_3m": 0.0,
       "quadrant_1m": "chronic_loser",
       "quadrant_3m": "chronic_loser",
       "name": "Communication Services",
@@ -22532,8 +22532,8 @@
       "est_flow_pct": null,
       "flow_window_days": null,
       "flow_dir": null,
-      "beta_1y": 0.91,
-      "corr_1y": 0.7,
+      "beta_1y": 0.89,
+      "corr_1y": 0.71,
       "conc_top10": 75.2,
       "cot_pctile": null,
       "cot_net": null,
@@ -22690,10 +22690,10 @@
       "current_rank": 100.0,
       "abs_strength": 93.89312977099237,
       "rank_1m_ago": 100.0,
-      "rank_3m_ago": 100.0,
-      "base_rank_6m": 94.54545454545455,
+      "rank_3m_ago": 90.0,
+      "base_rank_6m": 94.66666666666667,
       "delta_1m": 0.0,
-      "delta_3m": 0.0,
+      "delta_3m": 10.0,
       "quadrant_1m": "stable_winner",
       "quadrant_3m": "stable_winner",
       "name": "Energy Select",
@@ -22715,14 +22715,14 @@
       "atr_pct": 2.479,
       "chandelier_stop": 65.6208,
       "stop_distance_pct": -7.7518,
-      "dollar_vol_20d": 2337219574.22,
-      "dollar_vol_trend": 7.2042,
+      "dollar_vol_20d": 2337255200.72,
+      "dollar_vol_trend": 7.2053,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": -0.14,
+      "beta_1y": -0.13,
       "corr_1y": -0.07,
       "conc_top10": 78.4,
       "cot_pctile": null,
@@ -22881,7 +22881,7 @@
       "abs_strength": 47.32824427480916,
       "rank_1m_ago": 40.0,
       "rank_3m_ago": 30.0,
-      "base_rank_6m": 31.25,
+      "base_rank_6m": 31.444444444444443,
       "delta_1m": 0.0,
       "delta_3m": 10.0,
       "quadrant_1m": "neutral",
@@ -22905,14 +22905,14 @@
       "atr_pct": 1.8292,
       "chandelier_stop": 56.939,
       "stop_distance_pct": -0.7591,
-      "dollar_vol_20d": 2428684569.84,
-      "dollar_vol_trend": 16.6595,
+      "dollar_vol_20d": 2428775550.93,
+      "dollar_vol_trend": 16.6622,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.66,
+      "beta_1y": 0.64,
       "corr_1y": 0.64,
       "conc_top10": 57.2,
       "cot_pctile": null,
@@ -23078,10 +23078,10 @@
       "current_rank": 50.0,
       "abs_strength": 54.19847328244275,
       "rank_1m_ago": 60.0,
-      "rank_3m_ago": 70.0,
-      "base_rank_6m": 72.27272727272727,
+      "rank_3m_ago": 80.0,
+      "base_rank_6m": 72.0,
       "delta_1m": -10.0,
-      "delta_3m": -20.0,
+      "delta_3m": -30.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Industrial Select",
@@ -23110,8 +23110,8 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.76,
-      "corr_1y": 0.7,
+      "beta_1y": 0.74,
+      "corr_1y": 0.71,
       "conc_top10": 37.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -23276,12 +23276,12 @@
       "current_rank": 90.0,
       "abs_strength": 89.31297709923665,
       "rank_1m_ago": 90.0,
-      "rank_3m_ago": 90.0,
-      "base_rank_6m": 95.22727272727273,
+      "rank_3m_ago": 100.0,
+      "base_rank_6m": 95.11111111111111,
       "delta_1m": 0.0,
-      "delta_3m": 0.0,
+      "delta_3m": -10.0,
       "quadrant_1m": "stable_winner",
-      "quadrant_3m": "stable_winner",
+      "quadrant_3m": "decayer",
       "name": "Technology Select",
       "category": "US Sector",
       "benchmark": "SPY",
@@ -23301,15 +23301,15 @@
       "atr_pct": 4.5369,
       "chandelier_stop": 170.3458,
       "stop_distance_pct": -9.3432,
-      "dollar_vol_20d": 2829264124.0,
-      "dollar_vol_trend": 48.2037,
+      "dollar_vol_20d": 2829502482.69,
+      "dollar_vol_trend": 48.2103,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 1.66,
-      "corr_1y": 0.88,
+      "beta_1y": 1.58,
+      "corr_1y": 0.87,
       "conc_top10": 64.6,
       "cot_pctile": null,
       "cot_net": null,
@@ -23464,12 +23464,12 @@
     {
       "ticker": "XLP",
       "current_rank": 60.0,
-      "abs_strength": 62.59541984732825,
+      "abs_strength": 63.358778625954194,
       "rank_1m_ago": 50.0,
-      "rank_3m_ago": 50.0,
-      "base_rank_6m": 35.22727272727273,
+      "rank_3m_ago": 40.0,
+      "base_rank_6m": 35.55555555555556,
       "delta_1m": 10.0,
-      "delta_3m": 10.0,
+      "delta_3m": 20.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Consumer Staples Select",
@@ -23491,15 +23491,15 @@
       "atr_pct": 1.6171,
       "chandelier_stop": 89.0022,
       "stop_distance_pct": 3.573,
-      "dollar_vol_20d": 2044008861.33,
-      "dollar_vol_trend": 51.7592,
+      "dollar_vol_20d": 2044204537.34,
+      "dollar_vol_trend": 51.7667,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.11,
-      "corr_1y": 0.12,
+      "beta_1y": 0.12,
+      "corr_1y": 0.13,
       "conc_top10": 63.3,
       "cot_pctile": null,
       "cot_net": null,
@@ -23664,10 +23664,10 @@
       "current_rank": 80.0,
       "abs_strength": 42.74809160305343,
       "rank_1m_ago": 60.0,
-      "rank_3m_ago": 40.0,
-      "base_rank_6m": 49.54545454545455,
+      "rank_3m_ago": 60.0,
+      "base_rank_6m": 49.77777777777778,
       "delta_1m": 20.0,
-      "delta_3m": 40.0,
+      "delta_3m": 20.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Real Estate Select SPDR",
@@ -23697,7 +23697,7 @@
       "flow_window_days": null,
       "flow_dir": null,
       "beta_1y": 0.32,
-      "corr_1y": 0.32,
+      "corr_1y": 0.33,
       "conc_top10": 59.0,
       "cot_pctile": null,
       "cot_net": null,
@@ -23854,10 +23854,10 @@
       "current_rank": 20.0,
       "abs_strength": 19.84732824427481,
       "rank_1m_ago": 10.0,
-      "rank_3m_ago": 40.0,
-      "base_rank_6m": 38.75,
+      "rank_3m_ago": 50.0,
+      "base_rank_6m": 38.111111111111114,
       "delta_1m": 10.0,
-      "delta_3m": -20.0,
+      "delta_3m": -30.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Utilities Select",
@@ -23879,15 +23879,15 @@
       "atr_pct": 1.4289,
       "chandelier_stop": 42.5306,
       "stop_distance_pct": 2.4751,
-      "dollar_vol_20d": 1136007237.49,
-      "dollar_vol_trend": -2.7851,
+      "dollar_vol_20d": 1136047358.69,
+      "dollar_vol_trend": -2.7828,
       "liquidity_flag": "ok",
       "est_flow": 0.0,
       "est_flow_pct": 0.0,
       "flow_window_days": 29.0,
       "flow_dir": "flat",
-      "beta_1y": 0.04,
-      "corr_1y": 0.03,
+      "beta_1y": 0.05,
+      "corr_1y": 0.04,
       "conc_top10": 58.7,
       "cot_pctile": null,
       "cot_net": null,
@@ -24044,10 +24044,10 @@
       "current_rank": 70.0,
       "abs_strength": 70.99236641221374,
       "rank_1m_ago": 80.0,
-      "rank_3m_ago": 80.0,
-      "base_rank_6m": 68.52272727272727,
+      "rank_3m_ago": 70.0,
+      "base_rank_6m": 68.77777777777777,
       "delta_1m": -10.0,
-      "delta_3m": -10.0,
+      "delta_3m": 0.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Health Care Select",
@@ -24077,7 +24077,7 @@
       "flow_window_days": 18.0,
       "flow_dir": "flat",
       "beta_1y": 0.34,
-      "corr_1y": 0.29,
+      "corr_1y": 0.3,
       "conc_top10": 61.4,
       "cot_pctile": null,
       "cot_net": null,
@@ -24234,10 +24234,10 @@
       "current_rank": 30.0,
       "abs_strength": 32.06106870229007,
       "rank_1m_ago": 20.0,
-      "rank_3m_ago": 10.0,
-      "base_rank_6m": 25.795454545454547,
+      "rank_3m_ago": 20.0,
+      "base_rank_6m": 25.666666666666668,
       "delta_1m": 10.0,
-      "delta_3m": 20.0,
+      "delta_3m": 10.0,
       "quadrant_1m": "neutral",
       "quadrant_3m": "neutral",
       "name": "Consumer Discret Select",
@@ -24266,7 +24266,7 @@
       "est_flow_pct": 0.0,
       "flow_window_days": 18.0,
       "flow_dir": "flat",
-      "beta_1y": 0.95,
+      "beta_1y": 0.92,
       "corr_1y": 0.74,
       "conc_top10": 67.5,
       "cot_pctile": null,
@@ -24436,7 +24436,7 @@
     "US Sector"
   ],
   "barometer": {
-    "as_of": "2026-11-25",
+    "as_of": "2026-11-27",
     "indicators": [
       {
         "key": "hy_spread",
@@ -24444,13 +24444,13 @@
         "source": "FRED BAMLH0A0HYM2",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 3.72,
+        "value": 3.77,
         "zone": "alarm",
         "base_threshold": 3.0,
         "alarm_threshold": 3.5,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": -0.22,
-        "z": 3.54,
+        "dist_to_alarm": -0.27,
+        "z": 3.75,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "flat",
@@ -24498,17 +24498,17 @@
         "source": "yfinance ^VIX",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 26.8,
-        "zone": "alarm",
+        "value": 23.81,
+        "zone": "gray",
         "base_threshold": 20.0,
         "alarm_threshold": 25.0,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": -1.8,
-        "z": 3.7,
+        "dist_to_alarm": 1.19,
+        "z": 2.54,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "up",
-        "change_4w_pct": 22.48
+        "change_4w_pct": 32.84
       },
       {
         "key": "breakeven_10y",
@@ -24516,17 +24516,17 @@
         "source": "FRED T10YIE",
         "kind": "abs",
         "stress_dir": "high",
-        "value": 2.12,
+        "value": 2.15,
         "zone": "base",
         "base_threshold": 2.4,
         "alarm_threshold": 2.6,
         "calibrated": "2026-06-18",
-        "dist_to_alarm": 0.48,
-        "z": -2.83,
+        "dist_to_alarm": 0.45,
+        "z": -2.43,
         "z_base": null,
         "z_alarm": null,
         "trend_4w": "down",
-        "change_4w_pct": -3.94
+        "change_4w_pct": -3.8
       },
       {
         "key": "move",
@@ -24534,17 +24534,17 @@
         "source": "yfinance ^MOVE",
         "kind": "robust_z",
         "stress_dir": "high",
-        "value": 97.54,
+        "value": 95.3,
         "zone": "base",
         "base_threshold": null,
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": 0.93,
+        "z": 0.8,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "up",
-        "change_4w_pct": 6.29
+        "change_4w_pct": 5.24
       },
       {
         "key": "hyg_lqd",
@@ -24576,7 +24576,7 @@
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": -1.2,
+        "z": -1.19,
         "z_base": 1.0,
         "z_alarm": 2.0,
         "trend_4w": "down",
@@ -24606,27 +24606,27 @@
         "source": "yfinance VUG/VTV (\u0440\u0430\u0441\u0442\u0435\u0436/\u0441\u0442\u043e\u0439\u043d\u043e\u0441\u0442; z_alarm 2.5 \u2014 S16)",
         "kind": "robust_z",
         "stress_dir": "high",
-        "value": 0.3579,
+        "value": 0.3607,
         "zone": "base",
         "base_threshold": null,
         "alarm_threshold": null,
         "calibrated": null,
         "dist_to_alarm": null,
-        "z": -1.98,
+        "z": -1.87,
         "z_base": 1.0,
         "z_alarm": 2.5,
         "trend_4w": "down",
-        "change_4w_pct": -2.85
+        "change_4w_pct": -2.91
       }
     ],
     "snapshot": [
       {
         "indicator": "HY-spread",
-        "value": 3.72,
+        "value": 3.77,
         "kind": "abs",
         "base": 3.0,
         "alarm": 3.5,
-        "z": 3.54,
+        "z": 3.75,
         "zone": "alarm",
         "trend": "flat",
         "stress_dir": "high",
@@ -24734,14 +24734,14 @@
             "value": 3.76
           },
           {
-            "date": "2026-11-24",
-            "value": 3.72
+            "date": "2026-11-26",
+            "value": 3.77
           }
         ],
-        "value_date": "2026-11-24",
-        "value_since": "2026-11-24",
-        "lag_sessions": 2,
-        "freshness": "late",
+        "value_date": "2026-11-26",
+        "value_since": "2026-11-25",
+        "lag_sessions": 1,
+        "freshness": "fresh",
         "stale": false
       },
       {
@@ -24864,8 +24864,8 @@
         ],
         "value_date": "2026-11-25",
         "value_since": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
@@ -24988,18 +24988,18 @@
         ],
         "value_date": "2026-11-25",
         "value_since": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
         "indicator": "VIX",
-        "value": 26.8,
+        "value": 23.81,
         "kind": "abs",
         "base": 20.0,
         "alarm": 25.0,
-        "z": 3.7,
-        "zone": "alarm",
+        "z": 2.54,
+        "zone": "gray",
         "trend": "up",
         "stress_dir": "high",
         "z_base": null,
@@ -25106,23 +25106,23 @@
             "value": 35.89
           },
           {
-            "date": "2026-11-26",
-            "value": 26.8
+            "date": "2026-11-27",
+            "value": 23.81
           }
         ],
-        "value_date": "2026-11-26",
-        "value_since": "2026-11-26",
+        "value_date": "2026-11-27",
+        "value_since": "2026-11-27",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
       },
       {
         "indicator": "10Y breakeven",
-        "value": 2.12,
+        "value": 2.15,
         "kind": "abs",
         "base": 2.4,
         "alarm": 2.6,
-        "z": -2.83,
+        "z": -2.43,
         "zone": "base",
         "trend": "down",
         "stress_dir": "high",
@@ -25230,23 +25230,23 @@
             "value": 2.15
           },
           {
-            "date": "2026-11-25",
-            "value": 2.12
+            "date": "2026-11-27",
+            "value": 2.15
           }
         ],
-        "value_date": "2026-11-25",
-        "value_since": "2026-11-24",
-        "lag_sessions": 1,
+        "value_date": "2026-11-27",
+        "value_since": "2026-11-27",
+        "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
       },
       {
         "indicator": "MOVE",
-        "value": 97.54,
+        "value": 95.3,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": 0.93,
+        "z": 0.8,
         "zone": "base",
         "trend": "up",
         "stress_dir": "high",
@@ -25354,13 +25354,13 @@
             "value": 106.31
           },
           {
-            "date": "2026-11-25",
-            "value": 97.54
+            "date": "2026-11-27",
+            "value": 95.3
           }
         ],
-        "value_date": "2026-11-25",
-        "value_since": "2026-11-25",
-        "lag_sessions": 1,
+        "value_date": "2026-11-27",
+        "value_since": "2026-11-27",
+        "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
       },
@@ -25484,8 +25484,8 @@
         ],
         "value_date": "2026-11-25",
         "value_since": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
@@ -25494,7 +25494,7 @@
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": -1.2,
+        "z": -1.19,
         "zone": "gray",
         "trend": "down",
         "stress_dir": "low",
@@ -25608,8 +25608,8 @@
         ],
         "value_date": "2026-11-25",
         "value_since": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
@@ -25732,17 +25732,17 @@
         ],
         "value_date": "2026-11-25",
         "value_since": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
         "indicator": "VUG/VTV",
-        "value": 0.3579,
+        "value": 0.3607,
         "kind": "robust_z",
         "base": null,
         "alarm": null,
-        "z": -1.98,
+        "z": -1.87,
         "zone": "base",
         "trend": "down",
         "stress_dir": "high",
@@ -25850,13 +25850,13 @@
             "value": 0.3533
           },
           {
-            "date": "2026-11-25",
-            "value": 0.3579
+            "date": "2026-11-27",
+            "value": 0.3607
           }
         ],
-        "value_date": "2026-11-25",
-        "value_since": "2026-11-25",
-        "lag_sessions": 1,
+        "value_date": "2026-11-27",
+        "value_since": "2026-11-27",
+        "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
       }
@@ -25866,13 +25866,13 @@
         "indicator": "HY-spread",
         "zone": "alarm",
         "kind": "abs",
-        "dist_to_alarm": -0.22,
-        "z": 3.54,
+        "dist_to_alarm": -0.27,
+        "z": 3.75,
         "trend_4w": "flat",
         "change_4w_pct": 1.9,
-        "value_date": "2026-11-24",
-        "lag_sessions": 2,
-        "freshness": "late",
+        "value_date": "2026-11-26",
+        "lag_sessions": 1,
+        "freshness": "fresh",
         "stale": false
       },
       {
@@ -25884,8 +25884,8 @@
         "trend_4w": "flat",
         "change_4w_pct": -1.49,
         "value_date": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
@@ -25897,19 +25897,19 @@
         "trend_4w": "down",
         "change_4w_pct": -5.29,
         "value_date": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
         "indicator": "VIX",
-        "zone": "alarm",
+        "zone": "gray",
         "kind": "abs",
-        "dist_to_alarm": -1.8,
-        "z": 3.7,
+        "dist_to_alarm": 1.19,
+        "z": 2.54,
         "trend_4w": "up",
-        "change_4w_pct": 22.48,
-        "value_date": "2026-11-26",
+        "change_4w_pct": 32.84,
+        "value_date": "2026-11-27",
         "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
@@ -25918,12 +25918,12 @@
         "indicator": "10Y breakeven",
         "zone": "base",
         "kind": "abs",
-        "dist_to_alarm": 0.48,
-        "z": -2.83,
+        "dist_to_alarm": 0.45,
+        "z": -2.43,
         "trend_4w": "down",
-        "change_4w_pct": -3.94,
-        "value_date": "2026-11-25",
-        "lag_sessions": 1,
+        "change_4w_pct": -3.8,
+        "value_date": "2026-11-27",
+        "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
       },
@@ -25932,11 +25932,11 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": 0.93,
+        "z": 0.8,
         "trend_4w": "up",
-        "change_4w_pct": 6.29,
-        "value_date": "2026-11-25",
-        "lag_sessions": 1,
+        "change_4w_pct": 5.24,
+        "value_date": "2026-11-27",
+        "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
       },
@@ -25949,8 +25949,8 @@
         "trend_4w": "flat",
         "change_4w_pct": 0.28,
         "value_date": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
@@ -25958,12 +25958,12 @@
         "zone": "gray",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": -1.2,
+        "z": -1.19,
         "trend_4w": "down",
         "change_4w_pct": -2.05,
         "value_date": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
@@ -25975,8 +25975,8 @@
         "trend_4w": "flat",
         "change_4w_pct": -0.26,
         "value_date": "2026-11-25",
-        "lag_sessions": 1,
-        "freshness": "fresh",
+        "lag_sessions": 2,
+        "freshness": "late",
         "stale": false
       },
       {
@@ -25984,23 +25984,22 @@
         "zone": "base",
         "kind": "robust_z",
         "dist_to_alarm": null,
-        "z": -1.98,
+        "z": -1.87,
         "trend_4w": "down",
-        "change_4w_pct": -2.85,
-        "value_date": "2026-11-25",
-        "lag_sessions": 1,
+        "change_4w_pct": -2.91,
+        "value_date": "2026-11-27",
+        "lag_sessions": 0,
         "freshness": "fresh",
         "stale": false
       }
     ],
     "confluence": {
-      "alarm_count": 2,
+      "alarm_count": 1,
       "base_count": 6,
-      "gray_count": 2,
+      "gray_count": 3,
       "unknown_count": 0,
       "alarm": [
-        "HY-spread",
-        "VIX"
+        "HY-spread"
       ],
       "base": [
         "GLD/TLT",
@@ -26012,13 +26011,14 @@
       ],
       "gray": [
         "XLE/SPY",
+        "VIX",
         "XLY/XLP"
       ],
-      "net": -4,
+      "net": -5,
       "alarm_conf_threshold": 2,
       "conf_net_threshold": 2,
       "has_confluence": true,
-      "direction": "alarm",
+      "direction": "base",
       "factor_groups": {
         "credit": {
           "members": [
@@ -26036,11 +26036,9 @@
             "vix",
             "move"
           ],
-          "in_alarm": true,
+          "in_alarm": false,
           "all_base": false,
-          "alarm_members": [
-            "vix"
-          ]
+          "alarm_members": []
         },
         "infl_rates": {
           "members": [
@@ -26070,10 +26068,9 @@
         }
       },
       "alarm_groups": [
-        "credit",
-        "volatility"
+        "credit"
       ],
-      "alarm_group_count": 2,
+      "alarm_group_count": 1,
       "base_groups": [
         "growth_value"
       ],
@@ -26083,10 +26080,10 @@
           "note": "\u0440\u0435\u0436\u0438\u043c\u0435\u043d \u043c\u0430\u0440\u043a\u0435\u0440 \u2014 \u043d\u0435 \u0433\u043b\u0430\u0441 \u0432 \u0431\u0440\u043e\u044f\u0447\u0430"
         },
         "t10y2y": {
-          "value": 0.28,
+          "value": 0.24,
           "zone": "gray",
           "label": "\u043f\u043b\u043e\u0441\u043a\u0430",
-          "value_date": "2026-11-24",
+          "value_date": "2026-11-25",
           "note": "\u043b\u0438\u0434\u0435\u0440\u0435\u043d \u0431\u0430\u0434\u0436 (\u043a\u0440\u0438\u0432\u0430 2s10s) \u2014 \u043e\u0446\u0432\u0435\u0442\u044f\u0432\u0430 \u043f\u0440\u043e\u0447\u0438\u0442\u0430, \u041d\u0415 \u0433\u043b\u0430\u0441 \u0432 \u0431\u0440\u043e\u044f\u0447\u0430",
           "lag_sessions": 2,
           "freshness": "late",
@@ -26094,23 +26091,27 @@
         }
       },
       "group_conf_threshold": 2,
-      "has_confluence_grouped": true,
-      "direction_grouped": "alarm"
+      "has_confluence_grouped": false,
+      "direction_grouped": "single"
     },
     "freshness": {
-      "newest_cohort": "2026-11-26",
+      "newest_cohort": "2026-11-27",
       "unit": "weekday sessions",
       "fresh_lag": 1,
       "stale_lag": 3,
       "late": [
-        "HY-spread"
+        "XLE/SPY",
+        "GLD/TLT",
+        "HYG/LQD",
+        "XLY/XLP",
+        "IWM/SPY"
       ],
       "stale": [],
       "missing": []
     }
   },
   "macro": {
-    "as_of": "2026-11-25",
+    "as_of": "2026-11-27",
     "items": [
       {
         "key": "stlfsi",
@@ -26182,8 +26183,8 @@
   },
   "movers": {
     "available": true,
-    "as_of": "2026-11-25",
-    "prev_date": "2026-11-18",
+    "as_of": "2026-11-27",
+    "prev_date": "2026-11-20",
     "window_bdays": 5,
     "threshold": 15.0,
     "top_n": 15,
@@ -26197,60 +26198,28 @@
         "delta": 33
       },
       {
-        "ticker": "VOO",
-        "name": "Vanguard S&P 500",
-        "category": "US Equity",
-        "prev": 30,
-        "now": 60,
-        "delta": 30
+        "ticker": "MTUM",
+        "name": "iShares MSCI Momentum",
+        "category": "Factor",
+        "prev": 55,
+        "now": 73,
+        "delta": 18
       },
       {
-        "ticker": "IVV",
-        "name": "iShares Core S&P 500",
-        "category": "US Equity",
-        "prev": 40,
-        "now": 70,
-        "delta": 30
-      },
-      {
-        "ticker": "SPY",
-        "name": "SPDR S&P 500",
-        "category": "US Equity",
-        "prev": 20,
-        "now": 50,
-        "delta": 30
+        "ticker": "EWW",
+        "name": "iShares MSCI Mexico",
+        "category": "Intl Equity",
+        "prev": 50,
+        "now": 65,
+        "delta": 15
       },
       {
         "ticker": "EIS",
         "name": "iShares MSCI Israel",
         "category": "Intl Equity",
-        "prev": 69,
+        "prev": 77,
         "now": 92,
-        "delta": 23
-      },
-      {
-        "ticker": "EWA",
-        "name": "iShares MSCI Australia",
-        "category": "Intl Equity",
-        "prev": 62,
-        "now": 81,
-        "delta": 19
-      },
-      {
-        "ticker": "CORN",
-        "name": "Teucrium Corn Fund",
-        "category": "Commodity",
-        "prev": 12,
-        "now": 31,
-        "delta": 19
-      },
-      {
-        "ticker": "DBA",
-        "name": "Invesco DB Agriculture",
-        "category": "Commodity",
-        "prev": 44,
-        "now": 62,
-        "delta": 19
+        "delta": 15
       }
     ],
     "down": [
@@ -26263,20 +26232,20 @@
         "delta": -58
       },
       {
-        "ticker": "IJH",
-        "name": "iShares Core S&P Mid-Cap",
-        "category": "US Equity",
-        "prev": 70,
-        "now": 30,
-        "delta": -40
+        "ticker": "DVY",
+        "name": "iShares Select Dividend",
+        "category": "Factor",
+        "prev": 73,
+        "now": 55,
+        "delta": -18
       },
       {
-        "ticker": "MDY",
-        "name": "SPDR S&P 400 Mid-Cap",
-        "category": "US Equity",
-        "prev": 60,
-        "now": 20,
-        "delta": -40
+        "ticker": "EWU",
+        "name": "iShares MSCI UK",
+        "category": "Intl Equity",
+        "prev": 73,
+        "now": 58,
+        "delta": -15
       }
     ],
     "entered": [
@@ -26284,17 +26253,17 @@
         "ticker": "BUG",
         "name": "Global X Cybersecurity",
         "category": "Thematic",
-        "prev": 87,
+        "prev": 90,
         "now": 94,
-        "delta": 6
+        "delta": 3
       },
       {
         "ticker": "EIS",
         "name": "iShares MSCI Israel",
         "category": "Intl Equity",
-        "prev": 69,
+        "prev": 77,
         "now": 92,
-        "delta": 23
+        "delta": 15
       }
     ],
     "left": [
@@ -26346,7 +26315,7 @@
       "2026-11-06",
       "2026-11-13",
       "2026-11-20",
-      "2026-11-25"
+      "2026-11-27"
     ],
     "categories": [
       "Factor",
@@ -26470,7 +26439,7 @@
         56.5,
         63.0,
         64.1,
-        58.4
+        58.8
       ],
       "Thematic": [
         71.8,
@@ -26635,36 +26604,36 @@
     "data": {
       "SPY": {
         "TLT": {
-          "c26": -0.41,
-          "c52": -0.12
+          "c26": -0.37,
+          "c52": -0.1
         },
         "GLD": {
-          "c26": 0.49,
-          "c52": 0.45
+          "c26": 0.48,
+          "c52": 0.44
         },
         "USO": {
-          "c26": -0.08,
-          "c52": -0.19
+          "c26": -0.07,
+          "c52": -0.18
         },
         "UUP": {
           "c26": -0.11,
           "c52": -0.2
         },
         "EEM": {
-          "c26": 0.83,
+          "c26": 0.82,
           "c52": 0.78
         },
         "HYG": {
-          "c26": 0.47,
-          "c52": 0.59
+          "c26": 0.46,
+          "c52": 0.58
         },
         "URA": {
-          "c26": 0.77,
-          "c52": 0.66
+          "c26": 0.75,
+          "c52": 0.65
         },
         "SOXX": {
-          "c26": 0.76,
-          "c52": 0.74
+          "c26": 0.74,
+          "c52": 0.72
         },
         "ITA": {
           "c26": 0.65,
@@ -26673,8 +26642,8 @@
       },
       "QQQ": {
         "SPY": {
-          "c26": 0.94,
-          "c52": 0.94
+          "c26": 0.93,
+          "c52": 0.93
         },
         "TLT": {
           "c26": -0.43,
@@ -26715,7 +26684,7 @@
       },
       "IWM": {
         "SPY": {
-          "c26": 0.77,
+          "c26": 0.78,
           "c52": 0.77
         },
         "TLT": {
@@ -26799,8 +26768,8 @@
       },
       "VTI": {
         "SPY": {
-          "c26": 1.0,
-          "c52": 1.0
+          "c26": 0.99,
+          "c52": 0.99
         },
         "TLT": {
           "c26": -0.39,
@@ -26841,8 +26810,8 @@
       },
       "MDY": {
         "SPY": {
-          "c26": 0.81,
-          "c52": 0.75
+          "c26": 0.82,
+          "c52": 0.76
         },
         "TLT": {
           "c26": -0.23,
@@ -26883,7 +26852,7 @@
       },
       "IJH": {
         "SPY": {
-          "c26": 0.81,
+          "c26": 0.82,
           "c52": 0.76
         },
         "TLT": {
@@ -26925,8 +26894,8 @@
       },
       "IJR": {
         "SPY": {
-          "c26": 0.66,
-          "c52": 0.65
+          "c26": 0.68,
+          "c52": 0.66
         },
         "TLT": {
           "c26": -0.11,
@@ -26967,8 +26936,8 @@
       },
       "IVV": {
         "SPY": {
-          "c26": 1.0,
-          "c52": 1.0
+          "c26": 0.99,
+          "c52": 0.99
         },
         "TLT": {
           "c26": -0.41,
@@ -27009,8 +26978,8 @@
       },
       "VOO": {
         "SPY": {
-          "c26": 1.0,
-          "c52": 1.0
+          "c26": 0.99,
+          "c52": 0.99
         },
         "TLT": {
           "c26": -0.41,
@@ -27051,8 +27020,8 @@
       },
       "XLK": {
         "SPY": {
-          "c26": 0.9,
-          "c52": 0.88
+          "c26": 0.88,
+          "c52": 0.87
         },
         "TLT": {
           "c26": -0.42,
@@ -27135,7 +27104,7 @@
       },
       "XLE": {
         "SPY": {
-          "c26": 0.24,
+          "c26": 0.23,
           "c52": -0.07
         },
         "TLT": {
@@ -27177,8 +27146,8 @@
       },
       "XLV": {
         "SPY": {
-          "c26": 0.29,
-          "c52": 0.29
+          "c26": 0.3,
+          "c52": 0.3
         },
         "TLT": {
           "c26": 0.02,
@@ -27219,8 +27188,8 @@
       },
       "XLI": {
         "SPY": {
-          "c26": 0.77,
-          "c52": 0.7
+          "c26": 0.78,
+          "c52": 0.71
         },
         "TLT": {
           "c26": -0.32,
@@ -27303,8 +27272,8 @@
       },
       "XLP": {
         "SPY": {
-          "c26": 0.16,
-          "c52": 0.12
+          "c26": 0.17,
+          "c52": 0.13
         },
         "TLT": {
           "c26": 0.21,
@@ -27345,8 +27314,8 @@
       },
       "XLU": {
         "SPY": {
-          "c26": 0.16,
-          "c52": 0.03
+          "c26": 0.18,
+          "c52": 0.04
         },
         "TLT": {
           "c26": 0.1,
@@ -27387,8 +27356,8 @@
       },
       "XLB": {
         "SPY": {
-          "c26": 0.64,
-          "c52": 0.48
+          "c26": 0.66,
+          "c52": 0.49
         },
         "TLT": {
           "c26": 0.12,
@@ -27429,8 +27398,8 @@
       },
       "XLC": {
         "SPY": {
-          "c26": 0.68,
-          "c52": 0.7
+          "c26": 0.69,
+          "c52": 0.71
         },
         "TLT": {
           "c26": -0.35,
@@ -27513,8 +27482,8 @@
       },
       "MTUM": {
         "SPY": {
-          "c26": 0.75,
-          "c52": 0.79
+          "c26": 0.73,
+          "c52": 0.77
         },
         "TLT": {
           "c26": -0.48,
@@ -27555,7 +27524,7 @@
       },
       "USMV": {
         "SPY": {
-          "c26": 0.79,
+          "c26": 0.8,
           "c52": 0.71
         },
         "TLT": {
@@ -27598,7 +27567,7 @@
       "VLUE": {
         "SPY": {
           "c26": 0.77,
-          "c52": 0.75
+          "c52": 0.74
         },
         "TLT": {
           "c26": -0.32,
@@ -27639,7 +27608,7 @@
       },
       "SIZE": {
         "SPY": {
-          "c26": 0.86,
+          "c26": 0.87,
           "c52": 0.85
         },
         "TLT": {
@@ -27681,7 +27650,7 @@
       },
       "IWF": {
         "SPY": {
-          "c26": 0.97,
+          "c26": 0.96,
           "c52": 0.96
         },
         "TLT": {
@@ -27766,7 +27735,7 @@
       "DGRO": {
         "SPY": {
           "c26": 0.72,
-          "c52": 0.68
+          "c52": 0.69
         },
         "TLT": {
           "c26": -0.16,
@@ -27849,8 +27818,8 @@
       },
       "DVY": {
         "SPY": {
-          "c26": 0.41,
-          "c52": 0.32
+          "c26": 0.43,
+          "c52": 0.33
         },
         "TLT": {
           "c26": 0.01,
@@ -27891,8 +27860,8 @@
       },
       "SCHD": {
         "SPY": {
-          "c26": 0.54,
-          "c52": 0.41
+          "c26": 0.55,
+          "c52": 0.43
         },
         "TLT": {
           "c26": -0.03,
@@ -27971,7 +27940,7 @@
       },
       "XAR": {
         "SPY": {
-          "c26": 0.7,
+          "c26": 0.69,
           "c52": 0.63
         },
         "TLT": {
@@ -28055,8 +28024,8 @@
       },
       "URA": {
         "SPY": {
-          "c26": 0.77,
-          "c52": 0.66
+          "c26": 0.75,
+          "c52": 0.65
         },
         "TLT": {
           "c26": -0.17,
@@ -28094,7 +28063,7 @@
       "URNM": {
         "SPY": {
           "c26": 0.7,
-          "c52": 0.56
+          "c52": 0.55
         },
         "TLT": {
           "c26": -0.08,
@@ -28135,8 +28104,8 @@
       },
       "NLR": {
         "SPY": {
-          "c26": 0.76,
-          "c52": 0.64
+          "c26": 0.74,
+          "c52": 0.63
         },
         "TLT": {
           "c26": -0.23,
@@ -28177,8 +28146,8 @@
       },
       "ICLN": {
         "SPY": {
-          "c26": 0.63,
-          "c52": 0.57
+          "c26": 0.62,
+          "c52": 0.56
         },
         "TLT": {
           "c26": -0.17,
@@ -28219,8 +28188,8 @@
       },
       "QCLN": {
         "SPY": {
-          "c26": 0.82,
-          "c52": 0.75
+          "c26": 0.81,
+          "c52": 0.74
         },
         "TLT": {
           "c26": -0.37,
@@ -28304,7 +28273,7 @@
       "FAN": {
         "SPY": {
           "c26": 0.5,
-          "c52": 0.42
+          "c52": 0.41
         },
         "TLT": {
           "c26": -0.16,
@@ -28346,7 +28315,7 @@
       "CNRG": {
         "SPY": {
           "c26": 0.73,
-          "c52": 0.61
+          "c52": 0.6
         },
         "TLT": {
           "c26": -0.2,
@@ -28387,8 +28356,8 @@
       },
       "SOXX": {
         "SPY": {
-          "c26": 0.76,
-          "c52": 0.74
+          "c26": 0.74,
+          "c52": 0.72
         },
         "TLT": {
           "c26": -0.46,
@@ -28425,8 +28394,8 @@
       },
       "SMH": {
         "SPY": {
-          "c26": 0.8,
-          "c52": 0.78
+          "c26": 0.79,
+          "c52": 0.77
         },
         "TLT": {
           "c26": -0.42,
@@ -28467,8 +28436,8 @@
       },
       "AIQ": {
         "SPY": {
-          "c26": 0.89,
-          "c52": 0.87
+          "c26": 0.88,
+          "c52": 0.86
         },
         "TLT": {
           "c26": -0.33,
@@ -28509,8 +28478,8 @@
       },
       "ARKK": {
         "SPY": {
-          "c26": 0.78,
-          "c52": 0.74
+          "c26": 0.76,
+          "c52": 0.73
         },
         "TLT": {
           "c26": -0.18,
@@ -28593,8 +28562,8 @@
       },
       "ROBO": {
         "SPY": {
-          "c26": 0.92,
-          "c52": 0.86
+          "c26": 0.9,
+          "c52": 0.84
         },
         "TLT": {
           "c26": -0.45,
@@ -28635,7 +28604,7 @@
       },
       "HACK": {
         "SPY": {
-          "c26": 0.46,
+          "c26": 0.45,
           "c52": 0.41
         },
         "TLT": {
@@ -28677,7 +28646,7 @@
       },
       "BUG": {
         "SPY": {
-          "c26": 0.39,
+          "c26": 0.38,
           "c52": 0.37
         },
         "TLT": {
@@ -28719,8 +28688,8 @@
       },
       "CIBR": {
         "SPY": {
-          "c26": 0.57,
-          "c52": 0.53
+          "c26": 0.56,
+          "c52": 0.52
         },
         "TLT": {
           "c26": -0.26,
@@ -28761,7 +28730,7 @@
       },
       "WCLD": {
         "SPY": {
-          "c26": 0.54,
+          "c26": 0.53,
           "c52": 0.4
         },
         "TLT": {
@@ -28803,7 +28772,7 @@
       },
       "CLOU": {
         "SPY": {
-          "c26": 0.65,
+          "c26": 0.64,
           "c52": 0.5
         },
         "TLT": {
@@ -28887,8 +28856,8 @@
       },
       "BLOK": {
         "SPY": {
-          "c26": 0.74,
-          "c52": 0.72
+          "c26": 0.73,
+          "c52": 0.71
         },
         "TLT": {
           "c26": -0.31,
@@ -28929,8 +28898,8 @@
       },
       "IBB": {
         "SPY": {
-          "c26": 0.48,
-          "c52": 0.5
+          "c26": 0.51,
+          "c52": 0.52
         },
         "TLT": {
           "c26": 0.09,
@@ -28971,8 +28940,8 @@
       },
       "XBI": {
         "SPY": {
-          "c26": 0.49,
-          "c52": 0.54
+          "c26": 0.53,
+          "c52": 0.56
         },
         "TLT": {
           "c26": 0.14,
@@ -29013,8 +28982,8 @@
       },
       "IHI": {
         "SPY": {
-          "c26": 0.29,
-          "c52": 0.27
+          "c26": 0.31,
+          "c52": 0.28
         },
         "TLT": {
           "c26": 0.17,
@@ -29056,7 +29025,7 @@
       "ARKG": {
         "SPY": {
           "c26": 0.42,
-          "c52": 0.47
+          "c52": 0.48
         },
         "TLT": {
           "c26": 0.01,
@@ -29097,7 +29066,7 @@
       },
       "PAVE": {
         "SPY": {
-          "c26": 0.67,
+          "c26": 0.68,
           "c52": 0.59
         },
         "TLT": {
@@ -29139,8 +29108,8 @@
       },
       "IFRA": {
         "SPY": {
-          "c26": 0.51,
-          "c52": 0.41
+          "c26": 0.52,
+          "c52": 0.42
         },
         "TLT": {
           "c26": -0.14,
@@ -29181,8 +29150,8 @@
       },
       "GII": {
         "SPY": {
-          "c26": 0.44,
-          "c52": 0.26
+          "c26": 0.46,
+          "c52": 0.27
         },
         "TLT": {
           "c26": 0.03,
@@ -29265,8 +29234,8 @@
       },
       "EWG": {
         "SPY": {
-          "c26": 0.78,
-          "c52": 0.74
+          "c26": 0.76,
+          "c52": 0.73
         },
         "TLT": {
           "c26": -0.28,
@@ -29349,8 +29318,8 @@
       },
       "EWI": {
         "SPY": {
-          "c26": 0.68,
-          "c52": 0.68
+          "c26": 0.66,
+          "c52": 0.66
         },
         "TLT": {
           "c26": -0.27,
@@ -29391,8 +29360,8 @@
       },
       "EWP": {
         "SPY": {
-          "c26": 0.64,
-          "c52": 0.61
+          "c26": 0.63,
+          "c52": 0.6
         },
         "TLT": {
           "c26": -0.26,
@@ -29434,7 +29403,7 @@
       "VGK": {
         "SPY": {
           "c26": 0.77,
-          "c52": 0.72
+          "c52": 0.71
         },
         "TLT": {
           "c26": -0.2,
@@ -29475,8 +29444,8 @@
       },
       "EZU": {
         "SPY": {
-          "c26": 0.81,
-          "c52": 0.74
+          "c26": 0.79,
+          "c52": 0.73
         },
         "TLT": {
           "c26": -0.33,
@@ -29517,8 +29486,8 @@
       },
       "IEUR": {
         "SPY": {
-          "c26": 0.78,
-          "c52": 0.73
+          "c26": 0.77,
+          "c52": 0.72
         },
         "TLT": {
           "c26": -0.2,
@@ -29601,8 +29570,8 @@
       },
       "EWA": {
         "SPY": {
-          "c26": 0.72,
-          "c52": 0.63
+          "c26": 0.71,
+          "c52": 0.62
         },
         "TLT": {
           "c26": -0.03,
@@ -29727,8 +29696,8 @@
       },
       "EWY": {
         "SPY": {
-          "c26": 0.61,
-          "c52": 0.61
+          "c26": 0.6,
+          "c52": 0.6
         },
         "TLT": {
           "c26": -0.25,
@@ -29769,8 +29738,8 @@
       },
       "EWS": {
         "SPY": {
-          "c26": 0.73,
-          "c52": 0.65
+          "c26": 0.71,
+          "c52": 0.64
         },
         "TLT": {
           "c26": -0.34,
@@ -29811,7 +29780,7 @@
       },
       "INDA": {
         "SPY": {
-          "c26": -0.16,
+          "c26": -0.15,
           "c52": 0.17
         },
         "TLT": {
@@ -29853,8 +29822,8 @@
       },
       "MCHI": {
         "SPY": {
-          "c26": 0.38,
-          "c52": 0.46
+          "c26": 0.37,
+          "c52": 0.45
         },
         "TLT": {
           "c26": -0.14,
@@ -29896,7 +29865,7 @@
       "FXI": {
         "SPY": {
           "c26": 0.25,
-          "c52": 0.35
+          "c52": 0.34
         },
         "TLT": {
           "c26": -0.15,
@@ -29938,7 +29907,7 @@
       "KWEB": {
         "SPY": {
           "c26": 0.34,
-          "c52": 0.41
+          "c52": 0.4
         },
         "TLT": {
           "c26": -0.08,
@@ -29980,7 +29949,7 @@
       "EWZ": {
         "SPY": {
           "c26": 0.38,
-          "c52": 0.34
+          "c52": 0.35
         },
         "TLT": {
           "c26": -0.22,
@@ -30021,7 +29990,7 @@
       },
       "EEM": {
         "SPY": {
-          "c26": 0.83,
+          "c26": 0.82,
           "c52": 0.78
         },
         "TLT": {
@@ -30102,7 +30071,7 @@
       "IEMG": {
         "SPY": {
           "c26": 0.84,
-          "c52": 0.8
+          "c52": 0.79
         },
         "TLT": {
           "c26": -0.34,
@@ -30144,7 +30113,7 @@
       "EWW": {
         "SPY": {
           "c26": 0.42,
-          "c52": 0.41
+          "c52": 0.4
         },
         "TLT": {
           "c26": 0.08,
@@ -30185,8 +30154,8 @@
       },
       "EIS": {
         "SPY": {
-          "c26": 0.68,
-          "c52": 0.59
+          "c26": 0.67,
+          "c52": 0.58
         },
         "TLT": {
           "c26": -0.17,
@@ -30227,7 +30196,7 @@
       },
       "ACWI": {
         "SPY": {
-          "c26": 0.99,
+          "c26": 0.98,
           "c52": 0.97
         },
         "TLT": {
@@ -30269,7 +30238,7 @@
       },
       "VT": {
         "SPY": {
-          "c26": 0.99,
+          "c26": 0.98,
           "c52": 0.96
         },
         "TLT": {
@@ -30311,8 +30280,8 @@
       },
       "TLT": {
         "SPY": {
-          "c26": -0.41,
-          "c52": -0.12
+          "c26": -0.37,
+          "c52": -0.1
         },
         "GLD": {
           "c26": -0.03,
@@ -30349,8 +30318,8 @@
       },
       "IEF": {
         "SPY": {
-          "c26": -0.43,
-          "c52": -0.11
+          "c26": -0.39,
+          "c52": -0.09
         },
         "TLT": {
           "c26": 0.91,
@@ -30391,8 +30360,8 @@
       },
       "SHY": {
         "SPY": {
-          "c26": -0.41,
-          "c52": -0.14
+          "c26": -0.39,
+          "c52": -0.13
         },
         "TLT": {
           "c26": 0.64,
@@ -30433,8 +30402,8 @@
       },
       "GOVT": {
         "SPY": {
-          "c26": -0.45,
-          "c52": -0.13
+          "c26": -0.42,
+          "c52": -0.12
         },
         "TLT": {
           "c26": 0.93,
@@ -30475,8 +30444,8 @@
       },
       "BND": {
         "SPY": {
-          "c26": -0.35,
-          "c52": -0.03
+          "c26": -0.32,
+          "c52": -0.02
         },
         "TLT": {
           "c26": 0.93,
@@ -30517,8 +30486,8 @@
       },
       "AGG": {
         "SPY": {
-          "c26": -0.36,
-          "c52": -0.03
+          "c26": -0.32,
+          "c52": -0.02
         },
         "TLT": {
           "c26": 0.93,
@@ -30559,7 +30528,7 @@
       },
       "BNDX": {
         "SPY": {
-          "c26": -0.12,
+          "c26": -0.09,
           "c52": 0.22
         },
         "TLT": {
@@ -30601,8 +30570,8 @@
       },
       "LQD": {
         "SPY": {
-          "c26": -0.25,
-          "c52": 0.09
+          "c26": -0.21,
+          "c52": 0.1
         },
         "TLT": {
           "c26": 0.91,
@@ -30643,8 +30612,8 @@
       },
       "HYG": {
         "SPY": {
-          "c26": 0.47,
-          "c52": 0.59
+          "c26": 0.46,
+          "c52": 0.58
         },
         "TLT": {
           "c26": 0.31,
@@ -30681,8 +30650,8 @@
       },
       "JNK": {
         "SPY": {
-          "c26": 0.45,
-          "c52": 0.58
+          "c26": 0.44,
+          "c52": 0.57
         },
         "TLT": {
           "c26": 0.3,
@@ -30723,7 +30692,7 @@
       },
       "EMB": {
         "SPY": {
-          "c26": 0.41,
+          "c26": 0.43,
           "c52": 0.54
         },
         "TLT": {
@@ -30765,8 +30734,8 @@
       },
       "TIP": {
         "SPY": {
-          "c26": -0.39,
-          "c52": -0.06
+          "c26": -0.36,
+          "c52": -0.05
         },
         "TLT": {
           "c26": 0.83,
@@ -30807,7 +30776,7 @@
       },
       "VTIP": {
         "SPY": {
-          "c26": -0.3,
+          "c26": -0.29,
           "c52": -0.06
         },
         "TLT": {
@@ -30849,8 +30818,8 @@
       },
       "MUB": {
         "SPY": {
-          "c26": -0.11,
-          "c52": 0.14
+          "c26": -0.08,
+          "c52": 0.15
         },
         "TLT": {
           "c26": 0.71,
@@ -30891,8 +30860,8 @@
       },
       "VCIT": {
         "SPY": {
-          "c26": -0.26,
-          "c52": 0.08
+          "c26": -0.23,
+          "c52": 0.09
         },
         "TLT": {
           "c26": 0.88,
@@ -30933,7 +30902,7 @@
       },
       "VCSH": {
         "SPY": {
-          "c26": -0.3,
+          "c26": -0.28,
           "c52": 0.04
         },
         "TLT": {
@@ -30975,8 +30944,8 @@
       },
       "BKLN": {
         "SPY": {
-          "c26": 0.29,
-          "c52": 0.27
+          "c26": 0.23,
+          "c52": 0.24
         },
         "TLT": {
           "c26": -0.19,
@@ -31017,7 +30986,7 @@
       },
       "FLOT": {
         "SPY": {
-          "c26": 0.42,
+          "c26": 0.43,
           "c52": 0.38
         },
         "TLT": {
@@ -31059,8 +31028,8 @@
       },
       "GLD": {
         "SPY": {
-          "c26": 0.49,
-          "c52": 0.45
+          "c26": 0.48,
+          "c52": 0.44
         },
         "TLT": {
           "c26": -0.03,
@@ -31098,7 +31067,7 @@
       "IAU": {
         "SPY": {
           "c26": 0.48,
-          "c52": 0.45
+          "c52": 0.44
         },
         "TLT": {
           "c26": -0.03,
@@ -31139,8 +31108,8 @@
       },
       "SLV": {
         "SPY": {
-          "c26": 0.57,
-          "c52": 0.44
+          "c26": 0.55,
+          "c52": 0.43
         },
         "TLT": {
           "c26": -0.19,
@@ -31181,8 +31150,8 @@
       },
       "USO": {
         "SPY": {
-          "c26": -0.08,
-          "c52": -0.19
+          "c26": -0.07,
+          "c52": -0.18
         },
         "TLT": {
           "c26": -0.15,
@@ -31219,7 +31188,7 @@
       },
       "DBC": {
         "SPY": {
-          "c26": 0.17,
+          "c26": 0.16,
           "c52": -0.01
         },
         "TLT": {
@@ -31261,7 +31230,7 @@
       },
       "DBA": {
         "SPY": {
-          "c26": 0.36,
+          "c26": 0.35,
           "c52": 0.21
         },
         "TLT": {
@@ -31303,8 +31272,8 @@
       },
       "PDBC": {
         "SPY": {
-          "c26": 0.18,
-          "c52": -0.01
+          "c26": 0.17,
+          "c52": -0.02
         },
         "TLT": {
           "c26": -0.26,
@@ -31345,8 +31314,8 @@
       },
       "CPER": {
         "SPY": {
-          "c26": 0.66,
-          "c52": 0.64
+          "c26": 0.62,
+          "c52": 0.62
         },
         "TLT": {
           "c26": -0.27,
@@ -31387,8 +31356,8 @@
       },
       "WEAT": {
         "SPY": {
-          "c26": 0.2,
-          "c52": 0.11
+          "c26": 0.19,
+          "c52": 0.1
         },
         "TLT": {
           "c26": -0.03,
@@ -31429,8 +31398,8 @@
       },
       "CORN": {
         "SPY": {
-          "c26": 0.22,
-          "c52": 0.09
+          "c26": 0.23,
+          "c52": 0.1
         },
         "TLT": {
           "c26": -0.06,
@@ -31471,8 +31440,8 @@
       },
       "PALL": {
         "SPY": {
-          "c26": 0.51,
-          "c52": 0.41
+          "c26": 0.47,
+          "c52": 0.39
         },
         "TLT": {
           "c26": -0.01,
@@ -31513,8 +31482,8 @@
       },
       "PPLT": {
         "SPY": {
-          "c26": 0.48,
-          "c52": 0.34
+          "c26": 0.45,
+          "c52": 0.32
         },
         "TLT": {
           "c26": -0.24,
@@ -31555,8 +31524,8 @@
       },
       "COPX": {
         "SPY": {
-          "c26": 0.69,
-          "c52": 0.63
+          "c26": 0.67,
+          "c52": 0.62
         },
         "TLT": {
           "c26": -0.26,
@@ -31723,8 +31692,8 @@
       },
       "VNQ": {
         "SPY": {
-          "c26": 0.14,
-          "c52": 0.34
+          "c26": 0.18,
+          "c52": 0.35
         },
         "TLT": {
           "c26": 0.1,
@@ -31765,8 +31734,8 @@
       },
       "IYR": {
         "SPY": {
-          "c26": 0.15,
-          "c52": 0.34
+          "c26": 0.19,
+          "c52": 0.35
         },
         "TLT": {
           "c26": 0.12,
@@ -31807,8 +31776,8 @@
       },
       "SCHH": {
         "SPY": {
-          "c26": 0.1,
-          "c52": 0.29
+          "c26": 0.14,
+          "c52": 0.31
         },
         "TLT": {
           "c26": 0.1,
@@ -31849,8 +31818,8 @@
       },
       "XLRE": {
         "SPY": {
-          "c26": 0.16,
-          "c52": 0.32
+          "c26": 0.19,
+          "c52": 0.33
         },
         "TLT": {
           "c26": 0.1,
@@ -31891,7 +31860,7 @@
       },
       "VNQI": {
         "SPY": {
-          "c26": 0.43,
+          "c26": 0.44,
           "c52": 0.52
         },
         "TLT": {
@@ -32013,8 +31982,8 @@
       },
       "FXY": {
         "SPY": {
-          "c26": -0.04,
-          "c52": 0.03
+          "c26": -0.05,
+          "c52": 0.02
         },
         "TLT": {
           "c26": -0.02,
@@ -32055,8 +32024,8 @@
       },
       "FXF": {
         "SPY": {
-          "c26": 0.0,
-          "c52": 0.15
+          "c26": 0.04,
+          "c52": 0.16
         },
         "TLT": {
           "c26": 0.34,
